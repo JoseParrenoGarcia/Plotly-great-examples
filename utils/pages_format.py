@@ -1,4 +1,4 @@
-from st_pages import Page, Section, add_indentation, show_pages
+from st_pages import Page, Section, show_pages
 
 def pages_format():
     show_pages(
