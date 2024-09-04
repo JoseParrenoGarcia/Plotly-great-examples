@@ -1,6 +1,10 @@
 import streamlit as st
-from utils.pages_format import pages_format
 import pandas as pd
+from utils.pages_format import pages_format
+from utils.load_data import travel_gdp_share_data
+from utils.bar_chart_examples.travel_gdp_share_plot import travel_gdp_share_plot
+
+
 
 # ---------------------------------------------------------------------
 # HOME PAGE - CONFIGURATION
@@ -14,18 +18,11 @@ pages_format()
 # ---------------------------------------------------------------------
 # Data read
 # ---------------------------------------------------------------------
-travel_gdp_share_df = (
-    pd.read_csv('data/travel_gdp_share_statista.csv', delimiter=';')
-    .assign(
-        **{
-            '2019': lambda x: x['2019'].str.rstrip('%').astype(float),
-            '2023': lambda x: x['2023'].str.rstrip('%').astype(float),
-        }
-    )
-    .rename(columns={'2019': 'y2019', '2023': 'y2023'})
-)
+travel_gdp_share_df = travel_gdp_share_data()
+travel_gdp_share_chart = travel_gdp_share_plot(df=travel_gdp_share_df)
 
 st.write(travel_gdp_share_df)
+st.plotly_chart(travel_gdp_share_chart)
 
 
 
