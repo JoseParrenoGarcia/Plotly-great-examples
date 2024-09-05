@@ -29,7 +29,8 @@ country_to_iso = {
     'Lithuania': 'LT',
     'Slovakia': 'SK',
     'Poland': 'PL',
-    'Ireland': 'IE'
+    'Ireland': 'IE',
+    'Average': 'Avg.'
 }
 
 def travel_gdp_share_data():
@@ -39,11 +40,22 @@ def travel_gdp_share_data():
             **{
                 '2019': lambda x: x['2019'].str.rstrip('%').astype(float),
                 '2023': lambda x: x['2023'].str.rstrip('%').astype(float),
-                'ISO_Code': lambda x: x['Characteristic'].map(country_to_iso)
             }
         )
         .rename(columns={'2019': 'y2019', '2023': 'y2023', 'Characteristic': 'Country'})
-        .sort_values(by='y2023', ascending=False)
     )
 
+    # Create a new DataFrame for the average row
+    average_row = pd.DataFrame({
+        'Country': ['Average'],
+        'y2019': [None],
+        'y2023': [travel_gdp_share_df['y2023'].mean()],
+    })
+
+    # Append the average row to the original DataFrame
+    travel_gdp_share_df = (pd.concat([travel_gdp_share_df, average_row]
+                                     , ignore_index=True)
+                           .assign(**{'ISO_Code': lambda x: x['Country'].map(country_to_iso),})
+                           .sort_values(by='y2023', ascending=False)
+                           )
     return travel_gdp_share_df
