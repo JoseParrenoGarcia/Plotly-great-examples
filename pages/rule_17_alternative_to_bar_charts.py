@@ -1,7 +1,9 @@
 import streamlit as st
 from utils.pages_format import pages_format
 from utils.load_data import travel_gdp_share_data
-from utils.bar_chart_examples.travel_gdp_share_plot import travel_gdp_share_plot_bar_chart
+from utils.bar_chart_examples.travel_gdp_share_plot import (
+    travel_gdp_share_plot_bar_chart,
+    travel_gdp_share_plot_dot_chart)
 
 
 
@@ -18,7 +20,8 @@ pages_format()
 # Data read
 # ---------------------------------------------------------------------
 travel_gdp_share_df = travel_gdp_share_data()
-travel_gdp_share_chart = travel_gdp_share_plot_bar_chart(df=travel_gdp_share_df)
+travel_gdp_share_chart_bar = travel_gdp_share_plot_bar_chart(df=travel_gdp_share_df)
+travel_gdp_share_chart_dot = travel_gdp_share_plot_dot_chart(df=travel_gdp_share_df)
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -40,13 +43,13 @@ with dot_plot_tab:
     """
     st.markdown(bullet_points)
 
-    st.plotly_chart(travel_gdp_share_chart)
+    st.plotly_chart(travel_gdp_share_chart_bar)
 
     st.divider()
 
     st.write('**Dot plots can be elegant and provide a minimalist view**')
 
-    st.plotly_chart(travel_gdp_share_chart)
+    st.plotly_chart(travel_gdp_share_chart_dot)
 
 
 
