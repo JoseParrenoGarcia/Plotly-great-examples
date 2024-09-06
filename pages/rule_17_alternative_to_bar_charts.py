@@ -7,7 +7,9 @@ from utils.bar_chart_examples.travel_gdp_share_plot import (
 )
 from utils.bar_chart_examples.life_expectancy_plot import (
     life_expectancy_bar_chart,
-    life_expectancy_scatter_plot
+    life_expectancy_scatter_plot,
+    life_expectancy_bar_chart_multiple_countries,
+    life_expectancy_scatter_plot_multiple_countries
 )
 
 
@@ -32,6 +34,14 @@ life_expectancy_df = life_expectancy_data()
 life_expectancy_df_russia = life_expectancy_df[life_expectancy_df['country'].isin(['Russia'])]
 life_expectancy_chart_bar = life_expectancy_bar_chart(df=life_expectancy_df_russia)
 life_expectancy_scatter_plot = life_expectancy_scatter_plot(df=life_expectancy_df_russia)
+
+life_expectancy_df_multiple = life_expectancy_df[life_expectancy_df['country'].isin(['Russia', 'Spain', 'Germany',
+                                                                                     'Brazil', 'Argentina',
+                                                                                     'Japan'])]
+life_expectancy_chart_bar_multiple = life_expectancy_bar_chart_multiple_countries(df=life_expectancy_df_multiple)
+life_expectancy_scatter_plot_multiple = life_expectancy_scatter_plot_multiple_countries(df=life_expectancy_df_multiple)
+
+
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -68,6 +78,8 @@ with dot_plot_tab:
 with timeseries_area_plot_tab:
     st.plotly_chart(life_expectancy_chart_bar)
     st.plotly_chart(life_expectancy_scatter_plot)
+    st.plotly_chart(life_expectancy_chart_bar_multiple)
+    st.plotly_chart(life_expectancy_scatter_plot_multiple)
 
 
 

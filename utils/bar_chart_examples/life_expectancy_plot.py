@@ -1,5 +1,14 @@
 import plotly.graph_objects as go
 
+country_colors = {
+    'Russia': 'darkblue',
+    'Spain': 'gold',
+    'Germany': 'black',
+    'Brazil': 'green',
+    'Argentina': 'lightblue',
+    'Japan': 'red'
+}
+
 def life_expectancy_bar_chart(df):
     fig = go.Figure()
 
@@ -256,6 +265,104 @@ def life_expectancy_scatter_plot(df):
             linewidth=1,
             showgrid=False,
             range=[0, 90]
+        ),
+        font=dict(family="Helvetica Neue"),
+        margin=dict(t=180, pad=0),
+        height=600,
+        width=1000,
+    )
+
+    return fig
+
+def life_expectancy_bar_chart_multiple_countries(df):
+    fig = go.Figure()
+
+    # Add bars to the chart
+    for country in df['country'].unique():
+        country_data = df[df['country'] == country]
+        fig.add_trace(go.Bar(
+            x=country_data['year'],
+            y=country_data['life_expectancy'],
+            name=country,
+            marker=dict(color=country_colors[country])
+        ))
+
+    # Update the layout
+    fig.update_layout(
+        title=dict(
+            text='Average life expectancy by country',
+            y=0.80,
+            x=0,
+            xanchor='left',
+            yanchor='top',
+            font=dict(family="Helvetica Neue", size=18),
+        ),
+        xaxis=dict(
+            title='',
+            tickmode='linear',
+            dtick=20,
+            showline=True,
+            linecolor='lightgrey',
+            linewidth=1,
+        ),
+        yaxis=dict(
+            title='Life Expectancy',
+            tickmode='linear',
+            dtick=10,
+            showline=True,
+            linecolor='lightgrey',
+            linewidth=1,
+            showgrid=False,
+        ),
+        font=dict(family="Helvetica Neue"),
+        barmode='group',
+        margin=dict(t=180, pad=0),
+        height=600,
+        width=1000,
+    )
+
+    return fig
+
+def life_expectancy_scatter_plot_multiple_countries(df):
+    fig = go.Figure()
+
+    for country in df['country'].unique():
+        country_data = df[df['country'] == country]
+        fig.add_trace(go.Scatter(
+            x=country_data['year'],
+            y=country_data['life_expectancy'],
+            mode='lines',
+            name=country,
+            line=dict(color=country_colors[country]),
+        ))
+
+    # Update the layout
+    fig.update_layout(
+        title=dict(
+            text='Average life expectancy by country',
+            y=0.80,
+            x=0,
+            xanchor='left',
+            yanchor='top',
+            font=dict(family="Helvetica Neue", size=18),
+        ),
+        xaxis=dict(
+            title='',
+            tickmode='linear',
+            dtick=20,
+            showline=True,
+            linecolor='lightgrey',
+            linewidth=1,
+        ),
+        yaxis=dict(
+            title='Life Expectancy',
+            tickmode='linear',
+            dtick=10,
+            showline=True,
+            linecolor='lightgrey',
+            linewidth=1,
+            showgrid=False,
+            range=[0, df['life_expectancy'].max() + 5]
         ),
         font=dict(family="Helvetica Neue"),
         margin=dict(t=180, pad=0),
