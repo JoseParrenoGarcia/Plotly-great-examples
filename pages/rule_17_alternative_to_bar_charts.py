@@ -30,24 +30,28 @@ dot_plot_tab, timeseries_area_plot_tab = st.tabs(["🔵 Dot plots", "🕒 Timese
 
 with dot_plot_tab:
     st.subheader('Dot plots can be an elegant alternative to bar charts')
+    st.write('When you need to compare a large number of datapoints, bars can be quite heavy. '
+             'The end of each bar, so critical for understanding the charts '
+             'meaning, can become blurred by proximity to its neighbours. Dot charts '
+             'make it easier for your audience to pinpoint each category’s value. '
+             'They are also less visually overwhelming.')
 
-    st.write('**Whilst this is well designed bar chart**')
+    st.write('You can see below a well designed bar chart following all best practices. It is '
+             'still very legible and easy to understand. However, the dot plot is more minimalist '
+             'and makes the audience focus thr attention on the data points. This reduces the use '
+             'of "ink" and helps redue cognitive load of comparing the end of each bar chart.')
 
-    bullet_points = """
-    - Not too many categories, but enough for experts to have a detailed view
-    - Carefully chosen colour: 1 colour for countries and 1 for the average. In addition, we have replicated the RGB colours used in the EU flag
-    - The *Avg.* category helps divide the countries to get a clear view of our definition of high vs low
-    - Numbers only with 1 decimal point so that it doesn't get too cluttered
-    - Chart has yaxis removed, it doesn't add value to have the range of values. We already show them in each bar.
-    - Clear title, definition of the chart and footer with the source
-    """
-    st.markdown(bullet_points)
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/6/16/rule-17-not-too-many-bars)")
+
+    st.divider()
+    st.write('**Bar chart**')
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/your-username/your-repo)")
 
     st.plotly_chart(travel_gdp_share_chart_bar)
 
     st.divider()
-
-    st.write('**Dot plots can be elegant and provide a minimalist view**')
+    st.write('**Dot chart**')
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/your-username/your-repo)")
 
     st.plotly_chart(travel_gdp_share_chart_dot)
 
