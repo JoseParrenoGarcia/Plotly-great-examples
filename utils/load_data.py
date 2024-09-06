@@ -65,6 +65,7 @@ def life_expectancy_data():
                           .melt(id_vars=['country'], var_name='year', value_name='life_expectancy')
                           .assign(year=lambda x: x['year'].astype(int))
                           .query("year >= 1900")
+                          .query("year <= 2080")
                           )
 
     return life_expectancy_df

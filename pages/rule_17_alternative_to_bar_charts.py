@@ -3,9 +3,12 @@ from utils.pages_format import pages_format
 from utils.load_data import (travel_gdp_share_data, life_expectancy_data)
 from utils.bar_chart_examples.travel_gdp_share_plot import (
     travel_gdp_share_plot_bar_chart,
-    travel_gdp_share_plot_dot_chart)
+    travel_gdp_share_plot_dot_chart
+)
 from utils.bar_chart_examples.life_expectancy_plot import (
-    life_expectancy_bar_chart)
+    life_expectancy_bar_chart,
+    life_expectancy_scatter_plot
+)
 
 
 
@@ -26,8 +29,9 @@ travel_gdp_share_chart_bar = travel_gdp_share_plot_bar_chart(df=travel_gdp_share
 travel_gdp_share_chart_dot = travel_gdp_share_plot_dot_chart(df=travel_gdp_share_df)
 
 life_expectancy_df = life_expectancy_data()
-# life_expectancy_df = life_expectancy_df[life_expectancy_df['country'].isin(['Russia', 'Spain'])]
-life_expectancy_chart_bar = life_expectancy_bar_chart(df=life_expectancy_df[life_expectancy_df['country'].isin(['Russia'])])
+life_expectancy_df_russia = life_expectancy_df[life_expectancy_df['country'].isin(['Russia'])]
+life_expectancy_chart_bar = life_expectancy_bar_chart(df=life_expectancy_df_russia)
+life_expectancy_scatter_plot = life_expectancy_scatter_plot(df=life_expectancy_df_russia)
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -62,8 +66,8 @@ with dot_plot_tab:
     st.plotly_chart(travel_gdp_share_chart_dot)
 
 with timeseries_area_plot_tab:
-    st.dataframe(life_expectancy_df)
     st.plotly_chart(life_expectancy_chart_bar)
+    st.plotly_chart(life_expectancy_scatter_plot)
 
 
 
