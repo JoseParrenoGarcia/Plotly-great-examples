@@ -39,7 +39,7 @@ def life_expectancy_bar_chart(df):
         showarrow=True,
         arrowhead=0,
         ax=0,
-        ay=-190,
+        ay=-230,
         arrowcolor='lightgrey',
         arrowwidth=1,
         borderpad=5,
@@ -55,7 +55,7 @@ def life_expectancy_bar_chart(df):
         showarrow=True,
         arrowhead=0,
         ax=0,
-        ay=-160,
+        ay=-200,
         arrowcolor='lightgrey',
         arrowwidth=1,
         borderpad=5,
@@ -71,7 +71,7 @@ def life_expectancy_bar_chart(df):
         showarrow=True,
         arrowhead=0,
         ax=0,
-        ay=-130,
+        ay=-170,
         arrowcolor='lightgrey',
         arrowwidth=1,
         borderpad=5,
@@ -82,7 +82,7 @@ def life_expectancy_bar_chart(df):
     txt_ = "Source: Gapminder, <a href='https://www.gapminder.org/data/'>Life expectancy</a>"
     fig.add_annotation(
         x=0,
-        y=-0.15,
+        y=-0.10,
         text=txt_,
         showarrow = False,
         ax=0,
@@ -96,7 +96,7 @@ def life_expectancy_bar_chart(df):
     fig.update_layout(
         title=dict(
             text='Average life expectancy in Russia',
-            y=0.80,
+            y=0.98,
             x=0,
             xanchor='left',
             yanchor='top',
@@ -121,7 +121,7 @@ def life_expectancy_bar_chart(df):
         ),
         font=dict(family="Helvetica Neue"),
         barmode='group',
-        margin=dict(t=180, pad=0),
+        margin=dict(t=70, pad=0),
         height=600,
         width=1000,
     )
@@ -178,7 +178,7 @@ def life_expectancy_scatter_plot(df):
         showarrow=True,
         arrowhead=0,
         ax=0,
-        ay=-190,
+        ay=-230,
         arrowcolor='lightgrey',
         arrowwidth=1,
         borderpad=5,
@@ -194,7 +194,7 @@ def life_expectancy_scatter_plot(df):
         showarrow=True,
         arrowhead=0,
         ax=0,
-        ay=-160,
+        ay=-200,
         arrowcolor='lightgrey',
         arrowwidth=1,
         borderpad=5,
@@ -210,7 +210,7 @@ def life_expectancy_scatter_plot(df):
         showarrow=True,
         arrowhead=0,
         ax=0,
-        ay=-130,
+        ay=-170,
         arrowcolor='lightgrey',
         arrowwidth=1,
         borderpad=5,
@@ -221,7 +221,7 @@ def life_expectancy_scatter_plot(df):
     txt_ = "Source: Gapminder, <a href='https://www.gapminder.org/data/'>Life expectancy</a>"
     fig.add_annotation(
         x=0,
-        y=-0.15,
+        y=-0.10,
         text=txt_,
         showarrow=False,
         ax=0,
@@ -242,105 +242,7 @@ def life_expectancy_scatter_plot(df):
     fig.update_layout(
         title=dict(
             text='Average life expectancy in Russia',
-            y=0.80,
-            x=0,
-            xanchor='left',
-            yanchor='top',
-            font=dict(family="Helvetica Neue", size=18),
-        ),
-        xaxis=dict(
-            title='',
-            tickmode='linear',
-            dtick=20,
-            showline=True,
-            linecolor='lightgrey',
-            linewidth=1,
-        ),
-        yaxis=dict(
-            title='Life Expectancy',
-            tickmode='linear',
-            dtick=10,
-            showline=True,
-            linecolor='lightgrey',
-            linewidth=1,
-            showgrid=False,
-            range=[0, 90]
-        ),
-        font=dict(family="Helvetica Neue"),
-        margin=dict(t=180, pad=0),
-        height=600,
-        width=1000,
-    )
-
-    return fig
-
-def life_expectancy_bar_chart_multiple_countries(df):
-    fig = go.Figure()
-
-    # Add bars to the chart
-    for country in df['country'].unique():
-        country_data = df[df['country'] == country]
-        fig.add_trace(go.Bar(
-            x=country_data['year'],
-            y=country_data['life_expectancy'],
-            name=country,
-            marker=dict(color=country_colors[country])
-        ))
-
-    # Update the layout
-    fig.update_layout(
-        title=dict(
-            text='Average life expectancy by country',
-            y=0.80,
-            x=0,
-            xanchor='left',
-            yanchor='top',
-            font=dict(family="Helvetica Neue", size=18),
-        ),
-        xaxis=dict(
-            title='',
-            tickmode='linear',
-            dtick=20,
-            showline=True,
-            linecolor='lightgrey',
-            linewidth=1,
-        ),
-        yaxis=dict(
-            title='Life Expectancy',
-            tickmode='linear',
-            dtick=10,
-            showline=True,
-            linecolor='lightgrey',
-            linewidth=1,
-            showgrid=False,
-        ),
-        font=dict(family="Helvetica Neue"),
-        barmode='group',
-        margin=dict(t=180, pad=0),
-        height=600,
-        width=1000,
-    )
-
-    return fig
-
-def life_expectancy_scatter_plot_multiple_countries(df):
-    fig = go.Figure()
-
-    for country in df['country'].unique():
-        country_data = df[df['country'] == country]
-        fig.add_trace(go.Scatter(
-            x=country_data['year'],
-            y=country_data['life_expectancy'],
-            mode='lines',
-            name=country,
-            line=dict(color=country_colors[country]),
-        ))
-
-    # Update the layout
-    fig.update_layout(
-        title=dict(
-            text='Average life expectancy by country',
-            y=0.80,
+            y=0.98,
             x=0,
             xanchor='left',
             yanchor='top',
@@ -365,7 +267,107 @@ def life_expectancy_scatter_plot_multiple_countries(df):
             range=[0, df['life_expectancy'].max() + 5]
         ),
         font=dict(family="Helvetica Neue"),
-        margin=dict(t=180, pad=0),
+        barmode='group',
+        margin=dict(t=70, pad=0),
+        height=600,
+        width=1000,
+    )
+
+    return fig
+
+def life_expectancy_bar_chart_multiple_countries(df):
+    fig = go.Figure()
+
+    # Add bars to the chart
+    for country in df['country'].unique():
+        country_data = df[df['country'] == country]
+        fig.add_trace(go.Bar(
+            x=country_data['year'],
+            y=country_data['life_expectancy'],
+            name=country,
+            marker=dict(color=country_colors[country])
+        ))
+
+    # Update the layout
+    fig.update_layout(
+        title=dict(
+            text='Average life expectancy in Russia',
+            y=0.98,
+            x=0,
+            xanchor='left',
+            yanchor='top',
+            font=dict(family="Helvetica Neue", size=18),
+        ),
+        xaxis=dict(
+            title='',
+            tickmode='linear',
+            dtick=20,
+            showline=True,
+            linecolor='lightgrey',
+            linewidth=1,
+        ),
+        yaxis=dict(
+            title='Life Expectancy',
+            tickmode='linear',
+            dtick=10,
+            showline=True,
+            linecolor='lightgrey',
+            linewidth=1,
+            showgrid=False,
+        ),
+        font=dict(family="Helvetica Neue"),
+        barmode='group',
+        margin=dict(t=70, pad=0),
+        height=600,
+        width=1000,
+    )
+
+    return fig
+
+def life_expectancy_scatter_plot_multiple_countries(df):
+    fig = go.Figure()
+
+    for country in df['country'].unique():
+        country_data = df[df['country'] == country]
+        fig.add_trace(go.Scatter(
+            x=country_data['year'],
+            y=country_data['life_expectancy'],
+            mode='lines',
+            name=country,
+            line=dict(color=country_colors[country]),
+        ))
+
+    # Update the layout
+    fig.update_layout(
+        title=dict(
+            text='Average life expectancy in Russia',
+            y=0.98,
+            x=0,
+            xanchor='left',
+            yanchor='top',
+            font=dict(family="Helvetica Neue", size=18),
+        ),
+        xaxis=dict(
+            title='',
+            tickmode='linear',
+            dtick=20,
+            showline=True,
+            linecolor='lightgrey',
+            linewidth=1,
+        ),
+        yaxis=dict(
+            title='Life Expectancy',
+            tickmode='linear',
+            dtick=10,
+            showline=True,
+            linecolor='lightgrey',
+            linewidth=1,
+            showgrid=False,
+            range=[0, df['life_expectancy'].max() + 5]
+        ),
+        font=dict(family="Helvetica Neue"),
+        barmode='group',
+        margin=dict(t=70, pad=0),
         height=600,
         width=1000,
     )
