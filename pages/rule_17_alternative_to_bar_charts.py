@@ -27,8 +27,7 @@ travel_gdp_share_chart_dot = travel_gdp_share_plot_dot_chart(df=travel_gdp_share
 
 life_expectancy_df = life_expectancy_data()
 # life_expectancy_df = life_expectancy_df[life_expectancy_df['country'].isin(['Russia', 'Spain'])]
-life_expectancy_df = life_expectancy_df[life_expectancy_df['country'].isin(['Spain'])] # germany, russia and spain
-life_expectancy_chart_bar = life_expectancy_bar_chart(df=life_expectancy_df)
+life_expectancy_chart_bar = life_expectancy_bar_chart(df=life_expectancy_df[life_expectancy_df['country'].isin(['Russia'])])
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
