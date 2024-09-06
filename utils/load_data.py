@@ -59,3 +59,13 @@ def travel_gdp_share_data():
                            .sort_values(by='y2023', ascending=False)
                            )
     return travel_gdp_share_df
+
+def life_expectancy_data():
+    life_expectancy_df = (pd.read_csv('data/life_expectancy.csv')
+                          .melt(id_vars=['country'], var_name='year', value_name='life_expectancy')
+                          .assign(year=lambda x: x['year'].astype(int))
+                          .query("year >= 1900")
+                          .query("year <= 2080")
+                          )
+
+    return life_expectancy_df

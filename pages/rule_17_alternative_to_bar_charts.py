@@ -1,9 +1,16 @@
 import streamlit as st
 from utils.pages_format import pages_format
-from utils.load_data import travel_gdp_share_data
+from utils.load_data import (travel_gdp_share_data, life_expectancy_data)
 from utils.bar_chart_examples.travel_gdp_share_plot import (
     travel_gdp_share_plot_bar_chart,
-    travel_gdp_share_plot_dot_chart)
+    travel_gdp_share_plot_dot_chart
+)
+from utils.bar_chart_examples.life_expectancy_plot import (
+    life_expectancy_bar_chart,
+    life_expectancy_scatter_plot,
+    life_expectancy_bar_chart_multiple_countries,
+    life_expectancy_scatter_plot_multiple_countries
+)
 
 
 
@@ -23,10 +30,23 @@ travel_gdp_share_df = travel_gdp_share_data()
 travel_gdp_share_chart_bar = travel_gdp_share_plot_bar_chart(df=travel_gdp_share_df)
 travel_gdp_share_chart_dot = travel_gdp_share_plot_dot_chart(df=travel_gdp_share_df)
 
+life_expectancy_df = life_expectancy_data()
+life_expectancy_df_russia = life_expectancy_df[life_expectancy_df['country'].isin(['Russia'])]
+life_expectancy_chart_bar = life_expectancy_bar_chart(df=life_expectancy_df_russia)
+life_expectancy_scatter_plot = life_expectancy_scatter_plot(df=life_expectancy_df_russia)
+
+life_expectancy_df_multiple = life_expectancy_df[life_expectancy_df['country'].isin(['Russia', 'Spain', 'Germany',
+                                                                                     'Brazil', 'Argentina',
+                                                                                     'Japan'])]
+life_expectancy_chart_bar_multiple = life_expectancy_bar_chart_multiple_countries(df=life_expectancy_df_multiple)
+life_expectancy_scatter_plot_multiple = life_expectancy_scatter_plot_multiple_countries(df=life_expectancy_df_multiple)
+
+
+
 # ---------------------------------------------------------------------
 # MAIN PANEL
 # ---------------------------------------------------------------------
-dot_plot_tab, timeseries_area_plot_tab = st.tabs(["🔵 Dot plots", "🕒 Timeseries area plots"])
+dot_plot_tab, timeseries_area_plot_tab = st.tabs(["🔵 Dot plots", "🕒 Timeseries"])
 
 with dot_plot_tab:
     st.subheader('Dot plots can be an elegant alternative to bar charts')
@@ -43,17 +63,61 @@ with dot_plot_tab:
 
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/6/16/rule-17-not-too-many-bars)")
 
-    st.divider()
     st.write('**Bar chart**')
-    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/your-username/your-repo)")
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
 
     st.plotly_chart(travel_gdp_share_chart_bar)
 
-    st.divider()
     st.write('**Dot chart**')
-    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/your-username/your-repo)")
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L86)")
 
     st.plotly_chart(travel_gdp_share_chart_dot)
+
+with timeseries_area_plot_tab:
+    st.subheader('Bar charts are not great for timeseries plots')
+    st.write('When you have lots of bars representing a crowded and long timeseries, '
+             'the mind can struggle to understand the important trends. The change over time story is less '
+             'clear as you have the cognitive load of too much ink and spaces between bars. In addition, '
+             'you head tends to automatically compare the ends of bars, bringing you away from processing a trend.')
+
+    st.write('Whilst I have tried to keep the bar chart as clean as possible, the line plot is clearer. '
+             'The line plot makes it easier to see the trend over time. The line plot is also more '
+             'space efficient, as it does not need to leave space for the bars. This makes the line plot '
+             'more compact and easier to read. In the line chart, I have also highlighted the annotated years with '
+             'bolder markers, and used a dashed line for estimated years.')
+
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/6/16/rule-17-not-too-many-bars)")
+
+    st.write('**Bar chart**')
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
+
+    st.plotly_chart(life_expectancy_chart_bar)
+
+    st.write('**Line chart**')
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L86)")
+
+    st.plotly_chart(life_expectancy_scatter_plot)
+
+    st.divider()
+
+    st.subheader('This is even worse when you have multiple categories')
+    st.write('The moment that you have different categories, a timeseries using a bar chart breaks. It '
+             'is impossible to compare different categories as the bars are trying to all '
+             'fit into the tiny space reserved for each year. The colours are hard to distinguish.')
+
+    st.write("The line chart however is much clearer. "
+             "Whilst the colouring might not be the best for this example, it is actually possible to see the differences "
+             "between a couple of trends or easy to answer which country has the lower life expectancy.")
+
+    st.write('**Bar chart**')
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
+
+    st.plotly_chart(life_expectancy_chart_bar_multiple)
+
+    st.write('**Line chart**')
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L86)")
+
+    st.plotly_chart(life_expectancy_scatter_plot_multiple)
 
 
 
