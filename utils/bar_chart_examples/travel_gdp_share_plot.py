@@ -141,6 +141,15 @@ def travel_gdp_share_plot_dot_chart(df):
         annotations=[
             # First paragraph annotation
             dict(
+                text="Travel",
+                xref="paper", yref="paper",
+                x=0, y=1.10,
+                showarrow=False,
+                font=dict(family="Helvetica Neue", size=14),
+                align="left"
+            ),
+            # Second paragraph annotation
+            dict(
                 text="10 countries are more heavily reliant on international tourism than the global average",
                 xref="paper",
                 yref="paper",
