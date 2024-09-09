@@ -154,7 +154,7 @@ with abacus_plot_tab:
     st.write("")
 
     st.write('**Bar chart**')
-    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/1f5bbef0f5d881ff5309155883037af68603a167/utils/bar_chart_examples/life_expectancy_plot.py#L12)")
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/e22e99d15bc296435d0df6ae8e81f4485e953aeb/utils/bar_chart_examples/neighbouring_countries_plot.py#L5)")
     st.write("")
 
     st.plotly_chart(neighbouring_countries_bar)
@@ -162,7 +162,7 @@ with abacus_plot_tab:
     st.write("")
     st.write("")
     st.write('**Dot chart**')
-    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L86)")
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/e22e99d15bc296435d0df6ae8e81f4485e953aeb/utils/bar_chart_examples/neighbouring_countries_plot.py#L77)")
     st.write("")
 
     st.plotly_chart(neighbouring_countries_abacus)
