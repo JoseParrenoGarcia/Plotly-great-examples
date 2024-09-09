@@ -56,10 +56,10 @@ neighbouring_countries_abacus = neighbouring_countries_abacus_chart(df=neighbour
 # ---------------------------------------------------------------------
 # MAIN PANEL
 # ---------------------------------------------------------------------
-dot_plot_tab, timeseries_area_plot_tab, abacus_plot_tab = st.tabs(
+dot_plot_tab, abacus_plot_tab, timeseries_area_plot_tab,  = st.tabs(
     ["🔵 Dot plot",
-     "🕒 Timeseries",
      "🧮 Abacus plot",
+     "🕒 Timeseries",
      ]
 )
 
@@ -135,8 +135,36 @@ with timeseries_area_plot_tab:
     st.plotly_chart(life_expectancy_scatter_plot_multiple)
 
 with abacus_plot_tab:
-    st.write(neighbouring_countries_df)
+    st.subheader('Another way to represent comparisons is through Abacus plots')
+    st.write('Similar to dot plots, if we have a horizontal bar chart with lots of categories, '
+             'and where our aim to compare values between them, the bar chart can become a bit heavy '
+             'from a cognitive load point of view.')
+
+    st.write('Even though the bar chart below has an OK design, your mind actually scans the whole bar '
+             'chart until you get to the displayed data point at the end of it. That doesnt happen with the '
+             'abacus dot plot, because you are immediately drawn to the dot.')
+
+    st.write('In addition, because we want to show percentages, the bar chart has this wierd look of being shrinked. '
+             'We could have expanded the bar charts so that the range was between 0 to 67, and not 0 to 100, but then '
+             'the % representation might have been a bit skewed. Again, the abacus dot plot lends well into have '
+             'this fixed comparison range.')
+
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/5/17/rule-16-if-in-doubt-use-a-bar-chart)")
+    st.write("")
+    st.write("")
+
+    st.write('**Bar chart**')
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/1f5bbef0f5d881ff5309155883037af68603a167/utils/bar_chart_examples/life_expectancy_plot.py#L12)")
+    st.write("")
+
     st.plotly_chart(neighbouring_countries_bar)
+
+    st.write("")
+    st.write("")
+    st.write('**Dot chart**')
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L86)")
+    st.write("")
+
     st.plotly_chart(neighbouring_countries_abacus)
 
 
