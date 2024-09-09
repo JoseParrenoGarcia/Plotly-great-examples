@@ -1,6 +1,10 @@
 import streamlit as st
 from utils.pages_format import pages_format
-from utils.load_data import (travel_gdp_share_data, life_expectancy_data)
+from utils.load_data import (
+    travel_gdp_share_data,
+    life_expectancy_data,
+    neighbouring_countries_ownership,
+)
 from utils.bar_chart_examples.travel_gdp_share_plot import (
     travel_gdp_share_plot_bar_chart,
     travel_gdp_share_plot_dot_chart
@@ -9,7 +13,11 @@ from utils.bar_chart_examples.life_expectancy_plot import (
     life_expectancy_bar_chart,
     life_expectancy_scatter_plot,
     life_expectancy_bar_chart_multiple_countries,
-    life_expectancy_scatter_plot_multiple_countries
+    life_expectancy_scatter_plot_multiple_countries,
+)
+from utils.bar_chart_examples.neighbouring_countries_plot import (
+    neighbouring_countries_bar_chart,
+    neighbouring_countries_abacus_chart,
 )
 
 
@@ -35,18 +43,25 @@ life_expectancy_df_russia = life_expectancy_df[life_expectancy_df['country'].isi
 life_expectancy_chart_bar = life_expectancy_bar_chart(df=life_expectancy_df_russia)
 life_expectancy_scatter_plot = life_expectancy_scatter_plot(df=life_expectancy_df_russia)
 
-life_expectancy_df_multiple = life_expectancy_df[life_expectancy_df['country'].isin(['Russia', 'Spain', 'Germany',
-                                                                                     'Brazil', 'Argentina',
-                                                                                     'Japan'])]
+life_expectancy_df_multiple = life_expectancy_df[life_expectancy_df['country'].isin([
+    'Russia', 'Spain', 'Germany', 'Brazil', 'Argentina', 'Japan']
+)]
 life_expectancy_chart_bar_multiple = life_expectancy_bar_chart_multiple_countries(df=life_expectancy_df_multiple)
 life_expectancy_scatter_plot_multiple = life_expectancy_scatter_plot_multiple_countries(df=life_expectancy_df_multiple)
 
-
+neighbouring_countries_df = neighbouring_countries_ownership()
+neighbouring_countries_bar = neighbouring_countries_bar_chart(df=neighbouring_countries_df)
+neighbouring_countries_abacus = neighbouring_countries_abacus_chart(df=neighbouring_countries_df)
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
 # ---------------------------------------------------------------------
-dot_plot_tab, timeseries_area_plot_tab = st.tabs(["🔵 Dot plots", "🕒 Timeseries"])
+dot_plot_tab, abacus_plot_tab, timeseries_area_plot_tab,  = st.tabs(
+    ["🔵 Dot plot",
+     "🧮 Abacus plot",
+     "🕒 Timeseries",
+     ]
+)
 
 with dot_plot_tab:
     st.subheader('Dot plots can be an elegant alternative to bar charts')
@@ -75,7 +90,7 @@ with dot_plot_tab:
 
 with timeseries_area_plot_tab:
     st.subheader('Bar charts are not great for timeseries plots')
-    st.write('When you have lots of bars representing a crowded and long timeseries, '
+    st.write('Bar charts can be used for timeseries, but, when you have lots of bars representing a crowded and long timeseries, '
              'the mind can struggle to understand the important trends. The change over time story is less '
              'clear as you have the cognitive load of too much ink and spaces between bars. In addition, '
              'you head tends to automatically compare the ends of bars, bringing you away from processing a trend.')
@@ -118,6 +133,39 @@ with timeseries_area_plot_tab:
     st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/1f5bbef0f5d881ff5309155883037af68603a167/utils/bar_chart_examples/life_expectancy_plot.py#L327)")
 
     st.plotly_chart(life_expectancy_scatter_plot_multiple)
+
+with abacus_plot_tab:
+    st.subheader('Another way to represent comparisons is through Abacus plots')
+    st.write('Similar to dot plots, if we have a horizontal bar chart with lots of categories, '
+             'and where our aim to compare values between them, the bar chart can become a bit heavy '
+             'from a cognitive load point of view.')
+
+    st.write('Even though the bar chart below has an OK design, your mind actually scans the whole bar '
+             'chart until you get to the displayed data point at the end of it. That doesnt happen with the '
+             'abacus dot plot, because you are immediately drawn to the dot.')
+
+    st.write('In addition, because we want to show percentages, the bar chart has this wierd look of being shrinked. '
+             'We could have expanded the bar charts so that the range was between 0 to 67, and not 0 to 100, but then '
+             'the % representation might have been a bit skewed. Again, the abacus dot plot lends well into have '
+             'this fixed comparison range.')
+
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/5/17/rule-16-if-in-doubt-use-a-bar-chart)")
+    st.write("")
+    st.write("")
+
+    st.write('**Bar chart**')
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/1f5bbef0f5d881ff5309155883037af68603a167/utils/bar_chart_examples/life_expectancy_plot.py#L12)")
+    st.write("")
+
+    st.plotly_chart(neighbouring_countries_bar)
+
+    st.write("")
+    st.write("")
+    st.write('**Dot chart**')
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L86)")
+    st.write("")
+
+    st.plotly_chart(neighbouring_countries_abacus)
 
 
 

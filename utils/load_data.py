@@ -69,3 +69,37 @@ def life_expectancy_data():
                           )
 
     return life_expectancy_df
+
+def neighbouring_countries_ownership():
+    data = [
+        ('Canada', 25),
+        ('US', 19),
+        ('Hungary', 67),
+        ('Greece', 60),
+        ('Bulgaria', 58),
+        ('Poland', 48),
+        ('Slovakia', 46),
+        ('Spain', 37),
+        ('Italy', 36),
+        ('France', 33),
+        ('Czech Rep.', 31),
+        ('Lithuania', 30),
+        ('Germany', 30),
+        ('Netherlands', 24),
+        ('UK', 23),
+        ('Turkey', 58),
+        ('Russia', 53),
+        ('Ukraine', 47),
+        ('Sweden', 13),
+    ]
+
+    df = pd.DataFrame(data, columns=['country', 'percentage'])
+
+    median_percentage = df['percentage'].median()
+    median_row = pd.DataFrame({
+        'country': ['Median'],
+        'percentage': [median_percentage]
+    })
+
+    return pd.concat([df, median_row], ignore_index=True).sort_values('percentage', ascending=True)
+
