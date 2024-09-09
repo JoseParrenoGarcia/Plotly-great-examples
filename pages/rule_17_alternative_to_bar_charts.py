@@ -17,6 +17,7 @@ from utils.bar_chart_examples.life_expectancy_plot import (
 )
 from utils.bar_chart_examples.neighbouring_countries_plot import (
     neighbouring_countries_bar_chart,
+    neighbouring_countries_abacus_chart,
 )
 
 
@@ -50,6 +51,7 @@ life_expectancy_scatter_plot_multiple = life_expectancy_scatter_plot_multiple_co
 
 neighbouring_countries_df = neighbouring_countries_ownership()
 neighbouring_countries_bar = neighbouring_countries_bar_chart(df=neighbouring_countries_df)
+neighbouring_countries_abacus = neighbouring_countries_abacus_chart(df=neighbouring_countries_df)
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -135,6 +137,7 @@ with timeseries_area_plot_tab:
 with abacus_plot_tab:
     st.write(neighbouring_countries_df)
     st.plotly_chart(neighbouring_countries_bar)
+    st.plotly_chart(neighbouring_countries_abacus)
 
 
 
