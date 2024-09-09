@@ -101,5 +101,5 @@ def neighbouring_countries_ownership():
         'percentage': [median_percentage]
     })
 
-    return pd.concat([df, median_row], ignore_index=True)
+    return pd.concat([df, median_row], ignore_index=True).sort_values('percentage', ascending=True)
 
