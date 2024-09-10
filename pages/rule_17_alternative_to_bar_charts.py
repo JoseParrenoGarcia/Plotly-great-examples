@@ -12,8 +12,6 @@ from utils.bar_chart_examples.travel_gdp_share_plot import (
 from utils.bar_chart_examples.life_expectancy_plot import (
     life_expectancy_bar_chart,
     life_expectancy_scatter_plot,
-    life_expectancy_bar_chart_multiple_countries,
-    life_expectancy_scatter_plot_multiple_countries,
 )
 from utils.bar_chart_examples.neighbouring_countries_plot import (
     neighbouring_countries_bar_chart,
@@ -112,27 +110,6 @@ with timeseries_area_plot_tab:
     st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/1f5bbef0f5d881ff5309155883037af68603a167/utils/bar_chart_examples/life_expectancy_plot.py#L132)")
 
     st.plotly_chart(life_expectancy_scatter_plot)
-
-    st.divider()
-
-    st.subheader('This is even worse when you have multiple categories')
-    st.write('The moment that you have different categories, a timeseries using a bar chart breaks. It '
-             'is impossible to compare different categories as the bars are trying to all '
-             'fit into the tiny space reserved for each year. The colours are hard to distinguish.')
-
-    st.write("The line chart however is much clearer. "
-             "Whilst the colouring might not be the best for this example, it is actually possible to see the differences "
-             "between a couple of trends or easy to answer which country has the lower life expectancy.")
-
-    st.write('**Bar chart**')
-    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/1f5bbef0f5d881ff5309155883037af68603a167/utils/bar_chart_examples/life_expectancy_plot.py#L278)")
-
-    st.plotly_chart(life_expectancy_chart_bar_multiple)
-
-    st.write('**Line chart**')
-    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/1f5bbef0f5d881ff5309155883037af68603a167/utils/bar_chart_examples/life_expectancy_plot.py#L327)")
-
-    st.plotly_chart(life_expectancy_scatter_plot_multiple)
 
 with abacus_plot_tab:
     st.subheader('Another way to represent comparisons is through Abacus plots')
