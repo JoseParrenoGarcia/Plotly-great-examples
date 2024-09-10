@@ -123,7 +123,7 @@ def gdp_per_capita_data():
     gdp_per_capita_df = (pd.read_csv('data/gdp-per-capita-maddison.csv')
                          .assign(Continent=lambda x: x['Entity'].map(country_to_continent))
                          .query("Continent == 'South America'")
-                         .query("Year == 2022")
+                         .query("Year == 2020")
                          )
 
     return gdp_per_capita_df
@@ -132,7 +132,7 @@ def co2_emissions_per_capita_data():
     co2_emissions_df = (pd.read_csv('data/co-emissions-per-capita.csv')
                         .assign(Continent=lambda x: x['Entity'].map(country_to_continent))
                         .query("Continent == 'South America'")
-                        .query("Year == 2022")
+                        .query("Year == 2020")
                         )
 
     return co2_emissions_df
@@ -141,7 +141,7 @@ def child_mortality_data():
     child_mortality_df = (pd.read_csv('data/child-mortality.csv')
                           .assign(Continent=lambda x: x['Entity'].map(country_to_continent))
                           .query("Continent == 'South America'")
-                          .query("Year == 2022")
+                          .query("Year == 2020")
                           )
 
     return child_mortality_df
@@ -150,7 +150,31 @@ def air_pollution_data():
     air_pollution_df = (pd.read_csv('data/air-pollution.csv')
                         .assign(Continent=lambda x: x['Entity'].map(country_to_continent))
                         .query("Continent == 'South America'")
-                        .query("Year == 2022")
+                        .query("Year == 2020")
                       )
 
     return air_pollution_df
+
+def gov_health_expenditure_data():
+    gov_health_expenditure_df = (pd.read_csv('data/health-expenditure-government-expenditure.csv')
+                        .assign(Continent=lambda x: x['Entity'].map(country_to_continent))
+                        .query("Continent == 'South America'")
+                        .query("Year == 2020")
+                      )
+
+    return gov_health_expenditure_df
+
+def population_in_extreme_poverty_data():
+    specific_cases = {
+        'Argentina (urban)': 'Argentina',
+    }
+
+    population_in_extreme_poverty_df = (
+        pd.read_csv('data/share-of-population-in-extreme-poverty.csv')
+        .assign(Entity=lambda x: x['Entity'].replace(specific_cases))
+        .assign(Continent=lambda x: x['Entity'].map(country_to_continent))
+        .query("Continent == 'South America'")
+        .query("Year == 2020")
+    )
+
+    return population_in_extreme_poverty_df
