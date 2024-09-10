@@ -44,8 +44,6 @@ life_expectancy_scatter_plot = life_expectancy_scatter_plot(df=life_expectancy_d
 life_expectancy_df_multiple = life_expectancy_df[life_expectancy_df['country'].isin([
     'Russia', 'Spain', 'Germany', 'Brazil', 'Argentina', 'Japan']
 )]
-life_expectancy_chart_bar_multiple = life_expectancy_bar_chart_multiple_countries(df=life_expectancy_df_multiple)
-life_expectancy_scatter_plot_multiple = life_expectancy_scatter_plot_multiple_countries(df=life_expectancy_df_multiple)
 
 neighbouring_countries_df = neighbouring_countries_ownership()
 neighbouring_countries_bar = neighbouring_countries_bar_chart(df=neighbouring_countries_df)

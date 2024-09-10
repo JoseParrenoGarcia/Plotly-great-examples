@@ -33,6 +33,22 @@ country_to_iso = {
     'Average': 'Avg.'
 }
 
+# Mapping of countries to continents
+country_to_continent = {
+    'Argentina': 'South America',
+    'Bolivia': 'South America',
+    'Brazil': 'South America',
+    'Chile': 'South America',
+    'Colombia': 'South America',
+    'Ecuador': 'South America',
+    'Guyana': 'South America',
+    'Paraguay': 'South America',
+    'Peru': 'South America',
+    'Suriname': 'South America',
+    'Uruguay': 'South America',
+    'Venezuela': 'South America'
+}
+
 def travel_gdp_share_data():
     travel_gdp_share_df = (
         pd.read_csv('data/travel_gdp_share_statista.csv', delimiter=';')
@@ -103,3 +119,20 @@ def neighbouring_countries_ownership():
 
     return pd.concat([df, median_row], ignore_index=True).sort_values('percentage', ascending=True)
 
+def gdp_per_capita_data():
+    gdp_per_capita_df = (pd.read_csv('data/gdp-per-capita-maddison.csv')
+                         .assign(Continent=lambda x: x['Entity'].map(country_to_continent))
+                         .query("Continent == 'South America'")
+                         .query("Year == 2022")
+                         )
+
+    return gdp_per_capita_df
+
+def co2_emissions_per_capita_data():
+    co2_emissions_df = (pd.read_csv('data/co-emissions-per-capita.csv')
+                        .assign(Continent=lambda x: x['Entity'].map(country_to_continent))
+                        .query("Continent == 'South America'")
+                        .query("Year == 2022")
+                        )
+
+    return co2_emissions_df
