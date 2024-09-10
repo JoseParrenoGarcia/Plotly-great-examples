@@ -5,7 +5,7 @@ def pages_format():
         [
             Page("streamlit_app.py", "Home", "🏠", in_section=False),
             Section(name="Rules for bar charts", icon="📊"),
-            Page("pages/rule_17_alternative_to_bar_charts.py", "Rule 17 - Alternatives to bar charts"),
-            # Section(name="Rules for ", icon="⭐"),
+            Page("pages/rule_17_alternative_to_bar_charts.py", "R17. Bar chart alternatives"),
+            Page("pages/rule_18_bar_chart_colouring_and_grouping.py", "R18. Colouring and grouping"),
         ]
     )
