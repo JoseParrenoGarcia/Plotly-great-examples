@@ -136,3 +136,21 @@ def co2_emissions_per_capita_data():
                         )
 
     return co2_emissions_df
+
+def child_mortality_data():
+    child_mortality_df = (pd.read_csv('data/child-mortality.csv')
+                          .assign(Continent=lambda x: x['Entity'].map(country_to_continent))
+                          .query("Continent == 'South America'")
+                          .query("Year == 2022")
+                          )
+
+    return child_mortality_df
+
+def air_pollution_data():
+    air_pollution_df = (pd.read_csv('data/air-pollution.csv')
+                        .assign(Continent=lambda x: x['Entity'].map(country_to_continent))
+                        .query("Continent == 'South America'")
+                        .query("Year == 2022")
+                      )
+
+    return air_pollution_df
