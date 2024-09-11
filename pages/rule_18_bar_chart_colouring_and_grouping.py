@@ -44,8 +44,12 @@ colouring_tab, grouping_tab, subplots_tab  = st.tabs(
 # highlighting a small bar
 
 with colouring_tab:
-    st.subheader('xxxx')
-    st.write('xxx')
+    st.subheader('Colours in bar charts should be used sparingly')
+    st.write('It is standard best practice to try to keep colour variety in plots to a minimum.  This is '
+             'not an exception for bar charts. However, single-colour bar charts can be a bit dull. '
+             'There might be instances where keeping the same colour is what the chart requires (for example, if you dont to provide more importance '
+             'to a category). '
+             'In this example, we show how to use colour to highlight specific bars in a bar chart. ')
 
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
@@ -84,8 +88,6 @@ with colouring_tab:
     # st.write(population_in_extreme_poverty_df)
 
 
-    st.write('**Bar chart**')
-    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
 
 
 

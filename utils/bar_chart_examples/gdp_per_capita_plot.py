@@ -50,18 +50,21 @@ def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay'):
         subtitle_text = f"This is a difference of ${diff/1000:,.1f}k"
 
     elif highlight == 'data_issue':
-        marker_color_ = ['rgba(85, 181, 229, 1)' if c_ == 'Paraguay' else 'lightgrey' for c_ in df['Entity']]
+        marker_color_ = ['rgba(211, 211, 211, 0.5)' if c_ == 'Paraguay' else
+                         'rgba(85, 181, 229, 1)' if c_ == 'Uruguay' else
+                         'rgb(211, 211, 211)' for c_ in df['Entity']
+                         ]
         pattern_shape_ = ['/' if c_ == 'Paraguay' else '' for c_ in df['Entity']]
-        text_ = [f"<b>${val / 1000:,.1f}k</b>" if c_ == 'Paraguay' else '' for val, c_ in zip(df['GDP per capita'], df['Entity'])]
-        title_text = 'Data Quality Issue'
-        subtitle_text = "Paraguay's data has a quality issue (2020)"
+        text_ = [f"<b>${val / 1000:,.1f}k</b>" if c_ == 'Uruguay' else '' for val, c_ in zip(df['GDP per capita'], df['Entity'])]
+        title_text = 'Uruguay flies high'
+        subtitle_text = "Uruguay's GDP per capita is amongst the highest in South America (2020)"
 
     else:
-        marker_color_ = ['lightgrey' for _ in df['Entity']]
-        pattern_shape_ = ['' for _ in df['Entity']]
-        text_ = ['' for _ in df['Entity']]
-        title_text = ''
-        subtitle_text = ''
+            marker_color_ = ['lightgrey' for _ in df['Entity']]
+            pattern_shape_ = ['' for _ in df['Entity']]
+            text_ = ['' for _ in df['Entity']]
+            title_text = ''
+            subtitle_text = ''
 
 
     fig = go.Figure(
@@ -143,17 +146,17 @@ def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay'):
 
     # Add custom legend item for the filled pattern
     if highlight == 'data_issue':
-        fig.add_trace(go.Scatter(
-            x=[None], y=[None],
-            mode='markers',
+        fig.add_trace(go.Bar(
+            x=[None],  # Dummy value for the x-axis
+            y=[None],  # Dummy value for the y-axis
             marker=dict(
-                size=10,
-                symbol='square',
-                color='rgba(85, 181, 229, 1)',
+                color='rgba(211, 211, 211, 0.5)',
+                pattern_shape='/'
             ),
-            legendgroup='Data Quality Issue',
             showlegend=True,
-            name='Data Quality Issue'
+            name='Data Quality Issue',
+            legendgroup='Data Quality Issue',
+            hoverinfo='none',  # Disable hover info for the dummy bar
         ))
 
     return fig
