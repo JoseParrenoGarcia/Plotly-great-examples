@@ -56,13 +56,13 @@ with colouring_tab:
         with st.container(border=True):
             st.write('**Highlighting a specific bar**')
             st.divider()
-            st.plotly_chart(gdp_per_capita_bar_chart_plot(df=gdp_per_capita_df))
+            st.plotly_chart(gdp_per_capita_bar_chart_plot(df=gdp_per_capita_df, highlight='Uruguay'))
 
     with col2:
         with st.container(border=True):
             st.write('**Highlighting the minimum or the maximum**')
             st.divider()
-            st.plotly_chart(gdp_per_capita_bar_chart_plot(df=gdp_per_capita_df))
+            st.plotly_chart(gdp_per_capita_bar_chart_plot(df=gdp_per_capita_df, highlight='min'))
 
     with col1:
         with st.container(border=True):

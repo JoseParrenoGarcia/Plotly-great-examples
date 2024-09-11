@@ -9,6 +9,16 @@ def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay'):
         title_text = 'Uruguay flies high'
         subtitle_text = "Uruguay's GDP per capita is amongst the highest in South America (2020)"
 
+    elif highlight=='min':
+        marker_color_ = ['rgba(239, 51, 64, 1)' if c_ == df['Entity'].iloc[0] else 'lightgrey' for c_ in df['Entity']]
+        text_ = [f"<b>${val / 1000:,.1f}k</b>" if c_ == df['Entity'].iloc[0] else '' for val, c_ in zip(df['GDP per capita'], df['Entity'])]
+        title_text = 'Venezuela hits rock bottom'
+        subtitle_text = "The country with the lowest GDP per capita in South America (2020)"
+
+    else:
+        pass
+
+
     fig = go.Figure(
         data=[
             go.Bar(
