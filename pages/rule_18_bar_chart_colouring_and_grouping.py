@@ -68,13 +68,15 @@ with colouring_tab:
         with st.container(border=True):
             st.write('**Highlighting a data quality issue**')
             st.divider()
-            st.plotly_chart(gdp_per_capita_bar_chart_plot(df=gdp_per_capita_df))
+            st.plotly_chart(gdp_per_capita_bar_chart_plot(df=gdp_per_capita_df, highlight='data_issue'))
 
     with col2:
         with st.container(border=True):
             st.write('**Highlighting a benchmark**')
             st.divider()
-            st.plotly_chart(gdp_per_capita_bar_chart_plot(df=gdp_per_capita_df))
+            st.plotly_chart(gdp_per_capita_bar_chart_plot(df=gdp_per_capita_df, highlight='median'))
+
+    st.plotly_chart(gdp_per_capita_bar_chart_plot(df=gdp_per_capita_df, highlight='data_issue'))
 
     # st.write(gdp_per_capita_df)
     # st.write(co2_emissions_per_capita_df)
