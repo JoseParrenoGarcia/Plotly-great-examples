@@ -74,6 +74,7 @@ def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay'):
                 orientation='h',
                 text=text_,
                 textposition='outside',
+                showlegend=False,
             )
         ]
     )
@@ -120,6 +121,13 @@ def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay'):
             linecolor='lightgrey',
             linewidth=1,
             showgrid=False,
+        ),
+        legend=dict(
+            x=1,
+            y=0,
+            xanchor='right',
+            yanchor='bottom',
+            orientation='h'
         ),
         font=dict(family="Helvetica Neue"),
         barmode='group',

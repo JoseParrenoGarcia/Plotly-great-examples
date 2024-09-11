@@ -76,8 +76,6 @@ with colouring_tab:
             st.divider()
             st.plotly_chart(gdp_per_capita_bar_chart_plot(df=gdp_per_capita_df, highlight='median'))
 
-    st.plotly_chart(gdp_per_capita_bar_chart_plot(df=gdp_per_capita_df, highlight='data_issue'))
-
     # st.write(gdp_per_capita_df)
     # st.write(co2_emissions_per_capita_df)
     # st.write(child_mortality_df)
