@@ -68,15 +68,24 @@ ons_data_df[columns_to_fill] = ons_data_df[columns_to_fill].fillna(0)
 
 with colouring_tab:
     st.subheader('Colours in bar charts should be used sparingly')
-    st.write('It is standard best practice to try to keep colour variety in plots to a minimum.  This is '
-             'not an exception for bar charts. There might be instances where keeping the same colour is what the chart requires '
-             '(for example, if you dont to provide more importance to a category). '
-             'However, if you do need to highlight something, single-colour bar charts can be a bit dull.')
 
-    st.write("In the examples below, you will see how we used only 2 colours and 1 pattern fill to convey our message. "
-             "Ideally, colours should be chosen so the contrast is clear but non-intrusive. For example, grey is a good colour to use. " 
-             "In the examples below, we highlighted bars based on country colours but contrasting them with grey. ")
+    explanation_text = """
+        ###### Effective Use of Colours in Bar Charts
+        - **Clarity and Focus**: Using colours sparingly in bar charts helps maintain clarity and focus. Minimal colour variety ensures that the viewer is not overwhelmed by too many colours.
+        - **Appropriate Use of Same Colour**: In some cases, using the same colour for all bars is appropriate, especially when you do not want to emphasize any particular category.
+        - **Effective Highlighting**: When highlighting is necessary, using simple contrasting colours can be very effective. This approach ensures that the highlighted data stands out without overwhelming the viewer.
+        """
+    st.markdown(explanation_text)
 
+    explanation_text = """
+        ###### Examples of effective colour use
+        - **Two Colours and One Pattern Fill**: In the examples below, we use only two colours and one pattern fill to convey our message.
+        - **Clear but Non-Intrusive Contrast**: Choosing colours with clear but non-intrusive contrast, such as grey for the majority and a distinct colour for highlights, ensures that the highlighted data stands out.
+        - **Enhanced Interpretability**: This approach makes the chart easier to interpret and more visually appealing.
+        """
+    st.markdown(explanation_text)
+
+    st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
 
@@ -120,7 +129,7 @@ with subplots_tab:
     In summary, this approach leverages color and layout to enhance the readability and interpretability of complex data, making it easier to draw meaningful insights from multi-dimensional comparisons.
     """
     st.markdown(explanation_text)
-    
+
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
