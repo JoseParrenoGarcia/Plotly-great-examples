@@ -115,4 +115,14 @@ def ons_data_subplots_bar_charts(ons_data_df):
         width=800,
     )
 
+    fig.add_annotation(
+        text = "Source: World Bank, <a href='https://ourworldindata.org'>Our World in Data</a>",
+        xref="paper", yref="paper",
+        x=0, y=-0.07,
+        showarrow=False,
+        font=dict(family="Helvetica Neue", size=12, color="grey"),
+        align='left',
+
+    )
+
     return fig

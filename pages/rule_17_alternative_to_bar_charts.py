@@ -61,18 +61,20 @@ dot_plot_tab, abacus_plot_tab, timeseries_area_plot_tab,  = st.tabs(
 
 with dot_plot_tab:
     st.subheader('Dot plots can be an elegant alternative to bar charts')
-    st.write('When you need to compare a large number of datapoints, bars can be quite heavy. '
-             'The end of each bar, so critical for understanding the charts '
-             'meaning, can become blurred by proximity to its neighbours. Dot charts '
-             'make it easier for your audience to pinpoint each category’s value. '
-             'They are also less visually overwhelming.')
+    st.write("""
+        - **Reduced Visual Clutter**: When you need to compare a large number of data points, bars can be quite heavy. The end of each bar, so critical for understanding the chart's meaning, can become blurred by proximity to its neighbours.
+        - **Pinpoint Accuracy**: Dot charts make it easier for your audience to pinpoint each category’s value. They are also less visually overwhelming.
+        - **Minimalist Design**: Dot plots are more minimalist and make the audience focus their attention on the data points. This reduces the use of "ink" and helps reduce the cognitive load of comparing the end of each bar chart.
+        - **Space Efficiency**: Dot plots often take up less space than bar charts, making them more suitable for dashboards or reports with limited space.
+        - **Ease of Comparison**: Dot plots make it easier to compare multiple categories at a glance, as the dots are aligned along a common axis.
+        - **Highlighting Trends**: Dot plots can more effectively highlight trends or patterns in the data, especially when combined with lines connecting the dots.
+        - **Versatility**: Dot plots can be used for both small and large datasets, whereas bar charts can become cluttered with too many bars.
+        - **Avoiding Misinterpretation**: Dot plots reduce the risk of misinterpreting the length of bars, which can sometimes be misleading in bar charts.
+        """)
 
-    st.write('You can see below a well designed bar chart following all best practices. It is '
-             'still very legible and easy to understand. However, the dot plot is more minimalist '
-             'and makes the audience focus thr attention on the data points. This reduces the use '
-             'of "ink" and helps redue cognitive load of comparing the end of each bar chart.')
-
+    st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/6/16/rule-17-not-too-many-bars)")
+    st.write('')
 
     st.write('**Bar chart**')
     st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
@@ -86,18 +88,17 @@ with dot_plot_tab:
 
 with timeseries_area_plot_tab:
     st.subheader('Bar charts are not great for timeseries plots')
-    st.write('Bar charts can be used for timeseries, but, when you have lots of bars representing a crowded and long timeseries, '
-             'the mind can struggle to understand the important trends. The change over time story is less '
-             'clear as you have the cognitive load of too much ink and spaces between bars. In addition, '
-             'you head tends to automatically compare the ends of bars, bringing you away from processing a trend.')
+    st.write("""
+        - **Visual Overload**: Bar charts can become visually overwhelming when representing a crowded and long timeseries. The cognitive load of too much ink and spaces between bars can make it difficult to discern important trends.
+        - **Trend Clarity**: Line plots make it easier to see trends over time. The continuous nature of line plots helps in understanding the change over time more clearly.
+        - **Space Efficiency**: Line plots are more space-efficient as they do not need to leave space for the bars. This makes them more compact and easier to read.
+        - **Highlighting Key Points**: Line plots can effectively highlight key points with markers and different line styles (e.g., dashed lines for estimated years), making it easier to focus on important data points.
+        - **Reduced Cognitive Load**: Line plots reduce the cognitive load by simplifying the visual representation, allowing the viewer to process trends more easily.
+        """)
 
-    st.write('Whilst I have tried to keep the bar chart as clean as possible, the line plot is clearer. '
-             'The line plot makes it easier to see the trend over time. The line plot is also more '
-             'space efficient, as it does not need to leave space for the bars. This makes the line plot '
-             'more compact and easier to read. In the line chart, I have also highlighted the annotated years with '
-             'bolder markers, and used a dashed line for estimated years.')
-
+    st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/6/16/rule-17-not-too-many-bars)")
+    st.write('')
 
     st.write('**Bar chart**')
     st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/1f5bbef0f5d881ff5309155883037af68603a167/utils/bar_chart_examples/life_expectancy_plot.py#L12)")
@@ -111,21 +112,16 @@ with timeseries_area_plot_tab:
 
 with abacus_plot_tab:
     st.subheader('Another way to represent comparisons is through Abacus plots')
-    st.write('Similar to dot plots, if we have a horizontal bar chart with lots of categories, '
-             'and where our aim to compare values between them, the bar chart can become a bit heavy '
-             'from a cognitive load point of view.')
+    st.write("""
+        - **Reduced Cognitive Load**: Similar to dot plots, abacus plots reduce cognitive load by drawing immediate attention to the data points rather than the entire bar.
+        - **Immediate Focus**: The viewer's attention is immediately drawn to the dot, making it easier to interpret the data.
+        - **Fixed Comparison Range**: Abacus plots lend themselves well to fixed comparison ranges, making it easier to compare percentages or other metrics.
+        - **Space Efficiency**: Abacus plots often take up less space than bar charts, making them more suitable for dashboards or reports with limited space.
+        - **Avoiding Misinterpretation**: Abacus plots reduce the risk of misinterpreting the length of bars, which can sometimes be misleading in bar charts.
+        """)
 
-    st.write('Even though the bar chart below has an OK design, your mind actually scans the whole bar '
-             'chart until you get to the displayed data point at the end of it. That doesnt happen with the '
-             'abacus dot plot, because you are immediately drawn to the dot.')
-
-    st.write('In addition, because we want to show percentages, the bar chart has this wierd look of being shrinked. '
-             'We could have expanded the bar charts so that the range was between 0 to 67, and not 0 to 100, but then '
-             'the % representation might have been a bit skewed. Again, the abacus dot plot lends well into have '
-             'this fixed comparison range.')
-
-    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/5/17/rule-16-if-in-doubt-use-a-bar-chart)")
     st.write("")
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/5/17/rule-16-if-in-doubt-use-a-bar-chart)")
     st.write("")
 
     st.write('**Bar chart**')
