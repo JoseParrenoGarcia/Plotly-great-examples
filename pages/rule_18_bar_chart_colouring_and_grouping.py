@@ -10,6 +10,7 @@ from utils.load_data import (
 )
 
 from utils.bar_chart_examples.gdp_per_capita_plot import gdp_per_capita_bar_chart_plot
+from utils.bar_chart_examples.ons_data_subplots import ons_data_subplots_bar_charts
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -38,6 +39,16 @@ ons_data_df  = (
     .merge(gov_health_expenditure_df, on=['Entity', 'Code'], how='outer')
     .merge(population_in_extreme_poverty_df, on=['Entity', 'Code'], how='outer')
 )
+
+columns_to_fill = [
+    'GDP per capita',
+    'Annual CO₂ emissions (per capita)',
+    'Under-five mortality rate',
+    'Nitrogen oxide (NOx)',
+    'Domestic general government health expenditure (GGHE-D) as percentage of general government expenditure (GGE) (%)',
+    '$2.15 a day - Share of population in poverty'
+]
+ons_data_df[columns_to_fill] = ons_data_df[columns_to_fill].fillna(0)
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -101,6 +112,8 @@ with subplots_tab:
 
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
+
+    st.plotly_chart(ons_data_subplots_bar_charts(ons_data_df))
 
     st.write(ons_data_df)
 

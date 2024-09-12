@@ -182,6 +182,7 @@ def population_in_extreme_poverty_data():
         .query("Continent == 'South America'")
         .query("Year == 2020")
         .drop(columns=['Year', 'Continent'])
+        .assign(Code=lambda x: x.apply(lambda row: 'ARG' if row['Entity'] == 'Argentina' and pd.isna(row['Code']) else row['Code'], axis=1))
     )
 
     return population_in_extreme_poverty_df
