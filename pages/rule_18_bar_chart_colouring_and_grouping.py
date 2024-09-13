@@ -153,9 +153,10 @@ with grouping_tab:
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
 
-    ### GROUPING BY GEO
+    ### GROUPING BY GEO - no need for colour, vertical spacing and visual aids can help
+    # because what colour do you give to a continent?
+    # maybe you could add a map with continents coloured and aligned with colouring
     st.plotly_chart(smoking_rates_plot(smoking_rate_df))
-    st.dataframe(smoking_rate_df)
 
     # ### PROGRESS AGAINST TARGET
     # st.dataframe(progress_against_target_synthetic_df)
