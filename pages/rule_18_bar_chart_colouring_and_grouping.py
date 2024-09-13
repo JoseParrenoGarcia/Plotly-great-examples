@@ -13,6 +13,7 @@ from utils.load_data import (
 
 from utils.bar_chart_examples.gdp_per_capita_plot import gdp_per_capita_bar_chart_plot
 from utils.bar_chart_examples.ons_data_subplots import ons_data_subplots_bar_charts
+from utils.bar_chart_examples.smoking_rates_plot import smoking_rates_plot
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -153,10 +154,11 @@ with grouping_tab:
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
 
     ### GROUPING BY GEO
-    # st.dataframe(smoking_rate_df)
+    st.plotly_chart(smoking_rates_plot(smoking_rate_df))
+    st.dataframe(smoking_rate_df)
 
-    ### PROGRESS AGAINST TARGET
-    st.dataframe(progress_against_target_synthetic_df)
+    # ### PROGRESS AGAINST TARGET
+    # st.dataframe(progress_against_target_synthetic_df)
 
 
 
