@@ -6,7 +6,9 @@ from utils.load_data import (
     child_mortality_data,
     air_pollution_data,
     gov_health_expenditure_data,
-    population_in_extreme_poverty_data
+    population_in_extreme_poverty_data,
+    smoking_rate_data,
+    progress_against_target_synthetic_data,
 )
 
 from utils.bar_chart_examples.gdp_per_capita_plot import gdp_per_capita_bar_chart_plot
@@ -24,6 +26,9 @@ pages_format()
 # ---------------------------------------------------------------------
 # Data read
 # ---------------------------------------------------------------------
+smoking_rate_df = smoking_rate_data()
+progress_against_target_synthetic_df = progress_against_target_synthetic_data()
+
 gdp_per_capita_df = gdp_per_capita_data()
 co2_emissions_per_capita_df = co2_emissions_per_capita_data()
 child_mortality_df = child_mortality_data()
@@ -137,7 +142,21 @@ with subplots_tab:
     st.plotly_chart(ons_data_subplots_bar_charts(ons_data_df))
 
 with grouping_tab:
-    st.write('hello')
+    st.subheader('xxx')
+    explanation_text = """
+        xxx
+        """
+    st.markdown(explanation_text)
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
+
+    ### GROUPING BY GEO
+    # st.dataframe(smoking_rate_df)
+
+    ### PROGRESS AGAINST TARGET
+    st.dataframe(progress_against_target_synthetic_df)
 
 
 

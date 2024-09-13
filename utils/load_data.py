@@ -1,4 +1,15 @@
 import pandas as pd
+import pycountry_convert as pc
+import numpy as np
+
+def _get_continent(country_name):
+    try:
+        country_alpha2 = pc.country_name_to_country_alpha2(country_name)
+        continent_code = pc.country_alpha2_to_continent_code(country_alpha2)
+        continent_name = pc.convert_continent_code_to_continent_name(continent_code)
+        return continent_name
+    except KeyError:
+        return None
 
 # Mapping of country names to ISO country codes
 country_to_iso = {
@@ -186,3 +197,65 @@ def population_in_extreme_poverty_data():
     )
 
     return population_in_extreme_poverty_df
+
+def smoking_rate_data():
+    country_pop_df = (pd.read_csv('data/country-population-2022.csv', delimiter=';')
+                      .rename(columns={'2022': 'population',
+                                       'Country Name': 'country'})
+                      .assign(continent=lambda x: x['Country Code'].apply(_get_continent))
+                      )
+
+    smoking_rate_df = (pd.read_csv('data/smoking-rates-by-country-2024.csv')
+                       .rename(columns={'smokingRatesByCountry_rateBothPct2022': 'smoking_rate'}))
+
+    merged_df = pd.merge(country_pop_df, smoking_rate_df, on='country')
+    merged_df['rank_by_population_over_continent'] = (merged_df
+                                                      .groupby('continent')['population']
+                                                      .transform(lambda x: x.rank(method='dense', ascending=False)))
+    merged_df = merged_df.query("rank_by_population_over_continent <= 5")
+    merged_df = merged_df[['continent', 'country', 'population', 'smoking_rate']]
+
+    return merged_df
+
+def progress_against_target_synthetic_data():
+    # np.random.seed(42)
+    #
+    # # Step 1: Create department names
+    # departments = [f'Department {i + 1}' for i in range(15)]
+    #
+    # # Step 2: Generate random target values between 45 and 95 percent
+    # targets = np.random.randint(45, 96, size=15)
+    #
+    # # Step 3: Initialize progress values
+    # progress = np.zeros(15)
+    #
+    # # Step 4: Assign progress values based on the specified conditions
+    # # 5 departments with progress lower than 20% of the target but at least 35%
+    # low_progress_indices = np.random.choice(range(15), 5, replace=False)
+    # progress[low_progress_indices] = np.maximum(targets[low_progress_indices] * np.random.uniform(0.75, 0.8, size=5), 5)
+    #
+    # # 5 departments with progress higher than 10% of the target but at least 35%
+    # remaining_indices = list(set(range(15)) - set(low_progress_indices))
+    # high_progress_indices = np.random.choice(remaining_indices, 5, replace=False)
+    # progress[high_progress_indices] = np.maximum(targets[high_progress_indices] * np.random.uniform(1.1, 1.25, size=5), 5)
+    # progress[high_progress_indices] = np.clip(progress[high_progress_indices], 0, 100)  # Ensure progress does not exceed 100%
+    #
+    # # Remaining 5 departments with progress within 5% below the target but at least 35%
+    # remaining_indices = list(set(remaining_indices) - set(high_progress_indices))
+    # progress[remaining_indices] = np.maximum(targets[remaining_indices] * np.random.uniform(0.95, 1, size=5), 5)
+    #
+    # # Step 5: Create category column
+    # categories = np.where(progress < targets * 0.8, 'Below target',
+    #                       np.where(progress > targets, 'Above target', 'On target'))
+    #
+    # # Step 6: Combine all data into a DataFrame
+    # df = pd.DataFrame({
+    #     'department': departments,
+    #     'target': targets,
+    #     'progress': progress,
+    #     'category': categories
+    # })
+
+    df = pd.read_csv('data/department_targets.csv')
+
+    return df
