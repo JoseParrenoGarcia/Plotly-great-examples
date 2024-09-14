@@ -58,7 +58,7 @@ def smoking_rates_plot(df):
         font=dict(family="Helvetica Neue"),
         showlegend=False,
         height=150 * len(continents),  # Adjust height based on the number of continents
-        width=800,
+        width=600,
         margin=dict(l=250),
     )
 
@@ -86,7 +86,7 @@ def smoking_rates_plot(df):
         xref='paper',
         yref='paper',
         xanchor='left',
-        x=-0.45,
+        x=-0.65,
         y=1.065,
         text='% of smoking population in the top 5 most populated countries by continent',
         showarrow=False,

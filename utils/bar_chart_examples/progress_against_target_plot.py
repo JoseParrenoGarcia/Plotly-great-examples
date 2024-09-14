@@ -33,41 +33,41 @@ def progress_against_target_bar_chart(df):
             col=1
         )
 
-        # Update the layout
-        fig.update_layout(
-            # title='Smoking Rates by Country and Continent',
-            title=dict(text='xxxx',
-                       y=0.98,
-                       x=0,
-                       xanchor='left',
-                       yanchor='top',
-                       font=dict(family="Helvetica Neue", size=18),
-                       ),
-            font=dict(family="Helvetica Neue"),
-            showlegend=False,
-            height=75 * len(category),  # Adjust height based on the number of continents
-            width=600,
-            margin=dict(l=250),
+    # Update the layout
+    fig.update_layout(
+        # title='Smoking Rates by Country and Continent',
+        title=dict(text='xxxx',
+                   y=0.98,
+                   x=0,
+                   xanchor='left',
+                   yanchor='top',
+                   font=dict(family="Helvetica Neue", size=18),
+                   ),
+        font=dict(family="Helvetica Neue"),
+        showlegend=False,
+        height=50 * len(category),  # Adjust height based on the number of continents
+        width=600,
+        margin=dict(l=250),
+    )
+
+    for i in range(len(category)):
+        fig.update_yaxes(
+            showline=True,
+            linecolor='lightgrey',
+            linewidth=1,
+            ticklabelposition='outside',
+            ticklen=7,
+            tickcolor='white',
+            row=i + 1,
+            col=1
         )
 
-        for i in range(len(category)):
-            fig.update_yaxes(
-                showline=True,
-                linecolor='lightgrey',
-                linewidth=1,
-                ticklabelposition='outside',
-                ticklen=7,
-                tickcolor='white',
-                row=i + 1,
-                col=1
-            )
+        fig.update_xaxes(
+            showticklabels=False,
+            showline=False,
+            zeroline=False,
+            row=i + 1,
+            col=1
+        )
 
-            fig.update_xaxes(
-                showticklabels=False,
-                showline=False,
-                zeroline=False,
-                row=i + 1,
-                col=1
-            )
-
-            return fig
+    return fig
