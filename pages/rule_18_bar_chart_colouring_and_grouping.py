@@ -143,9 +143,20 @@ with subplots_tab:
     st.plotly_chart(ons_data_subplots_bar_charts(ons_data_df))
 
 with grouping_tab:
-    st.subheader('xxx')
+    st.subheader('Grouping categories isnt just about colour')
     explanation_text = """
-        xxx
+        Sometimes, you want to tell a convey message that relates to groups. You do not only want to show the 
+        max or the min of the overall data. You want to show distributions by groups. In other words, you are 
+        trying to display 2 dimensions in a single chart.
+        
+        One way of doing this is simple by grouping bars by this category. In the first plot, you can see this categorisation as 
+        grouping by continent. I havent used any colouring, as I dont want to stand out a single country. In addition, I wouldnt know 
+        what colour to best represent each continent and, by adding colours, I dont think we are aided the readers eyes to 
+        focus on the categorisation, as they would need to process a non-intuituve colouring key.
+        
+        Another way of grouping bar charts, is not only by category, but also through colours. In the second plot, we grouping bars by 
+        progress status. Progress status though is intuitive for humans, so we can directly relate colours to progress. This is why, we 
+        also add colour to the bars.
         """
     st.markdown(explanation_text)
 
