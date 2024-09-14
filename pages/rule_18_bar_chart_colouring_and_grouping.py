@@ -14,6 +14,7 @@ from utils.load_data import (
 from utils.bar_chart_examples.gdp_per_capita_plot import gdp_per_capita_bar_chart_plot
 from utils.bar_chart_examples.ons_data_subplots import ons_data_subplots_bar_charts
 from utils.bar_chart_examples.smoking_rates_plot import smoking_rates_plot
+from utils.bar_chart_examples.progress_against_target_plot import progress_against_target_bar_chart
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -170,7 +171,8 @@ with grouping_tab:
     st.plotly_chart(smoking_rates_plot(smoking_rate_df))
 
     # ### PROGRESS AGAINST TARGET
-    # st.dataframe(progress_against_target_synthetic_df)
+    st.plotly_chart(progress_against_target_bar_chart(progress_against_target_synthetic_df))
+    st.dataframe(progress_against_target_synthetic_df)
 
 
 
