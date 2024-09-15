@@ -248,7 +248,7 @@ def favourite_weekday():
 
     return pd.DataFrame(data)
 
-def favourite_animal():
+def favourite_animal_data():
     # https://www.manchestereveningnews.co.uk/news/greater-manchester-news/tiger-is-worlds-favourite-animal-1131562
     data = {
         "Rank": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -256,7 +256,11 @@ def favourite_animal():
         "Percentage": [21.0, 20.0, 13.0, 10.0, 9.0, 8.0, 6.0, 5.0, 4.5, 3.5]
     }
 
-    return pd.DataFrame(data)
+    return (pd.DataFrame(data)
+            .assign(Animal=lambda df: df['Animal'].where(df['Percentage'] >= 8, 'Other'))
+            .groupby('Animal', as_index=False)
+            .agg({'Percentage': 'sum'})
+            )
 
 def synthetic_satisfaction_data():
     data = {
