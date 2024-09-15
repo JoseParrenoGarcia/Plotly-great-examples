@@ -61,15 +61,16 @@ ons_data_df[columns_to_fill] = ons_data_df[columns_to_fill].fillna(0)
 # MAIN PANEL
 # ---------------------------------------------------------------------
 (colouring_tab,
- grouping_tab,
  subplots_tab,
+ long_tail_highlights_tab,
+ grouping_tab,
  percentage_tab,
- long_tail_highlights_tab)  = st.tabs(
+ )  = st.tabs(
     ["🎨 Colouring",
-     "🫐 Grouping",
      "🏢 Subplots",
+     "Long tail highlights",
+     "🫐 Grouping",
      "Percentage plots",
-     "Long tail highlights", # highlighting a small bar
      ]
 )
 
