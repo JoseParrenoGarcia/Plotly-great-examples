@@ -12,7 +12,8 @@ pages_format()
 
 # ---------------------------------------------------------------------
 # Data read
-#
+# ---------------------------------------------------------------------
+
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -40,3 +41,54 @@ with other_tab:
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
+
+    st.write('')
+    # We can use the favourite animal data
+
+
+with ordinal_categories_tab:
+    st.subheader('xxxx')
+
+    explanation_text = """
+            xxx
+            """
+    st.markdown(explanation_text)
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
+
+    st.write('')
+    # We can use weekend data and population by age data
+
+with groupings_tab:
+    st.subheader('xxxx')
+
+    explanation_text = """
+                xxx
+                """
+    st.markdown(explanation_text)
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
+
+    st.write('')
+    # display our geo group data
+
+with distributions_tab:
+    st.subheader('xxxx')
+
+    explanation_text = """
+                    xxx
+                    """
+    st.markdown(explanation_text)
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
+
+    st.write('')
+    # display housing data
+
+

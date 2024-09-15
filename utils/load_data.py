@@ -235,3 +235,41 @@ def covid_data():
 
     return df
 
+
+def favourite_weekday():
+    # https://today.yougov.com/society/articles/34696-most-and-least-favorite-day-week-poll
+    data = {
+        "Day": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Don't know", "N/A"],
+        "Least Favorite": [38, 8, 4, 2, 3, 3, 6, 2, 34],
+        "Least Favorite %": ["58%", "12%", "6%", "3%", "5%", "5%", "9%", "3%", "28%"],
+        "Favorite": [4, 2, 5, 4, 21, 25, 10, 2, 28],
+        "Favorite %": ["6%", "3%", "7%", "6%", "29%", "35%", "14%", "3%", ""]
+    }
+
+    return pd.DataFrame(data)
+
+def favourite_animal():
+    # https://www.manchestereveningnews.co.uk/news/greater-manchester-news/tiger-is-worlds-favourite-animal-1131562
+    data = {
+        "Rank": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "Animal": ["Tiger", "Dog", "Dolphin", "Horse", "Lion", "Snake", "Elephant", "Chimpanzee", "Orang-utan", "Whale"],
+        "Percentage": [21.0, 20.0, 13.0, 10.0, 9.0, 8.0, 6.0, 5.0, 4.5, 3.5]
+    }
+
+    return pd.DataFrame(data)
+
+def synthetic_satisfaction_data():
+    data = {
+        "satisfaction": ["very satisfied", "satisfied", "neutral", "dissatisfied", "very dissatisfied"],
+        "percentage": [25.0, 35.0, 20.0, 10.0, 10.0]
+    }
+
+    return pd.DataFrame(data)
+
+def population_by_age():
+    # https://www.kaggle.com/datasets/elmoallistair/population-by-age-group-2021?resource=download
+    print('hello')
+
+
+
+
