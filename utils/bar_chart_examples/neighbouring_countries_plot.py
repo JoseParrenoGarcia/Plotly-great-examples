@@ -1,5 +1,4 @@
 import plotly.graph_objects as go
-from altair import layer
 
 
 def neighbouring_countries_bar_chart(df):
@@ -144,7 +143,7 @@ def neighbouring_countries_abacus_chart(df):
         font=dict(family="Helvetica Neue"),
         margin=dict(t=100, pad=0),
         height=600,
-        width=1000,
+        width=750,
     )
 
     fig.add_vline(

@@ -6,11 +6,15 @@ from utils.load_data import (
     child_mortality_data,
     air_pollution_data,
     gov_health_expenditure_data,
-    population_in_extreme_poverty_data
+    population_in_extreme_poverty_data,
+    smoking_rate_data,
+    progress_against_target_synthetic_data,
 )
 
 from utils.bar_chart_examples.gdp_per_capita_plot import gdp_per_capita_bar_chart_plot
 from utils.bar_chart_examples.ons_data_subplots import ons_data_subplots_bar_charts
+from utils.bar_chart_examples.smoking_rates_plot import smoking_rates_plot
+from utils.bar_chart_examples.progress_against_target_plot import progress_against_target_bar_chart
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -24,6 +28,9 @@ pages_format()
 # ---------------------------------------------------------------------
 # Data read
 # ---------------------------------------------------------------------
+smoking_rate_df = smoking_rate_data()
+progress_against_target_synthetic_df = progress_against_target_synthetic_data()
+
 gdp_per_capita_df = gdp_per_capita_data()
 co2_emissions_per_capita_df = co2_emissions_per_capita_data()
 child_mortality_df = child_mortality_data()
@@ -135,6 +142,36 @@ with subplots_tab:
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
 
     st.plotly_chart(ons_data_subplots_bar_charts(ons_data_df))
+
+with grouping_tab:
+    st.subheader('Grouping categories isnt just about colour')
+    explanation_text = """
+        Sometimes, you want to tell a convey message that relates to groups. You do not only want to show the 
+        max or the min of the overall data. You want to show distributions by groups. In other words, you are 
+        trying to display 2 dimensions in a single chart.
+        
+        One way of doing this is simple by grouping bars by this category. In the first plot, you can see this categorisation as 
+        grouping by continent. I havent used any colouring, as I dont want to stand out a single country. In addition, I wouldnt know 
+        what colour to best represent each continent and, by adding colours, I dont think we are aided the readers eyes to 
+        focus on the categorisation, as they would need to process a non-intuituve colouring key.
+        
+        Another way of grouping bar charts, is not only by category, but also through colours. In the second plot, we grouping bars by 
+        progress status. Progress status though is intuitive for humans, so we can directly relate colours to progress. This is why, we 
+        also add colour to the bars.
+        """
+    st.markdown(explanation_text)
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
+
+    ### GROUPING BY GEO - no need for colour, vertical spacing and visual aids can help
+    # because what colour do you give to a continent?
+    # maybe you could add a map with continents coloured and aligned with colouring
+    st.plotly_chart(smoking_rates_plot(smoking_rate_df))
+
+    # ### PROGRESS AGAINST TARGET
+    st.plotly_chart(progress_against_target_bar_chart(progress_against_target_synthetic_df))
 
 
 

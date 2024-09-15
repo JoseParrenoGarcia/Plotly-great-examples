@@ -39,12 +39,7 @@ def ons_data_subplots_bar_charts(ons_data_df):
         row = i // 2 + 1
         col = i % 2 + 1
 
-        print(f'{feature}: {row}x{col}')
-
         # Sort the DataFrame by the current feature
-        zero_value_entities = ons_data_df[ons_data_df[feature] == 0]['Entity'].tolist()
-        print(zero_value_entities)
-        print('')
         sorted_df = ons_data_df[ons_data_df[feature] > 0].sort_values(by=feature, ascending=True).copy()
 
         # Define bar colors
