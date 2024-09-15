@@ -1,5 +1,4 @@
 import plotly.graph_objects as go
-import pandas as pd
 
 def favourite_animal_bar_chart_plot(df):
     # Define the categorical order
