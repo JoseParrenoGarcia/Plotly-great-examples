@@ -38,7 +38,7 @@ def smoking_rates_plot(df):
             xref='paper',
             yref='y' + str(i + 1),
             xanchor='right',
-            x=-0.28,  # Position to the left of the plot
+            x=-0.45,  # Position to the left of the plot
             y=continent_df['country'].iloc[len(continent_df) // 2],  # Centered vertically
             text=continent,
             showarrow=False,
@@ -86,7 +86,7 @@ def smoking_rates_plot(df):
         xref='paper',
         yref='paper',
         xanchor='left',
-        x=-0.65,
+        x=-0.70,
         y=1.065,
         text='% of smoking population in the top 5 most populated countries by continent',
         showarrow=False,

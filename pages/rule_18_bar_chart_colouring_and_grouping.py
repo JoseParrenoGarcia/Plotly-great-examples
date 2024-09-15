@@ -172,7 +172,6 @@ with grouping_tab:
 
     # ### PROGRESS AGAINST TARGET
     st.plotly_chart(progress_against_target_bar_chart(progress_against_target_synthetic_df))
-    st.dataframe(progress_against_target_synthetic_df)
 
 
 
