@@ -236,7 +236,7 @@ def covid_data():
     return df
 
 
-def favourite_weekday():
+def favourite_weekday_data():
     # https://today.yougov.com/society/articles/34696-most-and-least-favorite-day-week-poll
     data = {
         "Day": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Don't know", "N/A"],
@@ -246,10 +246,24 @@ def favourite_weekday():
         "Favorite %": ["6%", "3%", "7%", "6%", "29%", "35%", "14%", "3%", ""]
     }
 
-    return pd.DataFrame(data)
+    day_to_number = {
+        "Monday": 1,
+        "Tuesday": 2,
+        "Wednesday": 3,
+        "Thursday": 4,
+        "Friday": 5,
+        "Saturday": 6,
+        "Sunday": 7
+    }
+
+    return (pd.DataFrame(data)
+            .assign(Day_Number=lambda df: df['Day'].map(day_to_number).fillna(8).astype(int))
+            .assign(Day=lambda df: df.apply(lambda row: 'No preference' if row['Day_Number'] == 8 else row['Day'], axis=1))
+            .groupby(['Day', 'Day_Number'], as_index=False)
+            .agg({'Favorite %': 'sum'})
+            )
 
 def favourite_animal_data():
-    # https://www.manchestereveningnews.co.uk/news/greater-manchester-news/tiger-is-worlds-favourite-animal-1131562
     data = {
         "Rank": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         "Animal": ["Tiger", "Dog", "Dolphin", "Horse", "Lion", "Snake", "Elephant", "Chimpanzee", "Orang-utan", "Whale"],
