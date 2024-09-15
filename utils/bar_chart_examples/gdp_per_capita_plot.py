@@ -97,7 +97,7 @@ def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay'):
             dict(
                 text=subtitle_text,
                 xref="paper", yref="paper",
-                x=0, y=1.08,
+                x=-0.18, y=1.18,
                 showarrow=False,
                 font=dict(family="Helvetica Neue", size=14),
                 align="left"
@@ -106,7 +106,7 @@ def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay'):
             dict(
                 text="Source: World Bank, <a href='https://ourworldindata.org'>Our World in Data</a>",
                 xref="paper", yref="paper",
-                x=0, y=-0.15,
+                x=-0.18, y=-0.15,
                 showarrow=False,
                 font=dict(family="Helvetica Neue", size=12),
                 align="left"

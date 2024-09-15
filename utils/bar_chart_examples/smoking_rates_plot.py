@@ -98,7 +98,7 @@ def smoking_rates_plot(df):
         xref='paper',
         yref='paper',
         xanchor='left',
-        x=-0.45,
+        x=-0.70,
         y=-0.05,
         text="Source: World Bank, <a href='https://ourworldindata.org'>Our World in Data</a>",
         showarrow=False,

@@ -218,44 +218,20 @@ def smoking_rate_data():
     return merged_df
 
 def progress_against_target_synthetic_data():
-    # np.random.seed(42)
-    #
-    # # Step 1: Create department names
-    # departments = [f'Department {i + 1}' for i in range(15)]
-    #
-    # # Step 2: Generate random target values between 45 and 95 percent
-    # targets = np.random.randint(45, 96, size=15)
-    #
-    # # Step 3: Initialize progress values
-    # progress = np.zeros(15)
-    #
-    # # Step 4: Assign progress values based on the specified conditions
-    # # 5 departments with progress lower than 20% of the target but at least 35%
-    # low_progress_indices = np.random.choice(range(15), 5, replace=False)
-    # progress[low_progress_indices] = np.maximum(targets[low_progress_indices] * np.random.uniform(0.75, 0.8, size=5), 5)
-    #
-    # # 5 departments with progress higher than 10% of the target but at least 35%
-    # remaining_indices = list(set(range(15)) - set(low_progress_indices))
-    # high_progress_indices = np.random.choice(remaining_indices, 5, replace=False)
-    # progress[high_progress_indices] = np.maximum(targets[high_progress_indices] * np.random.uniform(1.1, 1.25, size=5), 5)
-    # progress[high_progress_indices] = np.clip(progress[high_progress_indices], 0, 100)  # Ensure progress does not exceed 100%
-    #
-    # # Remaining 5 departments with progress within 5% below the target but at least 35%
-    # remaining_indices = list(set(remaining_indices) - set(high_progress_indices))
-    # progress[remaining_indices] = np.maximum(targets[remaining_indices] * np.random.uniform(0.95, 1, size=5), 5)
-    #
-    # # Step 5: Create category column
-    # categories = np.where(progress < targets * 0.8, 'Below target',
-    #                       np.where(progress > targets, 'Above target', 'On target'))
-    #
-    # # Step 6: Combine all data into a DataFrame
-    # df = pd.DataFrame({
-    #     'department': departments,
-    #     'target': targets,
-    #     'progress': progress,
-    #     'category': categories
-    # })
-
     df = pd.read_csv('data/department_targets.csv')
 
     return df
+
+
+def covid_data():
+    entities_to_filter = ['Brazil', 'UK', 'US', 'France', 'Sweden', 'Germany', 'Russia', 'India', 'Spain', 'New Zealand', 'Spain', 'China']
+    df = (pd.read_csv('data/covid.csv')
+          .query("Day == '2021-05-24'")
+          .query("Entity in @entities_to_filter")
+          .rename(columns={'Total confirmed deaths due to COVID-19 per 100,000 people': 'Deaths'})
+          .drop(columns=["Cumulative excess deaths per 100,000 people (central estimate)","Cumulative excess deaths per 100,000 people (95% CI, lower bound)","Cumulative excess deaths per 100,000 people (95% CI, upper bound)"])
+          .reset_index()
+          )
+
+    return df
+
