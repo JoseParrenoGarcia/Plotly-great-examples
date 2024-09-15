@@ -9,12 +9,14 @@ from utils.load_data import (
     population_in_extreme_poverty_data,
     smoking_rate_data,
     progress_against_target_synthetic_data,
+    covid_data,
 )
 
 from utils.bar_chart_examples.gdp_per_capita_plot import gdp_per_capita_bar_chart_plot
 from utils.bar_chart_examples.ons_data_subplots import ons_data_subplots_bar_charts
 from utils.bar_chart_examples.smoking_rates_plot import smoking_rates_plot
 from utils.bar_chart_examples.progress_against_target_plot import progress_against_target_bar_chart
+from utils.bar_chart_examples.covid_plot import covid_bar_chart_plot
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -37,6 +39,8 @@ child_mortality_df = child_mortality_data()
 air_pollution_df = air_pollution_data()
 gov_health_expenditure_df = gov_health_expenditure_data()
 population_in_extreme_poverty_df = population_in_extreme_poverty_data()
+
+covid_df = covid_data()
 
 ons_data_df  = (
     gdp_per_capita_df
@@ -61,15 +65,14 @@ ons_data_df[columns_to_fill] = ons_data_df[columns_to_fill].fillna(0)
 # MAIN PANEL
 # ---------------------------------------------------------------------
 (colouring_tab,
- grouping_tab,
  subplots_tab,
- percentage_tab,
- long_tail_highlights_tab)  = st.tabs(
+ long_tail_highlights_tab,
+ grouping_tab,
+ )  = st.tabs(
     ["🎨 Colouring",
-     "🫐 Grouping",
      "🏢 Subplots",
-     "Percentage plots",
-     "Long tail highlights", # highlighting a small bar
+     "🦎 Long tail highlights",
+     "🫐 Grouping",
      ]
 )
 
@@ -164,15 +167,28 @@ with grouping_tab:
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
+    st.write('')
 
-    ### GROUPING BY GEO - no need for colour, vertical spacing and visual aids can help
-    # because what colour do you give to a continent?
-    # maybe you could add a map with continents coloured and aligned with colouring
+    ### GROUPING BY GEO - no need for colour
     st.plotly_chart(smoking_rates_plot(smoking_rate_df))
 
     # ### PROGRESS AGAINST TARGET
     st.plotly_chart(progress_against_target_bar_chart(progress_against_target_synthetic_df))
 
+with long_tail_highlights_tab:
+    st.subheader('Highlighting a very small long tail')
+    explanation_text = """
+            Sometimes you need to highlight a piece of data that is very small compared to the rest. Adding a new 
+            colour doesnt really help, as the bar is still to small to distinguish. Instead, you can use another shape 
+            to highlight the bar."""
+    st.markdown(explanation_text)
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
+    st.write('')
+
+    st.plotly_chart(covid_bar_chart_plot(covid_df))
 
 
 
