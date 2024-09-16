@@ -311,7 +311,12 @@ def gdp_by_country_data():
           .query("GDP != '..'")
           .assign(GDP=lambda x: pd.to_numeric(x['GDP'], errors='coerce').round(0))
           .query("Country.map(@_is_valid_country)")
+          .replace({'Country': {'United Kingdom': 'UK',
+                                'United States': 'US',
+                                }})
           .assign(GDP_Rank=lambda x: x['GDP'].rank(ascending=False, method='dense'))
+          .query("GDP_Rank <= 10")
+          .sort_values('GDP_Rank')
           )
 
     return df

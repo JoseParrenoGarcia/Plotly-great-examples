@@ -5,6 +5,8 @@ from utils.load_data import (
     gdp_by_country_data,
 )
 
+from utils.bar_chart_examples.gdp_country_plot import gdp_by_country_bar_chart_plot
+
 # ---------------------------------------------------------------------
 # CONFIGURATION
 # ---------------------------------------------------------------------
@@ -47,7 +49,7 @@ with long_yaxis_tab:
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
 
-    st.dataframe(gdp_by_country_df)
+    st.plotly_chart(gdp_by_country_bar_chart_plot(gdp_by_country_df))
 
 with long_xaxis_tab:
     # https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/datasets/babynamesenglandandwalesbabynamesstatisticsboys
