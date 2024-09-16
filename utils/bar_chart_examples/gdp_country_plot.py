@@ -42,14 +42,25 @@ def gdp_by_country_bar_chart_plot(df):
                 yref="y",
                 showarrow=True,
                 arrowhead=0,
-                ax=350,
+                ax=355,
                 ay=0,
                 arrowcolor='lightgrey',
                 arrowwidth=1,
                 borderpad=10,
                 font=dict(family="Helvetica Neue", size=12),
                 align='left',
-            )
+            ),
+            dict(
+                x=-0.085,
+                y=-0.15,
+                text="Source: DataBank, <a href='https://databank.worldbank.org/reports.aspx?source=2&series=NY.GDP.MKTP.CD&country=&_gl=1*1jzomxe*_gcl_au*MTA2MTc2ODI5OS4xNzI2NDYxOTk4#'>World development indicators</a>",
+                showarrow = False,
+                ax=0,
+                ay=-130,
+                xref = "paper", yref = "paper",
+                font=dict(family="Helvetica Neue", size=12),
+                align = "left"
+    )
         ],
         shapes=[
             dict(
@@ -57,7 +68,7 @@ def gdp_by_country_bar_chart_plot(df):
                 xref="x",
                 yref="y",
                 x0='India',
-                y0=24_000_000_000_000,
+                y0=24_500_000_000_000,
                 x1='Canada',
                 y1=30_000_000_000_000,
                 fillcolor="lightgrey",
