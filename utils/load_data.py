@@ -235,3 +235,70 @@ def covid_data():
 
     return df
 
+
+def favourite_weekday_data():
+    # https://today.yougov.com/society/articles/34696-most-and-least-favorite-day-week-poll
+    data = {
+        "Day": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Don't know", "N/A"],
+        "Least Favorite": [38, 8, 4, 2, 3, 3, 6, 2, 34],
+        "Least Favorite %": ["58%", "12%", "6%", "3%", "5%", "5%", "9%", "3%", "28%"],
+        "Favorite": [4, 2, 5, 4, 21, 25, 10, 2, 28],
+        "Favorite %": ["6%", "3%", "7%", "6%", "29%", "35%", "14%", "3%", ""]
+    }
+
+    day_to_number = {
+        "Monday": 1,
+        "Tuesday": 2,
+        "Wednesday": 3,
+        "Thursday": 4,
+        "Friday": 5,
+        "Saturday": 6,
+        "Sunday": 7
+    }
+
+    return (pd.DataFrame(data)
+            .assign(Day_Number=lambda df: df['Day'].map(day_to_number).fillna(8).astype(int))
+            .assign(Day=lambda df: df.apply(lambda row: 'No preference' if row['Day_Number'] == 8 else row['Day'], axis=1))
+            .groupby(['Day', 'Day_Number'], as_index=False)
+            .agg({'Favorite %': 'sum'})
+            )
+
+def favourite_animal_data():
+    data = {
+        "Rank": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "Animal": ["Tiger", "Dog", "Dolphin", "Horse", "Lion", "Snake", "Elephant", "Chimpanzee", "Orang-utan", "Whale"],
+        "Percentage": [21.0, 20.0, 13.0, 10.0, 9.0, 8.0, 6.0, 5.0, 4.5, 3.5]
+    }
+
+    return (pd.DataFrame(data)
+            .assign(Animal=lambda df: df['Animal'].where(df['Percentage'] >= 8, 'Other'))
+            .groupby('Animal', as_index=False)
+            .agg({'Percentage': 'sum'})
+            )
+
+def synthetic_satisfaction_data():
+    data = {
+        "satisfaction": ["very satisfied", "satisfied", "neutral", "dissatisfied", "very dissatisfied"],
+        "percentage": [25.0, 35.0, 20.0, 10.0, 10.0]
+    }
+
+    return pd.DataFrame(data)
+
+def population_by_age():
+    # https://www.kaggle.com/datasets/elmoallistair/population-by-age-group-2021?resource=download
+    print('hello')
+
+def housing_data():
+    df = (pd.read_csv('data/Housing.csv')
+          .assign(price_grouped=lambda x: np.round(x['price'], -5))
+          .groupby('price_grouped')['area']
+          .size()
+          .reset_index(name='count')
+          )
+
+    return df
+
+
+
+
+

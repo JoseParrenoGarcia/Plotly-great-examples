@@ -1,16 +1,7 @@
 import plotly.graph_objects as go
-import pandas as pd
-import numpy as np
 
 def covid_bar_chart_plot(df):
     df = df.sort_values('Deaths', ascending=True).reset_index()
-
-    # if highlight=='Uruguay':
-    #     marker_color_ = ['rgba(85, 181, 229, 1)' if c_ == 'Uruguay' else 'lightgrey' for c_ in df['Entity']]
-    #     text_ = [f"<b>${val / 1000:,.1f}k</b>" if c_ == 'Uruguay' else '' for val, c_ in zip(df['GDP per capita'], df['Entity'])]
-    #     pattern_shape_ = ['' for _ in df['Entity']]
-    #     title_text = 'Uruguay flies high'
-    #     subtitle_text = "Uruguay's GDP per capita is amongst the highest in South America (2020)"
 
     fig = go.Figure(
         data=[
