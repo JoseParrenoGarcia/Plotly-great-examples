@@ -288,6 +288,17 @@ def population_by_age():
     # https://www.kaggle.com/datasets/elmoallistair/population-by-age-group-2021?resource=download
     print('hello')
 
+def housing_data():
+    df = (pd.read_csv('data/Housing.csv')
+          .assign(price_grouped=lambda x: np.round(x['price'], -5))
+          .groupby('price_grouped')['area']
+          .size()
+          .reset_index(name='count')
+          )
+
+    return df
+
+
 
 
 

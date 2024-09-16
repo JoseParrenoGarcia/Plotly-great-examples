@@ -2,10 +2,15 @@ import streamlit as st
 from utils.pages_format import pages_format
 from utils.load_data import (
     favourite_animal_data,
-    favourite_weekday_data
+    favourite_weekday_data,
+    smoking_rate_data,
+    housing_data
 )
 
 from utils.bar_chart_examples.favourite_animal import favourite_animal_bar_chart_plot
+from utils.bar_chart_examples.favourite_weekday import favourite_weekday_bar_chart_plot
+from utils.bar_chart_examples.smoking_rates_plot import smoking_rates_plot
+from utils.bar_chart_examples.housing_plot import housing_bar_chart_plot
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -21,6 +26,8 @@ pages_format()
 # ---------------------------------------------------------------------
 favourite_animal_df = favourite_animal_data()
 favourite_weekday_df = favourite_weekday_data()
+smoking_rate_df = smoking_rate_data()
+housing_df = housing_data()
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -46,7 +53,7 @@ with other_tab:
     st.markdown(explanation_text)
 
     st.write('')
-    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/27/rule-19-arrange-your-bars-from-largest-to-smallest)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
 
     st.write('')
@@ -62,11 +69,11 @@ with ordinal_categories_tab:
     st.markdown(explanation_text)
 
     st.write('')
-    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/27/rule-19-arrange-your-bars-from-largest-to-smallest)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
 
     st.write('')
-    st.dataframe(favourite_weekday_df)
+    st.plotly_chart(favourite_weekday_bar_chart_plot(favourite_weekday_df))
 
 with groupings_tab:
     st.subheader('xxxx')
@@ -78,10 +85,11 @@ with groupings_tab:
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
-    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
-
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/smoking_rates_plot.py#L5)")
     st.write('')
-    # display our geo group data
+
+    ### GROUPING BY GEO - no need for colour
+    st.plotly_chart(smoking_rates_plot(smoking_rate_df))
 
 with distributions_tab:
     st.subheader('xxxx')
@@ -92,10 +100,11 @@ with distributions_tab:
     st.markdown(explanation_text)
 
     st.write('')
-    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/27/rule-19-arrange-your-bars-from-largest-to-smallest)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
 
     st.write('')
-    # display housing data
+    st.plotly_chart(housing_bar_chart_plot(housing_df))
+
 
 
