@@ -1,4 +1,5 @@
 import pandas as pd
+import pycountry
 import pycountry_convert as pc
 import numpy as np
 
@@ -284,10 +285,6 @@ def synthetic_satisfaction_data():
 
     return pd.DataFrame(data)
 
-def population_by_age():
-    # https://www.kaggle.com/datasets/elmoallistair/population-by-age-group-2021?resource=download
-    print('hello')
-
 def housing_data():
     df = (pd.read_csv('data/Housing.csv')
           .assign(price_grouped=lambda x: np.round(x['price'], -5))
@@ -297,6 +294,28 @@ def housing_data():
           )
 
     return df
+
+def gdp_by_country_data():
+    def _is_valid_country(country_name):
+        try:
+            pycountry.countries.lookup(country_name)
+            return True
+        except LookupError:
+            return False
+
+    df = (pd.read_csv('data/gdp_by_country_2023.csv')
+          .rename(columns={'Country Name': 'Country',
+                           'Country Code': 'Code',
+                           '2023 [YR2023]': 'GDP',
+                           })
+          .query("GDP != '..'")
+          .assign(GDP=lambda x: pd.to_numeric(x['GDP'], errors='coerce').round(0))
+          .query("Country.map(@_is_valid_country)")
+          .assign(GDP_Rank=lambda x: x['GDP'].rank(ascending=False, method='dense'))
+          )
+
+    return df
+
 
 
 

@@ -1,6 +1,10 @@
 import streamlit as st
 from utils.pages_format import pages_format
 
+from utils.load_data import (
+    gdp_by_country_data,
+)
+
 # ---------------------------------------------------------------------
 # CONFIGURATION
 # ---------------------------------------------------------------------
@@ -13,7 +17,7 @@ pages_format()
 # ---------------------------------------------------------------------
 # Data read
 # ---------------------------------------------------------------------
-
+gdp_by_country_df = gdp_by_country_data()
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -23,27 +27,72 @@ pages_format()
  axis_removal_tab,
  icons_tab,
  )  = st.tabs(
-    ["🎨 Long yAxis labels",
-     "🏢 Long xAxis labels",
-     "🦎 Axis removal",
-     "🫐 Icons on axis",
+    ["⬆️ Long yAxis labels",
+     "➡️ Long xAxis labels",
+     "❌ Axis removal",
+     "🖼️ Icons on axis",
      ]
 )
 
 with long_yaxis_tab:
     # https://databank.worldbank.org/reports.aspx?source=2&series=NY.GDP.MKTP.CD&country=&_gl=1*1jzomxe*_gcl_au*MTA2MTc2ODI5OS4xNzI2NDYxOTk4#
-    st.write("## Long yAxis labels")
+    st.subheader('xxx')
+
+    explanation_text = """
+    xxx
+    """
+    st.markdown(explanation_text)
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
+
+    st.dataframe(gdp_by_country_df)
 
 with long_xaxis_tab:
     # https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/datasets/babynamesenglandandwalesbabynamesstatisticsboys
+    st.subheader('xxx')
+
+    explanation_text = """
+        xxx
+        """
+    st.markdown(explanation_text)
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
+
     st.write("## Long xAxis labels")
     st.write("## Use also abbreviations for weekdays")
 
 with axis_removal_tab:
+    st.subheader('xxx')
+
+    explanation_text = """
+        xxx
+        """
+    st.markdown(explanation_text)
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
+
     # use baby names
     st.write("## Long yAxis labels")
 
 with icons_tab:
+    st.subheader('xxx')
+
+    explanation_text = """
+        xxx
+        """
+    st.markdown(explanation_text)
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/2/rule-22-no-rounded-pointed-or-decorated-bars)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
+
+
     # use industry icons (https://www.ethnicity-facts-figures.service.gov.uk/work-pay-and-benefits/employment/employment-by-sector/latest/#download-the-data)
     st.write("## Long yAxis labels")
 
