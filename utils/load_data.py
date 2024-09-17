@@ -329,6 +329,26 @@ def boys_names_data():
 
     return df
 
+def employment_by_sector_data():
+    df = (pd.read_csv('data/employment-by-sector-UK.csv', sep=',')
+          .query("Time == 2021")
+          .query("Ethnicity == 'All'")
+          .replace({'Industry': {'A - Agriculture, forestry and fishing': 'Agriculture, forestry and fishing  -  🎣  ',
+                                'B,D,E - Energy and water': 'Energy and water  -  ⚡️ ',
+                                'C -Manufacturing': 'Manufacturing  -  🏭  ',
+                                'F - Construction': 'Construction  -  🏗️  ',
+                                'G,I -Distribution, hotels and restaurants': 'Distribution, hotels and restaurants  -  🍽️  ',
+                                'H,J -Transport and communication': 'Transport and communication  -  🚚  ',
+                                'K,L,M,N_-_Banking_and_finance': 'Banking and finance  -  💰  ',
+                                'O,P,Q - Public admin, education and health': 'Public admin, education and health  -  🏥  ',
+                                'R,S,T,U - Other services': 'Other services  -  🛠  ',
+                                }})
+          .assign(Value=lambda x: x['Value'].astype(float))
+          .sort_values('Value', ascending=True)
+          )
+
+    return df
+
 
 
 

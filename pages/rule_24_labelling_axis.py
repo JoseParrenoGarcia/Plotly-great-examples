@@ -5,11 +5,13 @@ from utils.load_data import (
     gdp_by_country_data,
     boys_names_data,
     favourite_weekday_data,
+    employment_by_sector_data,
 )
 
 from utils.bar_chart_examples.gdp_country_plot import gdp_by_country_bar_chart_plot
 from utils.bar_chart_examples.boys_name_plot import boys_names_bar_chart_plot
 from utils.bar_chart_examples.favourite_weekday import favourite_weekday_bar_chart_plot
+from utils.bar_chart_examples.emplyoment_by_industry import employmeny_by_industry_bar_chart_plot
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -26,6 +28,7 @@ pages_format()
 gdp_by_country_df = gdp_by_country_data()
 boys_names_df = boys_names_data()
 favourite_weekday_df = favourite_weekday_data()
+employment_by_sector_df = employment_by_sector_data()
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -104,9 +107,5 @@ with icons_tab:
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/2/rule-22-no-rounded-pointed-or-decorated-bars)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
 
-
-    # use industry icons (https://www.ethnicity-facts-figures.service.gov.uk/work-pay-and-benefits/employment/employment-by-sector/latest/#download-the-data)
-    st.write("## Long yAxis labels")
-
-    # use country icons (maybe with the GDP data)
+    st.plotly_chart(employmeny_by_industry_bar_chart_plot(employment_by_sector_df))
 
