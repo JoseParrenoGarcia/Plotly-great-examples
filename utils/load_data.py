@@ -321,6 +321,15 @@ def gdp_by_country_data():
 
     return df
 
+def boys_names_data():
+    df = (pd.read_csv('data/boynames2022.csv', sep=';')
+          .query("Rank <= 20")
+          .sort_values('Rank', ascending=False)
+          )
+
+    return df
+
+
 
 
 
