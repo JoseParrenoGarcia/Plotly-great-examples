@@ -1,6 +1,18 @@
 import plotly.graph_objects as go
 
-def boys_names_bar_chart_plot(df):
+def boys_names_bar_chart_plot(df, axis_removal=False):
+    if axis_removal:
+        xaxis_ = dict(title="", visible=False)
+        bar_chart_text_ = df['Count']
+    else:
+        xaxis_ = dict(title="",
+                      showline=True,
+                      linecolor='lightgrey',
+                      linewidth=3,
+                      )
+        bar_chart_text_ = None
+
+
     fig = go.Figure(
         data=[
             go.Bar(
@@ -8,6 +20,7 @@ def boys_names_bar_chart_plot(df):
                 y=df['Name'],
                 marker_color='darkblue',
                 orientation='h',
+                text=bar_chart_text_,
             )
         ]
     )
@@ -28,13 +41,13 @@ def boys_names_bar_chart_plot(df):
                 text="Count of baby names (2023)",
                 xref="paper",
                 yref="paper",
-                x=-0.155, y=1.20,
+                x=-0.145, y=1.20,
                 showarrow=False,
                 font=dict(family="Helvetica Neue", size=18),
                 align="left"
             ),
             dict(
-                x=-0.155,
+                x=-0.145,
                 y=-0.15,
                 text="Source: ONS, <a href='https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/datasets/babynamesenglandandwalesbabynamesstatisticsboys'>Baby name statistics</a>",
                 showarrow = False,
@@ -52,16 +65,11 @@ def boys_names_bar_chart_plot(df):
                    linewidth=1,
                    gridcolor='lightgrey',
                    gridwidth=1,
-                   griddash='dot'
-                   ),
-        xaxis=dict(title="",
-                   showline=True,
-                   linecolor='lightgrey',
-                   linewidth=3,
-                   ),
+                   griddash='dot'),
+        xaxis=xaxis_,
         margin=dict(t=150, pad=0),
         height=600,
-        width=700,
+        width=800,
     )
 
     return fig
