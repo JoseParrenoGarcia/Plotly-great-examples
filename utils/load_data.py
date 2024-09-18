@@ -349,6 +349,57 @@ def employment_by_sector_data():
 
     return df
 
+def mountain_or_structure_heights_data():
+    # Data for the dataframe
+    data = {
+        "Type": ["Mountain", "Mountain", "Mountain", "Mountain",
+                 "Volcano", "Volcano", "Volcano", "Volcano",
+                 "Ocean Trench", "Ocean Trench", "Ocean Trench", "Ocean Trench",
+                 "Man-Made Structure", "Man-Made Structure", "Man-Made Structure", "Man-Made Structure",
+                 "Cave", "Cave", "Cave", "Cave",
+                 "Mine", "Mine", "Mine", "Mine",
+                 "River", "River", "River",
+                 "Waterfall", "Waterfall", "Waterfall",
+                 "Canyon", "Canyon", "Canyon", "Canyon",
+                 "Lake", "Lake", "Lake"],
+
+        "Name": ["Mount Everest", "Mauna Kea", "K2", "Denali",
+                 "Ojos del Salado", "Mount Kilimanjaro", "Nevado Ojos del Salado", "Mount Vesuvius",
+                 "Mariana Trench", "Tonga Trench", "Puerto Rico Trench", "Java Trench",
+                 "Burj Khalifa", "Shanghai Tower", "Abraj Al-Bait Clock Tower", "CN Tower",
+                 "Veryovkina Cave", "Krubera Cave", "Sarma Cave", "Snezhnaya Cave",
+                 "Mponeng Gold Mine", "TauTona Mine", "Kola Superdeep Borehole", "Savuka Gold Mine",
+                 "Amazon River", "Nile River", "Yangtze River",
+                 "Angel Falls", "Tugela Falls", "Tres Hermanas Falls",
+                 "Grand Canyon", "Yarlung Tsangpo Canyon", "Kali Gandaki Gorge", "Cotahuasi Canyon",
+                 "Baikal Lake", "Caspian Sea", "Lake Tanganyika"],
+
+        "Total Height (km)": [8.848, 10.2, 8.611, 6.19,
+                              6.893, 5.895, 6.893, 1.281,
+                              -11, -10.882, -8.64, -7.725,
+                              0.828, 0.632, 0.601, 0.553,
+                              -2.212, -2.197, -1.83, -1.75,
+                              -4, -3.9, -12.262, -3.7,
+                              6.992, 6.65, 6.3,
+                              0.979, 0.948, 0.914,
+                              1.83, 5.382, 6, 3.354,
+                              -1.642, -1.025, -1.471],
+
+        "Height vs Sea Level (km)": [8.848, 4.2, 8.611, 6.19,
+                                     6.893, 5.895, 6.893, 1.281,
+                                     -11, -10.882, -8.64, -7.725,
+                                     0.828, 0.632, 0.601, 0.553,
+                                     -2.212, -2.197, -1.83, -1.75,
+                                     -4, -3.9, -12.262, -3.7,
+                                     6.992, 6.65, 6.3,
+                                     0.979, 0.948, 0.914,
+                                     1.83, 5.382, 6, 3.354,
+                                     -1.642, -1.025, -1.471]
+    }
+
+    return pd.DataFrame(data)
+
+
 
 
 
