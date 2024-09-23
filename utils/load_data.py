@@ -397,7 +397,12 @@ def mountain_or_structure_heights_data():
                                      -1.642, -1.025, -1.471]
     }
 
-    return pd.DataFrame(data)
+    return (pd.DataFrame(data)
+            .assign(Height_Rank=lambda x: x.groupby('Type')['Total Height (km)'].rank(ascending=False, method='dense'))
+            .query("Type.isin(['Mountain', 'Volcano', 'Ocean Trench', 'Canyon',' Waterfall'])")
+            .query("Height_Rank <= 3")
+            .sort_values('Total Height (km)', ascending=False)
+            )
 
 
 
