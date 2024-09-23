@@ -414,7 +414,12 @@ def mountain_or_structure_heights_data():
             )
 
 def sex_ratio_data():
-    df = (pd.read_csv('data/sex-ratio-at-birth.csv', sep=','))
+    df = (pd.read_csv('data/sex-ratio-at-birth.csv', sep=',')
+          .query("Year == 2017")
+          .dropna(subset=['Code'])
+          .rename(columns={'Sex ratio - Sex: all - Age: 0 - Variant: estimates': 'ratio'})
+          .assign(ratio_rank=lambda x: x['ratio'].rank(ascending=False, method='dense'))
+          )
 
     return df
 
