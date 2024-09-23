@@ -413,6 +413,10 @@ def mountain_or_structure_heights_data():
             .sort_values(['starting_point', 'total_height'], ascending=False)
             )
 
+def sex_ratio_data():
+    df = (pd.read_csv('data/sex-ratio-at-birth.csv', sep=','))
+
+    return df
 
 
 
