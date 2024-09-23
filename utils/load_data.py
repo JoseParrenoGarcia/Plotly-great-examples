@@ -398,10 +398,19 @@ def mountain_or_structure_heights_data():
     }
 
     return (pd.DataFrame(data)
-            .assign(Height_Rank=lambda x: x.groupby('Type')['Total Height (km)'].rank(ascending=False, method='dense'))
+            .assign(Height_Rank=lambda x: x.groupby('Type')['Total Height (km)'].rank(ascending=False, method='dense'),
+                    total_height=lambda x: np.round(x['Total Height (km)'], 1),
+                    height_sea_level=lambda x: np.round(x["Height vs Sea Level (km)"], 1),
+                    diff_sea_level_height=lambda x: np.round(x['height_sea_level'] - x['total_height'], 1),
+                    starting_point=lambda x: np.where(((x['diff_sea_level_height'] == 0) & (x['total_height'] > 0)), 0,
+                                                np.where(((x['diff_sea_level_height'] == 0) & (x['total_height'] < 0)),
+                                                         x['total_height'], x['diff_sea_level_height'])),
+                    text_for_starting_point=lambda x: np.where(x['starting_point'] < 0, x['starting_point'].astype(str) + 'km', ''),
+                    )
+            .query('Name != "Nevado Ojos del Salado"')
             .query("Type.isin(['Mountain', 'Volcano', 'Ocean Trench', 'Canyon',' Waterfall'])")
             .query("Height_Rank <= 3")
-            .sort_values('Total Height (km)', ascending=False)
+            .sort_values(['starting_point', 'total_height'], ascending=False)
             )
 
 
