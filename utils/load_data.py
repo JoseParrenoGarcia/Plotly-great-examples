@@ -453,7 +453,14 @@ def sex_ratio_data():
 
     return return_df
 
-
+def AE_waiting_times_data():
+    df = (pd.read_csv('data/AE_percentage_waiting_times.csv', sep=';')
+          .assign(year_clean=lambda x: x['Year'].str.split('-').str[0],
+                  quarter_clean=lambda x: x['Quarter'].str.split(':').str[0],
+                  text_col=lambda x: x['quarter_clean'] + ' ' + x['year_clean'],
+                  )
+          )
+    return df
 
 
 
