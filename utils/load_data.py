@@ -418,10 +418,25 @@ def sex_ratio_data():
           .query("Year == 2017")
           .dropna(subset=['Code'])
           .rename(columns={'Sex ratio - Sex: all - Age: 0 - Variant: estimates': 'ratio'})
-          .assign(ratio_rank=lambda x: x['ratio'].rank(ascending=False, method='dense'))
+          .assign(ratio_avg=lambda x: x['ratio'].mean(),)
           )
 
-    return df
+    country_pop_df = (pd.read_csv('data/country-population-2022.csv', delimiter=';')
+                      .rename(columns={'2022': 'population',
+                                       'Country Code': 'Code',})
+                      .drop(columns=['Country Name'])
+                      )
+
+    return_df = (pd.merge(df, country_pop_df, on='Code')
+                 .assign(population_rank=lambda x: x['population'].rank(ascending=False, method='dense'))
+                 .query("population_rank <= 100")
+                 .assign(ratio_rank=lambda x: x['ratio'].rank(ascending=False, method='dense'),
+                         ratio=lambda x: x['ratio'].round(0))
+                 .query("(ratio_rank <= 5) | (ratio_rank >= 95)")
+                 .sort_values('ratio_rank')
+                 )
+
+    return return_df
 
 
 
