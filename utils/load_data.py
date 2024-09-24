@@ -2,6 +2,7 @@ import pandas as pd
 import pycountry
 import pycountry_convert as pc
 import numpy as np
+import re
 
 def _get_continent(country_name):
     try:
@@ -464,6 +465,35 @@ def AE_waiting_times_data():
           .query("year_clean <= 2022")
           )
     return df
+
+def speaking_languages_data():
+    strings_to_replace = ['Other European language (EU):',
+                          '(English or Welsh in Wales)',
+                          'Other European language (non EU):',
+                          'Tagalog or',
+                          'or Farsi',
+                          '(with Sylheti and Chatgaya)',
+                          'South Asian language:',
+                          'African language:',
+                          'East Asian language:',
+                          'West or Central Asian language:'
+                          ' ',
+                          ]
+    pattern = '|'.join(map(re.escape, strings_to_replace))
+
+    df = (pd.read_csv('data/languages.csv', sep=',')
+          .rename(columns={'Main language (detailed) (95 categories)': 'language', })
+          .assign(language=lambda x: x['language'].str.replace(pattern, '', regex=True))
+          .groupby('language', as_index=False)
+          .agg({'Observation': 'sum'})
+          .assign(observation_rank=lambda x: x['Observation'].rank(ascending=False, method='dense'),)
+          .query("observation_rank <= 30")
+          .query("language != 'Does not apply'")
+          .sort_values('observation_rank')
+          )
+
+    return df
+
 
 
 
