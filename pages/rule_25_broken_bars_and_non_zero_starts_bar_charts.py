@@ -10,7 +10,8 @@ from utils.load_data import (
 from utils.bar_chart_examples.mountains_plot import mountain_bar_chart_plot
 from utils.bar_chart_examples.sex_ratio_at_birth_plot import (
     sex_ratio_at_birth_bar_chart_plot,
-    sex_ratio_at_birth_dot_plot
+    sex_ratio_at_birth_dot_plot,
+    sex_ratio_at_birth_bar_deviation_plot
 )
 
 # ---------------------------------------------------------------------
@@ -75,6 +76,7 @@ with hidden_differences_tab:
     st.plotly_chart(sex_ratio_at_birth_dot_plot(sex_ratio_df))
 
     # Deviation plot
+    st.plotly_chart(sex_ratio_at_birth_bar_deviation_plot(sex_ratio_df))
 
 
 # sex at birth ratio: https://ourworldindata.org/gender-ratio#:~:text=This%20is%20what%20the%20World,107%20boys%20per%20100%20girls.
