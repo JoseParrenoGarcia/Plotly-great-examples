@@ -455,10 +455,13 @@ def sex_ratio_data():
 
 def AE_waiting_times_data():
     df = (pd.read_csv('data/AE_percentage_waiting_times.csv', sep=';')
-          .assign(year_clean=lambda x: x['Year'].str.split('-').str[0],
+          .assign(year_clean=lambda x: x['Year'].str.split('-').str[0].astype(int),
                   quarter_clean=lambda x: x['Quarter'].str.split(':').str[0],
-                  text_col=lambda x: x['quarter_clean'] + ' ' + x['year_clean'],
+                  text_col=lambda x: x['quarter_clean'] + ' ' + x['year_clean'].astype(str),
+                  percentage_4_hours_or_less=lambda x: x['Percentage in 4 hours or less (all)'].str.replace('%', '').astype(float),
                   )
+          .query("year_clean >= 2018")
+          .query("year_clean <= 2022")
           )
     return df
 
