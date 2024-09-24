@@ -427,12 +427,27 @@ def sex_ratio_data():
                       .drop(columns=['Country Name'])
                       )
 
+    country_to_emoji = {
+        'China': '🇨🇳',
+        'Azerbaijan': '🇦🇿',
+        'Vietnam': '🇻🇳',
+        'India': '🇮🇳',
+        'Uzbekistan': '🇺🇿',
+        'Angola': '🇦🇴',
+        'Kenya': '🇰🇪',
+        'Zimbabwe': '🇿🇼',
+        'Mozambique': '🇲🇿',
+        'Malawi': '🇲🇼',
+        'Zambia': '🇿🇲'
+    }
+
     return_df = (pd.merge(df, country_pop_df, on='Code')
                  .assign(population_rank=lambda x: x['population'].rank(ascending=False, method='dense'))
                  .query("population_rank <= 100")
                  .assign(ratio_rank=lambda x: x['ratio'].rank(ascending=False, method='dense'),
                          ratio=lambda x: x['ratio'].round(0))
                  .query("(ratio_rank <= 5) | (ratio_rank >= 95)")
+                 .assign(Entity_text=lambda x: x['Entity'].map(lambda y: f"{y} {country_to_emoji.get(y, '')}"))
                  .sort_values('ratio_rank')
                  )
 

@@ -8,7 +8,10 @@ from utils.load_data import (
 )
 
 from utils.bar_chart_examples.mountains_plot import mountain_bar_chart_plot
-from utils.bar_chart_examples.sex_ratio_at_birth_plot import sex_ratio_at_birth_bar_chart_plot
+from utils.bar_chart_examples.sex_ratio_at_birth_plot import (
+    sex_ratio_at_birth_bar_chart_plot,
+    sex_ratio_at_birth_dot_plot
+)
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -69,6 +72,7 @@ with hidden_differences_tab:
     st.plotly_chart(sex_ratio_at_birth_bar_chart_plot(sex_ratio_df))
 
     # Dot plot
+    st.plotly_chart(sex_ratio_at_birth_dot_plot(sex_ratio_df))
 
     # Deviation plot
 
