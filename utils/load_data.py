@@ -483,11 +483,13 @@ def speaking_languages_data():
 
     df = (pd.read_csv('data/languages.csv', sep=',')
           .rename(columns={'Main language (detailed) (95 categories)': 'language', })
-          .assign(language=lambda x: x['language'].str.replace(pattern, '', regex=True))
-          .groupby('language', as_index=False)
+          .assign(language=lambda x: x['language'].str.replace(pattern, '', regex=True),
+                  language_group=lambda x: np.where(x['language'].str.contains('English'), 'English', 'All other languages'),
+                  )
+          .groupby(['language', 'language_group'], as_index=False)
           .agg({'Observation': 'sum'})
           .assign(observation_rank=lambda x: x['Observation'].rank(ascending=False, method='dense'),)
-          .query("observation_rank <= 30")
+          .query("observation_rank <= 20")
           .query("language != 'Does not apply'")
           .sort_values('observation_rank')
           )
