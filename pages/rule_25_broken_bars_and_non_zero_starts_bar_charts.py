@@ -113,7 +113,6 @@ with dominating_category_tab:
 
     st.plotly_chart(languages_bar_chart_plot(speaking_languages_df))
     st.plotly_chart(languages_stacked_bar_chart(speaking_languages_df))
-    st.dataframe(speaking_languages_df)
 
 
 

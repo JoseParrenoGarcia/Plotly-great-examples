@@ -58,29 +58,31 @@ def languages_bar_chart_plot(df):
 
 def languages_stacked_bar_chart(df):
     first_chart_data = (df
-                        .groupby('language_group')
+                        .groupby('language_group', as_index=False)
                         .agg({'Observation': 'sum'})
+                        .assign(language_group_text=lambda x: x['language_group'].str.replace(' ', '<br>'))
                         .sort_values('Observation', ascending=False)
                         .reset_index())
 
     second_chart_data = (df
                          .query("language_group == 'All other languages'")
+                         .query("observation_rank <= 10")
                          .sort_values('Observation', ascending=False))
 
     # Create the first bar chart
-    fig = make_subplots(rows=1, cols=2)
+    fig = make_subplots(rows=1, cols=2, column_widths=[0.3, 0.7])
 
     fig.add_trace(
         go.Bar(
-            x=first_chart_data['language_group'],
+            x=first_chart_data['language_group_text'],
             y=first_chart_data['Observation'],
             name='main_languages',
-            # text=[f'{obs / 1e6:.0f}m' for obs in first_chart_data['Observation']],
-            # texttemplate='%{text}',
-            # textposition='inside',
+            text=[f'{obs / 1e6:.0f}m' for obs in first_chart_data['Observation']],
+            texttemplate='%{text}',
+            textposition='outside',
             showlegend=False,
-            # marker_color=['darkblue' if main_languages == 'English' else 'green'],
-            marker_line=dict(color='black', width=1),
+            marker_color=['rgb(52, 152, 219)' if lang == 'English' else 'rgb(115, 198, 182)' for lang in first_chart_data['language_group_text']],
+            # marker_line=dict(color='black', width=1),
         ),
         row=1, col=1
     )
@@ -90,12 +92,12 @@ def languages_stacked_bar_chart(df):
             x=second_chart_data['language'],
             y=second_chart_data['Observation'],
             name='other_languages',
-            # text=[f'{obs / 1e6:.0f}m' for obs in first_chart_data['Observation']],
-            # texttemplate='%{text}',
-            # textposition='inside',
+            text=[f'{obs / 1e3:.0f}k' for obs in second_chart_data['Observation']],
+            texttemplate='%{text}',
+            textposition='outside',
             showlegend=False,
-            # marker_color=['darkblue' if main_languages == 'English' else 'green'],
-            marker_line=dict(color='black', width=1),
+            marker_color='rgb(115, 198, 182)',
+            # marker_line=dict(color='black', width=1),
         ),
         row=1, col=2
     )
@@ -103,22 +105,52 @@ def languages_stacked_bar_chart(df):
     # Customize the layout
     fig.update_layout(
         title=dict(
-            text='Languages Spoken in England',
-            y=0.95,
-            x=0.5,
-            xanchor='center',
+            text='English is still, of course, the main language in England',
+            y=0.98,
+            x=0,
+            xanchor='left',
             yanchor='top',
             font=dict(family="Helvetica Neue", size=18),
         ),
-        # barmode='stack',
-        font=dict(family="Helvetica Neue", size=10),
-        # yaxis1=dict(visible=False),
-        # xaxis1=dict(visible=False),
-        # yaxis2=dict(visible=False),
-        # xaxis2=dict(visible=False),
+        annotations=[
+            # Second paragraph annotation
+            dict(
+                text="Nigels Farage statement that he heard no English spoken on a train journey is likely to be untrue",
+                xref="paper", yref="paper",
+                x=-0.03, y=1.25,
+                showarrow=False,
+                font=dict(family="Helvetica Neue", size=14),
+                align="left"
+            ),
+        ],
+        font=dict(family="Helvetica Neue", size=12),
+        yaxis1=dict(
+            showline=True,
+            linecolor='lightgrey',
+            linewidth=1,
+            showgrid=False,
+        ),
+        yaxis2=dict(
+            showline=True,
+            linecolor='lightgrey',
+            linewidth=1,
+            showgrid=False,
+        ),
+        xaxis1=dict(
+            showline=True,
+            linecolor='lightgrey',
+            linewidth=1,
+            showgrid=False,
+        ),
+        xaxis2=dict(
+            showline=True,
+            linecolor='lightgrey',
+            linewidth=1,
+            showgrid=False,
+        ),
         margin=dict(t=100, pad=0),
         height=450,
-        width=750,
+        width=800,
     )
 
     return fig

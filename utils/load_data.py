@@ -489,7 +489,6 @@ def speaking_languages_data():
           .groupby(['language', 'language_group'], as_index=False)
           .agg({'Observation': 'sum'})
           .assign(observation_rank=lambda x: x['Observation'].rank(ascending=False, method='dense'),)
-          .query("observation_rank <= 20")
           .query("language != 'Does not apply'")
           .sort_values('observation_rank')
           )
