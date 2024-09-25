@@ -2,6 +2,7 @@ import pandas as pd
 import pycountry
 import pycountry_convert as pc
 import numpy as np
+import re
 
 def _get_continent(country_name):
     try:
@@ -349,6 +350,150 @@ def employment_by_sector_data():
 
     return df
 
+def mountain_or_structure_heights_data():
+    # Data for the dataframe
+    data = {
+        "Type": ["Mountain", "Mountain", "Mountain", "Mountain",
+                 "Volcano", "Volcano", "Volcano", "Volcano",
+                 "Ocean Trench", "Ocean Trench", "Ocean Trench", "Ocean Trench",
+                 "Man-Made Structure", "Man-Made Structure", "Man-Made Structure", "Man-Made Structure",
+                 "Cave", "Cave", "Cave", "Cave",
+                 "Mine", "Mine", "Mine", "Mine",
+                 "River", "River", "River",
+                 "Waterfall", "Waterfall", "Waterfall",
+                 "Canyon", "Canyon", "Canyon", "Canyon",
+                 "Lake", "Lake", "Lake"],
+
+        "Name": ["Mount Everest", "Mauna Kea", "K2", "Denali",
+                 "Ojos del Salado", "Mount Kilimanjaro", "Nevado Ojos del Salado", "Mount Vesuvius",
+                 "Mariana Trench", "Tonga Trench", "Puerto Rico Trench", "Java Trench",
+                 "Burj Khalifa", "Shanghai Tower", "Abraj Al-Bait Clock Tower", "CN Tower",
+                 "Veryovkina Cave", "Krubera Cave", "Sarma Cave", "Snezhnaya Cave",
+                 "Mponeng Gold Mine", "TauTona Mine", "Kola Superdeep Borehole", "Savuka Gold Mine",
+                 "Amazon River", "Nile River", "Yangtze River",
+                 "Angel Falls", "Tugela Falls", "Tres Hermanas Falls",
+                 "Grand Canyon", "Yarlung Tsangpo Canyon", "Kali Gandaki Gorge", "Cotahuasi Canyon",
+                 "Baikal Lake", "Caspian Sea", "Lake Tanganyika"],
+
+        "Total Height (km)": [8.848, 10.2, 8.611, 6.19,
+                              6.893, 5.895, 6.893, 1.281,
+                              -11, -10.882, -8.64, -7.725,
+                              0.828, 0.632, 0.601, 0.553,
+                              -2.212, -2.197, -1.83, -1.75,
+                              -4, -3.9, -12.262, -3.7,
+                              6.992, 6.65, 6.3,
+                              0.979, 0.948, 0.914,
+                              1.83, 5.382, 6, 3.354,
+                              -1.642, -1.025, -1.471],
+
+        "Height vs Sea Level (km)": [8.848, 4.2, 8.611, 6.19,
+                                     6.893, 5.895, 6.893, 1.281,
+                                     -11, -10.882, -8.64, -7.725,
+                                     0.828, 0.632, 0.601, 0.553,
+                                     -2.212, -2.197, -1.83, -1.75,
+                                     -4, -3.9, -12.262, -3.7,
+                                     6.992, 6.65, 6.3,
+                                     0.979, 0.948, 0.914,
+                                     1.83, 5.382, 6, 3.354,
+                                     -1.642, -1.025, -1.471]
+    }
+
+    return (pd.DataFrame(data)
+            .assign(Height_Rank=lambda x: x.groupby('Type')['Total Height (km)'].rank(ascending=False, method='dense'),
+                    total_height=lambda x: np.round(x['Total Height (km)'], 1),
+                    height_sea_level=lambda x: np.round(x["Height vs Sea Level (km)"], 1),
+                    diff_sea_level_height=lambda x: np.round(x['height_sea_level'] - x['total_height'], 1),
+                    starting_point=lambda x: np.where(((x['diff_sea_level_height'] == 0) & (x['total_height'] > 0)), 0,
+                                                np.where(((x['diff_sea_level_height'] == 0) & (x['total_height'] < 0)),
+                                                         x['total_height'], x['diff_sea_level_height'])),
+                    text_for_starting_point=lambda x: np.where(x['starting_point'] < 0, x['starting_point'].astype(str) + 'km', ''),
+                    )
+            .query('Name != "Nevado Ojos del Salado"')
+            .query("Type.isin(['Mountain', 'Volcano', 'Ocean Trench', 'Canyon',' Waterfall'])")
+            .query("Height_Rank <= 3")
+            .sort_values(['starting_point', 'total_height'], ascending=False)
+            )
+
+def sex_ratio_data():
+    df = (pd.read_csv('data/sex-ratio-at-birth.csv', sep=',')
+          .query("Year == 2017")
+          .dropna(subset=['Code'])
+          .rename(columns={'Sex ratio - Sex: all - Age: 0 - Variant: estimates': 'ratio'})
+          .assign(ratio_avg=lambda x: x['ratio'].mean(),)
+          )
+
+    country_pop_df = (pd.read_csv('data/country-population-2022.csv', delimiter=';')
+                      .rename(columns={'2022': 'population',
+                                       'Country Code': 'Code',})
+                      .drop(columns=['Country Name'])
+                      )
+
+    country_to_emoji = {
+        'China': '🇨🇳',
+        'Azerbaijan': '🇦🇿',
+        'Vietnam': '🇻🇳',
+        'India': '🇮🇳',
+        'Uzbekistan': '🇺🇿',
+        'Angola': '🇦🇴',
+        'Kenya': '🇰🇪',
+        'Zimbabwe': '🇿🇼',
+        'Mozambique': '🇲🇿',
+        'Malawi': '🇲🇼',
+        'Zambia': '🇿🇲'
+    }
+
+    return_df = (pd.merge(df, country_pop_df, on='Code')
+                 .assign(population_rank=lambda x: x['population'].rank(ascending=False, method='dense'))
+                 .query("population_rank <= 100")
+                 .assign(ratio_rank=lambda x: x['ratio'].rank(ascending=False, method='dense'),
+                         ratio=lambda x: x['ratio'].round(0))
+                 .query("(ratio_rank <= 5) | (ratio_rank >= 95)")
+                 .assign(Entity_text=lambda x: x['Entity'].map(lambda y: f"{y} {country_to_emoji.get(y, '')}"))
+                 .sort_values('ratio_rank')
+                 )
+
+    return return_df
+
+def AE_waiting_times_data():
+    df = (pd.read_csv('data/AE_percentage_waiting_times.csv', sep=';')
+          .assign(year_clean=lambda x: x['Year'].str.split('-').str[0].astype(int),
+                  quarter_clean=lambda x: x['Quarter'].str.split(':').str[0],
+                  text_col=lambda x: x['quarter_clean'] + ' ' + x['year_clean'].astype(str),
+                  percentage_4_hours_or_less=lambda x: x['Percentage in 4 hours or less (all)'].str.replace('%', '').astype(float),
+                  )
+          .query("year_clean >= 2018")
+          .query("year_clean <= 2022")
+          )
+    return df
+
+def speaking_languages_data():
+    strings_to_replace = ['Other European language (EU):',
+                          '(English or Welsh in Wales)',
+                          'Other European language (non EU):',
+                          'Tagalog or',
+                          'or Farsi',
+                          '(with Sylheti and Chatgaya)',
+                          'South Asian language:',
+                          'African language:',
+                          'East Asian language:',
+                          'West or Central Asian language:'
+                          ' ',
+                          ]
+    pattern = '|'.join(map(re.escape, strings_to_replace))
+
+    df = (pd.read_csv('data/languages.csv', sep=',')
+          .rename(columns={'Main language (detailed) (95 categories)': 'language', })
+          .assign(language=lambda x: x['language'].str.replace(pattern, '', regex=True),
+                  language_group=lambda x: np.where(x['language'].str.contains('English'), 'English', 'All other languages'),
+                  )
+          .groupby(['language', 'language_group'], as_index=False)
+          .agg({'Observation': 'sum'})
+          .assign(observation_rank=lambda x: x['Observation'].rank(ascending=False, method='dense'),)
+          .query("language != 'Does not apply'")
+          .sort_values('observation_rank')
+          )
+
+    return df
 
 
 
