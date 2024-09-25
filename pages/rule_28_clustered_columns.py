@@ -18,15 +18,11 @@ pages_format()
 # ---------------------------------------------------------------------
 # MAIN PANEL
 # ---------------------------------------------------------------------
-(non_zero_starts_tab,
- hidden_differences_tab,
- small_or_big_drops_tab,
- dominating_category_tab,
+(many_categories_tab,
+ comparing_2_groups_tab,
  )  = st.tabs(
-    ["0️⃣️ Non-zero starts",
-     "🫣️ Hidden differences",
-     "💧 Small or big drops",
-     "🐘️ Dominating category",
+    ["📊 Many categories",
+     "👥 Comparing 2 groups",
      ]
 )
 
