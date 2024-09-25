@@ -495,8 +495,18 @@ def speaking_languages_data():
 
     return df
 
+def percentage_of_global_food_exports():
+    # Define the data
+    data = {
+        'Country': ['USA', 'China', 'France', 'Germany', 'Netherlands'],
+        'Potatoes': [5, 6, 15, 9, 18],
+        'Onions': [7, 14, 2, 1, 19],
+        'Cucumbers': [2, 2, 1, 1, 21],
+        'Tomatoes': [3, 2, 4, 1, 20],
+        'Mushrooms': [2, 10, 2, 2, 15],
+        'Peppers': [4, 1, 1, 1, 20],
+        'Eggs': [5, 4, 1, 7, 23]
+    }
 
-
-
-
+    return pd.DataFrame(data)
 
