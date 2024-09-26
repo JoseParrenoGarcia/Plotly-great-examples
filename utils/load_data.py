@@ -552,19 +552,35 @@ def workforce_by_sector_data():
     strings_to_replace = ['Economic activity (Aggregate):',]
     pattern = '|'.join(map(re.escape, strings_to_replace))
 
+    country_to_emoji = {
+        'Netherlands': '🇳🇱',
+        'Spain': '🇪🇸',
+        'Brazil': '🇧🇷',
+        'Indonesia': '🇮🇩',
+        'South Africa': '🇿🇦',
+        'Nigeria': '🇳🇬',
+        'USA': '🇺🇸',
+        'Thailand': '🇹🇭',
+        'Vietnam': '🇻🇳',
+        'India': '🇮🇳'
+    }
+
     df = (pd.read_csv('data/workforce-by-sector1.csv', sep=';'))
     df.rename(columns=rename_dict, inplace=True)
     df = (df
           .query("year == 2019")
-          .groupby(['country', 'sector'], as_index=False)
-          .agg({'obs_value': 'sum'})
-          .query('sector.str.contains("Agriculture|Services|Industry|Construction|Manufacturing")')
-          .query('~sector.str.contains("Administration|Administrative")')
-          .query('sector.str.contains("Aggregate")')
           .assign(sector=lambda x: x['sector'].str.replace(pattern, '', regex=True))
-          .query('country in ["Brazil", "Indonesia", "South Africa", "Nigeria", "United States of America", "Thailand", "Viet Nam", "India"]')
+          .assign(sector=lambda x: x['sector'].str.replace('Trade, Transportation, Accommodation and Food, and Business and Administrative Services', 'Services'))
+          .assign(sector=lambda x: x['sector'].str.replace('Public Administration, Community, Social and other Services and Activities', 'Services'))
+          .query('country in ["Netherlands", "Spain", "Brazil", "Indonesia", "South Africa", "Nigeria", "United States of America", "Thailand", "Viet Nam", "India"]')
           .assign(country=lambda x: x['country'].str.replace('United States of America', 'USA'))
           .assign(country=lambda x: x['country'].str.replace('Viet Nam', 'Vietnam'))
+          .query('sector.str.contains("Agriculture|Services|Industry|Construction|Manufacturing")')
+          .groupby(['country', 'sector'], as_index=False)
+          .agg({'obs_value': 'sum'})
+          .assign(total_obs_value_by_country=lambda x: x.groupby('country')['obs_value'].transform('sum'))
+          .assign(percentage=lambda x: np.round((x['obs_value'] / x['total_obs_value_by_country']) * 100, 1))
+          .assign(country=lambda x: x['country'].map(lambda y: f"{y} {country_to_emoji.get(y, '')}"))
           )
 
     return df

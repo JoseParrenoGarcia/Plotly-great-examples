@@ -7,6 +7,8 @@ from utils.load_data import (
     workforce_by_sector_data
 )
 
+from utils.bar_chart_examples.workforce_by_sector_plot import workforce_by_sector_subplots_bar_charts
+
 # ---------------------------------------------------------------------
 # CONFIGURATION
 # ---------------------------------------------------------------------
@@ -48,7 +50,7 @@ with many_categories_tab:
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
 
-    st.write(workforce_by_sector_df)
+    st.plotly_chart(workforce_by_sector_subplots_bar_charts(workforce_by_sector_df))
 
     # https://rshiny.ilo.org/dataexplorer44/?lang=en&id=EMP_TEMP_ECO_OCU_NB_A
 
