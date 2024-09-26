@@ -495,7 +495,7 @@ def speaking_languages_data():
 
     return df
 
-def percentage_of_global_food_exports():
+def percentage_of_global_food_exports_data():
     # Define the data
     data = {
         'Country': ['USA', 'China', 'France', 'Germany', 'Netherlands'],
@@ -509,4 +509,31 @@ def percentage_of_global_food_exports():
     }
 
     return pd.DataFrame(data)
+
+def uefa_clubs_rankings_data():
+    ',ag-cell-value (6),ag-cell-value (7)'
+    rename_dict = {
+        'pk-d--flex': 'ranking',
+        'pk-identifier': 'club',
+        'pk-identifier (2)': 'country',
+        'ag-cell-value': '09/10',
+        'ag-cell-value (2)': '10/11',
+        'ag-cell-value (3)': '11/12',
+        'ag-cell-value (4)': '12/13',
+        'ag-cell-value (5)': '13/14',
+        'ag-cell-value (6)': 'total_points',
+        'ag-cell-value (7)': 'coefficient',
+    }
+
+    df_13_14 = (pd.read_csv('data/uefa-2013-14.csv', sep=','))
+    df_13_14.rename(columns=rename_dict, inplace=True)
+    df_13_14['season'] = '2013-14'
+
+    df_23_24 = (pd.read_csv('data/uefa-2023-24.csv', sep=','))
+    df_23_24.rename(columns=rename_dict, inplace=True)
+    df_23_24['season'] = '2023-24'
+
+    return_df = pd.concat([df_13_14, df_23_24], ignore_index=True)
+
+    return return_df
 
