@@ -25,7 +25,6 @@ def workforce_by_sector_subplots_bar_charts(df):
                 x=aux_df['percentage'],
                 text=aux_df['percentage'].round(0),
                 textposition='auto',
-                # marker_color=marker_color_,
                 orientation='h',
                 showlegend=False,
             ),
@@ -54,7 +53,7 @@ def workforce_by_sector_subplots_bar_charts(df):
     # Update the overall layout
     fig.update_layout(
         title=dict(
-            text='Distribution of workforce by country per sector',
+            text='Distribution of workforce by country per sector (as a percentange)',
             y=0.95,
             x=0,
             xanchor='left',

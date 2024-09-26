@@ -496,6 +496,14 @@ def speaking_languages_data():
     return df
 
 def percentage_of_global_food_exports_data():
+    country_to_emoji = {
+        'Netherlands': '🇳🇱',
+        'USA': '🇺🇸',
+        'China': '🇨🇳',
+        'France': '🇫🇷',
+        'Germany': '🇩🇪'
+    }
+
     # Define the data
     data = {
         'Country': ['USA', 'China', 'France', 'Germany', 'Netherlands'],
@@ -508,7 +516,11 @@ def percentage_of_global_food_exports_data():
         'Eggs': [5, 4, 1, 7, 23]
     }
 
-    return pd.DataFrame(data)
+    return (pd.DataFrame(data)
+            .melt(id_vars=['Country'], var_name='Food', value_name='percentage')
+            .assign(Country=lambda x: x['Country'].map(lambda y: f"{y} {country_to_emoji.get(y, '')}"))
+            .sort_values('percentage', ascending=True)
+            )
 
 def uefa_clubs_rankings_data():
     rename_dict = {
