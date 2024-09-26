@@ -535,8 +535,38 @@ def uefa_clubs_rankings_data():
     return_df = (pd.concat([df_13_14, df_23_24], ignore_index=True)
                  .query("country == 'Spain'")
                  .query("ranking <= 94")
-                 # .pivot(index='club', columns='season', values='ranking')
                  )
 
     return return_df
+
+def workforce_by_sector_data():
+    rename_dict = {
+        'ref_area.label': 'country',
+        'source.label': 'label',
+        'indicator.label': 'indicator',
+        'classif1.label': 'sector',
+        'classif2.label': 'skill',
+        'time': 'year',
+    }
+
+    strings_to_replace = ['Economic activity (Aggregate):',]
+    pattern = '|'.join(map(re.escape, strings_to_replace))
+
+    df = (pd.read_csv('data/workforce-by-sector1.csv', sep=';'))
+    df.rename(columns=rename_dict, inplace=True)
+    df = (df
+          .query("year == 2019")
+          .groupby(['country', 'sector'], as_index=False)
+          .agg({'obs_value': 'sum'})
+          .query('sector.str.contains("Agriculture|Services|Industry|Construction|Manufacturing")')
+          .query('~sector.str.contains("Administration|Administrative")')
+          .query('sector.str.contains("Aggregate")')
+          .assign(sector=lambda x: x['sector'].str.replace(pattern, '', regex=True))
+          .query('country in ["Brazil", "Indonesia", "South Africa", "Nigeria", "United States of America", "Thailand", "Viet Nam", "India"]')
+          .assign(country=lambda x: x['country'].str.replace('United States of America', 'USA'))
+          .assign(country=lambda x: x['country'].str.replace('Viet Nam', 'Vietnam'))
+          )
+
+    return df
+
 
