@@ -15,7 +15,7 @@ from utils.bar_chart_examples.sex_ratio_at_birth_plot import (
     sex_ratio_at_birth_dot_plot,
     sex_ratio_at_birth_bar_deviation_plot
 )
-from utils.bar_chart_examples.ae_waiting_times import (AE_waiting_times_bar_chart_plot, AE_waiting_times_dot_plot)
+from utils.bar_chart_examples.ae_waiting_times_plot import (AE_waiting_times_bar_chart_plot, AE_waiting_times_dot_plot)
 from utils.bar_chart_examples.languages_plot import (languages_bar_chart_plot, languages_stacked_bar_chart)
 
 # ---------------------------------------------------------------------

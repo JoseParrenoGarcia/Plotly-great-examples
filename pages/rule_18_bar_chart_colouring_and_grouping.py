@@ -13,7 +13,7 @@ from utils.load_data import (
 )
 
 from utils.bar_chart_examples.gdp_per_capita_plot import gdp_per_capita_bar_chart_plot
-from utils.bar_chart_examples.ons_data_subplots import ons_data_subplots_bar_charts
+from utils.bar_chart_examples.ons_data_subplots_plot import ons_data_subplots_bar_charts
 from utils.bar_chart_examples.smoking_rates_plot import smoking_rates_plot
 from utils.bar_chart_examples.progress_against_target_plot import progress_against_target_bar_chart
 from utils.bar_chart_examples.covid_plot import covid_bar_chart_plot

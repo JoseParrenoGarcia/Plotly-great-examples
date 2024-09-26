@@ -10,8 +10,8 @@ from utils.load_data import (
 
 from utils.bar_chart_examples.gdp_country_plot import gdp_by_country_bar_chart_plot
 from utils.bar_chart_examples.boys_name_plot import boys_names_bar_chart_plot
-from utils.bar_chart_examples.favourite_weekday import favourite_weekday_bar_chart_plot
-from utils.bar_chart_examples.emplyoment_by_industry import employmeny_by_industry_bar_chart_plot
+from utils.bar_chart_examples.favourite_weekday_plot import favourite_weekday_bar_chart_plot
+from utils.bar_chart_examples.emplyoment_by_industry_plot import employmeny_by_industry_bar_chart_plot
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
