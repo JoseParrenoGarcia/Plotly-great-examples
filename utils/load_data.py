@@ -511,7 +511,6 @@ def percentage_of_global_food_exports_data():
     return pd.DataFrame(data)
 
 def uefa_clubs_rankings_data():
-    ',ag-cell-value (6),ag-cell-value (7)'
     rename_dict = {
         'pk-d--flex': 'ranking',
         'pk-identifier': 'club',
@@ -533,7 +532,11 @@ def uefa_clubs_rankings_data():
     df_23_24.rename(columns=rename_dict, inplace=True)
     df_23_24['season'] = '2023-24'
 
-    return_df = pd.concat([df_13_14, df_23_24], ignore_index=True)
+    return_df = (pd.concat([df_13_14, df_23_24], ignore_index=True)
+                 .query("country == 'Spain'")
+                 .query("ranking <= 94")
+                 # .pivot(index='club', columns='season', values='ranking')
+                 )
 
     return return_df
 
