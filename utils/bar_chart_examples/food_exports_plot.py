@@ -1,7 +1,7 @@
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-def food_exports_subplots_bar_charts(df):
+def food_exports_subplots_dot_charts(df):
     list_of_categories = df['Food'].unique().tolist()
     list_of_categories.sort()
 

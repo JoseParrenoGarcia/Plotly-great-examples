@@ -547,7 +547,15 @@ def uefa_clubs_rankings_data():
     return_df = (pd.concat([df_13_14, df_23_24], ignore_index=True)
                  .query("country == 'Spain'")
                  .query("ranking <= 94")
+                 .query("club not in ['Getafe', 'Levante', 'Malaga', 'Athletic Club', 'Osasuna', 'Granada']")
                  )
+
+    return_df['text_column'] = return_df.apply(
+        lambda row: f"  {row['ranking']} - {row['club']}" if row['season'] == '2023-24' else (
+            f"{row['club']} - {row['ranking']}  " if row['season'] == '2013-14' else row['club']
+        ),
+        axis=1
+    )
 
     return return_df
 
