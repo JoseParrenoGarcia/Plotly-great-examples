@@ -7,8 +7,8 @@ from utils.load_data import (
     housing_data
 )
 
-from utils.bar_chart_examples.favourite_animal import favourite_animal_bar_chart_plot
-from utils.bar_chart_examples.favourite_weekday import favourite_weekday_bar_chart_plot
+from utils.bar_chart_examples.favourite_animal_plot import favourite_animal_bar_chart_plot
+from utils.bar_chart_examples.favourite_weekday_plot import favourite_weekday_bar_chart_plot
 from utils.bar_chart_examples.smoking_rates_plot import smoking_rates_plot
 from utils.bar_chart_examples.housing_plot import housing_bar_chart_plot
 

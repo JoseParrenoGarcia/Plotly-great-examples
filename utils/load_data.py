@@ -495,8 +495,114 @@ def speaking_languages_data():
 
     return df
 
+def percentage_of_global_food_exports_data():
+    country_to_emoji = {
+        'Netherlands': '🇳🇱',
+        'USA': '🇺🇸',
+        'China': '🇨🇳',
+        'France': '🇫🇷',
+        'Germany': '🇩🇪'
+    }
 
+    # Define the data
+    data = {
+        'Country': ['USA', 'China', 'France', 'Germany', 'Netherlands'],
+        'Potatoes': [5, 6, 15, 9, 18],
+        'Onions': [7, 14, 2, 1, 19],
+        'Cucumbers': [2, 2, 1, 1, 21],
+        'Tomatoes': [3, 2, 4, 1, 20],
+        'Mushrooms': [2, 10, 2, 2, 15],
+        'Peppers': [4, 1, 1, 1, 20],
+        'Eggs': [5, 4, 1, 7, 23]
+    }
 
+    return (pd.DataFrame(data)
+            .melt(id_vars=['Country'], var_name='Food', value_name='percentage')
+            .assign(Country=lambda x: x['Country'].map(lambda y: f"{y} {country_to_emoji.get(y, '')}"))
+            .sort_values('percentage', ascending=True)
+            )
 
+def uefa_clubs_rankings_data():
+    rename_dict = {
+        'pk-d--flex': 'ranking',
+        'pk-identifier': 'club',
+        'pk-identifier (2)': 'country',
+        'ag-cell-value': '09/10',
+        'ag-cell-value (2)': '10/11',
+        'ag-cell-value (3)': '11/12',
+        'ag-cell-value (4)': '12/13',
+        'ag-cell-value (5)': '13/14',
+        'ag-cell-value (6)': 'total_points',
+        'ag-cell-value (7)': 'coefficient',
+    }
+
+    df_13_14 = (pd.read_csv('data/uefa-2013-14.csv', sep=','))
+    df_13_14.rename(columns=rename_dict, inplace=True)
+    df_13_14['season'] = '2013-14'
+
+    df_23_24 = (pd.read_csv('data/uefa-2023-24.csv', sep=','))
+    df_23_24.rename(columns=rename_dict, inplace=True)
+    df_23_24['season'] = '2023-24'
+
+    return_df = (pd.concat([df_13_14, df_23_24], ignore_index=True)
+                 .query("country == 'Spain'")
+                 .query("ranking <= 94")
+                 .query("club not in ['Getafe', 'Levante', 'Malaga', 'Athletic Club', 'Osasuna', 'Granada']")
+                 )
+
+    return_df['text_column'] = return_df.apply(
+        lambda row: f"  {row['ranking']} - {row['club']}" if row['season'] == '2023-24' else (
+            f"{row['club']} - {row['ranking']}  " if row['season'] == '2013-14' else row['club']
+        ),
+        axis=1
+    )
+
+    return return_df
+
+def workforce_by_sector_data():
+    rename_dict = {
+        'ref_area.label': 'country',
+        'source.label': 'label',
+        'indicator.label': 'indicator',
+        'classif1.label': 'sector',
+        'classif2.label': 'skill',
+        'time': 'year',
+    }
+
+    strings_to_replace = ['Economic activity (Aggregate):',]
+    pattern = '|'.join(map(re.escape, strings_to_replace))
+
+    country_to_emoji = {
+        'Netherlands': '🇳🇱',
+        'Spain': '🇪🇸',
+        'Brazil': '🇧🇷',
+        'Indonesia': '🇮🇩',
+        'South Africa': '🇿🇦',
+        'Nigeria': '🇳🇬',
+        'USA': '🇺🇸',
+        'Thailand': '🇹🇭',
+        'Vietnam': '🇻🇳',
+        'India': '🇮🇳'
+    }
+
+    df = (pd.read_csv('data/workforce-by-sector1.csv', sep=';'))
+    df.rename(columns=rename_dict, inplace=True)
+    df = (df
+          .query("year == 2019")
+          .assign(sector=lambda x: x['sector'].str.replace(pattern, '', regex=True))
+          .assign(sector=lambda x: x['sector'].str.replace('Trade, Transportation, Accommodation and Food, and Business and Administrative Services', 'Services'))
+          .assign(sector=lambda x: x['sector'].str.replace('Public Administration, Community, Social and other Services and Activities', 'Services'))
+          .query('country in ["Netherlands", "Spain", "Brazil", "Indonesia", "South Africa", "Nigeria", "United States of America", "Thailand", "Viet Nam", "India"]')
+          .assign(country=lambda x: x['country'].str.replace('United States of America', 'USA'))
+          .assign(country=lambda x: x['country'].str.replace('Viet Nam', 'Vietnam'))
+          .query('sector.str.contains("Agriculture|Services|Industry|Construction|Manufacturing")')
+          .groupby(['country', 'sector'], as_index=False)
+          .agg({'obs_value': 'sum'})
+          .assign(total_obs_value_by_country=lambda x: x.groupby('country')['obs_value'].transform('sum'))
+          .assign(percentage=lambda x: np.round((x['obs_value'] / x['total_obs_value_by_country']) * 100, 1))
+          .assign(country=lambda x: x['country'].map(lambda y: f"{y} {country_to_emoji.get(y, '')}"))
+          )
+
+    return df
 
 
