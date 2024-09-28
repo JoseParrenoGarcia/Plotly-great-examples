@@ -1,4 +1,23 @@
 import plotly.graph_objects as go
+import plotly.express as px
+
+def travel_gdp_share_plotly_express_bar_chart(df):
+    df['tourism_percentage_over_gdp'] = df['y2023']
+    fig = px.bar(df,
+                 x='ISO_Code',
+                 y='tourism_percentage_over_gdp',
+                 title='The tourism trap<br>'
+                       '<sup>10 countries are more heavily reliant on international tourism than the global average</sup>', )
+
+    # Minor layout customization
+    fig.update_layout(
+        font=dict(family="Helvetica Neue"),
+        height=600,
+        width=1000,
+    )
+
+    return fig
+
 
 def travel_gdp_share_plot_bar_chart(df):
 
@@ -6,7 +25,7 @@ def travel_gdp_share_plot_bar_chart(df):
     fig = go.Figure(
         data=[
             go.Bar(
-                x=df['ISO_Code'],
+                x=df['ISO_Code_with_emoji'],
                 y=df['y2023'],
                 marker_color=[
                     'rgb(255, 204, 0)' if iso_code == 'Avg.' else 'rgb(0, 51, 153)' for iso_code in df['ISO_Code']
