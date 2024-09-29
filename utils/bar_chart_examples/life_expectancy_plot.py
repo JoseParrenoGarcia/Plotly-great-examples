@@ -272,6 +272,13 @@ def life_expectancy_scatter_plot(df):
         align="left"
     )
 
+    fig.add_vline(
+        x=2023,
+        line=dict(color='lightgrey', dash='dot', width=2),
+        annotation_text='Predicted life expectancy after 2022',
+        annotation_position='top right',
+    )
+
     # Update the layout
     fig.update_layout(
         title=dict(
