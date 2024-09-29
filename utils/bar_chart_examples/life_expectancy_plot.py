@@ -1,13 +1,23 @@
 import plotly.graph_objects as go
+import plotly.express as px
 
-country_colors = {
-    'Russia': 'darkblue',
-    'Spain': 'gold',
-    'Germany': 'black',
-    'Brazil': 'green',
-    'Argentina': 'lightblue',
-    'Japan': 'red'
-}
+def life_expectancy_plotly_express_bar_chart(df):
+    # df = df.rename(columns={'ISO_Code': 'Country ISO code',
+    #                         'y2023': 'Tourism percentage over GDP'})
+    fig = px.bar(df,
+                 x='year',
+                 y='life_expectancy',
+                 title='Average life expectancy in Russia', )
+
+    # Minor layout customization
+    fig.update_layout(
+        font=dict(family="Helvetica Neue"),
+        height=600,
+        width=1000,
+    )
+
+    return fig
+
 
 def life_expectancy_bar_chart(df):
     fig = go.Figure()

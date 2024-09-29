@@ -13,6 +13,7 @@ from utils.bar_chart_examples.travel_gdp_share_plot import (
 from utils.bar_chart_examples.life_expectancy_plot import (
     life_expectancy_bar_chart,
     life_expectancy_scatter_plot,
+    life_expectancy_plotly_express_bar_chart,
 )
 from utils.bar_chart_examples.neighbouring_countries_plot import (
     neighbouring_countries_bar_chart,
@@ -34,21 +35,13 @@ pages_format()
 # Data read
 # ---------------------------------------------------------------------
 travel_gdp_share_df = travel_gdp_share_data()
-travel_gdp_share_chart_bar = travel_gdp_share_plot_bar_chart(df=travel_gdp_share_df)
-travel_gdp_share_chart_dot = travel_gdp_share_plot_dot_chart(df=travel_gdp_share_df)
 
 life_expectancy_df = life_expectancy_data()
 life_expectancy_df_russia = life_expectancy_df[life_expectancy_df['country'].isin(['Russia'])]
-life_expectancy_chart_bar = life_expectancy_bar_chart(df=life_expectancy_df_russia)
-life_expectancy_scatter_plot = life_expectancy_scatter_plot(df=life_expectancy_df_russia)
 
-life_expectancy_df_multiple = life_expectancy_df[life_expectancy_df['country'].isin([
-    'Russia', 'Spain', 'Germany', 'Brazil', 'Argentina', 'Japan']
-)]
-
-neighbouring_countries_df = neighbouring_countries_ownership()
-neighbouring_countries_bar = neighbouring_countries_bar_chart(df=neighbouring_countries_df)
-neighbouring_countries_abacus = neighbouring_countries_abacus_chart(df=neighbouring_countries_df)
+# neighbouring_countries_df = neighbouring_countries_ownership()
+# neighbouring_countries_bar = neighbouring_countries_bar_chart(df=neighbouring_countries_df)
+# neighbouring_countries_abacus = neighbouring_countries_abacus_chart(df=neighbouring_countries_df)
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -74,13 +67,13 @@ with dot_plot_tab:
         st.write('**Bar chart**')
         st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
 
-        st.plotly_chart(travel_gdp_share_chart_bar)
+        st.plotly_chart(travel_gdp_share_plot_bar_chart(df=travel_gdp_share_df))
 
     with st.container(border=True):
         st.write('**Dot chart**')
         st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L86)")
 
-        st.plotly_chart(travel_gdp_share_chart_dot)
+        st.plotly_chart(travel_gdp_share_plot_dot_chart(df=travel_gdp_share_df))
 
 with timeseries_area_plot_tab:
     st.subheader('Bar charts are not great for timeseries plots')
@@ -90,16 +83,21 @@ with timeseries_area_plot_tab:
     st.write('')
 
     with st.container(border=True):
+        st.write('**Plotly express bar chart**')
+        st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
+        st.plotly_chart(life_expectancy_plotly_express_bar_chart(df=life_expectancy_df_russia))
+
+    with st.container(border=True):
         st.write('**Bar chart**')
         st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/1f5bbef0f5d881ff5309155883037af68603a167/utils/bar_chart_examples/life_expectancy_plot.py#L12)")
 
-        st.plotly_chart(life_expectancy_chart_bar)
+        st.plotly_chart(life_expectancy_bar_chart(df=life_expectancy_df_russia))
 
     with st.container(border=True):
         st.write('**Line chart**')
         st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/1f5bbef0f5d881ff5309155883037af68603a167/utils/bar_chart_examples/life_expectancy_plot.py#L132)")
 
-        st.plotly_chart(life_expectancy_scatter_plot)
+        st.plotly_chart(life_expectancy_scatter_plot(df=life_expectancy_df_russia))
 
 # with abacus_plot_tab:
 #     st.subheader('Another way to represent comparisons is through Abacus plots')
