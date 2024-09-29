@@ -81,10 +81,19 @@ def travel_gdp_share_data():
         'y2023': [travel_gdp_share_df['y2023'].mean()],
     })
 
+    iso_to_emoji = {
+        'HR': '🇭🇷', 'PT': '🇵🇹', 'GR': '🇬🇷', 'ES': '🇪🇸', 'MT': '🇲🇹', 'CY': '🇨🇾',
+        'DE': '🇩🇪', 'AT': '🇦🇹', 'IT': '🇮🇹', 'SI': '🇸🇮', 'NL': '🇳🇱', 'EE': '🇪🇪',
+        'FR': '🇫🇷', 'GB': '🇬🇧', 'LU': '🇱🇺', 'LV': '🇱🇻', 'HU': '🇭🇺', 'FI': '🇫🇮',
+        'SE': '🇸🇪', 'BG': '🇧🇬', 'DK': '🇩🇰', 'RO': '🇷🇴', 'BE': '🇧🇪', 'CZ': '🇨🇿',
+        'LT': '🇱🇹', 'SK': '🇸🇰', 'PL': '🇵🇱', 'IE': '🇮🇪'
+    }
+
     # Append the average row to the original DataFrame
     travel_gdp_share_df = (pd.concat([travel_gdp_share_df, average_row]
                                      , ignore_index=True)
                            .assign(**{'ISO_Code': lambda x: x['Country'].map(country_to_iso),})
+                           .assign(ISO_Code_with_emoji=lambda x: x['ISO_Code'].map(lambda y: f"{y}<br>{iso_to_emoji.get(y, '')}"))
                            .sort_values(by='y2023', ascending=False)
                            )
     return travel_gdp_share_df
