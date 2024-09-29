@@ -166,19 +166,24 @@ def life_expectancy_scatter_plot(df):
             showlegend=False,
         ))
 
-        specific_years = [1917, 1918, 1919, 1920, 1921, 1922, 1933, 1941, 1942, 1943, 1944, 1945]
-        specific_years_data = df[(df['country'] == country) & (df['year'].isin(specific_years))]
-        fig.add_trace(go.Scatter(
-            x=specific_years_data['year'],
-            y=specific_years_data['life_expectancy'],
-            mode='markers',
-            marker=dict(
-                size=8,
-                color='white',
-                line=dict(color='rgb(0, 51, 153)', width=4)
-            ),
-            showlegend=False,
-        ))
+        def _highlight_years(df, specific_years):
+            specific_years_data = df[(df['country'] == country) & (df['year'].isin(specific_years))]
+            fig.add_trace(go.Scatter(
+                x=specific_years_data['year'],
+                y=specific_years_data['life_expectancy'],
+                mode='lines+markers',
+                line=dict(width=5.5, color='rgb(0, 51, 153)', ),
+                marker=dict(
+                    size=8,
+                    color='white',
+                    line=dict(color='rgb(0, 51, 153)', width=4)
+                ),
+                showlegend=False,
+            ))
+
+        _highlight_years(df, [1917, 1918, 1919, 1920, 1921, 1922])
+        _highlight_years(df, [1933])
+        _highlight_years(df, [1941, 1942, 1943, 1944, 1945])
 
     txt_ = "<b>1917 - 1922.</b> Russian civil war <a href='https://en.wikipedia.org/wiki/Russian_Civil_War'>🔗</a>"
     fig.add_annotation(
