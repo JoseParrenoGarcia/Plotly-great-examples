@@ -89,9 +89,22 @@ def life_expectancy_bar_chart(df):
         xanchor='left',
     )
 
+    txt_ = "Life expectancy measured in years"
+    fig.add_annotation(
+        x=-0.02,
+        y=1.07,
+        text=txt_,
+        showarrow=False,
+        ax=0,
+        ay=-130,
+        xref="paper", yref="paper",
+        font=dict(size=14),
+        align="left"
+    )
+
     txt_ = "Source: Gapminder, <a href='https://www.gapminder.org/data/'>Life expectancy</a>"
     fig.add_annotation(
-        x=0,
+        x=-0.02,
         y=-0.10,
         text=txt_,
         showarrow = False,
@@ -121,7 +134,7 @@ def life_expectancy_bar_chart(df):
             linewidth=1,
         ),
         yaxis=dict(
-            title='Life Expectancy',
+            title=None,
             tickmode='linear',
             dtick=10,
             showline=True,
@@ -233,9 +246,22 @@ def life_expectancy_scatter_plot(df):
         xanchor='left',
     )
 
+    txt_ = "Life expectancy measured in years"
+    fig.add_annotation(
+        x=-0.02,
+        y=1.07,
+        text=txt_,
+        showarrow=False,
+        ax=0,
+        ay=-130,
+        xref="paper", yref="paper",
+        font=dict(size=14),
+        align="left"
+    )
+
     txt_ = "Source: Gapminder, <a href='https://www.gapminder.org/data/'>Life expectancy</a>"
     fig.add_annotation(
-        x=0,
+        x=-0.02,
         y=-0.10,
         text=txt_,
         showarrow=False,
@@ -244,13 +270,6 @@ def life_expectancy_scatter_plot(df):
         xref="paper", yref="paper",
         font=dict(family="Helvetica Neue", size=12),
         align="left"
-    )
-
-    fig.add_vline(
-        x=2023,
-        line=dict(color='lightgrey', dash='dot', width=2),
-        annotation_text='Predicted life expectancy after 2022',
-        annotation_position='top right',
     )
 
     # Update the layout
@@ -272,14 +291,13 @@ def life_expectancy_scatter_plot(df):
             linewidth=1,
         ),
         yaxis=dict(
-            title='Life Expectancy',
+            title=None,
             tickmode='linear',
             dtick=10,
             showline=True,
             linecolor='lightgrey',
             linewidth=1,
             showgrid=False,
-            range=[0, df['life_expectancy'].max() + 5]
         ),
         font=dict(family="Helvetica Neue"),
         barmode='group',
