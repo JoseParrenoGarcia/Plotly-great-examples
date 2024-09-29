@@ -233,6 +233,19 @@ def life_expectancy_scatter_plot(df):
         xanchor='left',
     )
 
+    txt_ = "hello"
+    fig.add_annotation(
+        x=0,
+        y=1.10,
+        text=txt_,
+        showarrow=False,
+        ax=0,
+        ay=-130,
+        xref="paper", yref="paper",
+        font=dict(size=14),
+        align="left"
+    )
+
     txt_ = "Source: Gapminder, <a href='https://www.gapminder.org/data/'>Life expectancy</a>"
     fig.add_annotation(
         x=0,
@@ -242,7 +255,7 @@ def life_expectancy_scatter_plot(df):
         ax=0,
         ay=-130,
         xref="paper", yref="paper",
-        font=dict(family="Helvetica Neue", size=12),
+        font=dict(size=12),
         align="left"
     )
 
