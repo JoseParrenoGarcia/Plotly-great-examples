@@ -133,7 +133,7 @@ def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay', remove_xaxis=False):
             dict(
                 text=subtitle_text,
                 xref="paper", yref="paper",
-                x=-0.18, y=1.18,
+                x=-0.22, y=1.18,
                 showarrow=False,
                 font=dict(family="Helvetica Neue", size=14),
                 align="left"
