@@ -62,6 +62,12 @@ country_to_continent = {
     'Venezuela': 'South America'
 }
 
+south_america_country_to_emoji = {
+        'Argentina': '🇦🇷', 'Bolivia': '🇧🇴', 'Brazil': '🇧🇷', 'Chile': '🇨🇱', 'Colombia': '🇨🇴',
+        'Ecuador': '🇪🇨', 'Guyana': '🇬🇾', 'Paraguay': '🇵🇾', 'Peru': '🇵🇪', 'Suriname': '🇸🇷',
+        'Uruguay': '🇺🇾', 'Venezuela': '🇻🇪'
+    }
+
 def travel_gdp_share_data():
     travel_gdp_share_df = (
         pd.read_csv('data/travel_gdp_share_statista.csv', delimiter=';')
@@ -147,6 +153,7 @@ def gdp_per_capita_data():
                          .query("Continent == 'South America'")
                          .query("Year == 2020")
                          .drop(columns=['Year', 'Continent'])
+                         .assign(Entity_emoji=lambda x: x['Entity'].map(lambda y: f"{y} {south_america_country_to_emoji.get(y, '') }"))
                          )
 
     return gdp_per_capita_df
