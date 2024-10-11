@@ -171,8 +171,9 @@ def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay', remove_xaxis=False):
     )
 
     if highlight == 'median':
+        median_ = df['GDP per capita'].median()
         fig.add_vline(x=median_, line_dash='dot', line_color='darkgrey', line_width=1,
-                  annotation_text='Median GDP per capita', annotation_position='bottom right',
+                  annotation_text=f'Median GDP per capita (${median_ / 1000:,.1f}k)', annotation_position='bottom right',
                       layer='below')
 
     # Add custom legend item for the filled pattern
