@@ -247,7 +247,11 @@ def covid_data():
           .query("Day == '2021-05-24'")
           .query("Entity in @entities_to_filter")
           .rename(columns={'Total confirmed deaths due to COVID-19 per 100,000 people': 'Deaths'})
-          .drop(columns=["Cumulative excess deaths per 100,000 people (central estimate)","Cumulative excess deaths per 100,000 people (95% CI, lower bound)","Cumulative excess deaths per 100,000 people (95% CI, upper bound)"])
+          .drop(columns=["Cumulative excess deaths per 100,000 people (central estimate)",
+                         "Cumulative excess deaths per 100,000 people (95% CI, lower bound)",
+                         "Cumulative excess deaths per 100,000 people (95% CI, upper bound)",
+                         "Day",])
+          .assign(Deaths=lambda x: x['Deaths'].round(2))
           .reset_index()
           )
 
