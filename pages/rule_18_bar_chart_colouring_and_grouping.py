@@ -176,6 +176,14 @@ with long_tail_highlights_tab:
     st.write('')
 
     with st.container(border=True):
+        st.dataframe(covid_df, hide_index=True)
+
+    with st.container(border=True):
+        st.write('**Simple plot**')
+        st.plotly_chart(covid_bar_chart_plot(covid_df, simple_plot=True))
+
+    with st.container(border=True):
+        st.write('**Highlighting**')
         st.plotly_chart(covid_bar_chart_plot(covid_df))
 
 
