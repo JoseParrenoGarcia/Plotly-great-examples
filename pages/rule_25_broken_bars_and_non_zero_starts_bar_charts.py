@@ -51,68 +51,52 @@ speaking_languages_df = speaking_languages_data()
 )
 
 with non_zero_starts_tab:
-    st.subheader('xxx')
-
-    explanation_text = """
-        xxx
-        """
-    st.markdown(explanation_text)
+    st.subheader('Sometimes a chart needs to start at a non-zero value')
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
-    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/mountains_plot.py)")
 
-    st.plotly_chart(mountain_bar_chart_plot(mountain_or_structure_heights_df))
+    with st.container(border=True):
+        st.plotly_chart(mountain_bar_chart_plot(mountain_or_structure_heights_df))
 
 with hidden_differences_tab:
-    st.subheader('xxx')
-
-    explanation_text = """
-        xxx
-        """
-    st.markdown(explanation_text)
+    st.subheader('Starting at zero will hide differences')
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
-    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/sex_ratio_at_birth_plot.py)")
 
-    st.plotly_chart(sex_ratio_at_birth_bar_chart_plot(sex_ratio_df))
+    with st.container(border=True):
+        st.plotly_chart(sex_ratio_at_birth_bar_chart_plot(sex_ratio_df))
 
-    # Dot plot
-    st.plotly_chart(sex_ratio_at_birth_dot_plot(sex_ratio_df))
+        # Dot plot
+        st.plotly_chart(sex_ratio_at_birth_dot_plot(sex_ratio_df))
 
-    # Deviation plot
-    st.plotly_chart(sex_ratio_at_birth_bar_deviation_plot(sex_ratio_df))
+        # Deviation plot
+        st.plotly_chart(sex_ratio_at_birth_bar_deviation_plot(sex_ratio_df))
 
 with small_or_big_drops_tab:
-    st.subheader('xxx')
-
-    explanation_text = """
-            xxx
-            """
-    st.markdown(explanation_text)
+    st.subheader('Small or big drops in a timeseries are not well represented with a bar chart')
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
-    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/ae_waiting_times_plot.py)")
 
-    st.plotly_chart(AE_waiting_times_bar_chart_plot(AE_waiting_times_df))
-    st.plotly_chart(AE_waiting_times_dot_plot(AE_waiting_times_df))
+    with st.container(border=True):
+        st.plotly_chart(AE_waiting_times_bar_chart_plot(AE_waiting_times_df))
+        st.plotly_chart(AE_waiting_times_dot_plot(AE_waiting_times_df))
 
 with dominating_category_tab:
-    st.subheader('xxx')
-
-    explanation_text = """
-            xxx
-            """
-    st.markdown(explanation_text)
+    st.subheader('How to deal with a dominating category?')
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
-    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/languages_plot.py)")
 
-    st.plotly_chart(languages_bar_chart_plot(speaking_languages_df))
-    st.plotly_chart(languages_stacked_bar_chart(speaking_languages_df))
+    with st.container(border=True):
+        st.plotly_chart(languages_bar_chart_plot(speaking_languages_df))
+        st.plotly_chart(languages_stacked_bar_chart(speaking_languages_df))
 
 
 

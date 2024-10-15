@@ -46,66 +46,51 @@ employment_by_sector_df = employment_by_sector_data()
 )
 
 with long_yaxis_tab:
-    st.subheader('xxx')
-
-    explanation_text = """
-    xxx
-    """
-    st.markdown(explanation_text)
+    st.subheader('You cant understand labels such as trillions in the yaxis')
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
-    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/gdp_country_plot.py)")
 
-    st.plotly_chart(gdp_by_country_bar_chart_plot(gdp_by_country_df))
+    with st.container(border=True):
+        st.plotly_chart(gdp_by_country_bar_chart_plot(gdp_by_country_df))
 
 with long_xaxis_tab:
     # https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/datasets/babynamesenglandandwalesbabynamesstatisticsboys
-    st.subheader('xxx')
-
-    explanation_text = """
-        xxx
-        """
-    st.markdown(explanation_text)
+    st.subheader('For long texts in the xaxis, a horizontal plot is your best option. Alternatively, careful abbreviations.')
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
-    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/boys_name_plot.py)")
 
-    st.plotly_chart(boys_names_bar_chart_plot(boys_names_df))
+    with st.container(border=True):
+        st.plotly_chart(boys_names_bar_chart_plot(boys_names_df))
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
-    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/favourite_weekday_plot.py)")
 
-    st.plotly_chart(favourite_weekday_bar_chart_plot(favourite_weekday_df))
+    with st.container(border=True):
+        st.plotly_chart(favourite_weekday_bar_chart_plot(favourite_weekday_df))
 
 with axis_removal_tab:
-    st.subheader('xxx')
-
-    explanation_text = """
-        xxx
-        """
-    st.markdown(explanation_text)
+    st.subheader('Axis labels can sometimes add clutter.')
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
-    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/boys_name_plot.py)")
 
     # use baby names
-    st.plotly_chart(boys_names_bar_chart_plot(boys_names_df, axis_removal=True))
+    with st.container(border=True):
+        st.plotly_chart(boys_names_bar_chart_plot(boys_names_df, axis_removal=True))
 
 with icons_tab:
-    st.subheader('xxx')
-
-    explanation_text = """
-        xxx
-        """
-    st.markdown(explanation_text)
+    st.subheader('Icons on axis can help understand labels more easily')
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/2/rule-22-no-rounded-pointed-or-decorated-bars)")
-    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py#L5)")
+    st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/emplyoment_by_industry_plot.py)")
 
-    st.plotly_chart(employmeny_by_industry_bar_chart_plot(employment_by_sector_df))
+    with st.container(border=True):
+        st.plotly_chart(employmeny_by_industry_bar_chart_plot(employment_by_sector_df))
 

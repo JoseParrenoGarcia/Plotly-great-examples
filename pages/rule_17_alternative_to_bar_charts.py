@@ -56,23 +56,19 @@ with dot_plot_tab:
     st.subheader('Dot plots can be an elegant alternative to bar charts')
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/6/16/rule-17-not-too-many-bars)")
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/travel_gdp_share_plot.py)")
     st.write('')
 
     with st.container(border=True):
         st.write('**Plotly express bar chart**')
-        st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
         st.plotly_chart(travel_gdp_share_plotly_express_bar_chart(df=travel_gdp_share_df))
 
     with st.container(border=True):
         st.write('**Bar chart**')
-        st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
-
         st.plotly_chart(travel_gdp_share_plot_bar_chart(df=travel_gdp_share_df))
 
     with st.container(border=True):
         st.write('**Dot chart**')
-        st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L86)")
-
         st.plotly_chart(travel_gdp_share_plot_dot_chart(df=travel_gdp_share_df))
 
 with timeseries_area_plot_tab:
@@ -80,23 +76,19 @@ with timeseries_area_plot_tab:
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/6/16/rule-17-not-too-many-bars)")
+    st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/life_expectancy_plot.py)")
     st.write('')
 
     with st.container(border=True):
         st.write('**Plotly express bar chart**')
-        st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b75ca0485b4bb1cb71c8d4d7d4e41b1b36dd6cb5/utils/bar_chart_examples/travel_gdp_share_plot.py#L3)")
         st.plotly_chart(life_expectancy_plotly_express_bar_chart(df=life_expectancy_df_russia))
 
     with st.container(border=True):
         st.write('**Bar chart**')
-        st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/1f5bbef0f5d881ff5309155883037af68603a167/utils/bar_chart_examples/life_expectancy_plot.py#L12)")
-
         st.plotly_chart(life_expectancy_bar_chart(df=life_expectancy_df_russia))
 
     with st.container(border=True):
         st.write('**Line chart**')
-        st.markdown("🔗 [To see the code which generated this plot, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/1f5bbef0f5d881ff5309155883037af68603a167/utils/bar_chart_examples/life_expectancy_plot.py#L132)")
-
         st.plotly_chart(life_expectancy_scatter_plot(df=life_expectancy_df_russia))
 
 # with abacus_plot_tab:
