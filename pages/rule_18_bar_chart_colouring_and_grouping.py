@@ -130,21 +130,6 @@ with colouring_tab:
 
 with grouping_tab:
     st.subheader('Grouping categories isnt just about colour')
-    explanation_text = """
-        Sometimes, you want to tell a convey message that relates to groups. You do not only want to show the 
-        max or the min of the overall data. You want to show distributions by groups. In other words, you are 
-        trying to display 2 dimensions in a single chart.
-        
-        One way of doing this is simple by grouping bars by this category. In the first plot, you can see this categorisation as 
-        grouping by continent. I havent used any colouring, as I dont want to stand out a single country. In addition, I wouldnt know 
-        what colour to best represent each continent and, by adding colours, I dont think we are aided the readers eyes to 
-        focus on the categorisation, as they would need to process a non-intuituve colouring key.
-        
-        Another way of grouping bar charts, is not only by category, but also through colours. In the second plot, we grouping bars by 
-        progress status. Progress status though is intuitive for humans, so we can directly relate colours to progress. This is why, we 
-        also add colour to the bars.
-        """
-    st.markdown(explanation_text)
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
@@ -164,11 +149,6 @@ with grouping_tab:
 
 with long_tail_highlights_tab:
     st.subheader('Highlighting a very small long tail')
-    explanation_text = """
-            Sometimes you need to highlight a piece of data that is very small compared to the rest. Adding a new 
-            colour doesnt really help, as the bar is still to small to distinguish. Instead, you can use another shape 
-            to highlight the bar."""
-    st.markdown(explanation_text)
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
