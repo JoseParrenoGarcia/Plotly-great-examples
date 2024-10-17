@@ -14,7 +14,7 @@ from utils.load_data import (
 
 from utils.bar_chart_examples.gdp_per_capita_plot import gdp_per_capita_bar_chart_plot, gdp_per_capita_bar_chart_plotly_express
 from utils.bar_chart_examples.ons_data_subplots_plot import ons_data_subplots_bar_charts
-from utils.bar_chart_examples.smoking_rates_plot import smoking_rates_plot
+from utils.bar_chart_examples.smoking_rates_plot import smoking_rates_plot, smoking_rates_plotly_express
 from utils.bar_chart_examples.progress_against_target_plot import progress_against_target_bar_chart
 from utils.bar_chart_examples.covid_plot import covid_bar_chart_plot
 
@@ -138,7 +138,14 @@ with grouping_tab:
     ### GROUPING BY GEO - no need for colour
     with st.container(border=True):
         st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/smoking_rates_plot.py)")
-        st.plotly_chart(smoking_rates_plot(smoking_rate_df))
+
+        st.write('**Plotly express - ordering by smoking rate**')
+        st.plotly_chart(smoking_rates_plotly_express(smoking_rate_df, sort_by='smoking_rate'))
+
+        st.write('**Plotly express - ordering by continent**')
+        st.plotly_chart(smoking_rates_plotly_express(smoking_rate_df))
+
+    st.plotly_chart(smoking_rates_plot(smoking_rate_df))
 
     # ### PROGRESS AGAINST TARGET
     with st.container(border=True):
