@@ -233,6 +233,16 @@ def smoking_rate_data():
     merged_df = merged_df.query("rank_by_population_over_continent <= 5")
     merged_df = merged_df[['continent', 'country', 'population', 'smoking_rate']]
 
+    continent_ordering = {
+        'Africa': 1,
+        'Asia': 2,
+        'Europe': 3,
+        'Oceania': 4,
+        'North America': 5,
+        'South America': 6,
+    }
+    merged_df['continent_ordering'] = merged_df['continent'].map(continent_ordering)
+
     return merged_df
 
 def progress_against_target_synthetic_data():

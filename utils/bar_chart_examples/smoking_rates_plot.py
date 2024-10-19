@@ -15,16 +15,7 @@ def smoking_rates_plotly_express(df, sort_by='continent'):
         'South America': 'orange',
 
     }
-    continent_ordering = {
-        'Africa': 1,
-        'Asia': 2,
-        'Europe': 3,
-        'Oceania': 4,
-        'North America': 5,
-        'South America': 6,
-    }
     df['color'] = df['continent'].map(color_mapping)
-    df['continent_ordering'] = df['continent'].map(continent_ordering)
 
     if sort_by=='continent':
         df = df.sort_values(by=['continent_ordering', 'smoking_rate'], ascending=[False, True])
@@ -61,10 +52,8 @@ def smoking_rates_plotly_express(df, sort_by='continent'):
     return fig
 
 def smoking_rates_plot(df):
-    continent_order = ['Asia', 'Oceania', 'Africa', 'Europe', 'South America', 'North America']
-    df['continent'] = pd.Categorical(df['continent'], categories=continent_order, ordered=True)
-    df = df.sort_values(by=['continent', 'smoking_rate'], ascending=[True, True])
-    continents = df['continent'].unique()
+    df = df.sort_values(by=['continent_ordering', 'smoking_rate'], ascending=[False, True])
+    continents = sorted(df['continent'].unique())
 
     # Create subplots
     fig = make_subplots(

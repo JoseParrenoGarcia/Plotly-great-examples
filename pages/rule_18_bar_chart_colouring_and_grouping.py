@@ -139,13 +139,16 @@ with grouping_tab:
     with st.container(border=True):
         st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/smoking_rates_plot.py)")
 
+        with st.expander('Expand to see the data'):
+            st.dataframe(smoking_rate_df, hide_index=True)
+
         st.write('**Plotly express - ordering by smoking rate**')
         st.plotly_chart(smoking_rates_plotly_express(smoking_rate_df, sort_by='smoking_rate'))
 
         st.write('**Plotly express - ordering by continent**')
         st.plotly_chart(smoking_rates_plotly_express(smoking_rate_df))
 
-    st.plotly_chart(smoking_rates_plot(smoking_rate_df))
+        st.plotly_chart(smoking_rates_plot(smoking_rate_df))
 
     # ### PROGRESS AGAINST TARGET
     with st.container(border=True):
