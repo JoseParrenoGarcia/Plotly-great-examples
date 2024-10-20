@@ -246,7 +246,12 @@ def smoking_rate_data():
     return merged_df
 
 def progress_against_target_synthetic_data():
-    df = pd.read_csv('data/department_targets.csv')
+    df = (pd.read_csv('data/department_targets.csv')
+          .assign(progress=lambda x: x['progress'].round(1),
+                  # diff=lambda x: (x['progress'] - x['target']).round(1),
+                  # diff_perct=lambda x: (((x['progress']-x['target']) / x['target']) * 100).round(1),
+                  )
+          )
 
     return df
 
