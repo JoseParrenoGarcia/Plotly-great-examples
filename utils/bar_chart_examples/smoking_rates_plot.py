@@ -1,12 +1,56 @@
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-import pandas as pd
+
+
+def smoking_rates_plotly_express(df, sort_by='continent'):
+    color_mapping = {
+        'Africa': 'green',
+        'Asia': 'red',
+        'Europe': 'purple',
+        'Oceania': 'blue',
+        'North America': 'brown',
+        'South America': 'orange',
+
+    }
+    df['color'] = df['continent'].map(color_mapping)
+
+    if sort_by=='continent':
+        df = df.sort_values(by=['continent_ordering', 'smoking_rate'], ascending=[False, True])
+    else:
+        df = df.sort_values(by=['smoking_rate'], ascending=[True])
+
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Bar(
+        x=df['smoking_rate'],
+        y=df['country'],
+        orientation='h',
+        marker_color=df['color'],
+        showlegend=False,
+    ))
+
+    for continent, color in color_mapping.items():
+        fig.add_trace(go.Scatter(
+            x=[None], y=[None],
+            mode='markers',
+            marker=dict(size=10, color=color),
+            legendgroup=continent,
+            showlegend=True,
+            name=continent
+        ))
+
+    fig.update_layout(
+        title='Smoking sticks around',
+        height=800,
+        width=600,
+    )
+
+    return fig
 
 def smoking_rates_plot(df):
-    continent_order = ['Asia', 'Oceania', 'Africa', 'Europe', 'South America', 'North America']
-    df['continent'] = pd.Categorical(df['continent'], categories=continent_order, ordered=True)
-    df = df.sort_values(by=['continent', 'smoking_rate'], ascending=[True, True])
-    continents = df['continent'].unique()
+    df = df.sort_values(by=['continent_ordering', 'smoking_rate'], ascending=[False, True])
+    continents = sorted(df['continent'].unique())
 
     # Create subplots
     fig = make_subplots(

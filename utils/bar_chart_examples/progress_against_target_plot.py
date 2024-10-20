@@ -1,6 +1,56 @@
 import plotly.graph_objects as go
+import plotly.express as px
 from plotly.subplots import make_subplots
 import pandas as pd
+
+def progress_against_target_bar_chart_basic(df, sort_by='category'):
+    color_mapping = {
+        'Above target': 'green',
+        'On target': 'gold',
+        'Below target': 'red',
+    }
+    df['color'] = df['category'].map(color_mapping)
+
+    df = df.sort_values(by=['progress'], ascending=[True])
+
+
+    if sort_by== 'category':
+        fig = px.bar(df,
+                     x='progress',
+                     y='department',
+                     orientation='h',
+                     color='category',
+                     color_discrete_map=color_mapping
+                     )
+
+    else:
+        fig = go.Figure()
+
+        fig.add_trace(go.Bar(
+            x=df['progress'],
+            y=df['department'],
+            orientation='h',
+            marker_color=df['color'],
+            showlegend=False,
+        ))
+
+        for category, color in color_mapping.items():
+            fig.add_trace(go.Scatter(
+                x=[None], y=[None],
+                mode='markers',
+                marker=dict(size=10, color=color),
+                legendgroup=category,
+                showlegend=True,
+                name=category
+            ))
+
+    fig.update_layout(
+        title='Progress against target',
+        height=550,
+        width=600,
+    )
+
+    return fig
 
 def progress_against_target_bar_chart(df):
     progress_order = ['Above target', 'On target', 'Below target']
@@ -31,10 +81,6 @@ def progress_against_target_bar_chart(df):
                 x=category_df['progress'],
                 y=category_df['department'],
                 orientation='h',
-                text=category_df['progress'].round(1),
-                textposition='inside',
-                textangle=0,
-                textfont=dict(color='black'),
                 marker_color=color_,
                 showlegend=False,
             ),
@@ -56,11 +102,30 @@ def progress_against_target_bar_chart(df):
             col=1
         )
 
+        # Add scatter trace for text values
+        category_df['text'] = category_df.apply(
+            lambda x: f"<span style='color: {color_};'>{x['progress']}</span> vs {x['target']}",
+            axis=1
+        )
+        
+        fig.add_trace(
+            go.Scatter(
+                x=[100] * len(category_df),
+                y=category_df['department'],
+                mode='text',
+                text=category_df['text'],
+                textposition='middle right',
+                showlegend=False,
+            ),
+            row=i + 1,
+            col=1
+        )
+
         fig.add_annotation(
             xref='paper',
             yref='y' + str(i + 1),
             xanchor='right',
-            x=-0.45,  # Position to the left of the plot
+            x=-0.3,  # Position to the left of the plot
             y=category_df['category'].iloc[len(category_df) // 2],  # Centered vertically
             text=category,
             showarrow=False,
@@ -87,7 +152,7 @@ def progress_against_target_bar_chart(df):
             font=dict(color='grey')
         ),
         height=50 * len(category),  # Adjust height based on the number of continents
-        width=600,
+        width=800,
         margin=dict(l=250),
     )
 
@@ -95,9 +160,9 @@ def progress_against_target_bar_chart(df):
         xref='paper',
         yref='paper',
         xanchor='left',
-        x=-0.70,
+        x=-0.45,
         y=1.095,
-        text='10 of 15 departments are close to achieving or above their yearly targes. 5 are stuggling.',
+        text='10 of 15 departments are close to achieving or above their yearly targets. 5 are struggling.',
         showarrow=False,
         font=dict(family="Helvetica Neue", size=14),
         align='left',
@@ -119,6 +184,7 @@ def progress_against_target_bar_chart(df):
             showticklabels=False,
             showline=False,
             zeroline=False,
+            range=[0, 140],
             row=i + 1,
             col=1
         )
