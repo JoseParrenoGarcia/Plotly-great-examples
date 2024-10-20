@@ -58,8 +58,6 @@ def progress_against_target_bar_chart(df):
     df = df.sort_values(by=['category', 'progress'], ascending=[True, True])
     category = df['category'].unique()
 
-    df['text'] = df.apply(lambda x: f"{x['progress']} vs {x['target']}", axis=1)
-
     # Create subplots
     fig = make_subplots(
         rows=len(category),
@@ -105,6 +103,11 @@ def progress_against_target_bar_chart(df):
         )
 
         # Add scatter trace for text values
+        category_df['text'] = category_df.apply(
+            lambda x: f"<span style='color: {color_};'>{x['progress']}</span> vs {x['target']}",
+            axis=1
+        )
+        
         fig.add_trace(
             go.Scatter(
                 x=[100] * len(category_df),
