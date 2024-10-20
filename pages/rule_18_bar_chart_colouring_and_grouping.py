@@ -15,7 +15,7 @@ from utils.load_data import (
 from utils.bar_chart_examples.gdp_per_capita_plot import gdp_per_capita_bar_chart_plot, gdp_per_capita_bar_chart_plotly_express
 from utils.bar_chart_examples.ons_data_subplots_plot import ons_data_subplots_bar_charts
 from utils.bar_chart_examples.smoking_rates_plot import smoking_rates_plot, smoking_rates_plotly_express
-from utils.bar_chart_examples.progress_against_target_plot import progress_against_target_bar_chart
+from utils.bar_chart_examples.progress_against_target_plot import progress_against_target_bar_chart, progress_against_target_bar_chart_basic
 from utils.bar_chart_examples.covid_plot import covid_bar_chart_plot
 
 # ---------------------------------------------------------------------
@@ -142,12 +142,13 @@ with grouping_tab:
         with st.expander('Expand to see the data'):
             st.dataframe(smoking_rate_df, hide_index=True)
 
-        st.write('**Plotly express - ordering by smoking rate**')
+        st.write('**Plotly basic - ordering by smoking rate**')
         st.plotly_chart(smoking_rates_plotly_express(smoking_rate_df, sort_by='smoking_rate'))
 
-        st.write('**Plotly express - ordering by continent**')
+        st.write('**Plotly basic - ordering by continent**')
         st.plotly_chart(smoking_rates_plotly_express(smoking_rate_df))
 
+        st.write('**Plotly advanced**')
         st.plotly_chart(smoking_rates_plot(smoking_rate_df))
 
     # ### PROGRESS AGAINST TARGET
@@ -155,6 +156,17 @@ with grouping_tab:
         st.write('')
         st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/progress_against_target_plot.py)")
         st.write('')
+
+        with st.expander('Expand to see the data'):
+            st.dataframe(progress_against_target_synthetic_df, hide_index=True)
+
+        st.write('**Plotly basic - ordering by progress against target**')
+        st.plotly_chart(progress_against_target_bar_chart_basic(progress_against_target_synthetic_df, sort_by='progress'))
+
+        st.write('**Plotly basic - ordering by progress against target by category**')
+        st.plotly_chart(progress_against_target_bar_chart_basic(progress_against_target_synthetic_df, sort_by='category'))
+
+        st.write('**Plotly advanced**')
         st.plotly_chart(progress_against_target_bar_chart(progress_against_target_synthetic_df))
 
 with long_tail_highlights_tab:
