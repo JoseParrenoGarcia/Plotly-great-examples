@@ -83,6 +83,9 @@ with colouring_tab:
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/gdp_per_capita_plot.py)")
 
+    with st.expander('Expand to see the data'):
+        st.dataframe(gdp_per_capita_df, hide_index=True)
+
     with st.container(border=True):
         st.write('**Plotly express**')
         st.plotly_chart(gdp_per_capita_bar_chart_plotly_express(df=gdp_per_capita_df))
