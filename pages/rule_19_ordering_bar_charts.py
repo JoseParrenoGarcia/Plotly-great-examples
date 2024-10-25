@@ -51,6 +51,9 @@ with other_tab:
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/27/rule-19-arrange-your-bars-from-largest-to-smallest)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/favourite_animal_plot.py)")
 
+    with st.expander("Expand to see the data"):
+        st.dataframe(favourite_animal_df, hide_index=True)
+
     st.write('')
     with st.container(border=True):
         st.plotly_chart(favourite_animal_bar_chart_plot(favourite_animal_df))
