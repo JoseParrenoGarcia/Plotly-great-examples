@@ -7,7 +7,7 @@ from utils.load_data import (
     housing_data
 )
 
-from utils.bar_chart_examples.favourite_animal_plot import favourite_animal_bar_chart_plot
+from utils.bar_chart_examples.favourite_animal_plot import favourite_animal_bar_chart_plot, favourite_animal_bar_chart_plot_plotly_express
 from utils.bar_chart_examples.favourite_weekday_plot import favourite_weekday_bar_chart_plot
 from utils.bar_chart_examples.smoking_rates_plot import smoking_rates_plot
 from utils.bar_chart_examples.housing_plot import housing_bar_chart_plot
@@ -53,6 +53,15 @@ with other_tab:
 
     with st.expander("Expand to see the data"):
         st.dataframe(favourite_animal_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(favourite_animal_bar_chart_plot_plotly_express(favourite_animal_df))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(favourite_animal_bar_chart_plot(favourite_animal_df, other_ordering=False))
+
 
     st.write('')
     with st.container(border=True):
