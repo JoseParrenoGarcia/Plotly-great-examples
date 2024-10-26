@@ -8,7 +8,7 @@ from utils.load_data import (
 )
 
 from utils.bar_chart_examples.favourite_animal_plot import favourite_animal_bar_chart_plot, favourite_animal_bar_chart_plot_plotly_express
-from utils.bar_chart_examples.favourite_weekday_plot import favourite_weekday_bar_chart_plot
+from utils.bar_chart_examples.favourite_weekday_plot import favourite_weekday_bar_chart_plot, favourite_weekday_bar_chart_plot_plotly_express
 from utils.bar_chart_examples.smoking_rates_plot import smoking_rates_plot
 from utils.bar_chart_examples.housing_plot import housing_bar_chart_plot
 
@@ -74,6 +74,13 @@ with ordinal_categories_tab:
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/27/rule-19-arrange-your-bars-from-largest-to-smallest)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/favourite_weekday_plot.py)")
+
+    with st.expander("Expand to see the data"):
+        st.dataframe(favourite_weekday_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(favourite_weekday_bar_chart_plot_plotly_express(favourite_weekday_df))
 
     st.write('')
     with st.container(border=True):

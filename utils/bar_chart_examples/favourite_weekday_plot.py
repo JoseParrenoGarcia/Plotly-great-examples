@@ -1,4 +1,19 @@
 import plotly.graph_objects as go
+import plotly.express as px
+
+def favourite_weekday_bar_chart_plot_plotly_express(df):
+    df = df.sort_values('Favorite %', ascending=False)
+
+    fig = px.bar(data_frame=df,
+                 x='Day',
+                 y='Favorite %',
+                 text='Favorite %',
+                 title='Looking forward to the weekend.',)
+
+    fig.update_layout(height=600,
+        width=700,)
+
+    return fig
 
 def favourite_weekday_bar_chart_plot(df):
     # Define the categorical order
