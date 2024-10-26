@@ -1,4 +1,22 @@
 import plotly.graph_objects as go
+import plotly.express as px
+
+def housing_bar_chart_plot_plotly_express(df):
+    df['price_grouped'] = df['price_grouped'].astype(str)
+    df = df.sort_values('count', ascending=False)
+
+    fig = px.bar(data_frame=df,
+                 x='price_grouped',
+                 y='count',
+                 title='Even luxury house prices in Boston have outliers',)
+
+    fig.update_layout(
+        height=600,
+        width=700,
+        xaxis=dict(type='category')
+    )
+
+    return fig
 
 def housing_bar_chart_plot(df):
     fig = go.Figure(
@@ -24,7 +42,7 @@ def housing_bar_chart_plot(df):
         annotations=[
             # First paragraph annotation
             dict(
-                text="Luxury house prices in Boston are centered around 3 US millions",
+                text="Luxury house prices in Boston are centered around $3 million",
                 xref="paper",
                 yref="paper",
                 x=-0.07, y=1.29,

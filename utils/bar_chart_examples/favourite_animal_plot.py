@@ -1,10 +1,29 @@
 import plotly.graph_objects as go
+import plotly.express as px
 
-def favourite_animal_bar_chart_plot(df):
-    # Define the categorical order
-    categories = [animal for animal in df['Animal'] if animal != 'Other'] + ['Other']
-    df['SortOrder'] = df['Animal'].apply(lambda x: 1 if x == 'Other' else 0)
-    df = df.sort_values(by=['SortOrder', 'Percentage'], ascending=[True, False]).reset_index(drop=True)
+def favourite_animal_bar_chart_plot_plotly_express(df):
+    df = df.sort_values('Percentage', ascending=False)
+
+    fig = px.bar(data_frame=df,
+                 x='Animal',
+                 y='Percentage',
+                 text='Percentage',
+                 title='The Tiger is the favourite animal',)
+
+    fig.update_layout(height=600,
+        width=700,)
+
+    return fig
+
+
+def favourite_animal_bar_chart_plot(df, other_ordering=True):
+
+    if other_ordering:
+        # Define the categorical order
+        df['SortOrder'] = df['Animal'].apply(lambda x: 1 if x == 'Other' else 0)
+        df = df.sort_values(by=['SortOrder', 'Percentage'], ascending=[True, False]).reset_index(drop=True)
+    else:
+        df = df.sort_values('Percentage', ascending=False)
 
     fig = go.Figure(
         data=[

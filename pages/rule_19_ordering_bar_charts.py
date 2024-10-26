@@ -7,10 +7,10 @@ from utils.load_data import (
     housing_data
 )
 
-from utils.bar_chart_examples.favourite_animal_plot import favourite_animal_bar_chart_plot
-from utils.bar_chart_examples.favourite_weekday_plot import favourite_weekday_bar_chart_plot
+from utils.bar_chart_examples.favourite_animal_plot import favourite_animal_bar_chart_plot, favourite_animal_bar_chart_plot_plotly_express
+from utils.bar_chart_examples.favourite_weekday_plot import favourite_weekday_bar_chart_plot, favourite_weekday_bar_chart_plot_plotly_express
 from utils.bar_chart_examples.smoking_rates_plot import smoking_rates_plot
-from utils.bar_chart_examples.housing_plot import housing_bar_chart_plot
+from utils.bar_chart_examples.housing_plot import housing_bar_chart_plot, housing_bar_chart_plot_plotly_express
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -34,13 +34,13 @@ housing_df = housing_data()
 # ---------------------------------------------------------------------
 (other_tab,
  ordinal_categories_tab,
- groupings_tab,
  distributions_tab,
+ groupings_tab,
  )  = st.tabs(
     ["🧩 Other segment",
      "🔢 Ordinal categories",
-     "🫐 Groupings",
      "📊 Distributions",
+     "🫐 Groupings",
      ]
 )
 
@@ -50,6 +50,18 @@ with other_tab:
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/27/rule-19-arrange-your-bars-from-largest-to-smallest)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/favourite_animal_plot.py)")
+
+    with st.expander("Expand to see the data"):
+        st.dataframe(favourite_animal_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(favourite_animal_bar_chart_plot_plotly_express(favourite_animal_df))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(favourite_animal_bar_chart_plot(favourite_animal_df, other_ordering=False))
+
 
     st.write('')
     with st.container(border=True):
@@ -62,6 +74,13 @@ with ordinal_categories_tab:
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/27/rule-19-arrange-your-bars-from-largest-to-smallest)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/favourite_weekday_plot.py)")
+
+    with st.expander("Expand to see the data"):
+        st.dataframe(favourite_weekday_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(favourite_weekday_bar_chart_plot_plotly_express(favourite_weekday_df))
 
     st.write('')
     with st.container(border=True):
@@ -85,6 +104,13 @@ with distributions_tab:
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/27/rule-19-arrange-your-bars-from-largest-to-smallest)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/housing_plot.py)")
+
+    with st.expander("Expand to see the data"):
+        st.dataframe(housing_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(housing_bar_chart_plot_plotly_express(housing_df))
 
     st.write('')
     with st.container(border=True):
