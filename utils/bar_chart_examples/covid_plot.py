@@ -1,4 +1,24 @@
 import plotly.graph_objects as go
+import plotly.express as px
+
+def covid_bar_chart_plot_plotly_express(df):
+    df = df.sort_values('Deaths', ascending=True).reset_index()
+
+    fig = px.bar(
+        df,
+        x='Deaths',
+        y='Entity',
+        orientation='h',
+        title='Did China and New Zealand manage to contain Covid?'
+    )
+
+    fig.update_layout(
+        font=dict(family="Helvetica Neue"),
+        height=500,
+        width=600,
+    )
+
+    return fig
 
 def covid_bar_chart_plot(df, simple_plot=False):
     df = df.sort_values('Deaths', ascending=True).reset_index()

@@ -16,7 +16,7 @@ from utils.bar_chart_examples.gdp_per_capita_plot import gdp_per_capita_bar_char
 from utils.bar_chart_examples.ons_data_subplots_plot import ons_data_subplots_bar_charts
 from utils.bar_chart_examples.smoking_rates_plot import smoking_rates_plot, smoking_rates_plotly_express
 from utils.bar_chart_examples.progress_against_target_plot import progress_against_target_bar_chart, progress_against_target_bar_chart_basic
-from utils.bar_chart_examples.covid_plot import covid_bar_chart_plot
+from utils.bar_chart_examples.covid_plot import covid_bar_chart_plot, covid_bar_chart_plot_plotly_express
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -161,6 +161,10 @@ with long_tail_highlights_tab:
 
     with st.container(border=True):
         st.dataframe(covid_df, hide_index=True)
+
+    with st.container(border=True):
+        st.write('**Simple plot**')
+        st.plotly_chart(covid_bar_chart_plot_plotly_express(covid_df))
 
     with st.container(border=True):
         st.write('**Simple plot**')
