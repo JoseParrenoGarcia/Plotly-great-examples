@@ -8,7 +8,7 @@ from utils.load_data import (
     employment_by_sector_data,
 )
 
-from utils.bar_chart_examples.gdp_country_plot import gdp_by_country_bar_chart_plot
+from utils.bar_chart_examples.gdp_country_plot import gdp_by_country_bar_chart_plot, gdp_by_country_bar_chart_plot_plotly_express
 from utils.bar_chart_examples.boys_name_plot import boys_names_bar_chart_plot
 from utils.bar_chart_examples.favourite_weekday_plot import favourite_weekday_bar_chart_plot
 from utils.bar_chart_examples.emplyoment_by_industry_plot import employmeny_by_industry_bar_chart_plot
@@ -54,6 +54,12 @@ with long_yaxis_tab:
 
     with st.container(border=True):
         st.dataframe(gdp_by_country_df)
+
+    with st.container(border=True):
+        st.plotly_chart(gdp_by_country_bar_chart_plot_plotly_express(gdp_by_country_df))
+
+    with st.container(border=True):
+        st.plotly_chart(gdp_by_country_bar_chart_plot(gdp_by_country_df, add_context=False))
 
     with st.container(border=True):
         st.plotly_chart(gdp_by_country_bar_chart_plot(gdp_by_country_df))

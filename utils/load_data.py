@@ -339,6 +339,19 @@ def gdp_by_country_data():
         except LookupError:
             return False
 
+    country_to_emoji = {
+        'US': '🇺🇸',
+        'China': '🇨🇳',
+        'Germany': '🇩🇪',
+        'Japan': '🇯🇵',
+        'India': '🇮🇳',
+        'UK': '🇬🇧',
+        'France': '🇫🇷',
+        'Italy': '🇮🇹',
+        'Brazil': '🇧🇷',
+        'Canada': '🇨🇦'
+    }
+
     df = (pd.read_csv('data/gdp_by_country_2023.csv')
           .rename(columns={'Country Name': 'Country',
                            'Country Code': 'Code',
@@ -352,6 +365,7 @@ def gdp_by_country_data():
                                 }})
           .assign(GDP_Rank=lambda x: x['GDP'].rank(ascending=False, method='dense'))
           .query("GDP_Rank <= 10")
+          .assign(Country_with_emoji=lambda x: x['Country'].map(lambda y: f"{y}<br>{country_to_emoji.get(y, '')}"))
           .sort_values('GDP_Rank')
           )
 
