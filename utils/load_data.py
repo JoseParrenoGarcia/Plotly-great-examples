@@ -293,10 +293,22 @@ def favourite_weekday_data():
         "Sunday": 7
     }
 
+    day_abbreviation = {
+        "Monday": "Mo",
+        "Tuesday": "Tu",
+        "Wednesday": "We",
+        "Thursday": "Th",
+        "Friday": "Fr",
+        "Saturday": "Sa",
+        "Sunday": "Su",
+        "No preference": "NA"
+    }
+
     return (pd.DataFrame(data)
             .assign(Day_Number=lambda df: df['Day'].map(day_to_number).fillna(8).astype(int))
             .assign(Day=lambda df: df.apply(lambda row: 'No preference' if row['Day_Number'] == 8 else row['Day'], axis=1))
-            .groupby(['Day', 'Day_Number'], as_index=False)
+            .assign(Day_Abbreviation=lambda df: df['Day'].map(day_abbreviation))
+            .groupby(['Day', 'Day_Number', 'Day_Abbreviation'], as_index=False)
             .agg({'Favorite %': 'sum'})
             )
 
@@ -339,6 +351,19 @@ def gdp_by_country_data():
         except LookupError:
             return False
 
+    country_to_emoji = {
+        'US': '🇺🇸',
+        'China': '🇨🇳',
+        'Germany': '🇩🇪',
+        'Japan': '🇯🇵',
+        'India': '🇮🇳',
+        'UK': '🇬🇧',
+        'France': '🇫🇷',
+        'Italy': '🇮🇹',
+        'Brazil': '🇧🇷',
+        'Canada': '🇨🇦'
+    }
+
     df = (pd.read_csv('data/gdp_by_country_2023.csv')
           .rename(columns={'Country Name': 'Country',
                            'Country Code': 'Code',
@@ -352,6 +377,7 @@ def gdp_by_country_data():
                                 }})
           .assign(GDP_Rank=lambda x: x['GDP'].rank(ascending=False, method='dense'))
           .query("GDP_Rank <= 10")
+          .assign(Country_with_emoji=lambda x: x['Country'].map(lambda y: f"{y}<br>{country_to_emoji.get(y, '')}"))
           .sort_values('GDP_Rank')
           )
 
@@ -359,7 +385,7 @@ def gdp_by_country_data():
 
 def boys_names_data():
     df = (pd.read_csv('data/boynames2022.csv', sep=';')
-          .query("Rank <= 20")
+          .query("Rank <= 10")
           .sort_values('Rank', ascending=False)
           )
 
@@ -379,8 +405,12 @@ def employment_by_sector_data():
                                 'O,P,Q - Public admin, education and health': 'Public admin, education and health  -  🏥  ',
                                 'R,S,T,U - Other services': 'Other services  -  🛠  ',
                                 }})
+          .assign(Industry_without_emoji=lambda x: x['Industry'].str.replace(
+        r'[\U0001F300-\U0001F5FF\U0001F600-\U0001F64F\U0001F680-\U0001F6FF\U0001F700-\U0001F77F\U0001F780-\U0001F7FF\U0001F800-\U0001F8FF\U0001F900-\U0001F9FF\U0001FA00-\U0001FA6F\U0001FA70-\U0001FAFF\U00002702-\U000027B0\U000024C2-\U0001F251]', '', regex=True))
+          .assign(Industry_without_emoji=lambda x: x['Industry_without_emoji'].str.replace(' -  ', ''))
           .assign(Value=lambda x: x['Value'].astype(float))
           .sort_values('Value', ascending=True)
+          .drop(columns=['Measure', 'Time_type', 'Ethnicity', 'SIC', 'Denominator', 'Numerator', 'CI'])
           )
 
     return df

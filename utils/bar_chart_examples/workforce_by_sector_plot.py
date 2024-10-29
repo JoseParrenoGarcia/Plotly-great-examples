@@ -1,5 +1,6 @@
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import plotly.express as px
 
 def workforce_by_sector_subplots_bar_charts(df):
     list_of_categories = df['sector'].unique().tolist()

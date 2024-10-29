@@ -69,7 +69,7 @@ def boys_names_bar_chart_plot(df, axis_removal=False):
         xaxis=xaxis_,
         margin=dict(t=150, pad=0),
         height=600,
-        width=800,
+        width=200,
     )
 
     return fig
