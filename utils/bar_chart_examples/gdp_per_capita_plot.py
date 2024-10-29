@@ -41,7 +41,7 @@ def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay', add_median=False, rem
         subtitle_text = "The country with the lowest GDP per capita in South America (2020)"
         textposition = 'outside',
 
-    elif highlight == 'data_issue':
+    elif highlight == 'data_issue' and add_median == False:
         marker_color_ = ['rgba(211, 211, 211, 0.5)' if c_ == 'Paraguay' else
                          'rgba(85, 181, 229, 1)' if c_ == 'Uruguay' else
                          'rgb(211, 211, 211)' for c_ in df['Entity']
@@ -50,6 +50,31 @@ def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay', add_median=False, rem
         text_ = [f"<b>${val / 1000:,.1f}k</b>" if c_ == 'Uruguay' else '' for val, c_ in zip(df['GDP per capita'], df['Entity'])]
         title_text = 'Uruguay flies high'
         subtitle_text = "Uruguay's GDP per capita is amongst the highest in South America (2020)"
+        textposition = 'outside',
+
+    elif highlight == 'data_issue' and add_median:
+        median_ = df['GDP per capita'].median()
+        uruguay_gdp = df.loc[df['Entity'] == 'Uruguay', 'GDP per capita'].values[0]
+        diff = uruguay_gdp - median_
+        perct_diff = diff / median_
+        median_row = pd.DataFrame({
+            'Entity': ['Median'],
+            'GDP per capita': [median_]
+        })
+        df = pd.concat([df, median_row], ignore_index=True).sort_values('GDP per capita', ascending=True)
+        marker_color_ = [
+            'darkgrey' if c_ == 'Median' else
+            'rgba(85, 181, 229, 1)' if c_ == 'Uruguay' else
+            'lightgrey'
+            for c_ in df['Entity']
+        ]
+        text_ = [
+            f"<b>${val / 1000:,.1f}k</b>" if c_ in ['Median', 'Uruguay'] else ''
+            for val, c_ in zip(df['GDP per capita'], df['Entity'])
+        ]
+        pattern_shape_ = ['/' if c_ == 'Paraguay' else '' for c_ in df['Entity']]
+        title_text = f'Uruguay is {np.round(100 * perct_diff, 0)}% above the median'
+        subtitle_text = f"This is a difference of ${diff / 1000:,.1f}k"
         textposition = 'outside',
 
     else:
