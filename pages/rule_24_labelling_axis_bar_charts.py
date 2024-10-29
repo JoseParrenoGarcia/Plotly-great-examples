@@ -53,6 +53,9 @@ with long_yaxis_tab:
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/gdp_country_plot.py)")
 
     with st.container(border=True):
+        st.dataframe(gdp_by_country_df)
+
+    with st.container(border=True):
         st.plotly_chart(gdp_by_country_bar_chart_plot(gdp_by_country_df))
 
 with long_xaxis_tab:
