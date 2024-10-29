@@ -293,10 +293,22 @@ def favourite_weekday_data():
         "Sunday": 7
     }
 
+    day_abbreviation = {
+        "Monday": "Mo",
+        "Tuesday": "Tu",
+        "Wednesday": "We",
+        "Thursday": "Th",
+        "Friday": "Fr",
+        "Saturday": "Sa",
+        "Sunday": "Su",
+        "No preference": "NA"
+    }
+
     return (pd.DataFrame(data)
             .assign(Day_Number=lambda df: df['Day'].map(day_to_number).fillna(8).astype(int))
             .assign(Day=lambda df: df.apply(lambda row: 'No preference' if row['Day_Number'] == 8 else row['Day'], axis=1))
-            .groupby(['Day', 'Day_Number'], as_index=False)
+            .assign(Day_Abbreviation=lambda df: df['Day'].map(day_abbreviation))
+            .groupby(['Day', 'Day_Number', 'Day_Abbreviation'], as_index=False)
             .agg({'Favorite %': 'sum'})
             )
 

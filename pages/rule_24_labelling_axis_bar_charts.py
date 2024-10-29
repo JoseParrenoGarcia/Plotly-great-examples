@@ -10,7 +10,7 @@ from utils.load_data import (
 
 from utils.bar_chart_examples.gdp_country_plot import gdp_by_country_bar_chart_plot, gdp_by_country_bar_chart_plot_plotly_express
 from utils.bar_chart_examples.boys_name_plot import boys_names_bar_chart_plot
-from utils.bar_chart_examples.favourite_weekday_plot import favourite_weekday_bar_chart_plot
+from utils.bar_chart_examples.favourite_weekday_plot import favourite_weekday_bar_chart_plot, favourite_weekday_bar_chart_plot_abbreviations
 from utils.bar_chart_examples.emplyoment_by_industry_plot import employment_by_industry_bar_chart_plot, employment_by_industry_bar_chart_plotly_express
 
 # ---------------------------------------------------------------------
@@ -89,7 +89,19 @@ with abbreviations_tab:
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/favourite_weekday_plot.py)")
 
     with st.container(border=True):
-        st.plotly_chart(favourite_weekday_bar_chart_plot(favourite_weekday_df))
+        st.dataframe(favourite_weekday_df)
+
+    with st.container(border=True):
+        col1, col2 = st.columns([2, 1])
+
+        with col1:
+            st.plotly_chart(favourite_weekday_bar_chart_plot(favourite_weekday_df))
+
+        with col2:
+            st.plotly_chart(favourite_weekday_bar_chart_plot(favourite_weekday_df))
+
+    with st.container(border=True):
+        st.plotly_chart(favourite_weekday_bar_chart_plot_abbreviations(favourite_weekday_df))
 
 with icons_tab:
     st.subheader('Icons on axis can help understand labels more easily')
