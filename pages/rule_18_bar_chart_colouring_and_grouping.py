@@ -108,28 +108,7 @@ with colouring_tab:
 
     with st.container(border=True):
         st.write('**Highlighting a benchmark**')
-        st.plotly_chart(gdp_per_capita_bar_chart_plot(df=gdp_per_capita_df, highlight='median'))
-
-# with subplots_tab:
-#     st.subheader('One colour highlighted bars & subplots are great for multi-dimensional comparisons')
-#     explanation_text = """
-#
-#     Highlighting the Uruguay bar with a distinct color while keeping all other countries in grey, and organizing these visualizations into subplots, offers several advantages for multi-dimensional comparisons:
-#
-#     1. **Clarity and Focus**: By using a single color to highlight Uruguay, the viewer's attention is immediately drawn to this specific country. This makes it easier to compare Uruguay's performance across different dimensions without being distracted by other data points.
-#     2. **Consistency**: Using the same color for Uruguay across all subplots ensures consistency. This helps the viewer quickly identify Uruguay in each subplot, facilitating a more straightforward comparison across multiple metrics.
-#     3. **Reduced Visual Clutter**: Keeping all other countries in grey minimizes visual clutter. This approach simplifies the chart, making it easier to interpret the data and focus on the highlighted country.
-#     4. **Effective Use of Subplots**: Organizing the data into subplots allows for the simultaneous comparison of multiple dimensions. Each subplot represents a different metric, and the consistent highlighting of Uruguay across these subplots enables a comprehensive view of its performance relative to other countries.
-#     5. **Enhanced Comparability**: The combination of highlighting and subplots makes it easier to spot trends, patterns, and outliers. For instance, if Uruguay consistently performs well or poorly across different metrics, this will be immediately apparent.
-#     In summary, this approach leverages color and layout to enhance the readability and interpretability of complex data, making it easier to draw meaningful insights from multi-dimensional comparisons.
-#     """
-#     st.markdown(explanation_text)
-#
-#     st.write('')
-#     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/7/12/rule-18-dont-use-multi-coloured-bars)")
-#     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/b4fc56427486fb67e1938090481b77ca94ad7667/utils/bar_chart_examples/ons_data_subplots.py#L4)")
-#
-#     st.plotly_chart(ons_data_subplots_bar_charts(ons_data_df))
+        st.plotly_chart(gdp_per_capita_bar_chart_plot(df=gdp_per_capita_df, highlight='data_issue', add_median=True))
 
 with grouping_tab:
     st.subheader('Grouping categories isnt just about colour')

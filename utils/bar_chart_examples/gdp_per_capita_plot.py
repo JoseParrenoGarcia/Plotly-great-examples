@@ -22,7 +22,7 @@ def gdp_per_capita_bar_chart_plotly_express(df):
 
     return fig
 
-def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay', remove_xaxis=False):
+def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay', add_median=False, remove_xaxis=False):
     df = df.sort_values('GDP per capita', ascending=True)
 
     if highlight=='Uruguay':
@@ -39,37 +39,6 @@ def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay', remove_xaxis=False):
         pattern_shape_ = ['' for _ in df['Entity']]
         title_text = 'Venezuela hits rock bottom'
         subtitle_text = "The country with the lowest GDP per capita in South America (2020)"
-        textposition = 'outside',
-
-    elif highlight == 'median':
-        median_ = df['GDP per capita'].median()
-        uruguay_gdp = df.loc[df['Entity'] == 'Uruguay', 'GDP per capita'].values[0]
-        diff = uruguay_gdp - median_
-        perct_diff = diff / median_
-
-        median_row = pd.DataFrame({
-            'Entity': ['Median'],
-            'GDP per capita': [median_]
-        })
-
-        df = pd.concat([df, median_row], ignore_index=True).sort_values('GDP per capita', ascending=True)
-
-        marker_color_ = [
-            'darkgrey' if c_ == 'Median' else
-            'rgba(85, 181, 229, 1)' if c_ == 'Uruguay' else
-            'lightgrey'
-            for c_ in df['Entity']
-        ]
-
-        text_ = [
-            f"<b>${val / 1000:,.1f}k</b>" if c_ in ['Median', 'Uruguay'] else ''
-            for val, c_ in zip(df['GDP per capita'], df['Entity'])
-        ]
-
-        pattern_shape_ = ['' for _ in df['Entity']]
-
-        title_text = f'Uruguay is {np.round(100*perct_diff, 0)}% above the median'
-        subtitle_text = f"This is a difference of ${diff/1000:,.1f}k"
         textposition = 'outside',
 
     elif highlight == 'data_issue':
@@ -158,7 +127,7 @@ def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay', remove_xaxis=False):
         ),
         legend=dict(
             x=1,
-            y=0,
+            y=-0.17,
             xanchor='right',
             yanchor='bottom',
             orientation='h'
@@ -170,10 +139,13 @@ def gdp_per_capita_bar_chart_plot(df, highlight='Uruguay', remove_xaxis=False):
         width=600,
     )
 
-    if highlight == 'median':
+    if add_median:
         median_ = df['GDP per capita'].median()
-        fig.add_vline(x=median_, line_dash='dot', line_color='darkgrey', line_width=1,
-                  annotation_text=f'Median GDP per capita (${median_ / 1000:,.1f}k)', annotation_position='bottom right',
+        fig.add_vline(x=median_, line_dash='dot',
+                      line_color='darkgrey',
+                      line_width=1,
+                      annotation_text=f'Median GDP per capita (${median_ / 1000:,.1f}k)',
+                      annotation_position='bottom right',
                       layer='below')
 
     # Add custom legend item for the filled pattern
