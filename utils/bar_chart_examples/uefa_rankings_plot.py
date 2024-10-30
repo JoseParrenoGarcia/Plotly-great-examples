@@ -1,5 +1,28 @@
 import plotly.graph_objects as go
 import pandas as pd
+import plotly.express as px
+
+def uefa_ranking_slope_chart_plotly_express(df):
+    df = df.sort_values(['season', 'ranking'], ascending=True)
+
+    fig = px.bar(
+        df,
+        x='club',
+        y='ranking',
+        color='season',
+        text='ranking',
+        title='How Peter Lim destroyed a historical club'
+    )
+
+    fig.update_layout(
+        font=dict(family="Helvetica Neue"),
+        height=600,
+        width=1550,
+        barmode='group'
+    )
+
+    return fig
+
 
 def uefa_ranking_slope_chart(df):
     # Add dummy categories for spacing
@@ -9,6 +32,20 @@ def uefa_ranking_slope_chart(df):
     dummy_after = pd.DataFrame({'club': [''], 'season': ['2024-25'], 'ranking': [None], 'text_column': ['']})
     df = pd.concat([dummy_before, df, dummy_after], ignore_index=True)
     df['season'] = pd.Categorical(df['season'], categories=season_order, ordered=True)
+
+    df['text_column'] = df.apply(
+        lambda x: '' if x['season'] == '2023-24' and x['club'] == 'Sevilla' else x['text_column'],
+        axis=1
+    )
+    df['text_column'] = df.apply(
+        lambda x: '' if x['season'] == '2013-14' and x['club'] == 'Barcelona' else x['text_column'],
+        axis=1
+    )
+    df['text_column'] = df.apply(
+        lambda x: '' if x['season'] == '2013-14' and x['club'] == 'Atleti' else x['text_column'],
+        axis=1
+    )
+
 
     fig = go.Figure()
 
@@ -20,10 +57,12 @@ def uefa_ranking_slope_chart(df):
             color = 'orange'
             line_width = 4
             marker_size = 8
+            colour_ = color
         else:
             color = 'lightgrey'
             line_width = 2
             marker_size = 6
+            colour_ = 'grey'
 
         fig.add_trace(go.Scatter(
             x=club_data['season'],
@@ -32,6 +71,7 @@ def uefa_ranking_slope_chart(df):
             name=club,
             text=club_data['text_column'],
             textposition=['middle left' if season == '2013-14' else 'middle right' for season in club_data['season']],
+            textfont=dict(color=colour_),
             marker=dict(color=color, size=marker_size),
             line=dict(color=color, width=line_width)
         ))

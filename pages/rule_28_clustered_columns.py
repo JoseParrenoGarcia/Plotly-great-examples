@@ -9,7 +9,7 @@ from utils.load_data import (
 
 from utils.bar_chart_examples.workforce_by_sector_plot import workforce_by_sector_subplots_bar_charts, workforce_by_sector_subplots_bar_charts_plotly_express, workforce_by_sector_stacked_bar_chart
 from utils.bar_chart_examples.food_exports_plot import food_exports_subplots_dot_charts, food_exports_subplots_dot_charts_plotly_express
-from utils.bar_chart_examples.uefa_rankings_plot import uefa_ranking_slope_chart
+from utils.bar_chart_examples.uefa_rankings_plot import uefa_ranking_slope_chart, uefa_ranking_slope_chart_plotly_express
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -89,6 +89,9 @@ with comparing_2_groups_tab:
 
     with st.expander("Expand to see the data"):
         st.dataframe(uefa_clubs_rankings_df, hide_index=True)
+
+    with st.container(border=True):
+        st.plotly_chart(uefa_ranking_slope_chart_plotly_express(uefa_clubs_rankings_df))
 
     with st.container(border=True):
         st.plotly_chart(uefa_ranking_slope_chart(uefa_clubs_rankings_df))
