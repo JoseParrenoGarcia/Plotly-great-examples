@@ -1,5 +1,31 @@
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import plotly.express as px
+
+def food_exports_subplots_dot_charts_plotly_express(df, colour='Food'):
+    if colour=='Food':
+        df = df.sort_values('Food', ascending=False)
+        x_ = 'Country'
+    else:
+        df = df.sort_values('Country', ascending = False)
+        x_ = 'Food'
+
+    fig = px.bar(
+        df,
+        x=x_,
+        y='percentage',
+        color=colour,
+        title='How the Netherlands feeds the world'
+    )
+
+    fig.update_layout(
+        font=dict(family="Helvetica Neue"),
+        height=600,
+        width=750,
+        barmode='group'
+    )
+
+    return fig
 
 def food_exports_subplots_dot_charts(df):
     list_of_categories = df['Food'].unique().tolist()
