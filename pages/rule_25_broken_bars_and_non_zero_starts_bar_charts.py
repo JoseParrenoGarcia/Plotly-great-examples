@@ -9,7 +9,7 @@ from utils.load_data import (
 
 )
 
-from utils.bar_chart_examples.mountains_plot import mountain_bar_chart_plot
+from utils.bar_chart_examples.mountains_plot import mountain_bar_chart_plot, mountain_bar_chart_plot_plotly_express
 from utils.bar_chart_examples.sex_ratio_at_birth_plot import (
     sex_ratio_at_birth_bar_chart_plot,
     sex_ratio_at_birth_dot_plot,
@@ -59,6 +59,9 @@ with non_zero_starts_tab:
 
     with st.expander('Expand see to dataframe'):
         st.dataframe(mountain_or_structure_heights_df, hide_index=True)
+
+    with st.container(border=True):
+        st.plotly_chart(mountain_bar_chart_plot_plotly_express(mountain_or_structure_heights_df))
 
     with st.container(border=True):
         st.plotly_chart(mountain_bar_chart_plot(mountain_or_structure_heights_df))

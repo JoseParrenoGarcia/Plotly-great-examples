@@ -1,5 +1,25 @@
 import plotly.graph_objects as go
+import plotly.express as px
 import numpy as np
+
+def mountain_bar_chart_plot_plotly_express(df):
+    df = df.sort_values('Height vs Sea Level (km)', ascending=False)
+
+    fig = px.bar(
+        df,
+        x='Name',
+        y='Height vs Sea Level (km)',
+        title='The biggest natural structures on Earth'
+    )
+
+    fig.update_layout(
+        font=dict(family="Helvetica Neue"),
+        height=600,
+        width=750,
+    )
+
+    return fig
+
 
 def replace_spaces_with_br(text):
     return text.replace(' ', '<br>')
