@@ -8,7 +8,7 @@ from utils.load_data import (
 )
 
 from utils.bar_chart_examples.workforce_by_sector_plot import workforce_by_sector_subplots_bar_charts, workforce_by_sector_subplots_bar_charts_plotly_express, workforce_by_sector_stacked_bar_chart
-from utils.bar_chart_examples.food_exports_plot import food_exports_subplots_dot_charts
+from utils.bar_chart_examples.food_exports_plot import food_exports_subplots_dot_charts, food_exports_subplots_dot_charts_plotly_express
 from utils.bar_chart_examples.uefa_rankings_plot import uefa_ranking_slope_chart
 
 # ---------------------------------------------------------------------
@@ -68,6 +68,15 @@ with outlier_categories_tab:
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/food_exports_plot.py)")
 
+    with st.expander("Expand to see the data"):
+        st.dataframe(percentage_of_global_food_exports_df, hide_index=True)
+
+    with st.container(border=True):
+        st.plotly_chart(food_exports_subplots_dot_charts_plotly_express(percentage_of_global_food_exports_df, colour='Food'))
+
+    with st.container(border=True):
+        st.plotly_chart(food_exports_subplots_dot_charts_plotly_express(percentage_of_global_food_exports_df, colour='Country'))
+
     with st.container(border=True):
         st.plotly_chart(food_exports_subplots_dot_charts(percentage_of_global_food_exports_df))
 
@@ -77,6 +86,9 @@ with comparing_2_groups_tab:
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/uefa_rankings_plot.py)")
+
+    with st.expander("Expand to see the data"):
+        st.dataframe(uefa_clubs_rankings_df, hide_index=True)
 
     with st.container(border=True):
         st.plotly_chart(uefa_ranking_slope_chart(uefa_clubs_rankings_df))
