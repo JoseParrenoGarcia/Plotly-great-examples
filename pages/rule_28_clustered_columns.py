@@ -7,7 +7,7 @@ from utils.load_data import (
     workforce_by_sector_data
 )
 
-from utils.bar_chart_examples.workforce_by_sector_plot import workforce_by_sector_subplots_bar_charts
+from utils.bar_chart_examples.workforce_by_sector_plot import workforce_by_sector_subplots_bar_charts, workforce_by_sector_subplots_bar_charts_plotly_express, workforce_by_sector_stacked_bar_chart
 from utils.bar_chart_examples.food_exports_plot import food_exports_subplots_dot_charts
 from utils.bar_chart_examples.uefa_rankings_plot import uefa_ranking_slope_chart
 
@@ -44,8 +44,17 @@ with many_categories_tab:
     st.subheader('Use subplots, not multiple colours.')
 
     st.write('')
-    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/11/19/rule-28-use-a-clustered-column-to-show-multiple-series)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/workforce_by_sector_plot.py)")
+
+    with st.expander("Expand to see the data"):
+        st.dataframe(workforce_by_sector_df, hide_index=True)
+
+    with st.container(border=True):
+        st.plotly_chart(workforce_by_sector_subplots_bar_charts_plotly_express(workforce_by_sector_df))
+
+    with st.container(border=True):
+        st.plotly_chart(workforce_by_sector_stacked_bar_chart(workforce_by_sector_df))
 
     with st.container(border=True):
         st.plotly_chart(workforce_by_sector_subplots_bar_charts(workforce_by_sector_df))
