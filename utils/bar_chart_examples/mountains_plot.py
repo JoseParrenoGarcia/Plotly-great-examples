@@ -87,16 +87,6 @@ def mountain_bar_chart_plot(df):
                 font=dict(family="Helvetica Neue", size=10),
                 align="center"
             ),
-            # dict(
-            #     text='Sea level',
-            #     xref="paper",
-            #     yref="y",
-            #     x=-0.09,
-            #     y=0,
-            #     showarrow=False,
-            #     font=dict(family="Helvetica Neue", size=12),
-            #     align="left"
-            # ),
         ],
         font=dict(family="Helvetica Neue", size=10),
         yaxis=dict(title="",
@@ -117,5 +107,31 @@ def mountain_bar_chart_plot(df):
     fig.add_hline(y=df['height_sea_level'].max(), line_color="lightgrey", line_width=1, line_dash='dash',
                   annotation_text='Highest point above sea level', annotation_position='top left'
                   )
+
+    fig.add_annotation(
+        x='Puerto Rico Trench',
+        y=5.5,  # Slightly above the y-value
+        text='<b><i>Mauna Kea</i></b> is actually<br>the highest natural<br>structure on Earth<br>with 10.2km',
+        xref="x",
+        yref="y",
+        showarrow=False,
+        borderpad=10,
+        font=dict(family="Helvetica Neue", size=10),
+        align='center',
+    )
+
+    fig.add_shape(
+        type="rect",
+        xref="x",
+        yref="y",
+        x0='Java Trench',
+        y0=3.8,
+        x1='Tonga Trench',
+        y1=7.2,
+        fillcolor="lightgrey",
+        opacity=0.5,
+        layer="below",
+        line_width=0,
+    )
 
     return fig

@@ -57,6 +57,9 @@ with non_zero_starts_tab:
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/mountains_plot.py)")
 
+    with st.expander('Expand see to dataframe'):
+        st.dataframe(mountain_or_structure_heights_df, hide_index=True)
+
     with st.container(border=True):
         st.plotly_chart(mountain_bar_chart_plot(mountain_or_structure_heights_df))
 
