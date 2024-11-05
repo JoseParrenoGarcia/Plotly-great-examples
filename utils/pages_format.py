@@ -12,5 +12,6 @@ def pages_format():
             Page("pages/rule_25_broken_bars_and_non_zero_starts_bar_charts.py", "R25. Non zero starts and broken bars"),
             Page("pages/rule_28_clustered_columns.py", "R28. Careful with clustered columns"),
             Page("pages/line_chart_section.py", "Rules for line charts", "📈"),
+            Page("pages/rule_30_lines_distance.py", "R30. Lines can represent distance"),
         ]
     )

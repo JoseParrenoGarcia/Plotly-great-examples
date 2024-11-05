@@ -670,4 +670,12 @@ def workforce_by_sector_data():
 
     return df
 
+def driving_women_data():
+    df = (pd.read_csv('data/driving-women.csv', sep=';')
+          .drop(columns=['Unnamed: 10'])
+          .melt(id_vars=['Year', 'Sex'], var_name='age_group', value_name='percentage')
+          )
 
+    df['percentage'] = pd.to_numeric(df['percentage'], errors='coerce')
+
+    return df
