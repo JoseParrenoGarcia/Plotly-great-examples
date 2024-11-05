@@ -22,16 +22,19 @@ driving_women_data_df = driving_women_data()
 # ---------------------------------------------------------------------
 # MAIN PANEL
 # ---------------------------------------------------------------------
-(physical_distance_tab,
+(timeseries_tab,
+ physical_distance_tab,
  other_distances_tab,
  )  = st.tabs(
-    ["📊 Physical distance",
+    ["📊 Timeline",
+     "📊 Timeseries",
+     "📊 Physical distance",
      "🚩 Other types of distance",
      ]
 )
 
-with physical_distance_tab:
-    st.subheader('Physical distance')
+with timeseries_tab:
+    st.subheader('Time series')
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/1/28/rule-30-a-line-chart-should-only-show-change-over-time)")
