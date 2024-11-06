@@ -3,7 +3,8 @@ from utils.pages_format import pages_format
 
 from utils.load_data import (
     driving_women_data,
-    space_race_data
+    space_race_data,
+    island_distances_data
 )
 
 # ---------------------------------------------------------------------
@@ -20,6 +21,7 @@ pages_format()
 # ---------------------------------------------------------------------
 driving_women_data_df = driving_women_data()
 space_race_data_df = space_race_data()
+island_distances_data_df = island_distances_data()
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -40,6 +42,8 @@ with timeline_tab:
     st.subheader('Timeline')
 
     st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/1/28/rule-30-a-line-chart-should-only-show-change-over-time)")
+
     with st.expander("Expand to see the data"):
         st.dataframe(space_race_data_df, hide_index=True)
 
@@ -53,3 +57,14 @@ with timeseries_tab:
 
     with st.expander("Expand to see the data"):
         st.dataframe(driving_women_data_df, hide_index=True)
+
+with physical_distance_tab:
+    st.subheader('Physical distances')
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/1/28/rule-30-a-line-chart-should-only-show-change-over-time)")
+
+    with st.expander("Expand to see the data"):
+        st.dataframe(island_distances_data_df, hide_index=True)
+
+
