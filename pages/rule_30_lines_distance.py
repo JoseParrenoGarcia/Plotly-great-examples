@@ -2,7 +2,8 @@ import streamlit as st
 from utils.pages_format import pages_format
 
 from utils.load_data import (
-    driving_women_data
+    driving_women_data,
+    space_race_data
 )
 
 # ---------------------------------------------------------------------
@@ -18,20 +19,30 @@ pages_format()
 # Data read
 # ---------------------------------------------------------------------
 driving_women_data_df = driving_women_data()
+space_race_data_df = space_race_data()
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
 # ---------------------------------------------------------------------
 (timeseries_tab,
+ timeline_tab,
  physical_distance_tab,
  other_distances_tab,
  )  = st.tabs(
-    ["📊 Timeline",
-     "📊 Timeseries",
+    ["📊 Timeseries",
+     "📊 Timeline",
      "📊 Physical distance",
      "🚩 Other types of distance",
      ]
 )
+
+with timeline_tab:
+    st.subheader('Timeline')
+
+    st.write('')
+    with st.expander("Expand to see the data"):
+        st.dataframe(space_race_data_df, hide_index=True)
+
 
 with timeseries_tab:
     st.subheader('Time series')

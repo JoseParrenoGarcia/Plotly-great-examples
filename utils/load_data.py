@@ -679,3 +679,8 @@ def driving_women_data():
     df['percentage'] = pd.to_numeric(df['percentage'], errors='coerce')
 
     return df
+
+def space_race_data():
+    df = (pd.read_csv('data/timeline-space-race.csv', sep=';'))
+
+    return df
