@@ -4,7 +4,8 @@ from utils.pages_format import pages_format
 from utils.load_data import (
     driving_women_data,
     space_race_data,
-    island_distances_data
+    island_distances_data,
+    political_view_survey_data
 )
 
 # ---------------------------------------------------------------------
@@ -22,6 +23,7 @@ pages_format()
 driving_women_data_df = driving_women_data()
 space_race_data_df = space_race_data()
 island_distances_data_df = island_distances_data()
+political_view_survey_data_df = political_view_survey_data()
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -31,10 +33,10 @@ island_distances_data_df = island_distances_data()
  physical_distance_tab,
  other_distances_tab,
  )  = st.tabs(
-    ["📊 Timeseries",
-     "📊 Timeline",
-     "📊 Physical distance",
-     "🚩 Other types of distance",
+    ["📈 Timeseries",
+     "⏱️ Timeline",
+     "🚶‍♀️ Physical distance",
+     "📏 Other types of distance",
      ]
 )
 
@@ -67,4 +69,12 @@ with physical_distance_tab:
     with st.expander("Expand to see the data"):
         st.dataframe(island_distances_data_df, hide_index=True)
 
+with other_distances_tab:
+    st.subheader('Other distances')
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/1/28/rule-30-a-line-chart-should-only-show-change-over-time)")
+
+    with st.expander("Expand to see the data"):
+        st.dataframe(political_view_survey_data_df, hide_index=True)
 

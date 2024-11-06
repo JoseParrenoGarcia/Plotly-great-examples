@@ -689,3 +689,8 @@ def island_distances_data():
     df = (pd.read_csv('data/island-distances.csv', sep=';'))
 
     return df
+
+def political_view_survey_data():
+    df = (pd.read_csv('data/political-view-survey.csv', sep=';'))
+
+    return df
