@@ -17,6 +17,7 @@ from utils.bar_chart_examples.sex_ratio_at_birth_plot import (
 )
 from utils.bar_chart_examples.ae_waiting_times_plot import (AE_waiting_times_bar_chart_plot, AE_waiting_times_dot_plot)
 from utils.bar_chart_examples.languages_plot import (languages_bar_chart_plot, languages_stacked_bar_chart)
+from utils.bar_chart_examples.waterfall_bar_chart import waterfall_bar_chart
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -62,9 +63,10 @@ with non_zero_starts_tab:
 
     with st.container(border=True):
         st.plotly_chart(mountain_bar_chart_plot_plotly_express(mountain_or_structure_heights_df))
+        st.plotly_chart(mountain_bar_chart_plot(mountain_or_structure_heights_df))
 
     with st.container(border=True):
-        st.plotly_chart(mountain_bar_chart_plot(mountain_or_structure_heights_df))
+        st.plotly_chart(waterfall_bar_chart())
 
 with hidden_differences_tab:
     st.subheader('Starting at zero will hide differences')
