@@ -670,4 +670,27 @@ def workforce_by_sector_data():
 
     return df
 
+def driving_women_data():
+    df = (pd.read_csv('data/driving-women.csv', sep=';')
+          .drop(columns=['Unnamed: 10'])
+          .melt(id_vars=['Year', 'Sex'], var_name='age_group', value_name='percentage')
+          )
 
+    df['percentage'] = pd.to_numeric(df['percentage'], errors='coerce')
+
+    return df
+
+def space_race_data():
+    df = (pd.read_csv('data/timeline-space-race.csv', sep=';'))
+
+    return df
+
+def island_distances_data():
+    df = (pd.read_csv('data/island-distances.csv', sep=';'))
+
+    return df
+
+def political_view_survey_data():
+    df = (pd.read_csv('data/political-view-survey.csv', sep=';'))
+
+    return df

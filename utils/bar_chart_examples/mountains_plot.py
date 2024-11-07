@@ -131,7 +131,7 @@ def mountain_bar_chart_plot(df):
     fig.add_annotation(
         x='Puerto Rico Trench',
         y=5.5,  # Slightly above the y-value
-        text='<b><i>Mauna Kea</i></b> is actually<br>the highest natural<br>structure on Earth<br>with 10.2km',
+        text='<b><i>Mauna Kea</i></b> is actually<br>the highest mountain<br>with 4.2km are above<br>sea level',
         xref="x",
         yref="y",
         showarrow=False,

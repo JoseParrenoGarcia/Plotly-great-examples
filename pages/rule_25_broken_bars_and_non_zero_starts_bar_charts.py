@@ -54,7 +54,7 @@ with non_zero_starts_tab:
     st.subheader('Sometimes a chart needs to start at a non-zero value')
 
     st.write('')
-    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/9/26/rule-25-always-start-your-bar-charts-at-zero)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/mountains_plot.py)")
 
     with st.expander('Expand see to dataframe'):
@@ -73,14 +73,17 @@ with hidden_differences_tab:
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/sex_ratio_at_birth_plot.py)")
 
+    with st.expander('Expand see to dataframe'):
+        st.dataframe(sex_ratio_df, hide_index=True)
+
     with st.container(border=True):
         st.plotly_chart(sex_ratio_at_birth_bar_chart_plot(sex_ratio_df))
 
-        # Dot plot
-        st.plotly_chart(sex_ratio_at_birth_dot_plot(sex_ratio_df))
-
         # Deviation plot
         st.plotly_chart(sex_ratio_at_birth_bar_deviation_plot(sex_ratio_df))
+
+        # Dot plot
+        st.plotly_chart(sex_ratio_at_birth_dot_plot(sex_ratio_df))
 
 with small_or_big_drops_tab:
     st.subheader('Small or big drops in a timeseries are not well represented with a bar chart')
@@ -88,6 +91,9 @@ with small_or_big_drops_tab:
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/ae_waiting_times_plot.py)")
+
+    with st.expander('Expand see to dataframe'):
+        st.dataframe(AE_waiting_times_df, hide_index=True)
 
     with st.container(border=True):
         st.plotly_chart(AE_waiting_times_bar_chart_plot(AE_waiting_times_df))
@@ -99,6 +105,9 @@ with dominating_category_tab:
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/languages_plot.py)")
+
+    with st.expander('Expand see to dataframe'):
+        st.dataframe(speaking_languages_df, hide_index=True)
 
     with st.container(border=True):
         st.plotly_chart(languages_bar_chart_plot(speaking_languages_df))
