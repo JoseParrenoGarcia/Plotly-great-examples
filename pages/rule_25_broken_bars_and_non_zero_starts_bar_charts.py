@@ -73,14 +73,17 @@ with hidden_differences_tab:
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/sex_ratio_at_birth_plot.py)")
 
+    with st.expander('Expand see to dataframe'):
+        st.dataframe(sex_ratio_df, hide_index=True)
+
     with st.container(border=True):
         st.plotly_chart(sex_ratio_at_birth_bar_chart_plot(sex_ratio_df))
 
-        # Dot plot
-        st.plotly_chart(sex_ratio_at_birth_dot_plot(sex_ratio_df))
-
         # Deviation plot
         st.plotly_chart(sex_ratio_at_birth_bar_deviation_plot(sex_ratio_df))
+
+        # Dot plot
+        st.plotly_chart(sex_ratio_at_birth_dot_plot(sex_ratio_df))
 
 with small_or_big_drops_tab:
     st.subheader('Small or big drops in a timeseries are not well represented with a bar chart')

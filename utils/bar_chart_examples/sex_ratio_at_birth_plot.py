@@ -63,7 +63,7 @@ def sex_ratio_at_birth_dot_plot(df):
     # Customize the layout
     fig.update_layout(
         title=dict(
-            text='Number of male born babies for every 100 female babies',
+            text='Number of male for every 100 female babies',
             y=0.95,
             x=0,
             xanchor='left',
@@ -81,7 +81,7 @@ def sex_ratio_at_birth_dot_plot(df):
                    ),
         margin=dict(t=60, pad=0),
         height=450,
-        width=750,
+        width=480,
     )
 
     hist_avg = df['ratio_avg'].min().round(0)
@@ -112,7 +112,7 @@ def sex_ratio_at_birth_bar_deviation_plot(df):
     # Customize the layout
     fig.update_layout(
         title=dict(
-            text='Number of male born babies for every 100 female babies',
+            text='Number of male for every 100 female babies',
             y=0.95,
             x=0,
             xanchor='left',
@@ -128,7 +128,7 @@ def sex_ratio_at_birth_bar_deviation_plot(df):
         xaxis=dict(visible=False),
         margin=dict(t=60, pad=0),
         height=450,
-        width=750,
+        width=580,
     )
 
     fig.add_vline(x=0, line_color="darkgrey", line_width=3,
