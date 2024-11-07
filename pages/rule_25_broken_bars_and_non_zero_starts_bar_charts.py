@@ -92,6 +92,9 @@ with small_or_big_drops_tab:
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/ae_waiting_times_plot.py)")
 
+    with st.expander('Expand see to dataframe'):
+        st.dataframe(AE_waiting_times_df, hide_index=True)
+
     with st.container(border=True):
         st.plotly_chart(AE_waiting_times_bar_chart_plot(AE_waiting_times_df))
         st.plotly_chart(AE_waiting_times_dot_plot(AE_waiting_times_df))
@@ -102,6 +105,9 @@ with dominating_category_tab:
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/languages_plot.py)")
+
+    with st.expander('Expand see to dataframe'):
+        st.dataframe(speaking_languages_df, hide_index=True)
 
     with st.container(border=True):
         st.plotly_chart(languages_bar_chart_plot(speaking_languages_df))
