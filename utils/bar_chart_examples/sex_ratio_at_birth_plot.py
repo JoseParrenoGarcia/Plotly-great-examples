@@ -1,6 +1,8 @@
 import plotly.graph_objects as go
 
 def sex_ratio_at_birth_bar_chart_plot(df):
+    df = df.sort_values('ratio_rank', ascending=True).copy()
+
     fig = go.Figure()
 
     fig.add_trace(
@@ -45,8 +47,6 @@ def sex_ratio_at_birth_bar_chart_plot(df):
 
 
 def sex_ratio_at_birth_dot_plot(df):
-    df = df.sort_values('ratio_rank', ascending=False).copy()
-
     fig = go.Figure()
 
     fig.add_trace(
@@ -91,10 +91,6 @@ def sex_ratio_at_birth_dot_plot(df):
     return fig
 
 def sex_ratio_at_birth_bar_deviation_plot(df):
-    hist_avg = df['ratio_avg'].min().round(0)
-    df['deviation'] = df['ratio'] - hist_avg
-    df = df.sort_values('ratio_rank', ascending=False).copy()
-
     fig = go.Figure()
 
     fig.add_trace(
@@ -131,6 +127,7 @@ def sex_ratio_at_birth_bar_deviation_plot(df):
         width=580,
     )
 
+    hist_avg = df['ratio_avg'].min().round(0)
     fig.add_vline(x=0, line_color="darkgrey", line_width=3,
                   annotation_text=f'Historical average - {hist_avg}', annotation_position='bottom right')
 
