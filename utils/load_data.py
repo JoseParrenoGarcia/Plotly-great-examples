@@ -517,6 +517,10 @@ def sex_ratio_data():
                  .sort_values('ratio_rank')
                  )
 
+    hist_avg = return_df['ratio_avg'].min().round(0)
+    return_df['deviation'] = return_df['ratio'] - hist_avg
+    return_df = return_df.sort_values('ratio_rank', ascending=False).copy()
+
     return return_df
 
 def AE_waiting_times_data():
