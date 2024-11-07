@@ -54,7 +54,7 @@ with non_zero_starts_tab:
     st.subheader('Sometimes a chart needs to start at a non-zero value')
 
     st.write('')
-    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/8/18/rule-24-label-your-bars-and-axes)")
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2021/9/26/rule-25-always-start-your-bar-charts-at-zero)")
     st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/mountains_plot.py)")
 
     with st.expander('Expand see to dataframe'):
