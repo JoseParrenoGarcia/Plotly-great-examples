@@ -12,6 +12,7 @@ def languages_bar_chart_plot(df):
                y=df['Observation'],
                marker_color='darkblue',
                showlegend=False,
+               text=[f'{obs / 1e3:,.0f}k' for obs in df['Observation']],
             )
     )
 
@@ -67,7 +68,7 @@ def languages_stacked_bar_chart(df):
     second_chart_data = (df
                          .query("language_group == 'All other languages'")
                          .query("observation_rank <= 10")
-                         .sort_values('Observation', ascending=False))
+                         .sort_values(['Observation'], ascending=False))
 
     # Create the first bar chart
     fig = make_subplots(rows=1, cols=2, column_widths=[0.3, 0.7])
@@ -82,7 +83,6 @@ def languages_stacked_bar_chart(df):
             textposition='outside',
             showlegend=False,
             marker_color=['rgb(52, 152, 219)' if lang == 'English' else 'rgb(115, 198, 182)' for lang in first_chart_data['language_group_text']],
-            # marker_line=dict(color='black', width=1),
         ),
         row=1, col=1
     )
@@ -97,7 +97,6 @@ def languages_stacked_bar_chart(df):
             textposition='outside',
             showlegend=False,
             marker_color='rgb(115, 198, 182)',
-            # marker_line=dict(color='black', width=1),
         ),
         row=1, col=2
     )

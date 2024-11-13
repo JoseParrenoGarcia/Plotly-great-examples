@@ -315,7 +315,7 @@ def favourite_weekday_data():
 def favourite_animal_data():
     data = {
         "Rank": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-        "Animal": ["Tiger", "Dog", "Dolphin", "Horse", "Lion", "Snake", "Elephant", "Chimpanzee", "Orang-utan", "Whale"],
+        "Animal": ["Tiger", "Dog", "Dolphin", "Horse", "Lion", "Snake", "Elephant", "Chimpanzee", "Orangutan", "Whale"],
         "Percentage": [21.0, 20.0, 13.0, 10.0, 9.0, 8.0, 6.0, 5.0, 4.5, 3.5]
     }
 
@@ -557,7 +557,7 @@ def speaking_languages_data():
                   )
           .groupby(['language', 'language_group'], as_index=False)
           .agg({'Observation': 'sum'})
-          .assign(observation_rank=lambda x: x['Observation'].rank(ascending=False, method='dense'),)
+          .assign(observation_rank=lambda x: x['Observation'].rank(ascending=False, method='first'),)
           .query("language != 'Does not apply'")
           .sort_values('observation_rank')
           )
