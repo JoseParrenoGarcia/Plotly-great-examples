@@ -8,7 +8,7 @@ from utils.load_data import (
 )
 
 from utils.bar_chart_examples.workforce_by_sector_plot import workforce_by_sector_subplots_bar_charts, workforce_by_sector_subplots_bar_charts_plotly_express, workforce_by_sector_stacked_bar_chart
-from utils.bar_chart_examples.food_exports_plot import food_exports_subplots_dot_charts, food_exports_subplots_dot_charts_plotly_express
+from utils.bar_chart_examples.food_exports_plot import food_exports_subplots_dot_charts, food_exports_subplots_dot_charts_plotly_express, food_exports_stacked_bar_chart, food_exports_stacked_bar_chart2
 from utils.bar_chart_examples.uefa_rankings_plot import uefa_ranking_slope_chart, uefa_ranking_slope_chart_plotly_express
 
 # ---------------------------------------------------------------------
@@ -76,6 +76,12 @@ with outlier_categories_tab:
 
     with st.container(border=True):
         st.plotly_chart(food_exports_subplots_dot_charts_plotly_express(percentage_of_global_food_exports_df, colour='Country'))
+
+    with st.container(border=True):
+        st.plotly_chart(food_exports_stacked_bar_chart(percentage_of_global_food_exports_df))
+
+    with st.container(border=True):
+        st.plotly_chart(food_exports_stacked_bar_chart2(percentage_of_global_food_exports_df))
 
     with st.container(border=True):
         st.plotly_chart(food_exports_subplots_dot_charts(percentage_of_global_food_exports_df))
