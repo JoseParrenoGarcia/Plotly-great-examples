@@ -109,3 +109,76 @@ def food_exports_subplots_dot_charts(df):
     return fig
 
 
+def food_exports_stacked_bar_chart(df):
+    df = df.sort_values(['Food', 'percentage'], ascending=[True, True])
+
+    fig = go.Figure()
+
+    for Food in df['Food'].unique():
+        aux_df = df[df['Food'] == Food].copy()
+
+        fig.add_trace(
+            go.Bar(
+                x=aux_df['percentage'],
+                y=aux_df['Country'],
+                orientation='h',
+                name=Food,
+                text=aux_df['percentage'],
+                textposition='auto',
+            )
+        )
+
+    fig.update_layout(
+        barmode='stack',
+        font=dict(family="Helvetica Neue", size=10),
+        height=600,
+        width=750,
+        title=dict(
+            text='How the Netherlands feeds the world',
+            y=0.95,
+            x=0,
+            xanchor='left',
+            yanchor='top',
+            font=dict(family="Helvetica Neue", size=24),
+        ),
+        uniformtext_minsize=8, uniformtext_mode='hide'
+    )
+
+    return fig
+
+def food_exports_stacked_bar_chart2(df):
+    df = df.sort_values(['Country', 'percentage'], ascending=[True, True])
+
+    fig = go.Figure()
+
+    for Country in df['Country'].unique():
+        aux_df = df[df['Country'] == Country].copy()
+
+        fig.add_trace(
+            go.Bar(
+                x=aux_df['percentage'],
+                y=aux_df['Food'],
+                orientation='h',
+                name=Country,
+                text=aux_df['percentage'],
+                textposition='auto',
+            )
+        )
+
+    fig.update_layout(
+        barmode='stack',
+        font=dict(family="Helvetica Neue", size=10),
+        height=600,
+        width=750,
+        title=dict(
+            text='How the Netherlands feeds the world',
+            y=0.95,
+            x=0,
+            xanchor='left',
+            yanchor='top',
+            font=dict(family="Helvetica Neue", size=24),
+        ),
+        uniformtext_minsize=8, uniformtext_mode='hide'
+    )
+
+    return fig
