@@ -721,3 +721,9 @@ def european_elections_data():
     df = (pd.read_csv('data/eu2024.csv', sep=';'))
 
     return df
+
+def UK_elections_data():
+    # https://commonslibrary.parliament.uk/research-briefings/CBP-8647/#fullreport
+    df = (pd.read_csv('data/UK_1918-2019election_results.csv', sep=',', encoding='ISO-8859-1'))
+
+    return df
