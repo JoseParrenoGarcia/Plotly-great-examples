@@ -13,5 +13,6 @@ def pages_format():
             Page("pages/rule_28_clustered_columns.py", "R28. Careful with clustered columns"),
             Page("pages/line_chart_section.py", "Rules for line charts", "📈"),
             Page("pages/rule_30_lines_distance.py", "R30. Lines can represent distance"),
+            Page("pages/rule_31_too_many_lines.py", "R31. Too many lines"),
         ]
     )

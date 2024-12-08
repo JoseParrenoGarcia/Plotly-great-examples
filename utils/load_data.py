@@ -694,3 +694,8 @@ def political_view_survey_data():
     df = (pd.read_csv('data/political-view-survey.csv', sep=';'))
 
     return df
+
+def fertility_rates_data():
+    df = (pd.read_csv('data/fertility_rates1.csv', sep=','))
+
+    return df
