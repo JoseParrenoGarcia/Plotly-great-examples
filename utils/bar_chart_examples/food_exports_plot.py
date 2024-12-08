@@ -48,41 +48,45 @@ def food_exports_subplots_dot_charts(df):
                         )
 
     for i, feature in enumerate(list_of_categories):
-        row = i + 1
+        c = i + 1
 
-        if row == 1:
+        if c == 1:
             aux_df = df[df['Food'] == feature].sort_values('percentage', ascending=False).copy()
         else:
             aux_df = df[df['Food'] == feature].copy()
 
 
         # Add bar chart to the subplot
+        text = [f"{val}%" for val in aux_df['percentage'].round(0)]
+        textposition = ['top center' if val < 10 else 'middle center' for val in aux_df['percentage']]
+        textfont = dict(color=['grey' if val < 10 else 'white' for val in aux_df['percentage']])
+        marker = dict(size=aux_df['percentage'] * 3,
+                      color=['rgb(0, 61, 165)' if country == 'Netherlands 🇳🇱' else 'darkgrey' for country in aux_df['Country']])
 
         fig.add_trace(
             go.Scatter(
                 y=aux_df['Country'],
                 x=[1] * len(aux_df),
                 mode='markers+text',
-                text=[f"{val}%" for val in aux_df['percentage'].round(0)],
-                textposition=['top center' if val < 10 else 'middle center' for val in aux_df['percentage']],
-                textfont=dict(color=['grey' if val < 10 else 'white' for val in aux_df['percentage']]),
-                marker=dict(size=aux_df['percentage']*3,
-                            color=['rgb(0, 61, 165)' if country == 'Netherlands 🇳🇱' else 'darkgrey' for country in aux_df['Country']]),
+                text=text,
+                textposition=textposition,
+                textfont=textfont,
+                marker=marker,
                 showlegend=False,
             ),
-            row=1, col=row
+            row=1, col=c
         )
         # Update the layout for each subplot
         fig.update_xaxes(
             visible=False,
-            row=1, col=row
+            row=1, col=c
         )
         fig.update_yaxes(
             title_text='',
             showline=False,
             showgrid=False,
             tickfont=dict(weight='bold'),
-            row=1, col=row
+            row=1, col=c
         )
 
     # Adjust the y position of the subplot titles
