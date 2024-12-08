@@ -1,4 +1,4 @@
-from st_pages import Page, Section, show_pages
+from st_pages import Page, show_pages
 
 def pages_format():
     show_pages(
@@ -15,5 +15,6 @@ def pages_format():
             Page("pages/rule_30_lines_distance.py", "R30. Lines can represent distance"),
             Page("pages/rule_31_too_many_lines.py", "R31. Too many lines"),
             Page("pages/rule_32_colours_with_meaning.py", "R32. Colours with meaning"),
+            Page("pages/rule_35_markers_on_lines.py", "R35. Markers on lines"),
         ]
     )
