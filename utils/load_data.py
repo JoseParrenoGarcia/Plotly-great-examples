@@ -701,6 +701,7 @@ def fertility_rates_data():
     return df
 
 def smoking_rates_data():
+    # https://ourworldindata.org/grapher/sales-of-cigarettes-per-adult-per-day?v=1&csvType=full&useColumnShortNames=false
     df = (pd.read_csv('data/sales-of-cigarettes-per-adult-per-day.csv', sep=','))
 
     return df
@@ -712,5 +713,11 @@ def new_books_data():
 
 def alcohol_consumption_data():
     df = (pd.read_csv('data/alcohol_consumption.csv', sep=','))
+
+    return df
+
+def european_elections_data():
+    # https://results.elections.europa.eu/en/tools/download-datasheets/
+    df = (pd.read_csv('data/eu2024.csv', sep=';'))
 
     return df
