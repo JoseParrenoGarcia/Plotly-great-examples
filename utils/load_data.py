@@ -737,8 +737,14 @@ def kids_before_marriage_data():
 
     return pd.DataFrame(data)
 
-def ireland_population():
+def ireland_population_data():
     # https: // en.wikipedia.org / wiki / Historical_population_of_Ireland
     df = (pd.read_csv('data/ireland_population.csv', sep=';'))
+
+    return df
+
+def contraceptive_use_data():
+    # https://genderdata.worldbank.org/en/indicator/sp-dyn-zs#data-table-section
+    df = (pd.read_csv('data/contraceptive-prevalence-of-women-ages-15-49.csv', sep=','))
 
     return df

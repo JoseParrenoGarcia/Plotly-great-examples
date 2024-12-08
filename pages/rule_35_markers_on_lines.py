@@ -4,8 +4,8 @@ from utils.pages_format import pages_format
 from utils.load_data import (
     UK_elections_data,
     kids_before_marriage_data,
-    ireland_population,
-    # european_elections_data
+    ireland_population_data,
+    contraceptive_use_data
 )
 
 # ---------------------------------------------------------------------
@@ -22,8 +22,8 @@ pages_format()
 # ---------------------------------------------------------------------
 UK_elections_data_df = UK_elections_data()
 kids_before_marriage_data_df = kids_before_marriage_data()
-ireland_population_df = ireland_population()
-# european_elections_data_df = european_elections_data()
+ireland_population_df = ireland_population_data()
+contraceptive_use_data_df = contraceptive_use_data()
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -31,12 +31,12 @@ ireland_population_df = ireland_population()
 (uneven_intervals_tab,
  not_a_lot_of_data_tab,
  important_events_tab,
- colours_with_meaning_tab,
+ replacement_for_legend_tab,
  )  = st.tabs(
     ["📈 Uneven intervals",
      "🚶‍♀️ Not a lot of data",
-     "⏱️ Important events tab",
-     "📏 Colours with meaning",
+     "⏱️ Important events",
+     "📏 Replacement for legend",
      ]
 )
 
@@ -66,13 +66,13 @@ with important_events_tab:
 
     with st.expander("Expand to see the data"):
         st.dataframe(ireland_population_df, hide_index=True)
-#
-# with colour_hierarchy_tab:
-#     st.subheader('Colour hierarchy through colours')
-#
-#     st.write('')
-#     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2023/1/5/rule-35-add-data-markers-to-your-lines)")
-#
-#     # with st.expander("Expand to see the data"):
-#     #     st.dataframe(alcohol_consumption_data_df, hide_index=True)
+
+with replacement_for_legend_tab:
+    st.subheader('Colour hierarchy through colours')
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2023/1/5/rule-35-add-data-markers-to-your-lines)")
+
+    with st.expander("Expand to see the data"):
+        st.dataframe(contraceptive_use_data_df, hide_index=True)
 
