@@ -727,3 +727,12 @@ def UK_elections_data():
     df = (pd.read_csv('data/UK_1918-2019election_results.csv', sep=',', encoding='ISO-8859-1'))
 
     return df
+
+def kids_before_marriage_data():
+    # https://natcen.ac.uk/sites/default/files/2023-08/bsa30_personal_relationships_final.pdf
+    data = {
+        'year': [1989, 1994, 2000, 2002, 2010, 2012],
+        'percentage': [70, 57, 53, 51, 42, 42],
+    }
+
+    return pd.DataFrame(data)
