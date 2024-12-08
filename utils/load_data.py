@@ -736,3 +736,9 @@ def kids_before_marriage_data():
     }
 
     return pd.DataFrame(data)
+
+def ireland_population():
+    # https: // en.wikipedia.org / wiki / Historical_population_of_Ireland
+    df = (pd.read_csv('data/ireland_population.csv', sep=';'))
+
+    return df

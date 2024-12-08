@@ -4,7 +4,7 @@ from utils.pages_format import pages_format
 from utils.load_data import (
     UK_elections_data,
     kids_before_marriage_data,
-    # alcohol_consumption_data,
+    ireland_population,
     # european_elections_data
 )
 
@@ -22,7 +22,7 @@ pages_format()
 # ---------------------------------------------------------------------
 UK_elections_data_df = UK_elections_data()
 kids_before_marriage_data_df = kids_before_marriage_data()
-# alcohol_consumption_data_df = alcohol_consumption_data()
+ireland_population_df = ireland_population()
 # european_elections_data_df = european_elections_data()
 
 # ---------------------------------------------------------------------
@@ -30,12 +30,12 @@ kids_before_marriage_data_df = kids_before_marriage_data()
 # ---------------------------------------------------------------------
 (uneven_intervals_tab,
  not_a_lot_of_data_tab,
- colour_equal_importance_tab,
+ important_events_tab,
  colours_with_meaning_tab,
  )  = st.tabs(
     ["📈 Uneven intervals",
      "🚶‍♀️ Not a lot of data",
-     "⏱️ Colours of equal importance",
+     "⏱️ Important events tab",
      "📏 Colours with meaning",
      ]
 )
@@ -58,14 +58,14 @@ with not_a_lot_of_data_tab:
     with st.expander("Expand to see the data"):
         st.dataframe(kids_before_marriage_data_df, hide_index=True)
 
-# with colour_equal_importance_tab:
-#     st.subheader('Equal importance colours')
-#
-#     st.write('')
-#     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2023/1/5/rule-35-add-data-markers-to-your-lines)")
-#
-#     # with st.expander("Expand to see the data"):
-#     #     st.dataframe(smoking_rates_data_df, hide_index=True)
+with important_events_tab:
+    st.subheader('Important events')
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2023/1/5/rule-35-add-data-markers-to-your-lines)")
+
+    with st.expander("Expand to see the data"):
+        st.dataframe(ireland_population_df, hide_index=True)
 #
 # with colour_hierarchy_tab:
 #     st.subheader('Colour hierarchy through colours')
