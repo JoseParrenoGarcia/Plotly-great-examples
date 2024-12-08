@@ -49,7 +49,7 @@ with colours_with_meaning_tab:
     #     st.dataframe(smoking_rates_data_df, hide_index=True)
 
 with hero_line_tab:
-    st.subheader('Time series')
+    st.subheader('Hero lines')
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/6/10/rule-32-every-line-should-be-a-different-colour)")
@@ -58,7 +58,7 @@ with hero_line_tab:
         st.dataframe(new_books_data_df, hide_index=True)
 
 with colour_equal_importance_tab:
-    st.subheader('Physical distances')
+    st.subheader('Equal importance colours (look for another dataset')
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/6/10/rule-32-every-line-should-be-a-different-colour)")
@@ -67,7 +67,7 @@ with colour_equal_importance_tab:
         st.dataframe(smoking_rates_data_df, hide_index=True)
 
 with colour_hierarchy_tab:
-    st.subheader('xxx')
+    st.subheader('Colour hierarchy through colours')
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/6/10/rule-32-every-line-should-be-a-different-colour)")
