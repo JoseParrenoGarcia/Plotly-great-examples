@@ -1,0 +1,2829 @@
+Entity,Code,Year,Manufactured cigarettes sold per adult per day
+Armenia,ARM,1988,12
+Armenia,ARM,1989,11.6
+Armenia,ARM,1990,11.9
+Armenia,ARM,1991,9.3
+Armenia,ARM,1992,4.9
+Armenia,ARM,1993,5.5
+Armenia,ARM,1994,5.7
+Armenia,ARM,1995,5.6
+Armenia,ARM,1996,5.6
+Armenia,ARM,1997,5.6
+Armenia,ARM,1998,5.7
+Australia,AUS,1920,1.6
+Australia,AUS,1921,1.8
+Australia,AUS,1922,1.6
+Australia,AUS,1923,1.5
+Australia,AUS,1924,1.6
+Australia,AUS,1925,1.6
+Australia,AUS,1926,1.6
+Australia,AUS,1927,1.7
+Australia,AUS,1928,1.8
+Australia,AUS,1929,1.8
+Australia,AUS,1930,1.7
+Australia,AUS,1931,1.2
+Australia,AUS,1932,1.1
+Australia,AUS,1933,1.2
+Australia,AUS,1934,1.2
+Australia,AUS,1935,1.2
+Australia,AUS,1936,1.3
+Australia,AUS,1937,1.4
+Australia,AUS,1938,1.5
+Australia,AUS,1939,1.7
+Australia,AUS,1940,1.8
+Australia,AUS,1941,1.6
+Australia,AUS,1942,1.8
+Australia,AUS,1943,1.8
+Australia,AUS,1944,1.8
+Australia,AUS,1945,1.7
+Australia,AUS,1946,1.8
+Australia,AUS,1947,2.2
+Australia,AUS,1948,2.7
+Australia,AUS,1949,3.1
+Australia,AUS,1950,3.5
+Australia,AUS,1951,4.1
+Australia,AUS,1952,4.1
+Australia,AUS,1953,3.9
+Australia,AUS,1954,4.5
+Australia,AUS,1955,4.8
+Australia,AUS,1956,5.2
+Australia,AUS,1957,5.6
+Australia,AUS,1958,5.8
+Australia,AUS,1959,6.1
+Australia,AUS,1960,6.5
+Australia,AUS,1961,6.8
+Australia,AUS,1962,6.9
+Australia,AUS,1963,7
+Australia,AUS,1964,7.2
+Australia,AUS,1965,7.3
+Australia,AUS,1966,7.6
+Australia,AUS,1967,7.3
+Australia,AUS,1968,7.6
+Australia,AUS,1969,7.8
+Australia,AUS,1970,8
+Australia,AUS,1971,7.9
+Australia,AUS,1972,8.1
+Australia,AUS,1973,8.4
+Australia,AUS,1974,9.1
+Australia,AUS,1975,8.8
+Australia,AUS,1976,8.2
+Australia,AUS,1977,8.9
+Australia,AUS,1978,8.8
+Australia,AUS,1979,8.7
+Australia,AUS,1980,9
+Australia,AUS,1981,8.7
+Australia,AUS,1982,8.4
+Australia,AUS,1983,7.9
+Australia,AUS,1984,7.7
+Australia,AUS,1985,7.7
+Australia,AUS,1986,7.7
+Australia,AUS,1987,7.3
+Australia,AUS,1988,7.3
+Australia,AUS,1989,7.3
+Australia,AUS,1990,7.4
+Australia,AUS,1991,7
+Australia,AUS,1992,7.1
+Australia,AUS,1993,6.4
+Australia,AUS,1994,6.1
+Australia,AUS,1995,6
+Australia,AUS,1996,5.3
+Australia,AUS,1997,5.3
+Australia,AUS,1998,5.1
+Australia,AUS,1999,4.9
+Australia,AUS,2000,4.7
+Australia,AUS,2001,4.3
+Australia,AUS,2002,4.1
+Australia,AUS,2003,4.2
+Australia,AUS,2004,4.1
+Australia,AUS,2005,4
+Australia,AUS,2006,3.9
+Australia,AUS,2007,3.8
+Australia,AUS,2008,3.9
+Australia,AUS,2009,3.8
+Australia,AUS,2010,3.7
+Austria,AUT,1923,1.6
+Austria,AUT,1924,2.1
+Austria,AUT,1925,2.2
+Austria,AUT,1926,2.4
+Austria,AUT,1927,2.5
+Austria,AUT,1928,2.6
+Austria,AUT,1929,2.7
+Austria,AUT,1930,2.6
+Austria,AUT,1931,2.7
+Austria,AUT,1932,3
+Austria,AUT,1933,2.7
+Austria,AUT,1934,2.5
+Austria,AUT,1935,2.4
+Austria,AUT,1936,2.3
+Austria,AUT,1937,2.2
+Austria,AUT,1938,2.6
+Austria,AUT,1939,3.4
+Austria,AUT,1940,4.2
+Austria,AUT,1941,4.9
+Austria,AUT,1942,4.5
+Austria,AUT,1943,4.3
+Austria,AUT,1944,3.4
+Austria,AUT,1945,1.3
+Austria,AUT,1946,1.1
+Austria,AUT,1947,1.6
+Austria,AUT,1948,2
+Austria,AUT,1949,2.5
+Austria,AUT,1950,3
+Austria,AUT,1951,3.4
+Austria,AUT,1952,3.6
+Austria,AUT,1953,3.7
+Austria,AUT,1954,3.2
+Austria,AUT,1955,3.6
+Austria,AUT,1956,4
+Austria,AUT,1957,4.2
+Austria,AUT,1958,4.5
+Austria,AUT,1959,4.6
+Austria,AUT,1960,4.7
+Austria,AUT,1961,4.6
+Austria,AUT,1962,4.8
+Austria,AUT,1963,5
+Austria,AUT,1964,5.1
+Austria,AUT,1965,5.3
+Austria,AUT,1966,5.7
+Austria,AUT,1967,5.8
+Austria,AUT,1968,5.9
+Austria,AUT,1969,6.1
+Austria,AUT,1970,6.4
+Austria,AUT,1971,6.6
+Austria,AUT,1972,6.5
+Austria,AUT,1973,7
+Austria,AUT,1974,6.9
+Austria,AUT,1975,6.6
+Austria,AUT,1976,6.8
+Austria,AUT,1977,6.9
+Austria,AUT,1978,7
+Austria,AUT,1979,7.2
+Austria,AUT,1980,7.1
+Austria,AUT,1981,7.1
+Austria,AUT,1982,7
+Austria,AUT,1983,7.1
+Austria,AUT,1984,6.9
+Austria,AUT,1985,6.9
+Austria,AUT,1986,6.9
+Austria,AUT,1987,6.7
+Austria,AUT,1988,6.3
+Austria,AUT,1989,6.1
+Austria,AUT,1990,6.2
+Austria,AUT,1991,6.3
+Austria,AUT,1992,6
+Austria,AUT,1993,5.7
+Austria,AUT,1994,5.8
+Austria,AUT,1995,5.5
+Austria,AUT,1996,5.3
+Austria,AUT,1997,5.6
+Austria,AUT,1998,6.3
+Austria,AUT,1999,6.5
+Austria,AUT,2000,6.4
+Austria,AUT,2001,6.2
+Austria,AUT,2002,4.7
+Austria,AUT,2003,4.5
+Austria,AUT,2004,4.5
+Azerbaijan,AZE,1988,5.1
+Azerbaijan,AZE,1989,4.9
+Azerbaijan,AZE,1990,4.4
+Azerbaijan,AZE,1991,5.2
+Azerbaijan,AZE,1992,3.8
+Azerbaijan,AZE,1993,1.1
+Azerbaijan,AZE,1994,3.3
+Azerbaijan,AZE,1995,3.3
+Azerbaijan,AZE,1996,3.3
+Azerbaijan,AZE,1997,3.4
+Azerbaijan,AZE,1998,3.2
+Belarus,BLR,1988,4.4
+Belarus,BLR,1989,4.3
+Belarus,BLR,1990,4.3
+Belarus,BLR,1991,4.7
+Belarus,BLR,1992,4.7
+Belarus,BLR,1993,4.6
+Belarus,BLR,1994,4.8
+Belarus,BLR,1995,4.8
+Belarus,BLR,1996,5.1
+Belarus,BLR,1997,5.2
+Belarus,BLR,1998,5.4
+Belgium,BEL,1921,1.6
+Belgium,BEL,1922,1.7
+Belgium,BEL,1923,1.8
+Belgium,BEL,1924,2
+Belgium,BEL,1925,2
+Belgium,BEL,1926,2
+Belgium,BEL,1927,2.2
+Belgium,BEL,1928,2.5
+Belgium,BEL,1929,2.7
+Belgium,BEL,1930,3
+Belgium,BEL,1931,3
+Belgium,BEL,1932,2.6
+Belgium,BEL,1933,2.4
+Belgium,BEL,1934,2.1
+Belgium,BEL,1935,2.1
+Belgium,BEL,1936,2.2
+Belgium,BEL,1937,2.2
+Belgium,BEL,1938,2.1
+Belgium,BEL,1939,2.1
+Belgium,BEL,1940,1.8
+Belgium,BEL,1941,1.6
+Belgium,BEL,1942,1.4
+Belgium,BEL,1943,0.8
+Belgium,BEL,1944,0.9
+Belgium,BEL,1945,1.1
+Belgium,BEL,1946,2.6
+Belgium,BEL,1947,3.5
+Belgium,BEL,1948,3.6
+Belgium,BEL,1949,3.4
+Belgium,BEL,1950,3.4
+Belgium,BEL,1951,3.3
+Belgium,BEL,1952,3.2
+Belgium,BEL,1953,3.3
+Belgium,BEL,1954,3.3
+Belgium,BEL,1955,3.4
+Belgium,BEL,1956,3.6
+Belgium,BEL,1957,3.9
+Belgium,BEL,1958,4.1
+Belgium,BEL,1959,4
+Belgium,BEL,1960,4.3
+Belgium,BEL,1961,4.4
+Belgium,BEL,1962,4.6
+Belgium,BEL,1963,4.8
+Belgium,BEL,1964,4.9
+Belgium,BEL,1965,5.4
+Belgium,BEL,1966,5.7
+Belgium,BEL,1967,5.8
+Belgium,BEL,1968,5.9
+Belgium,BEL,1969,6.2
+Belgium,BEL,1970,6.6
+Belgium,BEL,1971,6.8
+Belgium,BEL,1972,7
+Belgium,BEL,1973,7.4
+Belgium,BEL,1974,7.3
+Belgium,BEL,1975,6.8
+Belgium,BEL,1976,6.6
+Belgium,BEL,1977,6.3
+Belgium,BEL,1978,5.5
+Belgium,BEL,1979,5.9
+Belgium,BEL,1980,5.9
+Belgium,BEL,1981,5.8
+Belgium,BEL,1982,6.2
+Belgium,BEL,1983,5.9
+Belgium,BEL,1984,5.9
+Belgium,BEL,1985,5.4
+Belgium,BEL,1986,5.3
+Belgium,BEL,1987,4.9
+Belgium,BEL,1988,5
+Belgium,BEL,1989,4.8
+Belgium,BEL,1990,4.6
+Belgium,BEL,1991,4.7
+Belgium,BEL,1992,4.5
+Belgium,BEL,1993,4.2
+Belgium,BEL,1994,4
+Belgium,BEL,1995,4.1
+Belgium,BEL,1996,4
+Belgium,BEL,1997,3.8
+Belgium,BEL,1998,4
+Belgium,BEL,1999,4.4
+Belgium,BEL,2000,4.5
+Belgium,BEL,2001,4.2
+Belgium,BEL,2002,4.6
+Belgium,BEL,2003,4.6
+Belgium,BEL,2004,4.3
+Belgium,BEL,2005,4.2
+Belgium,BEL,2006,4.2
+Belgium,BEL,2007,3.9
+Belgium,BEL,2008,3.7
+Belgium,BEL,2009,3.6
+Belgium,BEL,2010,3.9
+Belgium,BEL,2011,3.1
+Bosnia and Herzegovina,BIH,1993,7.7
+Bosnia and Herzegovina,BIH,1994,7.7
+Bosnia and Herzegovina,BIH,1995,7.7
+Bosnia and Herzegovina,BIH,1996,7.7
+Bosnia and Herzegovina,BIH,1997,7.7
+Bosnia and Herzegovina,BIH,1998,7.7
+Bosnia and Herzegovina,BIH,1999,7.7
+Bosnia and Herzegovina,BIH,2000,7.7
+Bosnia and Herzegovina,BIH,2001,7.7
+Bosnia and Herzegovina,BIH,2002,7.7
+Bosnia and Herzegovina,BIH,2003,7.7
+Bosnia and Herzegovina,BIH,2004,7.7
+Bulgaria,BGR,1913,0.2
+Bulgaria,BGR,1920,0.8
+Bulgaria,BGR,1921,1.4
+Bulgaria,BGR,1922,2
+Bulgaria,BGR,1923,2.3
+Bulgaria,BGR,1960,4
+Bulgaria,BGR,1961,4.3
+Bulgaria,BGR,1962,4.5
+Bulgaria,BGR,1963,4.9
+Bulgaria,BGR,1964,4.5
+Bulgaria,BGR,1965,3.9
+Bulgaria,BGR,1966,5.1
+Bulgaria,BGR,1967,3.4
+Bulgaria,BGR,1968,4.7
+Bulgaria,BGR,1969,6.3
+Bulgaria,BGR,1970,4.1
+Bulgaria,BGR,1971,5.1
+Bulgaria,BGR,1972,5.3
+Bulgaria,BGR,1973,5.5
+Bulgaria,BGR,1974,6.7
+Bulgaria,BGR,1975,5.3
+Bulgaria,BGR,1976,5.6
+Bulgaria,BGR,1977,6.7
+Bulgaria,BGR,1978,5.6
+Bulgaria,BGR,1979,5.6
+Bulgaria,BGR,1980,5.2
+Bulgaria,BGR,1981,5.1
+Bulgaria,BGR,1982,5.1
+Bulgaria,BGR,1983,5.7
+Bulgaria,BGR,1984,6.3
+Bulgaria,BGR,1985,6.6
+Bulgaria,BGR,1986,7.1
+Bulgaria,BGR,1987,6.2
+Bulgaria,BGR,1988,5.3
+Bulgaria,BGR,1989,5.4
+Bulgaria,BGR,1990,4.7
+Bulgaria,BGR,1991,6
+Bulgaria,BGR,1992,7.1
+Bulgaria,BGR,1993,7.5
+Bulgaria,BGR,1994,6
+Bulgaria,BGR,1995,6.4
+Bulgaria,BGR,1996,7.6
+Bulgaria,BGR,1997,7.4
+Bulgaria,BGR,1998,7.2
+Bulgaria,BGR,1999,7.6
+Bulgaria,BGR,2000,7.6
+Bulgaria,BGR,2001,7.8
+Bulgaria,BGR,2002,8.9
+Bulgaria,BGR,2003,10
+Bulgaria,BGR,2004,9.4
+Bulgaria,BGR,2007,8.1
+Bulgaria,BGR,2008,8.8
+Bulgaria,BGR,2009,8.3
+Bulgaria,BGR,2010,6.6
+Bulgaria,BGR,2011,5.7
+Bulgaria,BGR,2012,5.8
+Bulgaria,BGR,2013,6
+Bulgaria,BGR,2014,5.9
+Canada,CAN,1920,1
+Canada,CAN,1921,1.1
+Canada,CAN,1922,0.9
+Canada,CAN,1923,1
+Canada,CAN,1924,1.1
+Canada,CAN,1925,1.2
+Canada,CAN,1926,1.4
+Canada,CAN,1927,1.6
+Canada,CAN,1928,1.8
+Canada,CAN,1929,2.1
+Canada,CAN,1930,2
+Canada,CAN,1931,1.7
+Canada,CAN,1932,1.4
+Canada,CAN,1933,1.6
+Canada,CAN,1934,1.8
+Canada,CAN,1935,1.9
+Canada,CAN,1936,2
+Canada,CAN,1937,2.3
+Canada,CAN,1938,2.4
+Canada,CAN,1939,2.4
+Canada,CAN,1940,2.6
+Canada,CAN,1941,2.9
+Canada,CAN,1942,3.3
+Canada,CAN,1943,3.6
+Canada,CAN,1944,3.7
+Canada,CAN,1945,4.5
+Canada,CAN,1946,4.7
+Canada,CAN,1947,4.7
+Canada,CAN,1948,4.8
+Canada,CAN,1949,4.9
+Canada,CAN,1950,4.9
+Canada,CAN,1951,4.4
+Canada,CAN,1952,4.9
+Canada,CAN,1953,5.7
+Canada,CAN,1954,5.8
+Canada,CAN,1955,6.4
+Canada,CAN,1956,6.8
+Canada,CAN,1957,7.4
+Canada,CAN,1958,7.8
+Canada,CAN,1959,8
+Canada,CAN,1960,7.9
+Canada,CAN,1961,8.3
+Canada,CAN,1962,8.6
+Canada,CAN,1963,8.7
+Canada,CAN,1964,8.7
+Canada,CAN,1965,9
+Canada,CAN,1966,9.4
+Canada,CAN,1967,9.3
+Canada,CAN,1968,8.9
+Canada,CAN,1969,8.8
+Canada,CAN,1970,9.2
+Canada,CAN,1971,9.2
+Canada,CAN,1972,9.4
+Canada,CAN,1973,9.5
+Canada,CAN,1974,9.6
+Canada,CAN,1975,9.5
+Canada,CAN,1976,9.8
+Canada,CAN,1977,9.7
+Canada,CAN,1978,9.5
+Canada,CAN,1979,9.7
+Canada,CAN,1980,9.6
+Canada,CAN,1981,9.6
+Canada,CAN,1982,9.6
+Canada,CAN,1983,8.9
+Canada,CAN,1984,8.7
+Canada,CAN,1985,8.2
+Canada,CAN,1986,7.7
+Canada,CAN,1987,7.2
+Canada,CAN,1988,6.9
+Canada,CAN,1989,6.3
+Canada,CAN,1990,6.2
+Canada,CAN,1991,5.5
+Canada,CAN,1992,5.5
+Canada,CAN,1993,5.3
+Canada,CAN,1994,5.9
+Canada,CAN,1995,5.3
+Canada,CAN,1996,5.5
+Canada,CAN,1997,5.2
+Canada,CAN,1998,5.1
+Canada,CAN,1999,5
+Canada,CAN,2000,4.8
+Canada,CAN,2001,4.6
+Canada,CAN,2002,4
+Canada,CAN,2003,3.8
+Canada,CAN,2004,3.6
+Canada,CAN,2005,3.4
+Canada,CAN,2006,3.1
+Canada,CAN,2007,3
+Canada,CAN,2008,2.8
+Canada,CAN,2009,2.9
+Canada,CAN,2010,3.3
+Croatia,HRV,1993,6.8
+Croatia,HRV,1994,6.8
+Croatia,HRV,1995,6.8
+Croatia,HRV,1996,8
+Croatia,HRV,1997,6.7
+Croatia,HRV,1998,7.2
+Croatia,HRV,1999,7
+Croatia,HRV,2000,6.4
+Croatia,HRV,2001,6.3
+Croatia,HRV,2002,5.5
+Croatia,HRV,2003,5.4
+Croatia,HRV,2004,4.9
+Croatia,HRV,2005,5.4
+Croatia,HRV,2006,5.9
+Croatia,HRV,2007,6.5
+Croatia,HRV,2008,6.1
+Croatia,HRV,2009,4.3
+Croatia,HRV,2010,4.9
+Croatia,HRV,2011,5
+Croatia,HRV,2012,5
+Croatia,HRV,2013,4.7
+Czechia,CZE,1975,6.8
+Czechia,CZE,1980,6.9
+Czechia,CZE,1981,7
+Czechia,CZE,1982,6.7
+Czechia,CZE,1983,6.9
+Czechia,CZE,1984,6.7
+Czechia,CZE,1985,6.7
+Czechia,CZE,1986,6.8
+Czechia,CZE,1987,6.5
+Czechia,CZE,1988,6.2
+Czechia,CZE,1989,6.2
+Czechia,CZE,1993,5.3
+Czechia,CZE,1994,6.7
+Czechia,CZE,1995,6.8
+Czechia,CZE,1996,7.4
+Czechia,CZE,1997,7.8
+Czechia,CZE,1998,6.1
+Czechia,CZE,1999,6.9
+Czechia,CZE,2000,6.2
+Czechia,CZE,2001,5.4
+Czechia,CZE,2002,6.2
+Czechia,CZE,2003,7.1
+Czechia,CZE,2004,7.2
+Czechia,CZE,2005,7.3
+Czechia,CZE,2006,6.2
+Czechia,CZE,2007,6.2
+Czechia,CZE,2008,6.2
+Czechia,CZE,2009,5.8
+Czechia,CZE,2010,5.2
+Czechia,CZE,2011,4.7
+Czechia,CZE,2012,4.7
+Czechia,CZE,2013,4.1
+Czechia,CZE,2014,4.4
+Czechoslovakia,OWID_CZS,1923,2.2
+Czechoslovakia,OWID_CZS,1924,2.5
+Czechoslovakia,OWID_CZS,1925,2.6
+Czechoslovakia,OWID_CZS,1926,2.7
+Czechoslovakia,OWID_CZS,1927,2.9
+Czechoslovakia,OWID_CZS,1928,3.1
+Czechoslovakia,OWID_CZS,1929,3.2
+Czechoslovakia,OWID_CZS,1930,3.2
+Czechoslovakia,OWID_CZS,1931,2.9
+Czechoslovakia,OWID_CZS,1932,2.7
+Czechoslovakia,OWID_CZS,1933,2.6
+Czechoslovakia,OWID_CZS,1934,2.6
+Czechoslovakia,OWID_CZS,1937,2.7
+Czechoslovakia,OWID_CZS,1948,4
+Czechoslovakia,OWID_CZS,1950,4.3
+Czechoslovakia,OWID_CZS,1953,4.7
+Czechoslovakia,OWID_CZS,1955,4.7
+Czechoslovakia,OWID_CZS,1960,5.1
+Czechoslovakia,OWID_CZS,1961,5.3
+Czechoslovakia,OWID_CZS,1962,4.9
+Czechoslovakia,OWID_CZS,1963,5
+Czechoslovakia,OWID_CZS,1964,4.6
+Czechoslovakia,OWID_CZS,1965,5
+Czechoslovakia,OWID_CZS,1966,5.1
+Czechoslovakia,OWID_CZS,1967,5.1
+Czechoslovakia,OWID_CZS,1968,5.4
+Czechoslovakia,OWID_CZS,1969,4.6
+Czechoslovakia,OWID_CZS,1970,5.1
+Czechoslovakia,OWID_CZS,1971,5.2
+Czechoslovakia,OWID_CZS,1972,5.1
+Czechoslovakia,OWID_CZS,1973,5.2
+Czechoslovakia,OWID_CZS,1974,5.3
+Czechoslovakia,OWID_CZS,1975,5.5
+Czechoslovakia,OWID_CZS,1976,5.6
+Czechoslovakia,OWID_CZS,1977,5.7
+Czechoslovakia,OWID_CZS,1978,5.6
+Czechoslovakia,OWID_CZS,1979,5.7
+Czechoslovakia,OWID_CZS,1980,5.7
+Czechoslovakia,OWID_CZS,1981,6.7
+Czechoslovakia,OWID_CZS,1982,6.7
+Czechoslovakia,OWID_CZS,1983,6.7
+Czechoslovakia,OWID_CZS,1984,6.9
+Czechoslovakia,OWID_CZS,1985,6.5
+Czechoslovakia,OWID_CZS,1986,6.5
+Czechoslovakia,OWID_CZS,1987,6.4
+Czechoslovakia,OWID_CZS,1988,6.4
+Czechoslovakia,OWID_CZS,1989,6.1
+Czechoslovakia,OWID_CZS,1990,6.6
+Czechoslovakia,OWID_CZS,1991,6
+Czechoslovakia,OWID_CZS,1992,6.6
+Denmark,DNK,1920,1.1
+Denmark,DNK,1921,1
+Denmark,DNK,1922,1.1
+Denmark,DNK,1923,1.3
+Denmark,DNK,1924,1.3
+Denmark,DNK,1925,1.4
+Denmark,DNK,1926,1.5
+Denmark,DNK,1927,1.5
+Denmark,DNK,1928,1.7
+Denmark,DNK,1929,1.1
+Denmark,DNK,1930,1.4
+Denmark,DNK,1931,1.4
+Denmark,DNK,1932,1.2
+Denmark,DNK,1933,1.2
+Denmark,DNK,1934,1.2
+Denmark,DNK,1935,1.3
+Denmark,DNK,1936,1.4
+Denmark,DNK,1937,1.5
+Denmark,DNK,1938,1.5
+Denmark,DNK,1939,1.7
+Denmark,DNK,1940,1.6
+Denmark,DNK,1941,1.5
+Denmark,DNK,1942,1.7
+Denmark,DNK,1943,1
+Denmark,DNK,1944,1.2
+Denmark,DNK,1945,1.1
+Denmark,DNK,1946,1.9
+Denmark,DNK,1947,2.1
+Denmark,DNK,1948,2.3
+Denmark,DNK,1949,3.1
+Denmark,DNK,1950,3.5
+Denmark,DNK,1951,3
+Denmark,DNK,1952,3.3
+Denmark,DNK,1953,3.4
+Denmark,DNK,1954,3.2
+Denmark,DNK,1955,3.2
+Denmark,DNK,1956,3.2
+Denmark,DNK,1957,3.3
+Denmark,DNK,1958,3.6
+Denmark,DNK,1959,3.8
+Denmark,DNK,1960,4
+Denmark,DNK,1961,4
+Denmark,DNK,1962,4.1
+Denmark,DNK,1963,4.3
+Denmark,DNK,1964,4
+Denmark,DNK,1965,4.1
+Denmark,DNK,1966,4.2
+Denmark,DNK,1967,4.2
+Denmark,DNK,1968,4.3
+Denmark,DNK,1969,4.6
+Denmark,DNK,1970,4.6
+Denmark,DNK,1971,4.7
+Denmark,DNK,1972,5
+Denmark,DNK,1973,5.1
+Denmark,DNK,1974,4.9
+Denmark,DNK,1975,5.1
+Denmark,DNK,1976,5.4
+Denmark,DNK,1977,5.3
+Denmark,DNK,1978,5.1
+Denmark,DNK,1979,5.1
+Denmark,DNK,1980,4.8
+Denmark,DNK,1981,4.9
+Denmark,DNK,1982,5.3
+Denmark,DNK,1983,4.9
+Denmark,DNK,1984,5.1
+Denmark,DNK,1985,5.1
+Denmark,DNK,1986,4.9
+Denmark,DNK,1987,4.7
+Denmark,DNK,1988,4.5
+Denmark,DNK,1989,4.4
+Denmark,DNK,1990,4.2
+Denmark,DNK,1991,4.2
+Denmark,DNK,1992,4.3
+Denmark,DNK,1993,4.1
+Denmark,DNK,1994,4.1
+Denmark,DNK,1995,4.1
+Denmark,DNK,1996,4.2
+Denmark,DNK,1997,4.2
+Denmark,DNK,1998,4.3
+Denmark,DNK,1999,4.5
+Denmark,DNK,2000,5
+Denmark,DNK,2001,5.1
+Denmark,DNK,2002,5
+Denmark,DNK,2003,5.4
+Denmark,DNK,2004,5.4
+Denmark,DNK,2005,5.2
+Denmark,DNK,2006,5.3
+Denmark,DNK,2007,5
+Denmark,DNK,2008,5
+Denmark,DNK,2009,5
+Denmark,DNK,2010,4.9
+Estonia,EST,1988,4.4
+Estonia,EST,1989,4.3
+Estonia,EST,1990,4.3
+Estonia,EST,1991,4.7
+Estonia,EST,1992,4.8
+Estonia,EST,1993,4.9
+Estonia,EST,1994,5
+Estonia,EST,1995,5
+Estonia,EST,1996,5.3
+Estonia,EST,1997,5.4
+Estonia,EST,1998,5.4
+Estonia,EST,1999,5.4
+Estonia,EST,2000,4.8
+Estonia,EST,2001,5.1
+Estonia,EST,2002,5.5
+Estonia,EST,2003,5.1
+Estonia,EST,2004,5.4
+Estonia,EST,2005,5.6
+Estonia,EST,2006,5.2
+Estonia,EST,2007,5.3
+Estonia,EST,2008,5.1
+Estonia,EST,2009,5.1
+Estonia,EST,2010,4.8
+Estonia,EST,2011,4.6
+Estonia,EST,2012,4.7
+Estonia,EST,2013,4.5
+Estonia,EST,2014,4.5
+Finland,FIN,1920,3.6
+Finland,FIN,1921,2.7
+Finland,FIN,1922,2.9
+Finland,FIN,1923,3.5
+Finland,FIN,1924,3.6
+Finland,FIN,1925,3.6
+Finland,FIN,1926,3.5
+Finland,FIN,1927,4
+Finland,FIN,1928,4.1
+Finland,FIN,1929,4.2
+Finland,FIN,1930,4.4
+Finland,FIN,1931,3.4
+Finland,FIN,1932,3.2
+Finland,FIN,1933,3.3
+Finland,FIN,1934,3.6
+Finland,FIN,1935,3.7
+Finland,FIN,1936,3.8
+Finland,FIN,1937,4.2
+Finland,FIN,1938,4.6
+Finland,FIN,1939,4
+Finland,FIN,1940,3.8
+Finland,FIN,1941,4.6
+Finland,FIN,1942,3.7
+Finland,FIN,1943,3.7
+Finland,FIN,1944,3
+Finland,FIN,1945,2.1
+Finland,FIN,1946,2.9
+Finland,FIN,1947,3.6
+Finland,FIN,1948,4.2
+Finland,FIN,1949,4.2
+Finland,FIN,1950,4.4
+Finland,FIN,1951,4.5
+Finland,FIN,1952,5
+Finland,FIN,1953,4.9
+Finland,FIN,1954,5.2
+Finland,FIN,1955,5.3
+Finland,FIN,1956,5.4
+Finland,FIN,1957,5.1
+Finland,FIN,1958,4.8
+Finland,FIN,1959,5.3
+Finland,FIN,1960,5.6
+Finland,FIN,1961,5.8
+Finland,FIN,1962,5.8
+Finland,FIN,1963,6.1
+Finland,FIN,1964,4.6
+Finland,FIN,1965,5.4
+Finland,FIN,1966,5.2
+Finland,FIN,1967,5.4
+Finland,FIN,1968,5.1
+Finland,FIN,1969,5.2
+Finland,FIN,1970,5.1
+Finland,FIN,1971,5.5
+Finland,FIN,1972,5.8
+Finland,FIN,1973,5.6
+Finland,FIN,1974,6
+Finland,FIN,1975,6.1
+Finland,FIN,1976,4.8
+Finland,FIN,1977,4.9
+Finland,FIN,1978,4.9
+Finland,FIN,1979,5.1
+Finland,FIN,1980,5.1
+Finland,FIN,1981,4.7
+Finland,FIN,1982,4.9
+Finland,FIN,1983,5
+Finland,FIN,1984,5.2
+Finland,FIN,1985,4.7
+Finland,FIN,1986,5
+Finland,FIN,1987,5.3
+Finland,FIN,1988,5.1
+Finland,FIN,1989,5.3
+Finland,FIN,1990,4.9
+Finland,FIN,1991,4.7
+Finland,FIN,1992,4.6
+Finland,FIN,1993,3.9
+Finland,FIN,1994,3.7
+Finland,FIN,1995,3.4
+Finland,FIN,1996,3.5
+Finland,FIN,1997,3.5
+Finland,FIN,1998,3.5
+Finland,FIN,1999,3.5
+Finland,FIN,2000,3.4
+Finland,FIN,2001,3.5
+Finland,FIN,2002,3.5
+Finland,FIN,2003,3.4
+Finland,FIN,2004,3.4
+Finland,FIN,2005,3.5
+Finland,FIN,2006,3.4
+Finland,FIN,2007,3.3
+Finland,FIN,2008,4.6
+Finland,FIN,2009,2.4
+France,FRA,1865,0
+France,FRA,1870,0
+France,FRA,1875,0.1
+France,FRA,1880,0.1
+France,FRA,1885,0.1
+France,FRA,1890,0.1
+France,FRA,1895,0.1
+France,FRA,1900,0.2
+France,FRA,1901,0.2
+France,FRA,1902,0.2
+France,FRA,1903,0.2
+France,FRA,1904,0.2
+France,FRA,1905,0.2
+France,FRA,1906,0.2
+France,FRA,1907,0.3
+France,FRA,1908,0.3
+France,FRA,1909,0.3
+France,FRA,1910,0.3
+France,FRA,1913,0.4
+France,FRA,1923,0.7
+France,FRA,1924,0.9
+France,FRA,1932,1.6
+France,FRA,1933,1.6
+France,FRA,1934,1.5
+France,FRA,1935,1.4
+France,FRA,1936,1.5
+France,FRA,1937,1.6
+France,FRA,1938,1.6
+France,FRA,1939,1.8
+France,FRA,1940,1.7
+France,FRA,1941,1.4
+France,FRA,1942,1
+France,FRA,1943,0.9
+France,FRA,1944,0.8
+France,FRA,1945,1.2
+France,FRA,1946,1.6
+France,FRA,1947,2.1
+France,FRA,1948,2.3
+France,FRA,1949,2.4
+France,FRA,1950,2.7
+France,FRA,1951,2.9
+France,FRA,1952,3.1
+France,FRA,1953,3
+France,FRA,1954,3.1
+France,FRA,1955,3.3
+France,FRA,1956,3.5
+France,FRA,1957,3.7
+France,FRA,1958,3.8
+France,FRA,1959,3.6
+France,FRA,1960,3.6
+France,FRA,1961,3.7
+France,FRA,1962,3.8
+France,FRA,1963,3.8
+France,FRA,1964,3.9
+France,FRA,1965,4.1
+France,FRA,1966,4.2
+France,FRA,1967,4.5
+France,FRA,1968,4.6
+France,FRA,1969,4.7
+France,FRA,1970,4.9
+France,FRA,1971,5.1
+France,FRA,1972,5
+France,FRA,1973,5.2
+France,FRA,1974,5.5
+France,FRA,1975,5.7
+France,FRA,1976,5.6
+France,FRA,1977,5.8
+France,FRA,1978,5.6
+France,FRA,1979,5.8
+France,FRA,1980,5.7
+France,FRA,1981,5.6
+France,FRA,1982,5.6
+France,FRA,1983,5.7
+France,FRA,1984,5.7
+France,FRA,1985,6
+France,FRA,1986,5.9
+France,FRA,1987,5.8
+France,FRA,1988,5.7
+France,FRA,1989,5.7
+France,FRA,1990,5.7
+France,FRA,1991,5.8
+France,FRA,1992,5.7
+France,FRA,1993,5.5
+France,FRA,1994,5.3
+France,FRA,1995,5.1
+France,FRA,1996,5
+France,FRA,1997,4.8
+France,FRA,1998,4.8
+France,FRA,1999,4.8
+France,FRA,2000,4.7
+France,FRA,2001,4.8
+France,FRA,2002,4.5
+France,FRA,2003,3.9
+France,FRA,2004,3
+France,FRA,2005,3
+France,FRA,2006,3
+France,FRA,2007,3
+France,FRA,2008,2.9
+France,FRA,2009,3
+France,FRA,2010,3
+Georgia,GEO,1988,6.3
+Georgia,GEO,1989,6.2
+Georgia,GEO,1990,6.1
+Georgia,GEO,1991,6.3
+Georgia,GEO,1992,4.1
+Georgia,GEO,1993,5.6
+Georgia,GEO,1994,6.2
+Georgia,GEO,1995,6.4
+Georgia,GEO,1996,6.6
+Georgia,GEO,1997,6.7
+Georgia,GEO,1998,6.9
+Georgia,GEO,1999,7
+Germany,DEU,1907,0.3
+Germany,DEU,1908,0.4
+Germany,DEU,1909,0.4
+Germany,DEU,1910,0.5
+Germany,DEU,1911,0.6
+Germany,DEU,1912,0.7
+Germany,DEU,1913,0.7
+Germany,DEU,1925,1.7
+Germany,DEU,1926,1.6
+Germany,DEU,1927,1.8
+Germany,DEU,1928,1.8
+Germany,DEU,1929,1.8
+Germany,DEU,1930,1.6
+Germany,DEU,1931,1.5
+Germany,DEU,1932,1.7
+Germany,DEU,1933,1.8
+Germany,DEU,1934,2
+Germany,DEU,1935,2
+Germany,DEU,1936,2
+Germany,DEU,1937,2.2
+Germany,DEU,1938,2.5
+Germany,DEU,1950,1.3158402
+Germany,DEU,1951,1.614259
+Germany,DEU,1952,1.6938343
+Germany,DEU,1953,1.9216862
+Germany,DEU,1954,2.0768604
+Germany,DEU,1955,2.3818488
+Germany,DEU,1956,2.6141021
+Germany,DEU,1957,2.9227078
+Germany,DEU,1958,3.0076244
+Germany,DEU,1959,3.2437851
+Germany,DEU,1960,4.4568
+Germany,DEU,1961,4.786962
+Germany,DEU,1962,4.7900453
+Germany,DEU,1963,4.869482
+Germany,DEU,1964,5.149345
+Germany,DEU,1965,5.3833284
+Germany,DEU,1966,5.564471
+Germany,DEU,1967,5.49141
+Germany,DEU,1968,5.805462
+Germany,DEU,1969,6.087993
+Germany,DEU,1970,6.326807
+Germany,DEU,1971,6.7760053
+Germany,DEU,1972,6.7594295
+Germany,DEU,1973,6.6502852
+Germany,DEU,1974,6.77302
+Germany,DEU,1975,6.702037
+Germany,DEU,1976,6.960525
+Germany,DEU,1977,6.3519406
+Germany,DEU,1978,6.6734867
+Germany,DEU,1979,6.773881
+Germany,DEU,1980,6.853321
+Germany,DEU,1981,6.812003
+Germany,DEU,1982,6
+Germany,DEU,1983,6.4245443
+Germany,DEU,1984,6.3827677
+Germany,DEU,1985,6.4618793
+Germany,DEU,1986,6.302805
+Germany,DEU,1987,6.2819824
+Germany,DEU,1988,6.363443
+Germany,DEU,1989,6.3814607
+Germany,DEU,1990,5.9
+Germany,DEU,1991,6
+Germany,DEU,1992,5.3
+Germany,DEU,1993,5.2
+Germany,DEU,1994,5.4
+Germany,DEU,1995,5.4
+Germany,DEU,1996,5.4
+Germany,DEU,1997,5.5
+Germany,DEU,1998,5.5
+Germany,DEU,1999,5.8
+Germany,DEU,2000,5.5
+Germany,DEU,2001,5.6
+Germany,DEU,2002,5.7
+Germany,DEU,2003,5.2
+Germany,DEU,2004,4.3
+Germany,DEU,2005,3.7
+Germany,DEU,2006,3.6
+Germany,DEU,2007,3.5
+Germany,DEU,2008,3.4
+Germany,DEU,2009,3.4
+Germany,DEU,2010,3.2
+Germany,DEU,2011,3.4
+Germany,DEU,2012,3.2
+Germany,DEU,2013,3.1
+Germany,DEU,2014,3.1
+Germany,DEU,2015,3.2
+Greece,GRC,1920,3.2
+Greece,GRC,1921,4.3
+Greece,GRC,1922,4.3
+Greece,GRC,1923,3.5
+Greece,GRC,1924,3.3
+Greece,GRC,1925,3.6
+Greece,GRC,1926,2.9
+Greece,GRC,1927,2.8
+Greece,GRC,1928,2.7
+Greece,GRC,1929,2.7
+Greece,GRC,1930,2.6
+Greece,GRC,1931,2.6
+Greece,GRC,1932,2.4
+Greece,GRC,1933,2.5
+Greece,GRC,1934,2.6
+Greece,GRC,1935,2.6
+Greece,GRC,1936,2.7
+Greece,GRC,1937,2.7
+Greece,GRC,1938,2.9
+Greece,GRC,1939,2.9
+Greece,GRC,1940,3.1
+Greece,GRC,1941,2.6
+Greece,GRC,1942,2.8
+Greece,GRC,1943,2.3
+Greece,GRC,1944,1.3
+Greece,GRC,1945,2.4
+Greece,GRC,1946,3.3
+Greece,GRC,1947,4
+Greece,GRC,1948,4.1
+Greece,GRC,1949,4.5
+Greece,GRC,1950,4.4
+Greece,GRC,1951,4.3
+Greece,GRC,1952,4.2
+Greece,GRC,1953,4.3
+Greece,GRC,1954,4.2
+Greece,GRC,1955,4.3
+Greece,GRC,1956,4.3
+Greece,GRC,1957,4.4
+Greece,GRC,1958,4.6
+Greece,GRC,1959,4.7
+Greece,GRC,1960,4.7
+Greece,GRC,1961,4.8
+Greece,GRC,1962,4.9
+Greece,GRC,1963,5.1
+Greece,GRC,1964,5.1
+Greece,GRC,1965,5.3
+Greece,GRC,1966,5.6
+Greece,GRC,1967,5.7
+Greece,GRC,1968,5.9
+Greece,GRC,1969,6
+Greece,GRC,1970,6.3
+Greece,GRC,1971,6.4
+Greece,GRC,1972,6.6
+Greece,GRC,1973,7
+Greece,GRC,1974,7.3
+Greece,GRC,1975,7.5
+Greece,GRC,1976,7.9
+Greece,GRC,1977,8.1
+Greece,GRC,1978,8.4
+Greece,GRC,1979,8.3
+Greece,GRC,1980,8.1
+Greece,GRC,1981,7.1
+Greece,GRC,1982,8.6
+Greece,GRC,1983,9
+Greece,GRC,1984,9.5
+Greece,GRC,1985,9.7
+Greece,GRC,1986,9.9
+Greece,GRC,1987,9.6
+Greece,GRC,1988,9.1
+Greece,GRC,1989,8.7
+Greece,GRC,1990,8.3
+Greece,GRC,1991,8.1
+Greece,GRC,1992,7.1
+Greece,GRC,1993,6.7
+Greece,GRC,1994,9.3
+Greece,GRC,1995,8.8
+Greece,GRC,1996,9.1
+Greece,GRC,1997,9.3
+Greece,GRC,1998,8.7
+Greece,GRC,1999,9.5
+Greece,GRC,2000,9.6
+Greece,GRC,2001,10
+Greece,GRC,2002,9.5
+Greece,GRC,2003,9.7
+Greece,GRC,2004,10.3
+Greece,GRC,2005,10
+Greece,GRC,2006,9.6
+Greece,GRC,2007,10.1
+Greece,GRC,2008,8.6
+Greece,GRC,2009,9.7
+Greece,GRC,2010,6.8
+Greece,GRC,2011,7.3
+Greece,GRC,2012,5.6
+Hungary,HUN,1920,0.4
+Hungary,HUN,1921,0.8
+Hungary,HUN,1922,1
+Hungary,HUN,1923,0.6
+Hungary,HUN,1924,0.9
+Hungary,HUN,1925,0.9
+Hungary,HUN,1926,1
+Hungary,HUN,1927,1
+Hungary,HUN,1928,1
+Hungary,HUN,1929,1
+Hungary,HUN,1930,0.9
+Hungary,HUN,1931,0.8
+Hungary,HUN,1932,0.8
+Hungary,HUN,1933,0.8
+Hungary,HUN,1934,0.8
+Hungary,HUN,1940,1.2
+Hungary,HUN,1951,3.1
+Hungary,HUN,1952,4
+Hungary,HUN,1953,4
+Hungary,HUN,1954,4.4
+Hungary,HUN,1955,4.7
+Hungary,HUN,1956,5
+Hungary,HUN,1957,5.5
+Hungary,HUN,1958,5.2
+Hungary,HUN,1959,5.6
+Hungary,HUN,1960,5.8
+Hungary,HUN,1961,6.1
+Hungary,HUN,1962,6
+Hungary,HUN,1963,5.7
+Hungary,HUN,1964,5.8
+Hungary,HUN,1965,6.5
+Hungary,HUN,1966,7.2
+Hungary,HUN,1967,7.2
+Hungary,HUN,1968,7.5
+Hungary,HUN,1969,7
+Hungary,HUN,1970,7.5
+Hungary,HUN,1971,8
+Hungary,HUN,1972,8.6
+Hungary,HUN,1973,7.7
+Hungary,HUN,1974,7.7
+Hungary,HUN,1975,8.4
+Hungary,HUN,1976,8.6
+Hungary,HUN,1977,8.4
+Hungary,HUN,1978,8.3
+Hungary,HUN,1979,8.5
+Hungary,HUN,1980,9.4
+Hungary,HUN,1981,9.2
+Hungary,HUN,1982,8.7
+Hungary,HUN,1983,8.2
+Hungary,HUN,1984,9
+Hungary,HUN,1985,8.9
+Hungary,HUN,1986,8.9
+Hungary,HUN,1987,8.9
+Hungary,HUN,1988,8.7
+Hungary,HUN,1989,8.9
+Hungary,HUN,1990,9.4
+Hungary,HUN,1991,8.7
+Hungary,HUN,1992,8.5
+Hungary,HUN,1993,9
+Hungary,HUN,1994,9.3
+Hungary,HUN,1995,9
+Hungary,HUN,1996,6.9
+Hungary,HUN,1997,7.2
+Hungary,HUN,1998,7.2
+Hungary,HUN,1999,7.5
+Hungary,HUN,2000,7
+Hungary,HUN,2001,6.8
+Hungary,HUN,2002,6.5
+Hungary,HUN,2003,6
+Hungary,HUN,2004,4.8
+Hungary,HUN,2005,4.4
+Hungary,HUN,2006,6
+Hungary,HUN,2007,5.7
+Hungary,HUN,2008,5.5
+Hungary,HUN,2009,5
+Hungary,HUN,2010,4.5
+Hungary,HUN,2011,4.2
+Hungary,HUN,2012,3.3
+Iceland,ISL,1932,1.4
+Iceland,ISL,1933,1.7
+Iceland,ISL,1934,1.9
+Iceland,ISL,1935,1.4
+Iceland,ISL,1936,1.1
+Iceland,ISL,1937,1.2
+Iceland,ISL,1938,1.3
+Iceland,ISL,1939,0.9
+Iceland,ISL,1940,1.7
+Iceland,ISL,1941,2.1
+Iceland,ISL,1942,2.4
+Iceland,ISL,1943,2.2
+Iceland,ISL,1944,2.4
+Iceland,ISL,1945,3.4
+Iceland,ISL,1946,4.9
+Iceland,ISL,1947,4.5
+Iceland,ISL,1948,4.5
+Iceland,ISL,1949,4
+Iceland,ISL,1950,4.1
+Iceland,ISL,1951,3.8
+Iceland,ISL,1952,3.8
+Iceland,ISL,1953,4.3
+Iceland,ISL,1954,3.8
+Iceland,ISL,1955,3.9
+Iceland,ISL,1956,4.4
+Iceland,ISL,1957,5
+Iceland,ISL,1958,4.9
+Iceland,ISL,1959,4.8
+Iceland,ISL,1960,4.7
+Iceland,ISL,1961,5.1
+Iceland,ISL,1962,5.3
+Iceland,ISL,1963,5.5
+Iceland,ISL,1964,4.5
+Iceland,ISL,1965,5.1
+Iceland,ISL,1966,5.5
+Iceland,ISL,1967,5.6
+Iceland,ISL,1968,5.1
+Iceland,ISL,1969,4.5
+Iceland,ISL,1970,5.1
+Iceland,ISL,1971,5
+Iceland,ISL,1972,5.6
+Iceland,ISL,1973,5.6
+Iceland,ISL,1974,6.3
+Iceland,ISL,1975,6
+Iceland,ISL,1976,6.2
+Iceland,ISL,1977,5.8
+Iceland,ISL,1978,6
+Iceland,ISL,1979,6.3
+Iceland,ISL,1980,6.3
+Iceland,ISL,1981,6.6
+Iceland,ISL,1982,6.7
+Iceland,ISL,1983,6.9
+Iceland,ISL,1984,7
+Iceland,ISL,1985,6.7
+Iceland,ISL,1986,6.5
+Iceland,ISL,1987,6.6
+Iceland,ISL,1988,6.3
+Iceland,ISL,1989,6
+Iceland,ISL,1990,5.9
+Iceland,ISL,1991,5.9
+Iceland,ISL,1992,5.6
+Iceland,ISL,1993,5.3
+Iceland,ISL,1994,5.2
+Iceland,ISL,1995,5
+Iceland,ISL,1996,5
+Iceland,ISL,1997,4.8
+Iceland,ISL,1998,4.6
+Iceland,ISL,1999,4.7
+Iceland,ISL,2000,4.5
+Iceland,ISL,2001,4.3
+Iceland,ISL,2002,4.2
+Iceland,ISL,2003,3.9
+Iceland,ISL,2004,3.8
+Iceland,ISL,2005,3.7
+Iceland,ISL,2006,3.6
+Iceland,ISL,2007,3.6
+Iceland,ISL,2008,3.5
+Iceland,ISL,2009,3.3
+Iceland,ISL,2010,2.9
+Iceland,ISL,2011,2.8
+Iceland,ISL,2012,2.7
+Iceland,ISL,2013,2.3
+Iceland,ISL,2014,2.3
+Iceland,ISL,2015,2.2
+Ireland,IRL,1920,1.7
+Ireland,IRL,1921,1.7
+Ireland,IRL,1922,1.7
+Ireland,IRL,1923,1.7
+Ireland,IRL,1924,1.8
+Ireland,IRL,1925,1.9
+Ireland,IRL,1926,2
+Ireland,IRL,1927,2.1
+Ireland,IRL,1928,2.3
+Ireland,IRL,1929,2.4
+Ireland,IRL,1930,2.6
+Ireland,IRL,1931,2.8
+Ireland,IRL,1932,2.8
+Ireland,IRL,1933,2.9
+Ireland,IRL,1934,3.2
+Ireland,IRL,1935,3.2
+Ireland,IRL,1936,3.3
+Ireland,IRL,1937,3.5
+Ireland,IRL,1938,3.8
+Ireland,IRL,1939,4
+Ireland,IRL,1940,4
+Ireland,IRL,1941,3.5
+Ireland,IRL,1942,3.5
+Ireland,IRL,1943,4.1
+Ireland,IRL,1944,4.4
+Ireland,IRL,1945,4.1
+Ireland,IRL,1946,5.3
+Ireland,IRL,1947,5.5
+Ireland,IRL,1948,5.8
+Ireland,IRL,1949,6.4
+Ireland,IRL,1950,6.8
+Ireland,IRL,1951,7.7
+Ireland,IRL,1952,7.3
+Ireland,IRL,1953,7.1
+Ireland,IRL,1954,6.9
+Ireland,IRL,1955,7.3
+Ireland,IRL,1956,6.8
+Ireland,IRL,1957,6.6
+Ireland,IRL,1958,6.6
+Ireland,IRL,1959,6.9
+Ireland,IRL,1960,7.2
+Ireland,IRL,1961,7.5
+Ireland,IRL,1962,7.4
+Ireland,IRL,1963,7.8
+Ireland,IRL,1964,7.5
+Ireland,IRL,1965,7.4
+Ireland,IRL,1966,7.6
+Ireland,IRL,1967,7.7
+Ireland,IRL,1968,7.8
+Ireland,IRL,1969,8.1
+Ireland,IRL,1970,8.2
+Ireland,IRL,1971,8.2
+Ireland,IRL,1972,8.6
+Ireland,IRL,1973,9.1
+Ireland,IRL,1974,9.7
+Ireland,IRL,1975,9.6
+Ireland,IRL,1976,9.2
+Ireland,IRL,1977,8.8
+Ireland,IRL,1978,9.2
+Ireland,IRL,1979,8.9
+Ireland,IRL,1980,8.7
+Ireland,IRL,1981,8.3
+Ireland,IRL,1982,7.7
+Ireland,IRL,1983,7.3
+Ireland,IRL,1984,7
+Ireland,IRL,1985,6.8
+Ireland,IRL,1986,6.4
+Ireland,IRL,1987,6.1
+Ireland,IRL,1988,6
+Ireland,IRL,1989,6.1
+Ireland,IRL,1990,6.2
+Ireland,IRL,1991,6.6
+Ireland,IRL,1992,6.3
+Ireland,IRL,1993,5.9
+Ireland,IRL,1994,6.1
+Ireland,IRL,1995,6.4
+Ireland,IRL,1996,6
+Ireland,IRL,1997,6.1
+Ireland,IRL,1998,6.1
+Ireland,IRL,1999,6.5
+Ireland,IRL,2000,6.3
+Ireland,IRL,2001,6.1
+Ireland,IRL,2002,6.2
+Ireland,IRL,2003,5.5
+Ireland,IRL,2004,4.6
+Ireland,IRL,2005,4.6
+Ireland,IRL,2006,4.5
+Ireland,IRL,2007,4.3
+Ireland,IRL,2008,3.9
+Ireland,IRL,2009,3.6
+Ireland,IRL,2010,3.2
+Ireland,IRL,2011,3.2
+Israel,ISR,1960,5.8
+Israel,ISR,1961,5.6
+Israel,ISR,1962,5.6
+Israel,ISR,1963,5.8
+Israel,ISR,1964,5.7
+Israel,ISR,1965,6
+Israel,ISR,1966,5.5
+Israel,ISR,1967,5.7
+Israel,ISR,1968,5.8
+Israel,ISR,1969,6.3
+Israel,ISR,1970,6.3
+Israel,ISR,1971,6.2
+Israel,ISR,1972,6.6
+Israel,ISR,1973,7.3
+Israel,ISR,1974,7.6
+Israel,ISR,1975,6.9
+Israel,ISR,1976,7
+Israel,ISR,1977,6.1
+Israel,ISR,1978,6.7
+Israel,ISR,1979,5.9
+Israel,ISR,1980,6.4
+Israel,ISR,1981,6.8
+Israel,ISR,1982,6.8
+Israel,ISR,1983,7
+Israel,ISR,1984,6.9
+Israel,ISR,1985,6.9
+Israel,ISR,1986,6.7
+Israel,ISR,1987,6.8
+Israel,ISR,1988,6.8
+Israel,ISR,1989,6.7
+Israel,ISR,1990,6.4
+Israel,ISR,1991,6.1
+Israel,ISR,1992,6.2
+Israel,ISR,1993,6
+Israel,ISR,1994,6
+Israel,ISR,1995,6.1
+Israel,ISR,1996,6
+Israel,ISR,1997,5.6
+Israel,ISR,1998,5
+Israel,ISR,1999,5.2
+Israel,ISR,2000,5
+Israel,ISR,2001,5.2
+Israel,ISR,2002,5
+Israel,ISR,2003,4.8
+Israel,ISR,2004,4.6
+Israel,ISR,2005,4.4
+Israel,ISR,2006,4.3
+Israel,ISR,2007,4.3
+Israel,ISR,2008,4.3
+Israel,ISR,2009,4.2
+Israel,ISR,2010,4.1
+Israel,ISR,2011,4.1
+Israel,ISR,2012,3.9
+Israel,ISR,2013,3.5
+Israel,ISR,2014,3.3
+Italy,ITA,1881,0
+Italy,ITA,1882,0
+Italy,ITA,1883,0
+Italy,ITA,1904,0.2
+Italy,ITA,1905,0.2
+Italy,ITA,1909,0.3
+Italy,ITA,1910,0.3
+Italy,ITA,1914,0.5
+Italy,ITA,1915,0.5
+Italy,ITA,1919,0.7
+Italy,ITA,1920,0.7
+Italy,ITA,1921,1.1
+Italy,ITA,1922,1.1
+Italy,ITA,1923,1.1
+Italy,ITA,1924,1.1
+Italy,ITA,1925,1.1
+Italy,ITA,1926,1.4
+Italy,ITA,1927,1.4
+Italy,ITA,1928,1.4
+Italy,ITA,1929,1.4
+Italy,ITA,1930,1.4
+Italy,ITA,1931,1.2
+Italy,ITA,1932,1.2
+Italy,ITA,1933,1.2
+Italy,ITA,1934,1.2
+Italy,ITA,1935,1.2
+Italy,ITA,1936,1.5
+Italy,ITA,1937,1.5
+Italy,ITA,1938,1.5
+Italy,ITA,1939,1.5
+Italy,ITA,1940,1.5
+Italy,ITA,1941,1.8
+Italy,ITA,1942,1.8
+Italy,ITA,1943,1.8
+Italy,ITA,1944,1.8
+Italy,ITA,1945,1.8
+Italy,ITA,1946,1.8
+Italy,ITA,1947,1.8
+Italy,ITA,1948,1.8
+Italy,ITA,1949,1.8
+Italy,ITA,1950,1.8
+Italy,ITA,1951,2.6
+Italy,ITA,1952,2.6
+Italy,ITA,1953,2.6
+Italy,ITA,1954,2.6
+Italy,ITA,1955,2.6
+Italy,ITA,1956,3
+Italy,ITA,1957,3.2
+Italy,ITA,1958,3.3
+Italy,ITA,1959,3.4
+Italy,ITA,1960,3.5
+Italy,ITA,1961,3.7
+Italy,ITA,1962,4
+Italy,ITA,1963,4
+Italy,ITA,1964,4.1
+Italy,ITA,1965,4.2
+Italy,ITA,1966,4.5
+Italy,ITA,1967,4.6
+Italy,ITA,1968,4.7
+Italy,ITA,1969,4.7
+Italy,ITA,1970,4.7
+Italy,ITA,1971,4.7
+Italy,ITA,1972,4.9
+Italy,ITA,1973,5.3
+Italy,ITA,1974,5.7
+Italy,ITA,1975,5.7
+Italy,ITA,1976,5.7
+Italy,ITA,1977,5.7
+Italy,ITA,1978,5.6
+Italy,ITA,1979,6
+Italy,ITA,1980,6.1
+Italy,ITA,1981,6.1
+Italy,ITA,1982,6.2
+Italy,ITA,1983,6.2
+Italy,ITA,1984,6.3
+Italy,ITA,1985,6.3
+Italy,ITA,1986,6.2
+Italy,ITA,1987,6
+Italy,ITA,1988,5.6
+Italy,ITA,1989,5.6
+Italy,ITA,1990,5.2
+Italy,ITA,1991,5.1
+Italy,ITA,1992,5
+Italy,ITA,1993,5
+Italy,ITA,1994,5.1
+Italy,ITA,1995,5.1
+Italy,ITA,1996,5
+Italy,ITA,1997,5
+Italy,ITA,1998,5.1
+Italy,ITA,1999,5.4
+Italy,ITA,2000,5.6
+Italy,ITA,2001,5.7
+Italy,ITA,2002,5.8
+Italy,ITA,2003,5.6
+Italy,ITA,2004,5.4
+Italy,ITA,2005,5
+Italy,ITA,2006,5.1
+Italy,ITA,2007,5
+Italy,ITA,2008,4.9
+Italy,ITA,2009,4.8
+Italy,ITA,2010,4.7
+Japan,JPN,1920,1.6
+Japan,JPN,1921,1.7
+Japan,JPN,1922,1.8
+Japan,JPN,1923,2
+Japan,JPN,1924,2.1
+Japan,JPN,1925,2
+Japan,JPN,1926,2
+Japan,JPN,1927,2.1
+Japan,JPN,1928,2.2
+Japan,JPN,1929,2.2
+Japan,JPN,1930,2
+Japan,JPN,1931,2
+Japan,JPN,1932,2.1
+Japan,JPN,1933,2.2
+Japan,JPN,1934,2.3
+Japan,JPN,1935,2.4
+Japan,JPN,1936,2.4
+Japan,JPN,1937,2.5
+Japan,JPN,1938,2.5
+Japan,JPN,1939,2.9
+Japan,JPN,1940,3.1
+Japan,JPN,1941,3.1
+Japan,JPN,1942,3.2
+Japan,JPN,1943,3.2
+Japan,JPN,1944,2.7
+Japan,JPN,1945,0.9
+Japan,JPN,1946,0.9
+Japan,JPN,1947,1
+Japan,JPN,1948,1.9
+Japan,JPN,1949,2.8
+Japan,JPN,1950,3.3
+Japan,JPN,1951,3.7
+Japan,JPN,1952,3.9
+Japan,JPN,1953,4.3
+Japan,JPN,1954,4.5
+Japan,JPN,1955,4.5
+Japan,JPN,1956,4.4
+Japan,JPN,1957,4.5
+Japan,JPN,1958,4.6
+Japan,JPN,1959,4.8
+Japan,JPN,1960,5.1
+Japan,JPN,1961,5.6
+Japan,JPN,1962,5.7
+Japan,JPN,1963,5.9
+Japan,JPN,1964,6.2
+Japan,JPN,1965,6.4
+Japan,JPN,1966,6.7
+Japan,JPN,1967,7
+Japan,JPN,1968,7
+Japan,JPN,1969,7.5
+Japan,JPN,1970,7.8
+Japan,JPN,1971,8.2
+Japan,JPN,1972,8.6
+Japan,JPN,1973,8.9
+Japan,JPN,1974,9.5
+Japan,JPN,1975,9.5
+Japan,JPN,1976,9.4
+Japan,JPN,1977,9.7
+Japan,JPN,1978,9.6
+Japan,JPN,1979,9.6
+Japan,JPN,1980,9.4
+Japan,JPN,1981,9.5
+Japan,JPN,1982,9.4
+Japan,JPN,1983,9.3
+Japan,JPN,1984,9.2
+Japan,JPN,1985,9
+Japan,JPN,1986,8.8
+Japan,JPN,1987,8.7
+Japan,JPN,1988,8.6
+Japan,JPN,1989,8.6
+Japan,JPN,1990,8.8
+Japan,JPN,1991,8.9
+Japan,JPN,1992,8.8
+Japan,JPN,1993,8.8
+Japan,JPN,1994,8.8
+Japan,JPN,1995,8.8
+Japan,JPN,1996,9.1
+Japan,JPN,1997,8.5
+Japan,JPN,1998,8.7
+Japan,JPN,1999,8.5
+Japan,JPN,2000,8.3
+Japan,JPN,2001,8.1
+Japan,JPN,2002,7.9
+Japan,JPN,2003,7.6
+Japan,JPN,2004,7.4
+Japan,JPN,2005,7.2
+Japan,JPN,2006,6.8
+Japan,JPN,2007,6.5
+Japan,JPN,2008,6.2
+Japan,JPN,2009,5.9
+Japan,JPN,2010,5.3
+Japan,JPN,2011,4.9
+Japan,JPN,2012,4.9
+Japan,JPN,2013,4.9
+Japan,JPN,2014,4.5
+Japan,JPN,2015,4.6
+Kazakhstan,KAZ,1988,5
+Kazakhstan,KAZ,1989,4.7
+Kazakhstan,KAZ,1990,3.9
+Kazakhstan,KAZ,1991,3.6
+Kazakhstan,KAZ,1992,3.6
+Kazakhstan,KAZ,1993,4.7
+Kazakhstan,KAZ,1994,4.9
+Kazakhstan,KAZ,1995,5.1
+Kazakhstan,KAZ,1996,3.8
+Kazakhstan,KAZ,1997,3.9
+Kazakhstan,KAZ,1998,4.4
+Kazakhstan,KAZ,1999,4.4
+Kazakhstan,KAZ,2000,4.4
+Kyrgyzstan,KGZ,1988,5.3
+Kyrgyzstan,KGZ,1989,4.9
+Kyrgyzstan,KGZ,1990,4.9
+Kyrgyzstan,KGZ,1991,4.9
+Kyrgyzstan,KGZ,1992,5
+Kyrgyzstan,KGZ,1993,5.8
+Kyrgyzstan,KGZ,1994,4
+Kyrgyzstan,KGZ,1995,3.9
+Kyrgyzstan,KGZ,1996,3.9
+Kyrgyzstan,KGZ,1997,3.8
+Kyrgyzstan,KGZ,1998,3.8
+Latvia,LVA,1988,4.4
+Latvia,LVA,1989,4.3
+Latvia,LVA,1990,4.2
+Latvia,LVA,1991,4.4
+Latvia,LVA,1992,4.4
+Latvia,LVA,1993,4.5
+Latvia,LVA,1994,4.8
+Latvia,LVA,1995,5.2
+Latvia,LVA,1996,5.4
+Latvia,LVA,1997,3.4
+Latvia,LVA,1998,3.4
+Latvia,LVA,1999,3.4
+Latvia,LVA,2000,3.5
+Latvia,LVA,2001,4.1
+Latvia,LVA,2002,3.7
+Latvia,LVA,2003,3.8
+Latvia,LVA,2004,5.3
+Latvia,LVA,2005,6
+Latvia,LVA,2006,6.9
+Latvia,LVA,2007,4.8
+Latvia,LVA,2008,5.7
+Latvia,LVA,2009,3.4
+Latvia,LVA,2010,2.7
+Latvia,LVA,2011,3
+Latvia,LVA,2012,2.9
+Latvia,LVA,2013,3
+Latvia,LVA,2014,2.8
+Lithuania,LTU,1988,4.4
+Lithuania,LTU,1989,4.3
+Lithuania,LTU,1990,4.2
+Lithuania,LTU,1991,4.7
+Lithuania,LTU,1992,4.7
+Lithuania,LTU,1993,4.7
+Lithuania,LTU,1994,4.7
+Lithuania,LTU,1995,4.9
+Lithuania,LTU,1996,5.1
+Lithuania,LTU,1997,7
+Lithuania,LTU,1998,7
+Lithuania,LTU,1999,7
+Lithuania,LTU,2000,5.3
+Lithuania,LTU,2001,5.6
+Lithuania,LTU,2002,4.7
+Lithuania,LTU,2003,3.8
+Lithuania,LTU,2004,3.1
+Lithuania,LTU,2005,3.3
+Lithuania,LTU,2006,5.7
+Lithuania,LTU,2007,6.3
+Lithuania,LTU,2008,5.9
+Lithuania,LTU,2009,5.1
+Lithuania,LTU,2010,4.2
+Lithuania,LTU,2011,3.8
+Lithuania,LTU,2012,3.5
+Lithuania,LTU,2013,3.9
+Lithuania,LTU,2014,4
+Moldova,MDA,1988,8.5
+Moldova,MDA,1989,8.9
+Moldova,MDA,1990,6.6
+Moldova,MDA,1991,6.6
+Moldova,MDA,1992,6.5
+Moldova,MDA,1993,4.2
+Moldova,MDA,1994,4.1
+Moldova,MDA,1995,4.1
+Moldova,MDA,1996,4.1
+Moldova,MDA,1997,4.9
+Moldova,MDA,1998,4.7
+Moldova,MDA,1999,4.7
+Netherlands,NLD,1923,1.1
+Netherlands,NLD,1924,1.4
+Netherlands,NLD,1925,1.1
+Netherlands,NLD,1926,1.3
+Netherlands,NLD,1927,1.4
+Netherlands,NLD,1928,1.4
+Netherlands,NLD,1929,1.6
+Netherlands,NLD,1930,1.8
+Netherlands,NLD,1931,1.7
+Netherlands,NLD,1932,1.8
+Netherlands,NLD,1933,1.9
+Netherlands,NLD,1934,1.8
+Netherlands,NLD,1935,1.9
+Netherlands,NLD,1936,1.8
+Netherlands,NLD,1937,1.9
+Netherlands,NLD,1938,2.1
+Netherlands,NLD,1939,2.3
+Netherlands,NLD,1946,1.4
+Netherlands,NLD,1947,2.2
+Netherlands,NLD,1948,2.1
+Netherlands,NLD,1949,2.4
+Netherlands,NLD,1950,3.1
+Netherlands,NLD,1951,3.2
+Netherlands,NLD,1952,3.6
+Netherlands,NLD,1953,3.8
+Netherlands,NLD,1954,4.2
+Netherlands,NLD,1955,4.3
+Netherlands,NLD,1956,4.7
+Netherlands,NLD,1957,4.8
+Netherlands,NLD,1958,4.6
+Netherlands,NLD,1959,4.6
+Netherlands,NLD,1960,4.7
+Netherlands,NLD,1961,4.9
+Netherlands,NLD,1962,5
+Netherlands,NLD,1963,5.2
+Netherlands,NLD,1964,4.4
+Netherlands,NLD,1965,5.6
+Netherlands,NLD,1966,4.3
+Netherlands,NLD,1967,5
+Netherlands,NLD,1968,5.5
+Netherlands,NLD,1969,4.8
+Netherlands,NLD,1970,5.4
+Netherlands,NLD,1971,5.6
+Netherlands,NLD,1972,6.1
+Netherlands,NLD,1973,6.5
+Netherlands,NLD,1974,6.4
+Netherlands,NLD,1975,6.4
+Netherlands,NLD,1976,6
+Netherlands,NLD,1977,7
+Netherlands,NLD,1978,6
+Netherlands,NLD,1979,6.8
+Netherlands,NLD,1980,5.7
+Netherlands,NLD,1981,5.2
+Netherlands,NLD,1982,5.4
+Netherlands,NLD,1983,5.6
+Netherlands,NLD,1984,3.8
+Netherlands,NLD,1985,3.8
+Netherlands,NLD,1986,3.8
+Netherlands,NLD,1987,3.7
+Netherlands,NLD,1988,3.7
+Netherlands,NLD,1989,3.7
+Netherlands,NLD,1990,3.9
+Netherlands,NLD,1991,4.1
+Netherlands,NLD,1992,3.9
+Netherlands,NLD,1993,3.5
+Netherlands,NLD,1994,3.6
+Netherlands,NLD,1995,3.7
+Netherlands,NLD,1996,3.3
+Netherlands,NLD,1997,3.6
+Netherlands,NLD,1998,3.6
+Netherlands,NLD,1999,3.5
+Netherlands,NLD,2000,3.5
+Netherlands,NLD,2001,3.4
+Netherlands,NLD,2002,3.5
+Netherlands,NLD,2003,3.5
+Netherlands,NLD,2004,3.1
+Netherlands,NLD,2005,2.8
+Netherlands,NLD,2006,2.9
+Netherlands,NLD,2007,3.1
+Netherlands,NLD,2008,3
+Netherlands,NLD,2009,2.7
+Netherlands,NLD,2010,2.7
+New Zealand,NZL,1920,1.6
+New Zealand,NZL,1921,1.2
+New Zealand,NZL,1922,1.3
+New Zealand,NZL,1923,1.5
+New Zealand,NZL,1924,1.6
+New Zealand,NZL,1925,1.8
+New Zealand,NZL,1926,1.8
+New Zealand,NZL,1927,1.8
+New Zealand,NZL,1928,1.8
+New Zealand,NZL,1929,1.9
+New Zealand,NZL,1930,1.6
+New Zealand,NZL,1931,1.2
+New Zealand,NZL,1932,1
+New Zealand,NZL,1933,1
+New Zealand,NZL,1934,1.1
+New Zealand,NZL,1935,1.4
+New Zealand,NZL,1936,1.7
+New Zealand,NZL,1937,1.9
+New Zealand,NZL,1938,2.1
+New Zealand,NZL,1939,2.1
+New Zealand,NZL,1940,1.9
+New Zealand,NZL,1941,2
+New Zealand,NZL,1942,2.3
+New Zealand,NZL,1943,2.3
+New Zealand,NZL,1944,2.5
+New Zealand,NZL,1945,2.6
+New Zealand,NZL,1946,3.4
+New Zealand,NZL,1947,4.3
+New Zealand,NZL,1948,3.4
+New Zealand,NZL,1949,3.4
+New Zealand,NZL,1950,4
+New Zealand,NZL,1951,4.3
+New Zealand,NZL,1952,4.1
+New Zealand,NZL,1953,4
+New Zealand,NZL,1954,4.4
+New Zealand,NZL,1955,4.8
+New Zealand,NZL,1956,4.8
+New Zealand,NZL,1957,5
+New Zealand,NZL,1958,4.6
+New Zealand,NZL,1959,4.4
+New Zealand,NZL,1960,5.3
+New Zealand,NZL,1961,5.3
+New Zealand,NZL,1962,5.5
+New Zealand,NZL,1963,5.9
+New Zealand,NZL,1964,6
+New Zealand,NZL,1965,6.3
+New Zealand,NZL,1966,6.9
+New Zealand,NZL,1967,6.8
+New Zealand,NZL,1968,6.8
+New Zealand,NZL,1969,7
+New Zealand,NZL,1970,7.1
+New Zealand,NZL,1971,7.2
+New Zealand,NZL,1972,7.3
+New Zealand,NZL,1973,7.4
+New Zealand,NZL,1974,7.5
+New Zealand,NZL,1975,7.9
+New Zealand,NZL,1976,7.7
+New Zealand,NZL,1977,7.9
+New Zealand,NZL,1978,7.7
+New Zealand,NZL,1979,7.4
+New Zealand,NZL,1980,7.2
+New Zealand,NZL,1981,7.3
+New Zealand,NZL,1982,7.1
+New Zealand,NZL,1983,7
+New Zealand,NZL,1984,7
+New Zealand,NZL,1985,6.3
+New Zealand,NZL,1986,5.8
+New Zealand,NZL,1987,5.8
+New Zealand,NZL,1988,5.8
+New Zealand,NZL,1989,4.6
+New Zealand,NZL,1990,4.8
+New Zealand,NZL,1991,4.1
+New Zealand,NZL,1992,3.5
+New Zealand,NZL,1993,3.4
+New Zealand,NZL,1994,3.3
+New Zealand,NZL,1995,3.2
+New Zealand,NZL,1996,3.5
+New Zealand,NZL,1997,3.3
+New Zealand,NZL,1998,3.1
+New Zealand,NZL,1999,2.9
+New Zealand,NZL,2000,2.9
+New Zealand,NZL,2001,2.4
+New Zealand,NZL,2002,2.5
+New Zealand,NZL,2003,2.1
+New Zealand,NZL,2004,2
+New Zealand,NZL,2005,2.1
+New Zealand,NZL,2006,2
+New Zealand,NZL,2007,2
+New Zealand,NZL,2008,2.1
+New Zealand,NZL,2009,2
+North Macedonia,MKD,1993,8.7
+North Macedonia,MKD,1994,8.7
+North Macedonia,MKD,1995,8.7
+North Macedonia,MKD,1996,8.7
+North Macedonia,MKD,1997,8.7
+North Macedonia,MKD,1998,8.4
+North Macedonia,MKD,1999,8.4
+North Macedonia,MKD,2000,8.4
+North Macedonia,MKD,2001,8.4
+North Macedonia,MKD,2002,8.4
+North Macedonia,MKD,2003,8.4
+North Macedonia,MKD,2004,8.4
+Norway,NOR,1927,0.7
+Norway,NOR,1928,0.7
+Norway,NOR,1929,0.8
+Norway,NOR,1930,0.8
+Norway,NOR,1931,0.7
+Norway,NOR,1932,0.8
+Norway,NOR,1933,0.8
+Norway,NOR,1934,0.8
+Norway,NOR,1935,0.8
+Norway,NOR,1936,0.9
+Norway,NOR,1937,1.1
+Norway,NOR,1938,1.1
+Norway,NOR,1939,1.1
+Norway,NOR,1940,1.2
+Norway,NOR,1941,0.9
+Norway,NOR,1942,0.7
+Norway,NOR,1943,0.7
+Norway,NOR,1944,0.4
+Norway,NOR,1945,0.6
+Norway,NOR,1946,1.5
+Norway,NOR,1947,1.7
+Norway,NOR,1948,1.7
+Norway,NOR,1949,1.6
+Norway,NOR,1950,1.4
+Norway,NOR,1951,1.4
+Norway,NOR,1952,1.5
+Norway,NOR,1953,1.4
+Norway,NOR,1954,1.5
+Norway,NOR,1955,1.5
+Norway,NOR,1956,1.4
+Norway,NOR,1957,1.5
+Norway,NOR,1958,1.5
+Norway,NOR,1959,1.5
+Norway,NOR,1960,1.5
+Norway,NOR,1961,1.5
+Norway,NOR,1962,1.5
+Norway,NOR,1963,1.4
+Norway,NOR,1964,1.3
+Norway,NOR,1965,1.5
+Norway,NOR,1966,1.5
+Norway,NOR,1967,1.6
+Norway,NOR,1968,1.8
+Norway,NOR,1969,1.9
+Norway,NOR,1970,1.8
+Norway,NOR,1971,1.7
+Norway,NOR,1972,1.8
+Norway,NOR,1973,1.8
+Norway,NOR,1974,1.7
+Norway,NOR,1975,1.7
+Norway,NOR,1976,1.6
+Norway,NOR,1977,1.8
+Norway,NOR,1978,1.7
+Norway,NOR,1979,1.9
+Norway,NOR,1980,2
+Norway,NOR,1981,1.8
+Norway,NOR,1982,1.8
+Norway,NOR,1983,1.9
+Norway,NOR,1984,2.1
+Norway,NOR,1985,2.3
+Norway,NOR,1986,2.6
+Norway,NOR,1987,2.7
+Norway,NOR,1988,2.8
+Norway,NOR,1989,2.8
+Norway,NOR,1990,2.8
+Norway,NOR,1991,2.9
+Norway,NOR,1992,2.7
+Norway,NOR,1993,2.8
+Norway,NOR,1994,2.6
+Norway,NOR,1995,2.7
+Norway,NOR,1996,2.8
+Norway,NOR,1997,2.5
+Norway,NOR,1998,2.8
+Norway,NOR,1999,2.8
+Norway,NOR,2000,2.8
+Norway,NOR,2001,2.7
+Norway,NOR,2002,2.6
+Norway,NOR,2003,2.6
+Norway,NOR,2004,3
+Norway,NOR,2005,2.6
+Norway,NOR,2006,2.9
+Norway,NOR,2007,2.4
+Norway,NOR,2008,2.8
+Norway,NOR,2009,2.7
+Norway,NOR,2010,2.5
+Norway,NOR,2011,2.3
+Poland,POL,1922,0.7
+Poland,POL,1923,0.6
+Poland,POL,1924,0.7
+Poland,POL,1925,0.9
+Poland,POL,1926,0.8
+Poland,POL,1927,0.9
+Poland,POL,1928,1.1
+Poland,POL,1929,1.1
+Poland,POL,1930,1.1
+Poland,POL,1931,1
+Poland,POL,1932,1
+Poland,POL,1933,0.9
+Poland,POL,1934,0.8
+Poland,POL,1935,0.7
+Poland,POL,1937,0.9
+Poland,POL,1949,3.3
+Poland,POL,1953,4.6
+Poland,POL,1957,6.1
+Poland,POL,1960,6.2
+Poland,POL,1961,6.9
+Poland,POL,1962,7.2
+Poland,POL,1963,7.1
+Poland,POL,1964,6.1
+Poland,POL,1965,6.7
+Poland,POL,1966,7.4
+Poland,POL,1967,7.1
+Poland,POL,1968,7.6
+Poland,POL,1969,8
+Poland,POL,1970,8
+Poland,POL,1971,7.7
+Poland,POL,1972,9.1
+Poland,POL,1973,8.3
+Poland,POL,1974,8.7
+Poland,POL,1975,8.8
+Poland,POL,1976,9.4
+Poland,POL,1977,9.4
+Poland,POL,1978,9.4
+Poland,POL,1979,9.5
+Poland,POL,1980,9.6
+Poland,POL,1981,9.1
+Poland,POL,1982,9.2
+Poland,POL,1983,8.6
+Poland,POL,1984,8.8
+Poland,POL,1985,9.2
+Poland,POL,1986,9.7
+Poland,POL,1987,10.1
+Poland,POL,1988,9.2
+Poland,POL,1989,9.3
+Poland,POL,1990,9.9
+Poland,POL,1991,10.7
+Poland,POL,1992,9.1
+Poland,POL,1993,9.7
+Poland,POL,1994,8.9
+Poland,POL,1995,9.3
+Poland,POL,1996,8.2
+Poland,POL,1997,8.3
+Poland,POL,1998,8.1
+Poland,POL,1999,7.8
+Poland,POL,2000,6.5
+Poland,POL,2001,6.6
+Poland,POL,2002,6.6
+Poland,POL,2003,6.3
+Poland,POL,2004,6.2
+Poland,POL,2005,6.4
+Poland,POL,2006,5.7
+Poland,POL,2007,5.6
+Poland,POL,2008,5.1
+Poland,POL,2009,5.1
+Poland,POL,2010,4.6
+Poland,POL,2011,4.4
+Poland,POL,2012,4
+Portugal,PRT,1934,0.4
+Portugal,PRT,1940,0.7
+Portugal,PRT,1941,0.9
+Portugal,PRT,1942,1.1
+Portugal,PRT,1943,1.1
+Portugal,PRT,1944,1.1
+Portugal,PRT,1945,1.2
+Portugal,PRT,1946,1.3
+Portugal,PRT,1947,1.5
+Portugal,PRT,1948,1.6
+Portugal,PRT,1949,1.7
+Portugal,PRT,1950,1.7
+Portugal,PRT,1951,1.7
+Portugal,PRT,1952,1.9
+Portugal,PRT,1953,1.9
+Portugal,PRT,1954,1.9
+Portugal,PRT,1955,2
+Portugal,PRT,1956,2.2
+Portugal,PRT,1957,2.2
+Portugal,PRT,1958,2.4
+Portugal,PRT,1959,2.5
+Portugal,PRT,1960,2.7
+Portugal,PRT,1961,2.4
+Portugal,PRT,1962,2.5
+Portugal,PRT,1963,2.9
+Portugal,PRT,1964,3
+Portugal,PRT,1965,3.2
+Portugal,PRT,1966,3.4
+Portugal,PRT,1967,3.5
+Portugal,PRT,1968,3.7
+Portugal,PRT,1969,3.7
+Portugal,PRT,1970,4
+Portugal,PRT,1971,4
+Portugal,PRT,1972,4.2
+Portugal,PRT,1973,4.5
+Portugal,PRT,1974,4.7
+Portugal,PRT,1975,4.8
+Portugal,PRT,1976,4.6
+Portugal,PRT,1977,4.9
+Portugal,PRT,1978,4.9
+Portugal,PRT,1979,4.6
+Portugal,PRT,1980,4.5
+Portugal,PRT,1981,4.7
+Portugal,PRT,1982,4.8
+Portugal,PRT,1983,5
+Portugal,PRT,1984,4.9
+Portugal,PRT,1985,4.9
+Portugal,PRT,1986,4.9
+Portugal,PRT,1987,5.3
+Portugal,PRT,1988,5.1
+Portugal,PRT,1989,5.1
+Portugal,PRT,1990,5.3
+Portugal,PRT,1991,5.5
+Portugal,PRT,1992,5.7
+Portugal,PRT,1993,5.7
+Portugal,PRT,1994,5.9
+Portugal,PRT,1995,5.4
+Portugal,PRT,1996,5.3
+Portugal,PRT,1997,5.4
+Portugal,PRT,1998,5.3
+Portugal,PRT,1999,5.5
+Portugal,PRT,2000,5.4
+Portugal,PRT,2001,5.6
+Portugal,PRT,2002,5.5
+Portugal,PRT,2003,5.3
+Portugal,PRT,2004,5.1
+Portugal,PRT,2005,4.8
+Portugal,PRT,2006,4.4
+Portugal,PRT,2007,4.3
+Portugal,PRT,2008,3.8
+Portugal,PRT,2009,3.8
+Portugal,PRT,2010,3.6
+Portugal,PRT,2011,3.4
+Portugal,PRT,2012,3.1
+Romania,ROU,1920,0.2
+Romania,ROU,1921,0.5
+Romania,ROU,1922,0.6
+Romania,ROU,1923,0.7
+Romania,ROU,1924,1
+Romania,ROU,1925,0.9
+Romania,ROU,1926,1
+Romania,ROU,1927,1
+Romania,ROU,1928,0.9
+Romania,ROU,1929,0.9
+Romania,ROU,1930,0.7
+Romania,ROU,1931,0.6
+Romania,ROU,1932,0.5
+Romania,ROU,1933,0.5
+Romania,ROU,1934,0.5
+Romania,ROU,1935,0.5
+Romania,ROU,1960,4.3
+Romania,ROU,1961,4.5
+Romania,ROU,1962,4.5
+Romania,ROU,1963,4.3
+Romania,ROU,1964,4.4
+Romania,ROU,1965,4.5
+Romania,ROU,1966,4.9
+Romania,ROU,1967,4.7
+Romania,ROU,1968,4.7
+Romania,ROU,1969,4.8
+Romania,ROU,1970,4.7
+Romania,ROU,1971,4.7
+Romania,ROU,1972,4.8
+Romania,ROU,1973,4.9
+Romania,ROU,1974,5
+Romania,ROU,1975,5.2
+Romania,ROU,1976,5.3
+Romania,ROU,1977,5.4
+Romania,ROU,1978,5.6
+Romania,ROU,1979,5.6
+Romania,ROU,1980,5.7
+Romania,ROU,1981,5.9
+Romania,ROU,1982,6
+Romania,ROU,1983,5.9
+Romania,ROU,1984,5.8
+Romania,ROU,1985,5.8
+Romania,ROU,1986,5.7
+Romania,ROU,1987,4.6
+Romania,ROU,1988,4.9
+Romania,ROU,1989,5
+Romania,ROU,1990,5
+Romania,ROU,1991,3.6
+Romania,ROU,1992,4.3
+Romania,ROU,1993,5.5
+Romania,ROU,1994,5.7
+Romania,ROU,1995,6.3
+Romania,ROU,1996,4.9
+Romania,ROU,1997,4.7
+Romania,ROU,1998,5
+Romania,ROU,1999,6
+Romania,ROU,2000,6
+Romania,ROU,2001,5.6
+Romania,ROU,2002,5.7
+Romania,ROU,2003,5.8
+Romania,ROU,2004,5.6
+Romania,ROU,2005,5.1
+Romania,ROU,2006,4.6
+Romania,ROU,2007,4.7
+Romania,ROU,2008,4.9
+Romania,ROU,2009,4.9
+Romania,ROU,2010,4.1
+Romania,ROU,2011,4.2
+Romania,ROU,2012,4.1
+Romania,ROU,2013,4
+Russia,RUS,1988,4.9
+Russia,RUS,1989,4.6
+Russia,RUS,1990,4.7
+Russia,RUS,1991,4.7
+Russia,RUS,1992,4.4
+Russia,RUS,1993,4.4
+Russia,RUS,1994,4.2
+Russia,RUS,1995,5
+Russia,RUS,1996,4.9
+Russia,RUS,1997,5.4
+Russia,RUS,1998,5.7
+Russia,RUS,1999,6.7
+Russia,RUS,2000,8.3
+Russia,RUS,2001,8.7
+Russia,RUS,2002,9
+Russia,RUS,2003,8.7
+Russia,RUS,2004,8.4
+Slovakia,SVK,1975,5.3
+Slovakia,SVK,1980,6.3
+Slovakia,SVK,1981,6.5
+Slovakia,SVK,1982,6.6
+Slovakia,SVK,1983,6.3
+Slovakia,SVK,1984,6.1
+Slovakia,SVK,1985,6.1
+Slovakia,SVK,1986,6.1
+Slovakia,SVK,1987,6.1
+Slovakia,SVK,1988,5.8
+Slovakia,SVK,1989,5.7
+Slovakia,SVK,1993,6.5
+Slovakia,SVK,1994,6.5
+Slovakia,SVK,1995,7.2
+Slovakia,SVK,1996,7.4
+Slovakia,SVK,1997,7.7
+Slovakia,SVK,1998,7.9
+Slovakia,SVK,1999,7.9
+Slovakia,SVK,2000,7.8
+Slovakia,SVK,2001,7.7
+Slovakia,SVK,2002,7.7
+Slovakia,SVK,2003,7.6
+Slovakia,SVK,2004,7.6
+Slovakia,SVK,2006,4.3
+Slovakia,SVK,2007,4.6
+Slovakia,SVK,2008,5
+Slovakia,SVK,2009,4.6
+Slovakia,SVK,2010,4.4
+Slovakia,SVK,2011,4.3
+Slovakia,SVK,2012,4.2
+Slovakia,SVK,2013,3.9
+Slovakia,SVK,2014,3.9
+Slovenia,SVN,1993,6.3
+Slovenia,SVN,1994,6.3
+Slovenia,SVN,1995,6.2
+Slovenia,SVN,1996,6.2
+Slovenia,SVN,1997,6.2
+Slovenia,SVN,1998,6.2
+Slovenia,SVN,1999,6.1
+Slovenia,SVN,2000,6.1
+Slovenia,SVN,2001,6
+Slovenia,SVN,2002,3.9
+Slovenia,SVN,2003,3.7
+Slovenia,SVN,2004,3.6
+Slovenia,SVN,2006,6.8
+Slovenia,SVN,2007,6.6
+Slovenia,SVN,2008,7.4
+Slovenia,SVN,2009,6.6
+Slovenia,SVN,2010,6.2
+Slovenia,SVN,2011,5.7
+Slovenia,SVN,2012,5.8
+Slovenia,SVN,2013,4.8
+Slovenia,SVN,2014,4.6
+Spain,ESP,1920,1
+Spain,ESP,1921,1
+Spain,ESP,1922,1.1
+Spain,ESP,1923,1.2
+Spain,ESP,1924,1.1
+Spain,ESP,1925,1
+Spain,ESP,1926,0.9
+Spain,ESP,1927,1
+Spain,ESP,1928,1.2
+Spain,ESP,1929,1.3
+Spain,ESP,1930,1.4
+Spain,ESP,1931,1.3
+Spain,ESP,1932,1.4
+Spain,ESP,1933,1.3
+Spain,ESP,1934,1.2
+Spain,ESP,1935,1.1
+Spain,ESP,1940,1
+Spain,ESP,1941,1.1
+Spain,ESP,1942,1.1
+Spain,ESP,1943,1.3
+Spain,ESP,1944,1.3
+Spain,ESP,1945,1.3
+Spain,ESP,1946,1.4
+Spain,ESP,1947,1.5
+Spain,ESP,1948,1.3
+Spain,ESP,1949,1.4
+Spain,ESP,1950,1.2
+Spain,ESP,1951,1.3
+Spain,ESP,1952,1.5
+Spain,ESP,1953,1.7
+Spain,ESP,1954,1.8
+Spain,ESP,1955,2
+Spain,ESP,1956,1.9
+Spain,ESP,1957,2.3
+Spain,ESP,1958,2.8
+Spain,ESP,1959,2.9
+Spain,ESP,1960,3.1
+Spain,ESP,1961,3.4
+Spain,ESP,1962,3.7
+Spain,ESP,1963,4.1
+Spain,ESP,1964,4.4
+Spain,ESP,1965,4.8
+Spain,ESP,1966,5
+Spain,ESP,1967,5.3
+Spain,ESP,1968,5.4
+Spain,ESP,1969,5.4
+Spain,ESP,1970,5.6
+Spain,ESP,1971,5.7
+Spain,ESP,1972,5.9
+Spain,ESP,1973,6.2
+Spain,ESP,1974,6.6
+Spain,ESP,1975,6.3
+Spain,ESP,1976,6.6
+Spain,ESP,1977,6.9
+Spain,ESP,1978,6.4
+Spain,ESP,1979,7.1
+Spain,ESP,1980,6.9
+Spain,ESP,1981,6.3
+Spain,ESP,1982,6.6
+Spain,ESP,1983,6.7
+Spain,ESP,1984,6.9
+Spain,ESP,1985,7.3
+Spain,ESP,1986,7.1
+Spain,ESP,1987,7.2
+Spain,ESP,1988,6.9
+Spain,ESP,1989,7
+Spain,ESP,1990,7.2
+Spain,ESP,1991,7.3
+Spain,ESP,1992,6.9
+Spain,ESP,1993,6.3
+Spain,ESP,1994,6.8
+Spain,ESP,1995,6.3
+Spain,ESP,1996,6
+Spain,ESP,1997,6.5
+Spain,ESP,1998,7.2
+Spain,ESP,1999,7
+Spain,ESP,2000,7
+Spain,ESP,2001,7.1
+Spain,ESP,2002,7
+Spain,ESP,2003,7
+Spain,ESP,2004,7
+Spain,ESP,2005,6.8
+Spain,ESP,2006,6.6
+Spain,ESP,2007,6.4
+Spain,ESP,2008,6.4
+Spain,ESP,2009,5.7
+Spain,ESP,2010,5.1
+Sweden,SWE,1920,1
+Sweden,SWE,1921,0.9
+Sweden,SWE,1922,0.7
+Sweden,SWE,1923,0.7
+Sweden,SWE,1924,0.7
+Sweden,SWE,1925,0.7
+Sweden,SWE,1926,0.7
+Sweden,SWE,1927,0.8
+Sweden,SWE,1928,0.9
+Sweden,SWE,1929,1
+Sweden,SWE,1930,1.1
+Sweden,SWE,1931,1.2
+Sweden,SWE,1932,1.2
+Sweden,SWE,1933,1.1
+Sweden,SWE,1934,1.1
+Sweden,SWE,1935,1
+Sweden,SWE,1936,1
+Sweden,SWE,1937,1
+Sweden,SWE,1938,1
+Sweden,SWE,1939,1.1
+Sweden,SWE,1940,1.1
+Sweden,SWE,1941,1.2
+Sweden,SWE,1942,1.2
+Sweden,SWE,1943,1.2
+Sweden,SWE,1944,1.2
+Sweden,SWE,1945,1.3
+Sweden,SWE,1946,1.6
+Sweden,SWE,1947,1.9
+Sweden,SWE,1948,2
+Sweden,SWE,1949,2
+Sweden,SWE,1950,2.2
+Sweden,SWE,1951,2.2
+Sweden,SWE,1952,2.6
+Sweden,SWE,1953,2.6
+Sweden,SWE,1954,2.6
+Sweden,SWE,1955,2.7
+Sweden,SWE,1956,2.8
+Sweden,SWE,1957,2.9
+Sweden,SWE,1958,2.9
+Sweden,SWE,1959,3
+Sweden,SWE,1960,3.2
+Sweden,SWE,1961,3.4
+Sweden,SWE,1962,3.5
+Sweden,SWE,1963,3.6
+Sweden,SWE,1964,3.5
+Sweden,SWE,1965,3.7
+Sweden,SWE,1966,3.9
+Sweden,SWE,1967,3.9
+Sweden,SWE,1968,4.2
+Sweden,SWE,1969,4.4
+Sweden,SWE,1970,4.4
+Sweden,SWE,1971,4.3
+Sweden,SWE,1972,4.8
+Sweden,SWE,1973,3.9
+Sweden,SWE,1974,4.7
+Sweden,SWE,1975,4.9
+Sweden,SWE,1976,5
+Sweden,SWE,1977,4.7
+Sweden,SWE,1978,4.9
+Sweden,SWE,1979,4.9
+Sweden,SWE,1980,4.9
+Sweden,SWE,1981,4.7
+Sweden,SWE,1982,4.9
+Sweden,SWE,1983,4.7
+Sweden,SWE,1984,4.6
+Sweden,SWE,1985,4.5
+Sweden,SWE,1986,4.5
+Sweden,SWE,1987,4.4
+Sweden,SWE,1988,4.4
+Sweden,SWE,1989,4.3
+Sweden,SWE,1990,4.1
+Sweden,SWE,1991,4.1
+Sweden,SWE,1992,4.2
+Sweden,SWE,1993,3.4
+Sweden,SWE,1994,3.3
+Sweden,SWE,1995,3.1
+Sweden,SWE,1996,3.2
+Sweden,SWE,1997,2.3
+Sweden,SWE,1998,2.2
+Sweden,SWE,1999,2.6
+Sweden,SWE,2000,2.7
+Sweden,SWE,2001,2.7
+Sweden,SWE,2002,2.8
+Sweden,SWE,2003,2.7
+Sweden,SWE,2004,2.6
+Sweden,SWE,2005,2.5
+Sweden,SWE,2006,2.4
+Switzerland,CHE,1934,1.5
+Switzerland,CHE,1935,1.5
+Switzerland,CHE,1936,1.5
+Switzerland,CHE,1937,1.5
+Switzerland,CHE,1938,1.9
+Switzerland,CHE,1939,1.9
+Switzerland,CHE,1940,1.9
+Switzerland,CHE,1941,2.3
+Switzerland,CHE,1942,2.2
+Switzerland,CHE,1943,2.6
+Switzerland,CHE,1944,2.8
+Switzerland,CHE,1945,3.2
+Switzerland,CHE,1946,3.5
+Switzerland,CHE,1947,4
+Switzerland,CHE,1948,3.9
+Switzerland,CHE,1949,4
+Switzerland,CHE,1950,4.1
+Switzerland,CHE,1951,4.3
+Switzerland,CHE,1952,4.7
+Switzerland,CHE,1953,4.6
+Switzerland,CHE,1954,4.6
+Switzerland,CHE,1955,4.8
+Switzerland,CHE,1956,5.1
+Switzerland,CHE,1957,5.3
+Switzerland,CHE,1958,5.8
+Switzerland,CHE,1959,5.9
+Switzerland,CHE,1960,6.6
+Switzerland,CHE,1961,7.2
+Switzerland,CHE,1962,7.6
+Switzerland,CHE,1963,7.6
+Switzerland,CHE,1964,7.2
+Switzerland,CHE,1965,8.5
+Switzerland,CHE,1966,6.7
+Switzerland,CHE,1967,7.7
+Switzerland,CHE,1968,8.1
+Switzerland,CHE,1969,9
+Switzerland,CHE,1970,9.5
+Switzerland,CHE,1971,10.3
+Switzerland,CHE,1972,10.7
+Switzerland,CHE,1973,9.3
+Switzerland,CHE,1974,9.2
+Switzerland,CHE,1975,8.6
+Switzerland,CHE,1976,8.5
+Switzerland,CHE,1977,8.8
+Switzerland,CHE,1978,8.5
+Switzerland,CHE,1979,8.2
+Switzerland,CHE,1980,8.3
+Switzerland,CHE,1981,8.4
+Switzerland,CHE,1982,8.4
+Switzerland,CHE,1983,8.5
+Switzerland,CHE,1984,8.4
+Switzerland,CHE,1985,8.1
+Switzerland,CHE,1986,8.1
+Switzerland,CHE,1987,8
+Switzerland,CHE,1988,7.9
+Switzerland,CHE,1989,7.9
+Switzerland,CHE,1990,7.8
+Switzerland,CHE,1991,7.8
+Switzerland,CHE,1992,8.2
+Switzerland,CHE,1993,7.6
+Switzerland,CHE,1994,7.4
+Switzerland,CHE,1995,7.3
+Switzerland,CHE,1996,7.2
+Switzerland,CHE,1997,7
+Switzerland,CHE,1998,7.1
+Switzerland,CHE,1999,6.8
+Switzerland,CHE,2000,6.7
+Switzerland,CHE,2001,6.5
+Switzerland,CHE,2002,6.5
+Switzerland,CHE,2003,6.5
+Switzerland,CHE,2004,6.3
+Switzerland,CHE,2005,5.6
+Switzerland,CHE,2006,5.7
+Switzerland,CHE,2007,5.4
+Switzerland,CHE,2008,5.5
+Switzerland,CHE,2009,5.6
+Tajikistan,TJK,1988,6
+Tajikistan,TJK,1989,5.8
+Tajikistan,TJK,1990,5.1
+Tajikistan,TJK,1991,4.6
+Tajikistan,TJK,1992,3
+Tajikistan,TJK,1993,5.3
+Tajikistan,TJK,1994,6
+Tajikistan,TJK,1995,6.1
+Tajikistan,TJK,1996,6.3
+Tajikistan,TJK,1997,6.3
+Tajikistan,TJK,1998,6
+Turkmenistan,TKM,1988,6.7
+Turkmenistan,TKM,1989,6.4
+Turkmenistan,TKM,1990,6.4
+Turkmenistan,TKM,1991,6.7
+Turkmenistan,TKM,1992,6.6
+Turkmenistan,TKM,1993,6.4
+Turkmenistan,TKM,1994,6.3
+Turkmenistan,TKM,1995,5.8
+Turkmenistan,TKM,1996,5.9
+Turkmenistan,TKM,1997,5.9
+Turkmenistan,TKM,1998,5.8
+USSR,OWID_USS,1960,4.6
+USSR,OWID_USS,1961,4.6
+USSR,OWID_USS,1962,4.2
+USSR,OWID_USS,1963,4.7
+USSR,OWID_USS,1964,5.2
+USSR,OWID_USS,1965,5.8
+USSR,OWID_USS,1966,5.6
+USSR,OWID_USS,1967,5.2
+USSR,OWID_USS,1968,5.2
+USSR,OWID_USS,1969,5.5
+USSR,OWID_USS,1970,5.8
+USSR,OWID_USS,1971,6.2
+USSR,OWID_USS,1972,6.1
+USSR,OWID_USS,1973,6.2
+USSR,OWID_USS,1974,6.2
+USSR,OWID_USS,1975,6.1
+USSR,OWID_USS,1976,6.2
+USSR,OWID_USS,1977,6.2
+USSR,OWID_USS,1978,6.1
+USSR,OWID_USS,1979,5.8
+USSR,OWID_USS,1980,5.8
+USSR,OWID_USS,1981,5.9
+USSR,OWID_USS,1982,5.8
+USSR,OWID_USS,1983,5.9
+USSR,OWID_USS,1984,6
+USSR,OWID_USS,1985,5.9
+USSR,OWID_USS,1986,5.9
+USSR,OWID_USS,1987,5.6
+USSR,OWID_USS,1988,5.4
+USSR,OWID_USS,1989,5.1
+USSR,OWID_USS,1990,4.8
+USSR,OWID_USS,1991,4.9
+Ukraine,UKR,1988,6.3
+Ukraine,UKR,1989,6
+Ukraine,UKR,1990,5.5
+Ukraine,UKR,1991,5.7
+Ukraine,UKR,1992,5.3
+Ukraine,UKR,1993,5.3
+Ukraine,UKR,1994,5.3
+Ukraine,UKR,1995,5.4
+Ukraine,UKR,1996,5.7
+Ukraine,UKR,1997,5.8
+Ukraine,UKR,1998,5.9
+Ukraine,UKR,1999,5.9
+Ukraine,UKR,2000,5.9
+Ukraine,UKR,2001,5.9
+Ukraine,UKR,2002,4.6
+Ukraine,UKR,2003,5.8
+United Kingdom,GBR,1905,1.1
+United Kingdom,GBR,1906,1.1
+United Kingdom,GBR,1907,1.2
+United Kingdom,GBR,1908,1.3
+United Kingdom,GBR,1909,1.3
+United Kingdom,GBR,1910,1.4
+United Kingdom,GBR,1911,1.6
+United Kingdom,GBR,1912,1.7
+United Kingdom,GBR,1913,1.8
+United Kingdom,GBR,1914,1.9
+United Kingdom,GBR,1915,2.2
+United Kingdom,GBR,1916,2.1
+United Kingdom,GBR,1917,2.2
+United Kingdom,GBR,1918,2.3
+United Kingdom,GBR,1919,3.1
+United Kingdom,GBR,1920,3
+United Kingdom,GBR,1921,2.8
+United Kingdom,GBR,1922,2.7
+United Kingdom,GBR,1923,2.7
+United Kingdom,GBR,1924,2.8
+United Kingdom,GBR,1925,3
+United Kingdom,GBR,1926,3
+United Kingdom,GBR,1927,3.2
+United Kingdom,GBR,1928,3.5
+United Kingdom,GBR,1929,3.7
+United Kingdom,GBR,1930,3.9
+United Kingdom,GBR,1931,3.8
+United Kingdom,GBR,1932,3.9
+United Kingdom,GBR,1933,4
+United Kingdom,GBR,1934,4.1
+United Kingdom,GBR,1935,4.4
+United Kingdom,GBR,1936,4.6
+United Kingdom,GBR,1937,4.9
+United Kingdom,GBR,1938,5.2
+United Kingdom,GBR,1939,5.4
+United Kingdom,GBR,1940,5.6
+United Kingdom,GBR,1941,6.2
+United Kingdom,GBR,1942,6.5
+United Kingdom,GBR,1943,6.5
+United Kingdom,GBR,1944,6.5
+United Kingdom,GBR,1945,7.2
+United Kingdom,GBR,1946,7.2
+United Kingdom,GBR,1947,6.3
+United Kingdom,GBR,1948,6
+United Kingdom,GBR,1949,5.8
+United Kingdom,GBR,1950,6
+United Kingdom,GBR,1951,6.3
+United Kingdom,GBR,1952,6.4
+United Kingdom,GBR,1953,6.5
+United Kingdom,GBR,1954,6.7
+United Kingdom,GBR,1955,6.9
+United Kingdom,GBR,1956,6.9
+United Kingdom,GBR,1957,7.1
+United Kingdom,GBR,1958,7.2
+United Kingdom,GBR,1959,7.3
+United Kingdom,GBR,1960,7.6
+United Kingdom,GBR,1961,7.7
+United Kingdom,GBR,1962,7.3
+United Kingdom,GBR,1963,7.6
+United Kingdom,GBR,1964,7.5
+United Kingdom,GBR,1965,7.3
+United Kingdom,GBR,1966,7.7
+United Kingdom,GBR,1967,7.8
+United Kingdom,GBR,1968,7.9
+United Kingdom,GBR,1969,8.1
+United Kingdom,GBR,1970,8.3
+United Kingdom,GBR,1971,7.9
+United Kingdom,GBR,1972,8.4
+United Kingdom,GBR,1973,8.8
+United Kingdom,GBR,1974,8.8
+United Kingdom,GBR,1975,8.5
+United Kingdom,GBR,1976,8.3
+United Kingdom,GBR,1977,8
+United Kingdom,GBR,1978,7.9
+United Kingdom,GBR,1979,7.8
+United Kingdom,GBR,1980,7.5
+United Kingdom,GBR,1981,6.8
+United Kingdom,GBR,1982,6.2
+United Kingdom,GBR,1983,6.2
+United Kingdom,GBR,1984,6
+United Kingdom,GBR,1985,5.9
+United Kingdom,GBR,1986,5.7
+United Kingdom,GBR,1987,5.7
+United Kingdom,GBR,1988,5.7
+United Kingdom,GBR,1989,5.8
+United Kingdom,GBR,1990,6
+United Kingdom,GBR,1991,5.7
+United Kingdom,GBR,1992,5.4
+United Kingdom,GBR,1993,5.2
+United Kingdom,GBR,1994,5.1
+United Kingdom,GBR,1995,5.1
+United Kingdom,GBR,1996,5
+United Kingdom,GBR,1997,4.8
+United Kingdom,GBR,1998,4.8
+United Kingdom,GBR,1999,4.8
+United Kingdom,GBR,2000,4.6
+United Kingdom,GBR,2001,4.5
+United Kingdom,GBR,2002,4.3
+United Kingdom,GBR,2003,4.2
+United Kingdom,GBR,2004,4
+United Kingdom,GBR,2005,3.9
+United Kingdom,GBR,2006,3.7
+United Kingdom,GBR,2007,3.5
+United Kingdom,GBR,2008,3.3
+United Kingdom,GBR,2009,3.1
+United Kingdom,GBR,2010,2.8
+United Kingdom,GBR,2011,2.4
+United Kingdom,GBR,2012,2.2
+United Kingdom,GBR,2013,2
+United Kingdom,GBR,2014,1.9
+United States,USA,1900,0.1
+United States,USA,1901,0.1
+United States,USA,1902,0.1
+United States,USA,1903,0.1
+United States,USA,1904,0.2
+United States,USA,1905,0.2
+United States,USA,1906,0.2
+United States,USA,1907,0.2
+United States,USA,1908,0.2
+United States,USA,1909,0.3
+United States,USA,1910,0.4
+United States,USA,1911,0.4
+United States,USA,1912,0.5
+United States,USA,1913,0.6
+United States,USA,1914,0.6
+United States,USA,1915,0.7
+United States,USA,1916,1
+United States,USA,1917,1.4
+United States,USA,1918,1.7
+United States,USA,1919,1.8
+United States,USA,1920,1.7
+United States,USA,1921,1.9
+United States,USA,1922,1.9
+United States,USA,1923,2.3
+United States,USA,1924,2.5
+United States,USA,1925,2.7
+United States,USA,1926,3
+United States,USA,1927,3.2
+United States,USA,1928,3.4
+United States,USA,1929,3.8
+United States,USA,1930,3.8
+United States,USA,1931,3.5
+United States,USA,1932,3.2
+United States,USA,1933,3.4
+United States,USA,1934,3.8
+United States,USA,1935,4
+United States,USA,1936,4.4
+United States,USA,1937,4.7
+United States,USA,1938,4.7
+United States,USA,1939,4.9
+United States,USA,1940,5.1
+United States,USA,1941,5.7
+United States,USA,1942,6.5
+United States,USA,1943,7
+United States,USA,1944,6.4
+United States,USA,1945,7.1
+United States,USA,1946,8.5
+United States,USA,1947,8.7
+United States,USA,1948,8.9
+United States,USA,1949,8.8
+United States,USA,1950,9
+United States,USA,1951,9.4
+United States,USA,1952,9.7
+United States,USA,1953,9.4
+United States,USA,1954,8.9
+United States,USA,1955,9.1
+United States,USA,1956,9.2
+United States,USA,1957,9.5
+United States,USA,1958,9.9
+United States,USA,1959,10.2
+United States,USA,1960,10.4
+United States,USA,1961,10.7
+United States,USA,1962,10.6
+United States,USA,1963,10.8
+United States,USA,1964,10.3
+United States,USA,1965,10.5
+United States,USA,1966,10.5
+United States,USA,1967,10.5
+United States,USA,1968,10.2
+United States,USA,1969,9.8
+United States,USA,1970,10
+United States,USA,1971,9.7
+United States,USA,1972,10
+United States,USA,1973,10.5
+United States,USA,1974,10.5
+United States,USA,1975,10.3
+United States,USA,1976,10.2
+United States,USA,1977,10.1
+United States,USA,1978,9.9
+United States,USA,1979,9.8
+United States,USA,1980,9.8
+United States,USA,1981,9.8
+United States,USA,1982,9.6
+United States,USA,1983,9
+United States,USA,1984,8.9
+United States,USA,1985,8.7
+United States,USA,1986,8.5
+United States,USA,1987,8.2
+United States,USA,1988,8
+United States,USA,1989,7.6
+United States,USA,1990,7.4
+United States,USA,1991,7.1
+United States,USA,1992,6.9
+United States,USA,1993,6.6
+United States,USA,1994,6.6
+United States,USA,1995,6.5
+United States,USA,1996,6.4
+United States,USA,1997,6.3
+United States,USA,1998,6
+United States,USA,1999,5.6
+United States,USA,2000,5.3
+United States,USA,2001,5.2
+United States,USA,2002,5
+United States,USA,2003,4.8
+United States,USA,2004,4.6
+United States,USA,2005,4.4
+United States,USA,2006,4.4
+United States,USA,2007,4.1
+United States,USA,2008,3.9
+United States,USA,2009,3.6
+United States,USA,2010,3.4
+United States,USA,2011,3.3
+United States,USA,2012,3.3
+United States,USA,2013,3.1
+United States,USA,2014,3
+Uzbekistan,UZB,1988,2.3
+Uzbekistan,UZB,1989,2.3
+Uzbekistan,UZB,1990,2
+Uzbekistan,UZB,1991,2.6
+Uzbekistan,UZB,1992,2.3
+Uzbekistan,UZB,1993,3.9
+Uzbekistan,UZB,1994,3.5
+Uzbekistan,UZB,1995,3.4
+Uzbekistan,UZB,1996,3.5
+Uzbekistan,UZB,1997,3.5
+Uzbekistan,UZB,1998,3
+Uzbekistan,UZB,1999,3
+Uzbekistan,UZB,2000,3
+Yugoslavia,OWID_YGS,1922,0.7
+Yugoslavia,OWID_YGS,1923,0.7
+Yugoslavia,OWID_YGS,1924,0.9
+Yugoslavia,OWID_YGS,1925,1
+Yugoslavia,OWID_YGS,1926,1
+Yugoslavia,OWID_YGS,1927,1.1
+Yugoslavia,OWID_YGS,1928,1.2
+Yugoslavia,OWID_YGS,1929,1.3
+Yugoslavia,OWID_YGS,1930,1.6
+Yugoslavia,OWID_YGS,1931,1.6
+Yugoslavia,OWID_YGS,1932,1.5
+Yugoslavia,OWID_YGS,1933,1.4
+Yugoslavia,OWID_YGS,1934,1.4
+Yugoslavia,OWID_YGS,1935,1.3
+Yugoslavia,OWID_YGS,1960,4.3
+Yugoslavia,OWID_YGS,1961,4.8
+Yugoslavia,OWID_YGS,1962,4.7
+Yugoslavia,OWID_YGS,1963,4.8
+Yugoslavia,OWID_YGS,1964,4.8
+Yugoslavia,OWID_YGS,1965,5.2
+Yugoslavia,OWID_YGS,1966,5.7
+Yugoslavia,OWID_YGS,1967,5.6
+Yugoslavia,OWID_YGS,1968,5.9
+Yugoslavia,OWID_YGS,1969,6.2
+Yugoslavia,OWID_YGS,1970,6.2
+Yugoslavia,OWID_YGS,1971,6.4
+Yugoslavia,OWID_YGS,1972,6.4
+Yugoslavia,OWID_YGS,1973,6.4
+Yugoslavia,OWID_YGS,1974,7.1
+Yugoslavia,OWID_YGS,1975,7
+Yugoslavia,OWID_YGS,1976,7.1
+Yugoslavia,OWID_YGS,1977,7.9
+Yugoslavia,OWID_YGS,1978,8.8
+Yugoslavia,OWID_YGS,1979,9.7
+Yugoslavia,OWID_YGS,1980,8.9
+Yugoslavia,OWID_YGS,1981,8.1
+Yugoslavia,OWID_YGS,1982,7.9
+Yugoslavia,OWID_YGS,1983,8.9
+Yugoslavia,OWID_YGS,1984,8.4
+Yugoslavia,OWID_YGS,1985,8.6
+Yugoslavia,OWID_YGS,1986,8.8
+Yugoslavia,OWID_YGS,1987,8.5
+Yugoslavia,OWID_YGS,1988,8.9
+Yugoslavia,OWID_YGS,1989,8.5
+Yugoslavia,OWID_YGS,1990,8.5
+Yugoslavia,OWID_YGS,1991,7.8
+Yugoslavia,OWID_YGS,1992,5.7
+Yugoslavia,OWID_YGS,1993,6.1
+Yugoslavia,OWID_YGS,1994,7.6
+Yugoslavia,OWID_YGS,1995,7.6
+Yugoslavia,OWID_YGS,1996,7.4
+Yugoslavia,OWID_YGS,1997,7.4
+Yugoslavia,OWID_YGS,1998,7.3
+Yugoslavia,OWID_YGS,1999,7.3
+Yugoslavia,OWID_YGS,2000,7.3
+Yugoslavia,OWID_YGS,2001,7.3
+Yugoslavia,OWID_YGS,2002,7.3
+Yugoslavia,OWID_YGS,2003,7.3

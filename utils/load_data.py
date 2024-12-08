@@ -701,7 +701,7 @@ def fertility_rates_data():
     return df
 
 def smoking_rates_data():
-    df = (pd.read_csv('data/smoking_timeseries.csv', sep=','))
+    df = (pd.read_csv('data/sales-of-cigarettes-per-adult-per-day.csv', sep=','))
 
     return df
 
