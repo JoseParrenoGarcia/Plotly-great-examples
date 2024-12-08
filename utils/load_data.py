@@ -699,3 +699,18 @@ def fertility_rates_data():
     df = (pd.read_csv('data/fertility_rates1.csv', sep=','))
 
     return df
+
+def smoking_rates_data():
+    df = (pd.read_csv('data/smoking_timeseries.csv', sep=','))
+
+    return df
+
+def new_books_data():
+    df = (pd.read_csv('data/new-books-per-million.csv', sep=','))
+
+    return df
+
+def alcohol_consumption_data():
+    df = (pd.read_csv('data/alcohol_consumption.csv', sep=','))
+
+    return df
