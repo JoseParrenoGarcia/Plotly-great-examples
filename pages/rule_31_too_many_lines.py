@@ -49,7 +49,7 @@ with too_many_tab:
 # with timeseries_tab:
 #     st.subheader('Time series')
 #
-#     st.write('')
+#     st.write('')a
 #     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/1/28/rule-30-a-line-chart-should-only-show-change-over-time)")
 #     # st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/workforce_by_sector_plot.py)")
 #
