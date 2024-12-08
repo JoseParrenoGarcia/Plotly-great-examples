@@ -5,6 +5,7 @@ from utils.load_data import (
     smoking_rates_data,
     new_books_data,
     alcohol_consumption_data,
+    european_elections_data
 )
 
 # ---------------------------------------------------------------------
@@ -22,7 +23,7 @@ pages_format()
 smoking_rates_data_df = smoking_rates_data()
 new_books_data_df = new_books_data()
 alcohol_consumption_data_df = alcohol_consumption_data()
-# political_view_survey_data_df = political_view_survey_data()
+european_elections_data_df = european_elections_data()
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -45,8 +46,8 @@ with colours_with_meaning_tab:
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/6/10/rule-32-every-line-should-be-a-different-colour)")
 
-    # with st.expander("Expand to see the data"):
-    #     st.dataframe(smoking_rates_data_df, hide_index=True)
+    with st.expander("Expand to see the data"):
+        st.dataframe(european_elections_data_df, hide_index=True)
 
 with hero_line_tab:
     st.subheader('Hero lines')
@@ -58,7 +59,7 @@ with hero_line_tab:
         st.dataframe(new_books_data_df, hide_index=True)
 
 with colour_equal_importance_tab:
-    st.subheader('Equal importance colours (look for another dataset')
+    st.subheader('Equal importance colours')
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/6/10/rule-32-every-line-should-be-a-different-colour)")
