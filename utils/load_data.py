@@ -760,3 +760,36 @@ def market_stocks_data():
     df = (pd.read_csv('data/STOCK_US_XNAS_AAPL.csv', sep=','))
 
     return df
+
+def sector_growth_data():
+    # https://ourworldindata.org/economic-growth#all-charts
+    df = (pd.read_csv('data/shares-of-gdp-by-economic-sector.csv', sep=','))
+
+    return df
+
+def refugees_data():
+    # https://www.unhcr.org/refugee-statistics/download?data_finder%5BdataGroup%5D=displacement&data_finder%5Bdataset%5D=population&data_finder%5BdisplayType%5D=totals&data_finder%5BpopulationType%5D%5B%5D=REF&data_finder%5BpopulationType%5D%5B%5D=ASY&data_finder%5BpopulationType%5D%5B%5D=IDP&data_finder%5BpopulationType%5D%5B%5D=OIP&data_finder%5BpopulationType%5D%5B%5D=STA&data_finder%5BpopulationType%5D%5B%5D=HST&data_finder%5BpopulationType%5D%5B%5D=OOC&data-finder=on&data_finder%5Byear__filterType%5D=range&data_finder%5Byear__rangeFrom%5D=1971&data_finder%5Byear__rangeTo%5D=2024&data_finder%5Bcoo__displayType%5D=all&data_finder%5Bcoa__displayType%5D=doNotDisplay&data_finder%5Byear__%5D=&data_finder%5Bcoo__%5D=&data_finder%5Bcoa__%5D=&data_finder%5Badvanced__%5D=&data_finder%5Bsubmit%5D=
+    df = (pd.read_csv('data/refugees.csv', sep=','))
+
+    return df
+
+def cumulative_co2_emmissions_data():
+    # https://ourworldindata.org/grapher/cumulative-co2-emissions-region
+    df = (pd.read_csv('data/cumulative-co2-emissions-region.csv', sep=','))
+
+    return df
+
+def fertility_rates_stacked_area_data():
+    # https://data.worldbank.org/indicator/SP.DYN.TFRT.IN?locations=RO
+    df = (pd.read_csv('data/fertility_rates.csv', sep=','))
+
+    return df
+
+def inflation_rates_data():
+    # https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=HK
+    df = (pd.read_csv('data/inflation_rates.csv', sep=','))
+
+    return df
+
+
+

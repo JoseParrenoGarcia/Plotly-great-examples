@@ -20,8 +20,6 @@ pages_format()
 # ---------------------------------------------------------------------
 human_height_data_df = human_height_data()
 market_stocks_data_df = market_stocks_data()
-# ireland_population_df = ireland_population_data()
-# contraceptive_use_data_df = contraceptive_use_data()
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
