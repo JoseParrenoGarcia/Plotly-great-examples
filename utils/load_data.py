@@ -760,3 +760,11 @@ def market_stocks_data():
     df = (pd.read_csv('data/STOCK_US_XNAS_AAPL.csv', sep=','))
 
     return df
+
+def sector_growth_data():
+    # https://ourworldindata.org/economic-growth#all-charts
+    df = (pd.read_csv('data/shares-of-gdp-by-economic-sector.csv', sep=','))
+
+    return df
+
+

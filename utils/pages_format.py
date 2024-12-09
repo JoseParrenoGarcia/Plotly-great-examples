@@ -17,5 +17,6 @@ def pages_format():
             Page("pages/rule_32_colours_with_meaning.py", "R32. Colours with meaning"),
             Page("pages/rule_35_markers_on_lines.py", "R35. Markers on lines"),
             Page("pages/rule_36_line_width.py", "R36. Line width"),
+            Page("pages/rule_41_area_charts.py", "R41. Area charts"),
         ]
     )
