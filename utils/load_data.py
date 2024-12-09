@@ -748,3 +748,15 @@ def contraceptive_use_data():
     df = (pd.read_csv('data/contraceptive-prevalence-of-women-ages-15-49.csv', sep=','))
 
     return df
+
+def human_height_data():
+    # https://ourworldindata.org/human-height
+    df = (pd.read_csv('data/average-height-of-men-for-selected-countries.csv', sep=','))
+
+    return df
+
+def market_stocks_data():
+    # https://www.marketwatch.com/investing/stock/msft/download-data?mod=mw_quote_tab
+    df = (pd.read_csv('data/STOCK_US_XNAS_AAPL.csv', sep=','))
+
+    return df

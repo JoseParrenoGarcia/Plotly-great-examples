@@ -16,5 +16,6 @@ def pages_format():
             Page("pages/rule_31_too_many_lines.py", "R31. Too many lines"),
             Page("pages/rule_32_colours_with_meaning.py", "R32. Colours with meaning"),
             Page("pages/rule_35_markers_on_lines.py", "R35. Markers on lines"),
+            Page("pages/rule_36_line_width.py", "R36. Line width"),
         ]
     )
