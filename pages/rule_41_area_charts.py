@@ -4,6 +4,9 @@ from utils.pages_format import pages_format
 from utils.load_data import (
     sector_growth_data,
     refugees_data,
+    cumulative_co2_emmissions_data,
+    fertility_rates_stacked_area_data,
+    inflation_rates_data
 )
 
 # ---------------------------------------------------------------------
@@ -20,8 +23,9 @@ pages_format()
 # ---------------------------------------------------------------------
 sector_growth_data_df = sector_growth_data()
 refugees_data_df = refugees_data()
-# ireland_population_df = ireland_population_data()
-# contraceptive_use_data_df = contraceptive_use_data()
+cumulative_co2_emmissions_data_df = cumulative_co2_emmissions_data()
+fertility_rates_stacked_area_data_df = fertility_rates_stacked_area_data()
+inflation_rates_data_df = inflation_rates_data()
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -44,8 +48,9 @@ with single_timeseries_tab:
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2024/2/23/rule-41-avoid-area-charts")
 
-    # with st.expander("Expand to see the data"):
-    #     st.dataframe(market_stocks_data_df, hide_index=True)
+    with st.expander("Expand to see the data"):
+        st.dataframe(fertility_rates_stacked_area_data_df, hide_index=True)
+        st.dataframe(inflation_rates_data_df, hide_index=True)
 
 with overlapping_timeseries_tab:
     st.subheader('Overlapping timeseries')
@@ -71,6 +76,6 @@ with stacked_100_tab:
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2024/2/23/rule-41-avoid-area-charts")
 
-    # with st.expander("Expand to see the data"):
-    #     st.dataframe(human_height_data_df, hide_index=True)
+    with st.expander("Expand to see the data"):
+        st.dataframe(cumulative_co2_emmissions_data_df, hide_index=True)
 

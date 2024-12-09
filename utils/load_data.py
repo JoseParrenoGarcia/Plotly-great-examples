@@ -773,4 +773,23 @@ def refugees_data():
 
     return df
 
+def cumulative_co2_emmissions_data():
+    # https://ourworldindata.org/grapher/cumulative-co2-emissions-region
+    df = (pd.read_csv('data/cumulative-co2-emissions-region.csv', sep=','))
+
+    return df
+
+def fertility_rates_stacked_area_data():
+    # https://data.worldbank.org/indicator/SP.DYN.TFRT.IN?locations=RO
+    df = (pd.read_csv('data/fertility_rates.csv', sep=','))
+
+    return df
+
+def inflation_rates_data():
+    # https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=HK
+    df = (pd.read_csv('data/inflation_rates.csv', sep=','))
+
+    return df
+
+
 
