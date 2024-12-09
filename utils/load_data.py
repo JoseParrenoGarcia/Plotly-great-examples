@@ -767,4 +767,10 @@ def sector_growth_data():
 
     return df
 
+def refugees_data():
+    # https://www.unhcr.org/refugee-statistics/download?data_finder%5BdataGroup%5D=displacement&data_finder%5Bdataset%5D=population&data_finder%5BdisplayType%5D=totals&data_finder%5BpopulationType%5D%5B%5D=REF&data_finder%5BpopulationType%5D%5B%5D=ASY&data_finder%5BpopulationType%5D%5B%5D=IDP&data_finder%5BpopulationType%5D%5B%5D=OIP&data_finder%5BpopulationType%5D%5B%5D=STA&data_finder%5BpopulationType%5D%5B%5D=HST&data_finder%5BpopulationType%5D%5B%5D=OOC&data-finder=on&data_finder%5Byear__filterType%5D=range&data_finder%5Byear__rangeFrom%5D=1971&data_finder%5Byear__rangeTo%5D=2024&data_finder%5Bcoo__displayType%5D=all&data_finder%5Bcoa__displayType%5D=doNotDisplay&data_finder%5Byear__%5D=&data_finder%5Bcoo__%5D=&data_finder%5Bcoa__%5D=&data_finder%5Badvanced__%5D=&data_finder%5Bsubmit%5D=
+    df = (pd.read_csv('data/refugees.csv', sep=','))
+
+    return df
+
 
