@@ -683,6 +683,7 @@ def driving_women_data():
 def space_race_data():
     df = (pd.read_csv('data/timeline-space-race.csv', sep=';'))
 
+
     return df
 
 def island_distances_data():

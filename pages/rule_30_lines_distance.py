@@ -9,6 +9,7 @@ from utils.load_data import (
 )
 
 from utils.line_chart_examples.driving_women_plot import driving_women_line_chart
+from utils.line_chart_examples.space_race_plot import space_race_line_chart
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -51,6 +52,9 @@ with timeline_tab:
     with st.expander("Expand to see the data"):
         st.dataframe(space_race_data_df, hide_index=True)
 
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(space_race_line_chart(space_race_data_df))
 
 with timeseries_tab:
     st.subheader('Time series')
