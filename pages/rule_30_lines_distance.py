@@ -8,6 +8,8 @@ from utils.load_data import (
     political_view_survey_data
 )
 
+from utils.line_chart_examples.driving_women_plot import driving_women_line_chart
+
 # ---------------------------------------------------------------------
 # CONFIGURATION
 # ---------------------------------------------------------------------
@@ -59,6 +61,10 @@ with timeseries_tab:
 
     with st.expander("Expand to see the data"):
         st.dataframe(driving_women_data_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(driving_women_line_chart(driving_women_data_df))
 
 with physical_distance_tab:
     st.subheader('Physical distances')
