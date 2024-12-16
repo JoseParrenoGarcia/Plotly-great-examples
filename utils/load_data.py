@@ -674,9 +674,9 @@ def driving_women_data():
     df = (pd.read_csv('data/driving-women.csv', sep=';')
           .drop(columns=['Unnamed: 10'])
           .melt(id_vars=['Year', 'Sex'], var_name='age_group', value_name='percentage')
+          .query("age_group == 'All aged 17 and over (%)'")
+          .assign(percentage = lambda x: pd.to_numeric(x['percentage'], errors='coerce'))
           )
-
-    df['percentage'] = pd.to_numeric(df['percentage'], errors='coerce')
 
     return df
 
