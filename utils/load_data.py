@@ -688,7 +688,12 @@ def space_race_data():
     return df
 
 def island_distances_data():
-    df = (pd.read_csv('data/island-distances.csv', sep=';'))
+    df = (pd.read_csv('data/island-distances.csv', sep=';')
+          .assign(x_island = lambda x: -1*(x['Km']/2),
+                  x_landmass=lambda x:  x['Km'] / 2,
+                  Km_rank=lambda x: x['Km'].rank(ascending=True, method='dense')
+                  )
+          )
 
     return df
 
