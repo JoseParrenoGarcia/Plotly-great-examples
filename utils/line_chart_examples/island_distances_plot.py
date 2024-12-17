@@ -37,7 +37,7 @@ def island_distance_line_chart(df):
             y0=row['Km_rank'],
             x1=row['x_landmass'],
             y1=row['Km_rank'],
-            line=dict(color='rgb(133, 193, 233)', width=2, dash='dash'),
+            line=dict(color='rgb(133, 193, 233)', width=2, dash='dot'),
             layer='below',
         )
         fig.add_annotation(
