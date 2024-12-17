@@ -1,6 +1,6 @@
 import plotly.graph_objects as go
 
-def driving_women_line_chart(df, add_context=True):
+def driving_women_line_chart(df):
     df = df.sort_values(['Year', 'Sex'], ascending=False)
 
     fig = go.Figure()

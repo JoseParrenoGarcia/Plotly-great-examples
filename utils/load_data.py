@@ -682,6 +682,8 @@ def driving_women_data():
 
 def space_race_data():
     df = (pd.read_csv('data/timeline-space-race.csv', sep=';'))
+    df['text_to_show'] = '<b> (' + df['Year'].astype(str) + ') ' + df['Event'] + '</b><br><i>' + df['Significance'] + '</i>'
+
 
     return df
 

@@ -9,6 +9,7 @@ from utils.load_data import (
 )
 
 from utils.line_chart_examples.driving_women_plot import driving_women_line_chart
+from utils.line_chart_examples.space_race_plot import space_race_line_chart
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -51,13 +52,15 @@ with timeline_tab:
     with st.expander("Expand to see the data"):
         st.dataframe(space_race_data_df, hide_index=True)
 
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(space_race_line_chart(space_race_data_df))
 
 with timeseries_tab:
     st.subheader('Time series')
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/1/28/rule-30-a-line-chart-should-only-show-change-over-time)")
-    # st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/workforce_by_sector_plot.py)")
 
     with st.expander("Expand to see the data"):
         st.dataframe(driving_women_data_df, hide_index=True)
