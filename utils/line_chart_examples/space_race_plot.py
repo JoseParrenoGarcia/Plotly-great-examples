@@ -37,7 +37,7 @@ def space_race_line_chart(df):
             x=start_soviet,
             y=row['Year'],
             ax=start_soviet-10,
-            ay=0,  # Same y-coordinate to make it horizontal
+            ay=0,
             showarrow=True,
             arrowhead=0
         )
@@ -70,10 +70,22 @@ def space_race_line_chart(df):
             x=start_us,
             y=row['Year'],
             ax=start_us + 10,
-            ay=0,  # Same y-coordinate to make it horizontal
+            ay=0,
             showarrow=True,
             arrowhead=0
         )
+
+    # # Add annotations for both
+    # both_data = df[df['Country'] == 'U.S. & USSR']
+    # fig.add_annotation(
+    #     x=0,
+    #     y=both_data['Year'] + 2,
+    #     text=both_data['text_to_show'][0].astype(str),
+    #     ax=0,
+    #     ay=-100,
+    #     showarrow=True,
+    #     arrowhead=0
+    # )
 
     # Add scatter plot for years
     years = list(range(1957, 1976))
@@ -87,6 +99,9 @@ def space_race_line_chart(df):
             textposition='middle center'
         )
     )
+
+
+
 
     # Update layout
     fig.update_layout(
@@ -107,6 +122,24 @@ def space_race_line_chart(df):
             showgrid=False,
             visible=False,
         ),
+        images=[
+            dict(
+                source="https://upload.wikimedia.org/wikipedia/commons/f/f5/Flag_of_the_United_States_%281912-1959%29.svg",
+                xref="paper", yref="paper",
+                x=0.6, y=0.92,
+                sizex=0.05, sizey=0.08,
+                xanchor="right",
+                yanchor="bottom",
+            ),
+            dict(
+                source="https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_the_Soviet_Union.svg",
+                xref="paper", yref="paper",
+                x=0.45, y=0.92,
+                sizex=0.05, sizey=0.08,
+                xanchor="right",
+                yanchor="bottom",
+            ),
+        ],
         font=dict(family="Helvetica Neue", size=12),
         showlegend=False,
         margin=dict(t=150, pad=0),
