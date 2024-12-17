@@ -3,11 +3,26 @@ import plotly.graph_objects as go
 def space_race_line_chart(df):
     fig = go.Figure()
 
+    # Add scatter plot for years
+    years = list(range(1957, 1976))
+    fig.add_trace(
+        go.Scatter(
+            x=[0] * len(years),
+            y=years,
+            mode='text',
+            text=[str(year) for year in years],
+            showlegend=False,
+            textposition='middle center'
+        )
+    )
+
     start_us = 30
-    fig.add_vline(x=start_us, line=dict(color="black", width=2))
+    us_color = 'rgb(10, 49, 97)'
+    fig.add_vline(x=start_us, line=dict(color=us_color, width=2))
 
     start_soviet = -30
-    fig.add_vline(x=start_soviet, line=dict(color="black", width=2))
+    soviet_color = 'rgb(204, 0, 0)'
+    fig.add_vline(x=start_soviet, line=dict(color=soviet_color, width=2))
 
     # Add annotations for the Soviet Union
     soviet_data = df[df['Country'] == 'Soviet Union']
@@ -28,7 +43,7 @@ def space_race_line_chart(df):
             y=soviet_data['Year'],
             mode='markers',
             showlegend=False,
-            marker=dict(color='black')
+            marker=dict(color=soviet_color)
         )
     )
 
@@ -39,7 +54,8 @@ def space_race_line_chart(df):
             ax=start_soviet-10,
             ay=0,
             showarrow=True,
-            arrowhead=0
+            arrowhead=0,
+            arrowcolor=soviet_color,
         )
 
     # Add annotations for the US
@@ -61,7 +77,7 @@ def space_race_line_chart(df):
             y=us_data['Year'],
             mode='markers',
             showlegend=False,
-            marker=dict(color='black')
+            marker=dict(color=us_color)
         )
     )
 
@@ -72,36 +88,23 @@ def space_race_line_chart(df):
             ax=start_us + 10,
             ay=0,
             showarrow=True,
-            arrowhead=0
+            arrowhead=0,
+            arrowcolor=us_color,
         )
 
-    # # Add annotations for both
-    # both_data = df[df['Country'] == 'U.S. & USSR']
-    # fig.add_annotation(
-    #     x=0,
-    #     y=both_data['Year'] + 2,
-    #     text=both_data['text_to_show'][0].astype(str),
-    #     ax=0,
-    #     ay=-100,
-    #     showarrow=True,
-    #     arrowhead=0
-    # )
-
-    # Add scatter plot for years
-    years = list(range(1957, 1976))
-    fig.add_trace(
-        go.Scatter(
-            x=[0] * len(years),
-            y=years,
-            mode='text',
-            text=[str(year) for year in years],
-            showlegend=False,
-            textposition='middle center'
+    # Add annotations for both
+    both_data = df[df['Country'] == 'U.S. & USSR']
+    for index, row in both_data.iterrows():
+        fig.add_annotation(
+            x=0,
+            y=row['Year'] + 0.5,
+            text=str(row['text_to_show']),
+            ax=0,
+            ay=-50,
+            showarrow=True,
+            arrowhead=0,
+            arrowcolor='white',
         )
-    )
-
-
-
 
     # Update layout
     fig.update_layout(
