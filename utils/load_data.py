@@ -700,6 +700,7 @@ def island_distances_data():
 def political_view_survey_data():
     df = (pd.read_csv('data/political-view-survey.csv', sep=';'))
     df = df.sort_values('difference')
+    df = df.reset_index().drop(columns=['index'])
 
     return df
 

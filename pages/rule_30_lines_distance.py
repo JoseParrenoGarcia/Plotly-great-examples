@@ -91,7 +91,7 @@ with other_distances_tab:
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/1/28/rule-30-a-line-chart-should-only-show-change-over-time)")
 
     with st.expander("Expand to see the data"):
-        st.dataframe(political_view_survey_data_df, hide_index=True)
+        st.dataframe(political_view_survey_data_df, hide_index=False)
 
     st.write('')
     with st.container(border=True):
