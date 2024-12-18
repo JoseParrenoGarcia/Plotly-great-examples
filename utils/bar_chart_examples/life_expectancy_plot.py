@@ -2,8 +2,6 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 def life_expectancy_plotly_express_bar_chart(df):
-    # df = df.rename(columns={'ISO_Code': 'Country ISO code',
-    #                         'y2023': 'Tourism percentage over GDP'})
     fig = px.bar(df,
                  x='year',
                  y='life_expectancy',
