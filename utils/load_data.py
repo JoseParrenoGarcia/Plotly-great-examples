@@ -714,6 +714,7 @@ def fertility_rates_data():
           .dropna()
           .assign(Year=lambda x: x['Year'].str.replace(r'\[.*?\]', '', regex=True).str.strip().astype(int),
                   Fertility_Rate = lambda x: x['Fertility_Rate'].astype(float),
+                  continent=lambda x: x['Country Code'].apply(_get_continent),
                   )
           )
 

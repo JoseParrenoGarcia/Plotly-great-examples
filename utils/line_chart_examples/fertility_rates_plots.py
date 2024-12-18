@@ -115,3 +115,13 @@ def fertility_rates_line_plot(df, title, countries_to_highlight):
 
     return fig
 
+def fertility_rates_lines_by_group(df):
+    # subplots 5 (asia, africa, europe, north american, south america)
+    # create auxiliary plot
+    # -> take each continent (region), plot all lines in grey, highlight the max min and average
+    # then plot the line plot with
+    # line_chart = create_line_chart(df, title, countries_to_highlight)
+    # for trace in line_chart.data:
+    #     fig.add_trace(trace, row=row, col=col)
+
+    return df
