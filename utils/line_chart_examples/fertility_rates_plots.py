@@ -94,7 +94,9 @@ def fertility_rates_line_plot(df, title, countries_to_highlight):
             showline=True,
             linecolor='lightgrey',
             linewidth=2,
-            range=[df['Year'].min(), df['Year'].max()+9],
+            range=[df['Year'].min(), df['Year'].max()+8],
+            tickvals=[1980, 1990, 2000, 2010, 2020],
+            ticktext=['1980', '1990', '2000', '2010', '2020'],
         ),
         yaxis=dict(
             title='',
@@ -107,7 +109,7 @@ def fertility_rates_line_plot(df, title, countries_to_highlight):
         font=dict(family="Helvetica Neue", size=14),
         showlegend=False,
         margin=dict(t=150, r=100, pad=0),
-        height=800,
+        height=700,
         width=700,
     )
 
