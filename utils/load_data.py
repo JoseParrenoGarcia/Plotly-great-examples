@@ -727,7 +727,13 @@ def smoking_rates_data():
     return df
 
 def new_books_data():
-    df = (pd.read_csv('data/new-books-per-million.csv', sep=','))
+    df = (pd.read_csv('data/new-books-per-million.csv', sep=',')
+          .rename(columns={'Book titles per capita (Fink-Jensen 2015)': 'book_titles_per_capita'})
+          .query("Year >= 1960")
+          .query("Year <= 1996")
+          )
+
+    df = df[df['Entity'].isin(['Denmark', 'Norway', 'Sweden', 'Finland', 'Iceland', 'Netherlands', 'United Kingdom', 'Germany', 'France', 'Italy', 'Spain', 'Portugal', 'Greece', 'Turkey'])]
 
     return df
 

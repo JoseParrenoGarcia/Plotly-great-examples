@@ -8,6 +8,8 @@ from utils.load_data import (
     european_elections_data
 )
 
+from utils.line_chart_examples.books_per_capita_plot import books_per_capita_plotly_express_line_chart, books_per_capita_line_plot
+
 # ---------------------------------------------------------------------
 # CONFIGURATION
 # ---------------------------------------------------------------------
@@ -49,6 +51,13 @@ with hero_line_tab:
     with st.expander("Expand to see the data"):
         st.dataframe(new_books_data_df, hide_index=True)
 
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(books_per_capita_plotly_express_line_chart(new_books_data_df))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(books_per_capita_line_plot(new_books_data_df))
 
 with colours_with_meaning_tab:
     st.subheader('Political parties')
