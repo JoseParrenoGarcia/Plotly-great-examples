@@ -744,9 +744,65 @@ def alcohol_consumption_data():
 
 def european_elections_data():
     # https://results.elections.europa.eu/en/tools/download-datasheets/
-    df = (pd.read_csv('data/eu2024.csv', sep=';'))
+    def _clean_data(file, year):
+        return (pd.read_csv('data/eu2024.csv', sep=';')
+                .loc[:, ['GROUP_ID', 'SEATS_TOTAL', 'SEATS_PERCENT_EU']]
+                .assign(Year=year))
 
-    return df
+    eu2024 = _clean_data('data/eu2024.csv', 2024)
+    eu2019 = _clean_data('data/eu2019.csv', 2019)
+    eu2014 = _clean_data('data/eu2014.csv', 2014)
+    eu2009 = _clean_data('data/eu2009.csv', 2009)
+    eu2004 = _clean_data('data/eu2004.csv', 2004)
+    eu1999 = _clean_data('data/eu1999.csv', 1999)
+    eu1994 = _clean_data('data/eu1994.csv', 1994)
+    eu1989 = _clean_data('data/eu1989.csv', 1989)
+    eu1984 = _clean_data('data/eu1984.csv', 1984)
+    eu1979 = _clean_data('data/eu1979.csv', 1979)
+
+    party_to_spectrum = {
+        'EPP': 'Center-right',
+        'SD': 'Center-left',
+        'ECR': 'Right-wing',
+        'Renew': 'Center',
+        'Theleft': 'Left-wing',
+        'GREENSEFA': 'Green',
+        'PfE': 'Far-right',
+        'ESN': 'Far-left',
+        'NI': 'Non-inscrits'
+    }
+
+    party_to_full_name = {
+        'EPP': 'European People Party',
+        'SD': 'Progressive Alliance of Socialists and Democrats',
+        'ECR': 'European Conservatives and Reformists',
+        'Renew': 'Renew Europe',
+        'Theleft': 'The Left in the European Parliament',
+        'GREENSEFA': 'The Greens European Free Alliance',
+        'PfE': 'Identity and Democracy',
+        'ESN': 'European United Left–Nordic Green Left',
+        'NI': 'Non-Inscrits'
+    }
+
+    spectrum_to_color = {
+        'Non-inscrits': 'rgb(178, 186, 187)',
+        'Green': 'rgb(22, 160, 133)',
+        'Far-left': 'rgb(148, 49, 38)',
+        'Left-wing': 'rgb(203, 67, 53)',
+        'Center-left': 'rgb(236, 112, 99)',
+        'Center': 'rgb(210, 180, 222)',
+        'Center-right': 'rgb(93, 173, 226)',
+        'Right-wing': 'rgb(46, 134, 193)',
+        'Far-right': 'rgb(33, 97, 140)',
+    }
+
+    return (pd.concat([eu2024, eu2019, eu2014, eu2009, eu2004, eu1999, eu1994, eu1989, eu1984, eu1979],
+                     ignore_index=True)
+            .assign(political_spectrum=lambda x: x['GROUP_ID'].map(party_to_spectrum),
+                    party_name=lambda x: x['GROUP_ID'].map(party_to_full_name),
+                    color=lambda x: x['political_spectrum'].map(spectrum_to_color),
+                    )
+            )
 
 def UK_elections_data():
     # https://commonslibrary.parliament.uk/research-briefings/CBP-8647/#fullreport
