@@ -772,18 +772,6 @@ def european_elections_data():
         'NI': 'Non-inscrits'
     }
 
-    party_to_full_name = {
-        'EPP': 'European People Party',
-        'SD': 'Progressive Alliance of Socialists and Democrats',
-        'ECR': 'European Conservatives and Reformists',
-        'Renew': 'Renew Europe',
-        'Theleft': 'The Left in the European Parliament',
-        'GREENSEFA': 'The Greens European Free Alliance',
-        'PfE': 'Identity and Democracy',
-        'ESN': 'European United Left–Nordic Green Left',
-        'NI': 'Non-Inscrits'
-    }
-
     spectrum_to_color = {
         'Non-inscrits': 'rgb(178, 186, 187)',
         'Green': 'rgb(22, 160, 133)',
@@ -799,7 +787,6 @@ def european_elections_data():
     return (pd.concat([eu2024, eu2019, eu2014, eu2009, eu2004, eu1999, eu1994, eu1989, eu1984, eu1979],
                      ignore_index=True)
             .assign(political_spectrum=lambda x: x['GROUP_ID'].map(party_to_spectrum),
-                    party_name=lambda x: x['GROUP_ID'].map(party_to_full_name),
                     color=lambda x: x['political_spectrum'].map(spectrum_to_color),
                     )
             )

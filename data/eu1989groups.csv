@@ -1,0 +1,265 @@
+ID;LANGUAGE_ID;ACRONYM;LABEL
+GP0401;EN;S;Socialist Group
+GP0401;ES;S;Grupo Socialista
+GP0401;BG;S;Група на социалистите
+GP0401;CS;S;Skupina socialistů
+GP0401;DA;S;Den Socialistiske Gruppe
+GP0401;DE;S;Sozialistische Fraktion
+GP0401;EL;S;Σοσιαλιστική Ομάδα
+GP0401;ET;S;Sotsialistide fraktsioon
+GP0401;FI;S;Sosiaalidemokraattisen puolueen ryhmä
+GP0401;FR;S;Groupe socialiste
+GP0401;GA;S;An Grúpa Sóisialach
+GP0401;HR;S;Klub zastupnika socijalista
+GP0401;HU;S;Szocialista Csoport
+GP0401;IT;S;Gruppo socialista
+GP0401;LV;S;Socialistu grupa
+GP0401;LT;S;Socialistu grupe
+GP0401;MT;S;Grupp Socjalista
+GP0401;NL;S;Socialistische Fractie
+GP0401;PL;S;Grupa Socjalistów
+GP0401;PT;S;Grupo Socialista
+GP0401;RO;S;Grupul Socialist
+GP0401;SK;S;Skupina socialistov
+GP0401;SL;S;Skupina socialistov
+GP0401;SV;S;Socialistgruppen
+GP0402;EN;PPE;Group of the European People's Party (Christian-Democratic Group)
+GP0402;ES;PPE;Grupo del Partido Popular Europeo (Grupo Demócrata Cristiano)
+GP0402;BG;PPE;Група на Европейската народна партия (Група на християндемократите)
+GP0402;CS;PPE;Skupina Evropské lidové strany (Skupina křesťanské demokracie)
+GP0402;DA;PPE;Det Europæiske Folkepartis Gruppe (Den Kristelig-Demokratiske Gruppe)
+GP0402;DE;PPE;Fraktion der Europäischen Volkspartei (Christlich-demokratische Fraktion)
+GP0402;EL;PPE;Ομάδα του Ευρωπαϊκού Λαϊκού Κόμματος (Χριστιανοδημοκράτες)
+GP0402;ET;PPE;Euroopa rahvapartei fraktsioon (kristlik-demokraatide fraktsioon)
+GP0402;FI;PPE;Euroopan kansanpuolueen ryhmä (kristillis-demokraattinen puolueryhmä)
+GP0402;FR;PPE;Groupe du parti populaire européen (Groupe démocrate-chrétien)
+GP0402;GA;PPE;Grúpa Pháirtí an Phobail Eorpaigh (Grúpa na nDaonlathaithe Críostaí)
+GP0402;HR;PPE;Klub zastupnika Europske pučke stranke (Kršćansko-demokratski klub zastupnika)
+GP0402;HU;PPE;Az Európai Néppárt Csoportja (Kereszténydemokrata Csoport)
+GP0402;IT;PPE;Gruppo del partito popolare europeo (Gruppo democratico cristiano)
+GP0402;LV;PPE;Eiropas Tautas Partijas grupa (Kristigo demokratu grupa)
+GP0402;LT;PPE;Europos liaudies partijos grupe (Krikšcioniu demokratu grupe)
+GP0402;MT;PPE;Grupp tal-Partit Popolari Ewropew (Grupp Demokratiku-Kristjan)
+GP0402;NL;PPE;Fractie van de Europese Volkspartij (Christen-democratische Fractie)
+GP0402;PL;PPE;Grupa Europejskiej Partii Ludowej (Chrzescijanscy Demokraci)
+GP0402;PT;PPE;Grupo do Partido Popular Europeu (Grupo Democrata-Cristão)
+GP0402;RO;PPE;Grupul Partidului Popular European (Grupul Creștin-Democrat)
+GP0402;SK;PPE;Skupina Európskej ludovej strany (Krestansko-demokratická skupina)
+GP0402;SL;PPE;Skupina Evropske ljudske stranke (skupina krščanskih demokratov)
+GP0402;SV;PPE;Europeiska folkpartiets grupp (Kristdemokratiska gruppen)
+GP0403;EN;LDR;Liberal and Democratic Reformist Group
+GP0403;ES;LDR;Grupo Liberal, Democrático y Reformista
+GP0403;BG;LDR;Група на либералите, демократите и реформаторите
+GP0403;CS;LDR;Skupina liberálů a demokratických reformistů
+GP0403;DA;LDR;Den Liberale og Demokratiske Gruppe
+GP0403;DE;LDR;Liberale und Demokratische Fraktion
+GP0403;EL;LDR;Φιλελεύθερη, Δημοκρατική και Μεταρρυθμιστική Ομάδα
+GP0403;ET;LDR;Liberaalide ja demokraatlike reformistide partei fraktsioon
+GP0403;FI;LDR;Liberaali- ja demokraattipuolueen ryhmä
+GP0403;FR;LDR;Groupe libéral, démocratique et réformateur
+GP0403;GA;LDR;An Grúpa Liobrálach, Daonlathach agus Leasaitheach
+GP0403;HR;LDR;Klub zastupnika liberala i demokratskih reformista
+GP0403;HU;LDR;Liberális és Demokrata Reformisták Csoportja
+GP0403;IT;LDR;Gruppo liberale e democratico riformatore
+GP0403;LV;LDR;Liberalu un demokratisko reformistu grupa
+GP0403;LT;LDR;Liberalu ir demokratu reformistu grupe
+GP0403;MT;LDR;Grupp Liberali u Riformisti Demokratici
+GP0403;NL;LDR;Liberale en Democratische Fractie
+GP0403;PL;LDR;Grupa Liberalna, Demokratyczna i Reformatorska
+GP0403;PT;LDR;Grupo Liberal, Democrático e Reformista
+GP0403;RO;LDR;Grupul Liberal, Democrat și Reformator
+GP0403;SK;LDR;Skupina liberálov a demokratických reformistov
+GP0403;SL;LDR;Skupina liberalcev in demokratskih reformistov
+GP0403;SV;LDR;Liberala och demokratiska reformistgruppen
+GP0404;EN;ED;European Democratic Group
+GP0404;ES;ED;Grupo Demócrata Europeo
+GP0404;BG;ED;Група на Европейските демократи
+GP0404;CS;ED;Skupina evropské demokracie
+GP0404;DA;ED;Den Europæiske Demokratiske Gruppe
+GP0404;DE;ED;Fraktion der Europäischen Demokraten
+GP0404;EL;ED;Ομάδα των Ευρωπαίων Δημοκρατών
+GP0404;ET;ED;Euroopa demokraatide fraktsioon
+GP0404;FI;ED;Euroopan demokraattipuolueen ryhmä
+GP0404;FR;ED;Groupe des démocrates européens
+GP0404;GA;ED;Grúpa Dhaonlathaigh na hEorpa
+GP0404;HR;ED;Klub zastupnika europskih demokrata
+GP0404;HU;ED;Európai Demokraták Csoportja
+GP0404;IT;ED;Gruppo democratico europeo
+GP0404;LV;ED;Eiropas demokratu grupa
+GP0404;LT;ED;Europos demokratu grupe
+GP0404;MT;ED;Grupp Demokratiku Ewropew
+GP0404;NL;ED;Europese Democratische Fractie
+GP0404;PL;ED;Grupa Demokracji Europejskiej
+GP0404;PT;ED;Grupo dos Democratas Europeus
+GP0404;RO;ED;Grupul Democraților Europeni
+GP0404;SK;ED;Európska demokratická skupina
+GP0404;SL;ED;Skupina Evropski demokrati
+GP0404;SV;ED;Gruppen Europeiska demokrater
+GP0405;EN;V;The Green Group in the European Parliament
+GP0405;ES;V;Grupo de los Verdes en el Parlamento Europeo
+GP0405;BG;V;Група на Зелените в Европейския парламент
+GP0405;CS;V;Zelená skupina v Evropském parlamentu
+GP0405;DA;V;Gruppen De Grønne i Europa-Parlamentet
+GP0405;DE;V;Fraktion DIE GRÜNEN im Europäischen Parlament
+GP0405;EL;V;Ομάδα των Πρασίνων στο Ευρωπαϊκό Κοινοβούλιο
+GP0405;ET;V;Roheliste fraktsioon Euroopa Parlamendis
+GP0405;FI;V;Euroopan parlamentin vihreä ryhmä
+GP0405;FR;V;Groupe des Verts au Parlement européen
+GP0405;GA;V;An Grúpa Glas i bParlaimint na hEorpa
+GP0405;HR;V;Klub zastupnika zelenih u Europskom parlamentu
+GP0405;HU;V;Zöldek az Európai Parlamentben
+GP0405;IT;V;Gruppo Verde al Parlamento europeo
+GP0405;LV;V;Zalie Eiropas Parlamenta
+GP0405;LT;V;Žaliuju grupe Europos Parlamente
+GP0405;MT;V;Il-Grupp tal-Hodor fil-Parlament Ewropew
+GP0405;NL;V;Fractie De Groenen in het Europees Parlement
+GP0405;PL;V;Grupa Zielonych w Parlamencie Europejskim
+GP0405;PT;V;Grupo dos Verdes no Parlamento Europeu
+GP0405;RO;V;Grupul Verzilor din Parlamentul European
+GP0405;SK;V;Skupina zelených v Európskom parlamente
+GP0405;SL;V;Skupina Zelenih v Evropskem parlamentu
+GP0405;SV;V;Gruppen De gröna i Europaparlamentet
+GP0406;EN;GUE;Group for the European United Left
+GP0406;ES;GUE;Grupo por la Izquierda Unitaria Europea
+GP0406;BG;GUE;Група за Европейската обединена левица
+GP0406;CS;GUE;Skupina pro Sjednocenou evropskou levici
+GP0406;DA;GUE;Gruppen for Den Samlede Europæiske Venstrefløj
+GP0406;DE;GUE;Fraktion der Vereinigten Europäischen Linken
+GP0406;EL;GUE;Ομάδα για την Ευρωπαϊκή Ενωτική Αριστερά
+GP0406;ET;GUE;Euroopa ühendatud vasakpoolsete fraktsioon
+GP0406;FI;GUE;Euroopan yhtyneen vasemmiston ryhmä
+GP0406;FR;GUE;Groupe pour la Gauche Unitaire Européenne
+GP0406;GA;GUE;Grúpa an Chlé Aontaithe Eorpaigh
+GP0406;HR;GUE;Klub zastupnika Europske ujedinjene ljevice
+GP0406;HU;GUE;Az Európai Baloldali Unió Csoportja
+GP0406;IT;GUE;Gruppo per la Sinistra Unitaria Europea
+GP0406;LV;GUE;Eiropas Kreiso apvienibas grupa
+GP0406;LT;GUE;Europos jungtiniu kairiuju grupe
+GP0406;MT;GUE;Grupp ghax-Xellug Ewropew Maghqud
+GP0406;NL;GUE;Fractie voor een Unitair Europees Links
+GP0406;PL;GUE;Grupa Zjednoczonej Lewicy Europejskiej
+GP0406;PT;GUE;Grupo para a Esquerda Unitária Europeia
+GP0406;RO;GUE;Grupul pentru Stânga Unită Europeană
+GP0406;SK;GUE;Skupina pre Európsku zjednotenú lavicu
+GP0406;SL;GUE;Skupina za združeno evropsko levico
+GP0406;SV;GUE;Gruppen Europeiska enade vänstern
+GP0407;EN;RDE;Group of the European Democratic Alliance
+GP0407;ES;RDE;Grupo de Alianza Democrática Europea
+GP0407;BG;RDE;Група на Европейския демократичен алианс
+GP0407;CS;RDE;Skupina evropské demokratické levice
+GP0407;DA;RDE;Gruppen Europæisk Demokratisk Alliance
+GP0407;DE;RDE;Fraktion der Sammlungsbewegung der Europäischen Demokraten
+GP0407;EL;RDE;Ομάδα Συνασπισμού των Ευρωπαίων Δημοκρατών
+GP0407;ET;RDE;Euroopa demokraatide liidu fraktsioon
+GP0407;FI;RDE;Euroopan demokraattien yhteistyöryhmä
+GP0407;FR;RDE;Groupe du rassemblement des démocrates européens
+GP0407;GA;RDE;Grúpa Chomhaontas Daonlathach na hEorpa
+GP0407;HR;RDE;Klub zastupnika Europskog demokratskog saveza
+GP0407;HU;RDE;Az Európai Demokrata Szövetség Csoportja
+GP0407;IT;RDE;Gruppo dell'Alleanza democratica europea
+GP0407;LV;RDE;Eiropas Demokratu alianses grupa
+GP0407;LT;RDE;Europos demokratinio aljanso grupe
+GP0407;MT;RDE;Grupp ta’ l-Alleanza Demokratika Ewropea
+GP0407;NL;RDE;Fractie van verenigde Europese democraten
+GP0407;PL;RDE;Grupa Europejskiego Sojuszu Demokratycznego
+GP0407;PT;RDE;Grupo da Aliança dos Democratas Europeus
+GP0407;RO;RDE;Grupul Adunării Democraților Europeni
+GP0407;SK;RDE;Skupina Európskej demokratickej aliancie
+GP0407;SL;RDE;Skupina Evropske demokratske zveze
+GP0407;SV;RDE;Gruppen Europeiska demokratiska alliansen
+GP0408;EN;DR;Technical Group of the European Right
+GP0408;ES;DR;Grupo Técnico de Derechas Europeas
+GP0408;BG;DR;Техническа група на европейската десница
+GP0408;CS;DR;Technická skupina Evropské pravice
+GP0408;DA;DR;De Europæiske Højrepartiers Tekniske Gruppe
+GP0408;DE;DR;Technische Fraktion der Europäischen Rechten
+GP0408;EL;DR;Ομάδα Τεχνικού Συντονισμού των Κομμάτων της Ευρωπαϊκής Δεξιάς
+GP0408;ET;DR;Euroopa parempoolsete tehniline fraktsioon
+GP0408;FI;DR;Euroopan oikeistopuolueen tekninen ryhmä
+GP0408;FR;DR;Groupe technique des droites européennes
+GP0408;GA;DR;Grúpa Teicniúil Eite Dheis na hEorpa
+GP0408;HR;DR;Tehnički klub zastupnika europske desnice
+GP0408;HU;DR;Az Európai Jobboldal Technikai Csoportja
+GP0408;IT;DR;Gruppo tecnico delle destre europee
+GP0408;LV;DR;Eiropas Tiesibu tehniska grupa
+GP0408;LT;DR;Europos dešiniuju technine grupe
+GP0408;MT;DR;Grupp Tekniku tal-Lemin Ewropew
+GP0408;NL;DR;Technische Fractie Europees Rechts
+GP0408;PL;DR;Grupa Techniczna Prawicy Europejskiej
+GP0408;PT;DR;Grupo Técnico das Direitas Europeias
+GP0408;RO;DR;Grupul tehnic al liniilor europene
+GP0408;SK;DR;Technická skupina Európskej pravice
+GP0408;SL;DR;Tehnična skupina evropske desnice
+GP0408;SV;DR;Europeiska högerns tekniska grupp
+GP0409;EN;CG;Left Unity
+GP0409;ES;CG;Coalición de Izquierda
+GP0409;BG;CG;Коалиция на левите
+GP0409;CS;CG;Levá jednota
+GP0409;DA;CG;Venstrefløjs-Koalitionsgruppen
+GP0409;DE;CG;Koalition der Linken
+GP0409;EL;CG;Συνασπισμός της Αριστεράς
+GP0409;ET;CG;Vasakpoolsete Ühendus
+GP0409;FI;CG;Yhtyneen vasemmiston ryhmä
+GP0409;FR;CG;Coalition des Gauches
+GP0409;GA;CG;Aontacht Chlé
+GP0409;HR;CG;Koalicija ljevice
+GP0409;HU;CG;Baloldali Szövetség
+GP0409;IT;CG;Coalizione delle Sinistre
+GP0409;LV;CG;Kreiso apvieniba
+GP0409;LT;CG;Kairiuju vienybe
+GP0409;MT;CG;Ghaqda tax-Xellug
+GP0409;NL;CG;Linkse Coalitie
+GP0409;PL;CG;Unia Lewicowa
+GP0409;PT;CG;Coligação de Esquerda
+GP0409;RO;CG;Coaliția de Stânga
+GP0409;SK;CG;Zjednotená lavica
+GP0409;SL;CG;Združena levica
+GP0409;SV;CG;Enad vänster
+GP0410;EN;ARC;Rainbow Group in the European Parliament
+GP0410;ES;ARC;Grupo Arco Iris del Parlamento Europeo
+GP0410;BG;ARC;Група Дъга в Европейския парламент
+GP0410;CS;ARC;Skupina Duha v Evropském parlamentu
+GP0410;DA;ARC;Regnbuegruppen i Europa-Parlamentet
+GP0410;DE;ARC;Regenbogen-Fraktion im Europäischen Parlament
+GP0410;EL;ARC;Ομάδα Ουράνιου Τόξου στο Ευρωπαϊκό Κοινοβούλιο
+GP0410;ET;ARC;“Rainbow” fraktsioon Euroopa Parlamendis
+GP0410;FI;ARC;Euroopan parlamentin sateenkaariryhmä
+GP0410;FR;ARC;Groupe Arc-en-Ciel au Parlement Européen
+GP0410;GA;ARC;An Grúpa Bogha Ceatha i bParlaimint na hEorpa
+GP0410;HR;ARC;Klub zastupnika Duga u Europskom parlamentu
+GP0410;HU;ARC;Szivárvány Csoport az Európai Parlamentben
+GP0410;IT;ARC;Gruppo Arcobaleno del Parlamento Europeo
+GP0410;LV;ARC;Varaviksnes grupa Eiropas Parlamenta
+GP0410;LT;ARC;„Vaivorykštes” grupe Europos Parlamente
+GP0410;MT;ARC;Grupp Qawsalla fil-Parlament Ewropew
+GP0410;NL;ARC;Regenboogfractie in het Europees Parlement
+GP0410;PL;ARC;Grupa Tecza w Parlamencie Europejskim
+GP0410;PT;ARC;Grupo Arco-Íris ao Parlamento Europeu
+GP0410;RO;ARC;Grupul „Arc-en-Ciel” din Parlamentul European
+GP0410;SK;ARC;Skupina Rainbow (Dúha) v Európskom parlamente
+GP0410;SL;ARC;Skupina Mavrica v Evropskem parlamentu
+GP0410;SV;ARC;Regnbågsgruppen i Europaparlamentet
+NA;EN;NI;Non-attached Members
+NA;ES;NI;No inscritos
+NA;BG;НЧ;Независими членове
+NA;CS;NI;Nezařazení poslanci
+NA;DA;NI;Løsgængere
+NA;DE;NI;Fraktionslos
+NA;EL;NI;Μη Εγγεγραμμένοι
+NA;ET;NI;Fraktsioonilise kuuluvuseta parlamendiliikmed
+NA;FI;NI;Sitoutumattomat
+NA;FR;NI;Non-inscrits
+NA;GA;NI;Feisirí Neamhcheangailte
+NA;HR;NI;Nezavisni zastupnici
+NA;HU;NI;független képviselők
+NA;IT;NI;Non iscritti
+NA;LV;NI;Pie politiskajām grupām nepiederošie deputāti
+NA;LT;NI;Nepriklausomi nariai
+NA;MT;NI;Membri mhux affiljati
+NA;NL;NI;Niet-fractiegebonden leden
+NA;PL;NI;Niezrzeszeni
+NA;PT;NI;Não Inscritos
+NA;RO;NI;Deputați neafiliați
+NA;SK;NI;Nezaradení poslanci
+NA;SL;NI;Samostojni poslanci
+NA;SV;NI;Grupplösa
