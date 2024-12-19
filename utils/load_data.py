@@ -745,31 +745,70 @@ def alcohol_consumption_data():
 def european_elections_data():
     # https://results.elections.europa.eu/en/tools/download-datasheets/
     def _clean_data(file, year):
-        return (pd.read_csv(file, sep=';')
-                .loc[:, ['GROUP_ID', 'SEATS_TOTAL', 'SEATS_PERCENT_EU']]
-                .assign(Year=year))
+        votes_df = (pd.read_csv(f'{file}.csv', sep=';')
+                    .loc[:, ['GROUP_ID', 'SEATS_TOTAL', 'SEATS_PERCENT_EU']]
+                    .assign(Year=year)
+                    )
 
-    eu2024 = _clean_data('data/eu2024.csv', 2024)
-    eu2019 = _clean_data('data/eu2019.csv', 2019)
-    eu2014 = _clean_data('data/eu2014.csv', 2014)
-    eu2009 = _clean_data('data/eu2009.csv', 2009)
-    eu2004 = _clean_data('data/eu2004.csv', 2004)
-    eu1999 = _clean_data('data/eu1999.csv', 1999)
-    eu1994 = _clean_data('data/eu1994.csv', 1994)
-    eu1989 = _clean_data('data/eu1989.csv', 1989)
-    eu1984 = _clean_data('data/eu1984.csv', 1984)
-    eu1979 = _clean_data('data/eu1979.csv', 1979)
+        groups_df = (pd.read_csv(f'{file}groups.csv', sep=';')
+                     .rename(columns={'ID': 'GROUP_ID'})
+                     .query('LANGUAGE_ID == "EN"')
+                     )
+
+        return (votes_df.merge(groups_df, on='GROUP_ID', how='left')
+                .fillna({'ACRONYM': 'NI'})
+                )
+
+
+    eu2024 = _clean_data('data/eu2024', 2024)
+    eu2019 = _clean_data('data/eu2019', 2019)
+    eu2014 = _clean_data('data/eu2014', 2014)
+    eu2009 = _clean_data('data/eu2009', 2009)
+    eu2004 = _clean_data('data/eu2004', 2004)
+    eu1999 = _clean_data('data/eu1999', 1999)
+    eu1994 = _clean_data('data/eu1994', 1994)
+    eu1989 = _clean_data('data/eu1989', 1989)
+    eu1984 = _clean_data('data/eu1984', 1984)
+    eu1979 = _clean_data('data/eu1979', 1979)
 
     party_to_spectrum = {
         'EPP': 'Center-right',
-        'SD': 'Center-left',
+        'S&D': 'Center-left',
         'ECR': 'Right-wing',
-        'Renew': 'Center',
-        'Theleft': 'Left-wing',
-        'GREENSEFA': 'Green',
+        'Renew Europe': 'Center',
+        'The Left': 'Left-wing',
+        'Greens/EFA': 'Green',
         'PfE': 'Far-right',
         'ESN': 'Far-left',
-        'NI': 'Non-inscrits'
+        'NI': 'Non-inscrits',
+        'GUE/NGL': 'Left-wing',
+        'ID': 'Far-right',
+        'ALDE': 'Center',
+        'EFD': 'Right-wing',
+        'EPP-ED': 'Center-right',
+        'PSE': 'Center-left',
+        'Verts/ALE': 'Green',
+        'UEN': 'Right-wing',
+        'IND/DEM': 'Right-wing',
+        'TDI': 'Right-wing',
+        'EDD': 'Right-wing',
+        'PPE': 'Center-right',
+        'GUE': 'Left-wing',
+        'FE': 'Left-wing',
+        'RDE': 'Center',
+        'V': 'Green',
+        'ARE': 'Center',
+        'EDN': 'Center',
+        'S': 'Center-left',
+        'LDR': 'Center',
+        'ED': 'Center',
+        'COM': 'Left-wing',
+        'L': 'Left-wing',
+        'DEP': 'Center',
+        'CDI': 'Center',
+        'DR': 'Right-wing',
+        'CG': 'Right-wing',
+        'ARC': 'Right-wing'
     }
 
     spectrum_to_color = {
@@ -786,9 +825,13 @@ def european_elections_data():
 
     return (pd.concat([eu2024, eu2019, eu2014, eu2009, eu2004, eu1999, eu1994, eu1989, eu1984, eu1979],
                      ignore_index=True)
-            .assign(political_spectrum=lambda x: x['GROUP_ID'].map(party_to_spectrum),
+            .assign(political_spectrum=lambda x: x['ACRONYM'].map(party_to_spectrum),
                     color=lambda x: x['political_spectrum'].map(spectrum_to_color),
                     )
+            .groupby(['Year', 'political_spectrum', 'color'], as_index=False)
+            .agg({'SEATS_TOTAL': 'sum',
+                  'SEATS_PERCENT_EU': 'sum',
+                  })
             )
 
 def UK_elections_data():

@@ -88,7 +88,7 @@ with colours_with_meaning_tab:
     with st.expander("Expand to see the data"):
         st.dataframe(european_elections_data_df, hide_index=True)
 
-    st.write('')
-    with st.container(border=True):
-        st.plotly_chart(european_elections_plotly_express_line_chart(european_elections_data_df))
+    # st.write('')
+    # with st.container(border=True):
+    #     st.plotly_chart(european_elections_plotly_express_line_chart(european_elections_data_df))
 
