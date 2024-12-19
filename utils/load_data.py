@@ -705,7 +705,18 @@ def political_view_survey_data():
     return df
 
 def fertility_rates_data():
-    df = (pd.read_csv('data/fertility_rates1.csv', sep=','))
+    df = (pd.read_csv('data/fertility_rates1.csv', sep=',')
+          .drop(columns=['Series Name', 'Series Code'])
+          .melt(id_vars=['Country Name', 'Country Code'],
+                var_name='Year',
+                value_name='Fertility_Rate')
+          .query("Fertility_Rate != '..'")
+          .dropna()
+          .assign(Year=lambda x: x['Year'].str.replace(r'\[.*?\]', '', regex=True).str.strip().astype(int),
+                  Fertility_Rate = lambda x: x['Fertility_Rate'].astype(float),
+                  continent=lambda x: x['Country Code'].apply(_get_continent),
+                  )
+          )
 
     return df
 

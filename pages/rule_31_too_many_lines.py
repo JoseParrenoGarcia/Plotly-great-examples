@@ -5,6 +5,8 @@ from utils.load_data import (
     fertility_rates_data,
 )
 
+from utils.line_chart_examples.fertility_rates_plots import fertility_rates_plotly_express_line_chart, fertility_rates_line_plot, fertility_rates_lines_by_group
+
 # ---------------------------------------------------------------------
 # CONFIGURATION
 # ---------------------------------------------------------------------
@@ -18,9 +20,6 @@ pages_format()
 # Data read
 # ---------------------------------------------------------------------
 fertility_rates_data_df = fertility_rates_data()
-# space_race_data_df = space_race_data()
-# island_distances_data_df = island_distances_data()
-# political_view_survey_data_df = political_view_survey_data()
 
 # ---------------------------------------------------------------------
 # MAIN PANEL
@@ -38,7 +37,7 @@ fertility_rates_data_df = fertility_rates_data()
 )
 
 with too_many_tab:
-    st.subheader('Timeline')
+    st.subheader('Too many lines')
 
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/5/4/rule-31-line-charts-shouldnt-have-too-many-lines)")
@@ -46,31 +45,66 @@ with too_many_tab:
     with st.expander("Expand to see the data"):
         st.dataframe(fertility_rates_data_df, hide_index=True)
 
-# with timeseries_tab:
-#     st.subheader('Time series')
-#
-#     st.write('')a
-#     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/1/28/rule-30-a-line-chart-should-only-show-change-over-time)")
-#     # st.markdown("🔗 [To see the code which generated these plots, navigate to the repo](https://github.com/JoseParrenoGarcia/Plotly-great-examples/blob/main/utils/bar_chart_examples/workforce_by_sector_plot.py)")
-#
-#     with st.expander("Expand to see the data"):
-#         st.dataframe(driving_women_data_df, hide_index=True)
-#
-# with physical_distance_tab:
-#     st.subheader('Physical distances')
-#
-#     st.write('')
-#     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/1/28/rule-30-a-line-chart-should-only-show-change-over-time)")
-#
-#     with st.expander("Expand to see the data"):
-#         st.dataframe(island_distances_data_df, hide_index=True)
-#
-# with other_distances_tab:
-#     st.subheader('Other distances')
-#
-#     st.write('')
-#     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/1/28/rule-30-a-line-chart-should-only-show-change-over-time)")
-#
-#     with st.expander("Expand to see the data"):
-#         st.dataframe(political_view_survey_data_df, hide_index=True)
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(fertility_rates_plotly_express_line_chart(fertility_rates_data_df))
+
+with sparse_tab:
+    st.subheader('Line sparsity')
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/5/4/rule-31-line-charts-shouldnt-have-too-many-lines)")
+
+    with st.expander("Expand to see the data"):
+        st.dataframe(fertility_rates_data_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(fertility_rates_plotly_express_line_chart(fertility_rates_data_df[fertility_rates_data_df['Country Name'].isin(['France', 'United Kingdom', 'Germany', 'Italy'])]))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(fertility_rates_plotly_express_line_chart(fertility_rates_data_df[fertility_rates_data_df['Country Name'].isin(['Niger', 'Korea, Rep.', 'United States', 'World'])]))
+
+with grey_out_tab:
+    st.subheader('Grey out to provide context')
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/5/4/rule-31-line-charts-shouldnt-have-too-many-lines)")
+
+    with st.expander("Expand to see the data"):
+        st.dataframe(fertility_rates_data_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(fertility_rates_line_plot(
+            df=fertility_rates_data_df,
+            title='Gulf states have seen fertility rates plummet since the 1960s',
+            countries_to_highlight=['Kuwait', 'Bahrain', 'United Arab Emirates', 'Saudi Arabia', 'Oman']
+        )
+
+        )
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(fertility_rates_line_plot(
+            df=fertility_rates_data_df,
+            title='In sub-saharan Africa, fertility rates have remained high',
+            countries_to_highlight=['Niger', 'Somalia', 'Congo, Dem. Rep.', 'Mali']
+        )
+
+        )
+
+
+with segment_tab:
+    st.subheader('Segment to provide both context and details')
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/5/4/rule-31-line-charts-shouldnt-have-too-many-lines)")
+
+    with st.expander("Expand to see the data"):
+        st.dataframe(fertility_rates_data_df, hide_index=True)
+
+    with st.container(border=True):
+        st.plotly_chart(fertility_rates_lines_by_group(df=fertility_rates_data_df,))
 
