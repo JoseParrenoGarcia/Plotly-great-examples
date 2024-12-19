@@ -105,7 +105,7 @@ def books_per_capita_line_plot(df):
         annotations=[
             # First paragraph annotation
             dict(
-                text='UK amongst the top 10 countries with most books published per capita,<br>but still behind Scandinavian countries',
+                text='<b><span style="color:purple;">UK</span></b> amongst the top 10 countries with most books published per capita,<br>but still behind <b><span style="color:rgb(174, 214, 241);">Scandinavian countries</span></b>',
                 xref="paper",
                 yref="paper",
                 x=-0.13, y=1.12,
