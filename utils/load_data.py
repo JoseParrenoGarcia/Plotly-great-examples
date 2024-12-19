@@ -738,7 +738,22 @@ def new_books_data():
     return df
 
 def alcohol_consumption_data():
-    df = (pd.read_csv('data/alcohol_consumption.csv', sep=','))
+    df = (pd.read_csv('data/alcohol_consumption.csv', sep=',')
+          .drop(columns=['Series Name', 'Series Code'])
+          .melt(id_vars=['Country Name', 'Country Code'],
+                var_name='Year',
+                value_name='alcohol_consumption')
+          .rename(columns={'Country Name': 'Country',
+                           'Country Code': 'Code'})
+          .query("Country != 'Indicator Name'")
+          .query("Country != 'Total alcohol consumption per capita (liters of pure alcohol, projected estimates, 15+ years of age)'")
+          .query("alcohol_consumption != '..'")
+          .dropna()
+          .assign(Year=lambda x: x['Year'].str.replace(r'\[.*?\]', '', regex=True).str.strip().astype(int),
+                  alcohol_consumption=lambda x: x['alcohol_consumption'].astype(float),
+                  continent=lambda x: x['Code'].apply(_get_continent),
+                  )
+          )
 
     return df
 
