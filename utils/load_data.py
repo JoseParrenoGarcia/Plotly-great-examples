@@ -745,7 +745,7 @@ def alcohol_consumption_data():
 def european_elections_data():
     # https://results.elections.europa.eu/en/tools/download-datasheets/
     def _clean_data(file, year):
-        return (pd.read_csv('data/eu2024.csv', sep=';')
+        return (pd.read_csv(file, sep=';')
                 .loc[:, ['GROUP_ID', 'SEATS_TOTAL', 'SEATS_PERCENT_EU']]
                 .assign(Year=year))
 

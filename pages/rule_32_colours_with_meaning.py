@@ -9,6 +9,7 @@ from utils.load_data import (
 )
 
 from utils.line_chart_examples.books_per_capita_plot import books_per_capita_plotly_express_line_chart, books_per_capita_line_plot
+from utils.line_chart_examples.european_elections_plot import european_elections_plotly_express_line_chart
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -86,3 +87,8 @@ with colours_with_meaning_tab:
 
     with st.expander("Expand to see the data"):
         st.dataframe(european_elections_data_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(european_elections_plotly_express_line_chart(european_elections_data_df))
+
