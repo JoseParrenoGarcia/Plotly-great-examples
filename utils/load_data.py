@@ -727,20 +727,127 @@ def smoking_rates_data():
     return df
 
 def new_books_data():
-    df = (pd.read_csv('data/new-books-per-million.csv', sep=','))
+    df = (pd.read_csv('data/new-books-per-million.csv', sep=',')
+          .rename(columns={'Book titles per capita (Fink-Jensen 2015)': 'book_titles_per_capita'})
+          .query("Year >= 1960")
+          .query("Year <= 1996")
+          )
+
+    df = df[df['Entity'].isin(['Denmark', 'Norway', 'Sweden', 'Finland', 'Iceland', 'Netherlands', 'United Kingdom', 'Germany', 'France', 'Italy', 'Spain', 'Portugal', 'Greece', 'Turkey'])]
 
     return df
 
 def alcohol_consumption_data():
-    df = (pd.read_csv('data/alcohol_consumption.csv', sep=','))
+    df = (pd.read_csv('data/alcohol_consumption.csv', sep=',')
+          .drop(columns=['Series Name', 'Series Code'])
+          .melt(id_vars=['Country Name', 'Country Code'],
+                var_name='Year',
+                value_name='alcohol_consumption')
+          .rename(columns={'Country Name': 'Country',
+                           'Country Code': 'Code'})
+          .query("Country != 'Indicator Name'")
+          .query("Country != 'Total alcohol consumption per capita (liters of pure alcohol, projected estimates, 15+ years of age)'")
+          .query("alcohol_consumption != '..'")
+          .dropna()
+          .assign(Year=lambda x: x['Year'].str.replace(r'\[.*?\]', '', regex=True).str.strip().astype(int),
+                  alcohol_consumption=lambda x: x['alcohol_consumption'].astype(float),
+                  continent=lambda x: x['Code'].apply(_get_continent),
+                  )
+          )
 
     return df
 
 def european_elections_data():
     # https://results.elections.europa.eu/en/tools/download-datasheets/
-    df = (pd.read_csv('data/eu2024.csv', sep=';'))
+    def _clean_data(file, year):
+        votes_df = (pd.read_csv(f'{file}.csv', sep=';')
+                    .loc[:, ['GROUP_ID', 'SEATS_TOTAL', 'SEATS_PERCENT_EU']]
+                    .assign(Year=year)
+                    )
 
-    return df
+        groups_df = (pd.read_csv(f'{file}groups.csv', sep=';')
+                     .rename(columns={'ID': 'GROUP_ID'})
+                     .query('LANGUAGE_ID == "EN"')
+                     )
+
+        return (votes_df.merge(groups_df, on='GROUP_ID', how='left')
+                .fillna({'ACRONYM': 'NI'})
+                )
+
+
+    eu2024 = _clean_data('data/eu2024', 2024)
+    eu2019 = _clean_data('data/eu2019', 2019)
+    eu2014 = _clean_data('data/eu2014', 2014)
+    eu2009 = _clean_data('data/eu2009', 2009)
+    eu2004 = _clean_data('data/eu2004', 2004)
+    eu1999 = _clean_data('data/eu1999', 1999)
+    eu1994 = _clean_data('data/eu1994', 1994)
+    eu1989 = _clean_data('data/eu1989', 1989)
+    eu1984 = _clean_data('data/eu1984', 1984)
+    eu1979 = _clean_data('data/eu1979', 1979)
+
+    party_to_spectrum = {
+        'EPP': 'Center-right',
+        'S&D': 'Center-left',
+        'ECR': 'Right-wing',
+        'Renew Europe': 'Center',
+        'The Left': 'Left-wing',
+        'Greens/EFA': 'Green',
+        'PfE': 'Far-right',
+        'ESN': 'Far-left',
+        'NI': 'Non-inscrits',
+        'GUE/NGL': 'Left-wing',
+        'ID': 'Far-right',
+        'ALDE': 'Center',
+        'EFD': 'Right-wing',
+        'EPP-ED': 'Center-right',
+        'PSE': 'Center-left',
+        'Verts/ALE': 'Green',
+        'UEN': 'Right-wing',
+        'IND/DEM': 'Right-wing',
+        'TDI': 'Right-wing',
+        'EDD': 'Right-wing',
+        'PPE': 'Center-right',
+        'GUE': 'Left-wing',
+        'FE': 'Left-wing',
+        'RDE': 'Center',
+        'V': 'Green',
+        'ARE': 'Center',
+        'EDN': 'Center',
+        'S': 'Center-left',
+        'LDR': 'Center',
+        'ED': 'Center',
+        'COM': 'Left-wing',
+        'L': 'Left-wing',
+        'DEP': 'Center',
+        'CDI': 'Center',
+        'DR': 'Right-wing',
+        'CG': 'Right-wing',
+        'ARC': 'Right-wing'
+    }
+
+    spectrum_to_color = {
+        'Non-inscrits': 'rgb(178, 186, 187)',
+        'Green': 'rgb(22, 160, 133)',
+        'Far-left': 'rgb(148, 49, 38)',
+        'Left-wing': 'rgb(203, 67, 53)',
+        'Center-left': 'rgb(236, 112, 99)',
+        'Center': 'rgb(210, 180, 222)',
+        'Center-right': 'rgb(93, 173, 226)',
+        'Right-wing': 'rgb(46, 134, 193)',
+        'Far-right': 'rgb(33, 97, 140)',
+    }
+
+    return (pd.concat([eu2024, eu2019, eu2014, eu2009, eu2004, eu1999, eu1994, eu1989, eu1984, eu1979],
+                     ignore_index=True)
+            .assign(political_spectrum=lambda x: x['ACRONYM'].map(party_to_spectrum),
+                    color=lambda x: x['political_spectrum'].map(spectrum_to_color),
+                    )
+            .groupby(['Year', 'political_spectrum', 'color'], as_index=False)
+            .agg({'SEATS_TOTAL': 'sum',
+                  'SEATS_PERCENT_EU': 'sum',
+                  })
+            )
 
 def UK_elections_data():
     # https://commonslibrary.parliament.uk/research-briefings/CBP-8647/#fullreport

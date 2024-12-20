@@ -8,6 +8,10 @@ from utils.load_data import (
     european_elections_data
 )
 
+from utils.line_chart_examples.books_per_capita_plot import books_per_capita_plotly_express_line_chart, books_per_capita_line_plot
+from utils.line_chart_examples.european_elections_plot import european_elections_plotly_express_line_chart, european_elections_line_chart
+from utils.line_chart_examples.alcohol_consumption_plot import alcohol_consumption_plotly_express_line_chart, alcohol_consumption_line_chart
+
 # ---------------------------------------------------------------------
 # CONFIGURATION
 # ---------------------------------------------------------------------
@@ -30,24 +34,13 @@ european_elections_data_df = european_elections_data()
 # ---------------------------------------------------------------------
 (hero_line_tab,
  colour_hierarchy_tab,
- colour_equal_importance_tab,
  colours_with_meaning_tab,
  )  = st.tabs(
     ["📈 Hero lines",
      "🚶‍♀️ Colour hierarchy",
-     "⏱️ Colours of equal importance",
      "📏 Colours with meaning",
      ]
 )
-
-with colours_with_meaning_tab:
-    st.subheader('Political parties')
-
-    st.write('')
-    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/6/10/rule-32-every-line-should-be-a-different-colour)")
-
-    with st.expander("Expand to see the data"):
-        st.dataframe(european_elections_data_df, hide_index=True)
 
 with hero_line_tab:
     st.subheader('Hero lines')
@@ -58,14 +51,13 @@ with hero_line_tab:
     with st.expander("Expand to see the data"):
         st.dataframe(new_books_data_df, hide_index=True)
 
-with colour_equal_importance_tab:
-    st.subheader('Equal importance colours')
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(books_per_capita_plotly_express_line_chart(new_books_data_df))
 
     st.write('')
-    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/6/10/rule-32-every-line-should-be-a-different-colour)")
-
-    with st.expander("Expand to see the data"):
-        st.dataframe(smoking_rates_data_df, hide_index=True)
+    with st.container(border=True):
+        st.plotly_chart(books_per_capita_line_plot(new_books_data_df))
 
 with colour_hierarchy_tab:
     st.subheader('Colour hierarchy through colours')
@@ -75,4 +67,29 @@ with colour_hierarchy_tab:
 
     with st.expander("Expand to see the data"):
         st.dataframe(alcohol_consumption_data_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(alcohol_consumption_plotly_express_line_chart(alcohol_consumption_data_df))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(alcohol_consumption_line_chart(alcohol_consumption_data_df))
+
+with colours_with_meaning_tab:
+    st.subheader('Political parties')
+
+    st.write('')
+    st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2022/6/10/rule-32-every-line-should-be-a-different-colour)")
+
+    with st.expander("Expand to see the data"):
+        st.dataframe(european_elections_data_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(european_elections_plotly_express_line_chart(european_elections_data_df))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(european_elections_line_chart(european_elections_data_df))
 

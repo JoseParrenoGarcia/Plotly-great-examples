@@ -1,0 +1,193 @@
+ID;LANGUAGE_ID;ACRONYM;LABEL
+GP0001;EN;S;Socialist Group
+GP0001;ES;S;Grupo Socialista
+GP0001;BG;S;Група на социалистите
+GP0001;CS;S;Skupina socialistů
+GP0001;DA;S;Den Socialistiske Gruppe
+GP0001;DE;S;Sozialistische Fraktion
+GP0001;EL;S;Σοσιαλιστική Ομάδα
+GP0001;ET;S;Sotsialistide fraktsioon
+GP0001;FI;S;Sosiaalidemokraattisen puolueen ryhmä
+GP0001;FR;S;Groupe socialiste
+GP0001;GA;S;An Grúpa Sóisialach
+GP0001;HR;S;Klub zastupnika socijalista
+GP0001;HU;S;Szocialista Csoport
+GP0001;IT;S;Gruppo socialista
+GP0001;LV;S;Socialistu grupa
+GP0001;LT;S;Socialistu grupe
+GP0001;MT;S;Grupp Socjalista
+GP0001;NL;S;Socialistische Fractie
+GP0001;PL;S;Grupa Socjalistów
+GP0001;PT;S;Grupo Socialista
+GP0001;RO;S;Grupul Socialist
+GP0001;SK;S;Skupina socialistov
+GP0001;SL;S;Skupina socialistov
+GP0001;SV;S;Socialistgruppen
+GP0002;EN;PPE;Group of the European People's Party (Christian-Democratic Group)
+GP0002;ES;PPE;Grupo del Partido Popular Europeo (Grupo Demócrata Cristiano)
+GP0002;BG;PPE;Група на Европейската народна партия (Група на християндемократите)
+GP0002;CS;PPE;Skupina Evropské lidové strany (Skupina křesťanské demokracie)
+GP0002;DA;PPE;Det Europæiske Folkepartis Gruppe (Den Kristelig-Demokratiske Gruppe)
+GP0002;DE;PPE;Fraktion der Europäischen Volkspartei (Christlich-demokratische Fraktion)
+GP0002;EL;PPE;Ομάδα του Ευρωπαϊκού Λαϊκού Κόμματος (Χριστιανοδημοκράτες)
+GP0002;ET;PPE;Euroopa rahvapartei fraktsioon (kristlik-demokraatide fraktsioon)
+GP0002;FI;PPE;Euroopan kansanpuolueen ryhmä (kristillis-demokraattinen puolueryhmä)
+GP0002;FR;PPE;Groupe du parti populaire européen (Groupe démocrate-chrétien)
+GP0002;GA;PPE;Grúpa Pháirtí an Phobail Eorpaigh (Grúpa na nDaonlathaithe Críostaí)
+GP0002;HR;PPE;Klub zastupnika Europske pučke stranke (Kršćansko-demokratski klub zastupnika)
+GP0002;HU;PPE;Az Európai Néppárt Csoportja (Kereszténydemokrata Csoport)
+GP0002;IT;PPE;Gruppo del partito popolare europeo (Gruppo democratico cristiano)
+GP0002;LV;PPE;Eiropas Tautas Partijas grupa (Kristigo demokratu grupa)
+GP0002;LT;PPE;Europos liaudies partijos grupe (Krikšcioniu demokratu grupe)
+GP0002;MT;PPE;Grupp tal-Partit Popolari Ewropew (Grupp Demokratiku-Kristjan)
+GP0002;NL;PPE;Fractie van de Europese Volkspartij (Christen-democratische Fractie)
+GP0002;PL;PPE;Grupa Europejskiej Partii Ludowej (Chrzescijanscy Demokraci)
+GP0002;PT;PPE;Grupo do Partido Popular Europeu (Grupo Democrata-Cristão)
+GP0002;RO;PPE;Grupul Partidului Popular European (Grupul Creștin-Democrat)
+GP0002;SK;PPE;Skupina Európskej ludovej strany (Krestansko-demokratická skupina)
+GP0002;SL;PPE;Skupina Evropske ljudske stranke (skupina krščanskih demokratov)
+GP0002;SV;PPE;Europeiska folkpartiets grupp (Kristdemokratiska gruppen)
+GP0003;EN;ED;European Democratic Group
+GP0003;ES;ED;Grupo Demócrata Europeo
+GP0003;BG;ED;Група на Европейските демократи
+GP0003;CS;ED;Skupina evropské demokracie
+GP0003;DA;ED;Den Europæiske Demokratiske Gruppe
+GP0003;DE;ED;Fraktion der Europäischen Demokraten
+GP0003;EL;ED;Ομάδα των Ευρωπαίων Δημοκρατών
+GP0003;ET;ED;Euroopa demokraatide fraktsioon
+GP0003;FI;ED;Euroopan demokraattipuolueen ryhmä
+GP0003;FR;ED;Groupe des démocrates européens
+GP0003;GA;ED;Grúpa Dhaonlathaigh na hEorpa
+GP0003;HR;ED;Klub zastupnika europskih demokrata
+GP0003;HU;ED;Európai Demokraták Csoportja
+GP0003;IT;ED;Gruppo democratico europeo
+GP0003;LV;ED;Eiropas demokratu grupa
+GP0003;LT;ED;Europos demokratu grupe
+GP0003;MT;ED;Grupp Demokratiku Ewropew
+GP0003;NL;ED;Europese Democratische Fractie
+GP0003;PL;ED;Grupa Demokracji Europejskiej
+GP0003;PT;ED;Grupo dos Democratas Europeus
+GP0003;RO;ED;Grupul Democraților Europeni
+GP0003;SK;ED;Európska demokratická skupina
+GP0003;SL;ED;Skupina Evropski demokrati
+GP0003;SV;ED;Gruppen Europeiska demokrater
+GP0004;EN;COM;Communist and Allies Group
+GP0004;ES;COM;Grupo de Comunistas y afines
+GP0004;BG;COM;Група на комунистите и съмишлениците
+GP0004;CS;COM;Skupina komunistů a spojenců
+GP0004;DA;COM;Gruppen af Kommunister og Beslægtede
+GP0004;DE;COM;Fraktion der Kommunisten und Nahestehenden
+GP0004;EL;COM;Κομμουνιστική ομάδα και Προσκείμενοι
+GP0004;ET;COM;Kommunistide ja liitlaste fraktsioon
+GP0004;FI;COM;Kommunisti- ja vasemmistopuolueiden ryhmä
+GP0004;FR;COM;Groupe communiste et apparentés
+GP0004;GA;COM;An Grúpa Cumannach agus Comhghuaillithe
+GP0004;HR;COM;Klub zastupnika komunista i saveznika
+GP0004;HU;COM;Kommunisták és Szövetségeseik Csoportja
+GP0004;IT;COM;Gruppo comunista e apparentanti
+GP0004;LV;COM;Komunistu un sabiedroto grupa
+GP0004;LT;COM;Komunistu ir sajungininku grupe
+GP0004;MT;COM;Gruppi Komunisti u Alleati
+GP0004;NL;COM;Communistische Fractie en geestverwanten
+GP0004;PL;COM;Grupa Komunistów i Sojuszników
+GP0004;PT;COM;Grupo Comunista e Afins
+GP0004;RO;COM;Grupul comuniștilor și al afiliaților
+GP0004;SK;COM;Skupina komunistov a spojencov
+GP0004;SL;COM;Skupina Komunisti in zavezniki
+GP0004;SV;COM;Gruppen kommunister och deras samarbetspartner
+GP0005;EN;L;Liberal and Democratic Group
+GP0005;ES;L;Grupo Democrático y Liberal
+GP0005;BG;L;Група на либералите и демократите
+GP0005;CS;L;Skupina liberálů a demokratů
+GP0005;DA;L;Den liberale og demokratiske Gruppe
+GP0005;DE;L;Liberale und Demokratische Fraktion
+GP0005;EL;L;Φιλελεύθερη και Δημοκρατική Ομάδα
+GP0005;ET;L;Liberaalide ja demokraatide fraktsioon
+GP0005;FI;L;Liberal and Democratic Group
+GP0005;FR;L;Groupe libéral et démocratique
+GP0005;GA;L;An Grúpa Liobrálach, Daonlathach
+GP0005;HR;L;Klub zastupnika liberala i demokrata
+GP0005;HU;L;Liberálisok és Demokraták Csoportja
+GP0005;IT;L;Gruppo liberale e democratico
+GP0005;LV;L;Liberalu un demokratu grupa
+GP0005;LT;L;Liberalu ir demokratu grupe
+GP0005;MT;L;Grupp Liberali u Demokratiku
+GP0005;NL;L;Liberale en Democratische Fractie
+GP0005;PL;L;Grupa Liberalna i Demokratyczna
+GP0005;PT;L;Grupo Liberal e Democrático
+GP0005;RO;L;Grupul Liberal și Democrat
+GP0005;SK;L;Skupina liberálov a demokratov
+GP0005;SL;L;Liberalno-demokratska skupina
+GP0005;SV;L;Liberala och demokratiska gruppen
+GP0006;EN;DEP;Group of European Progressive Democrats
+GP0006;ES;DEP;Grupo de los Demócratas Europeos de Progreso
+GP0006;BG;DEP;Група на Европейските прогресивни демократи
+GP0006;CS;DEP;Skupina Evropských progresivních demokratů
+GP0006;DA;DEP;De europæiske fremskridsdemokraters gruppe
+GP0006;DE;DEP;Fraktion der Europäischen Demokraten für den Fortschritt
+GP0006;EL;DEP;Ομάδα τωv Ευρωπαίωv Δημoκρατώv Πρoόδου
+GP0006;ET;DEP;Euroopa progressiivsete demokraatide fraktsioon
+GP0006;FI;DEP;Euroopan edistyksellisten demokraattien ryhmä
+GP0006;FR;DEP;Groupe des démocrates européens de progrès
+GP0006;GA;DEP;Grúpa Pháirtí Daonlathach na hEorpa
+GP0006;HR;DEP;Klub zastupnika europskih progresivnih demokrata
+GP0006;HU;DEP;Európai Progresszív Demokraták Csoportja
+GP0006;IT;DEP;Gruppo dei democratici europei di progresso
+GP0006;LV;DEP;Eiropas Progresivo demokratu grupa
+GP0006;LT;DEP;Europos pažangiuju demokratu grupe
+GP0006;MT;DEP;Grupp ta’ Demokratici Progressivi Ewropej
+GP0006;NL;DEP;Fractie van Europese democraten voor de vooruitgang
+GP0006;PL;DEP;Grupa Europejskich Postepowych Demokratów
+GP0006;PT;DEP;Grupo dos Democratas Europeus para o Progresso
+GP0006;RO;DEP;Grupul Democraților europeni progresiști
+GP0006;SK;DEP;Skupina Európskych pokrokových demokratov
+GP0006;SL;DEP;Skupina Evropskih naprednih demokratov
+GP0006;SV;DEP;Gruppen Europeiska progressiva demokrater
+GP0007;EN;CDI;Group for the Technical Coordination and Defence of Independent Groups and Members
+GP0007;ES;CDI;Grupo para la Coordinación Técnica y la Defensa de los Grupos y Diputados
+GP0007;BG;CDI;Група за техническа координация и охрана на групите и независимите членове на Парламента
+GP0007;CS;CDI;Skupiny a členové technické koordinace a obhajoby nezávislých
+GP0007;DA;CDI;Gruppen for teknisk koordinering og forsvar for uafhængige grupper og medlemmer
+GP0007;DE;CDI;Fraktion für die technische Koordinierung und Verteidigung der unabhängigen Gruppen und Abgeordneten
+GP0007;EL;CDI;Ομάδα Τεχνικού Συντονισμού και Προασπίσεως Ανεξαρτήτων Ομάδων και Βουλευτών
+GP0007;ET;CDI;Tehnilise koordinatsiooni grupp ning sõltumatute fraktsioonide ja liikmete kaitse
+GP0007;FI;CDI;Itsenäisten ryhmien ja jäsenten tekninen koordinaatioryhmä
+GP0007;FR;CDI;Groupe de coordination technique et de défense des groupes et des parlementaires indépendents
+GP0007;GA;CDI;An Grúpa um Chomhordú Teicniúil agus Cosaint Grúpaí agus Comhaltaí Neamhspleácha
+GP0007;HR;CDI;Klub zastupnika za tehničku koordinaciju i obranu nezavisnih skupina i zastupnika
+GP0007;HU;CDI;Független Csoportok és Tagok Technikai Koordinációját és Védelmét Szolgáló Csoport
+GP0007;IT;CDI;Gruppo di coordinamento tecnico e di difesa dei gruppi e dei deputati indipendenti
+GP0007;LV;CDI;Neatkarigo grupu un deputatu tehniskas sadarbibas un aizsardzibas grupa
+GP0007;LT;CDI;Techninio koordinavimo ir nepriklausomu grupiu ir nariu gynimo grupe
+GP0007;MT;CDI;Grupp ghall-Koordinazzjoni Teknika u Difiza ta’ Gruppi u Membri Indipendenti
+GP0007;NL;CDI;Fractie voor de technische coördinatie en de verdediging van de onafhankelijke groepering en leden
+GP0007;PL;CDI;Grupa Koordynacji Technicznej i Obrony Niezaleznych Grup i Deputowanych
+GP0007;PT;CDI;Grupo para a Coordenação Técnica e a Defesa de Grupos e Deputados
+GP0007;RO;CDI;Grupul de coordonare tehnică și apărare a grupurilor politice și parlamentarilor neafiliați
+GP0007;SK;CDI;Skupina pre technickú koordináciu a obranu nezávislých skupín a clenov
+GP0007;SL;CDI;Skupina za tehnično koordinacijo in obrambo neodvisnih skupin in poslancev
+GP0007;SV;CDI;Gruppen för teknisk samordning och försvar av oberoende grupper och ledamöter
+NA;EN;NI;Non-attached Members
+NA;ES;NI;No inscritos
+NA;BG;НЧ;Независими членове
+NA;CS;NI;Nezařazení poslanci
+NA;DA;NI;Løsgængere
+NA;DE;NI;Fraktionslos
+NA;EL;NI;Μη Εγγεγραμμένοι
+NA;ET;NI;Fraktsioonilise kuuluvuseta parlamendiliikmed
+NA;FI;NI;Sitoutumattomat
+NA;FR;NI;Non-inscrits
+NA;GA;NI;Feisirí Neamhcheangailte
+NA;HR;NI;Nezavisni zastupnici
+NA;HU;NI;független képviselők
+NA;IT;NI;Non iscritti
+NA;LV;NI;Pie politiskajām grupām nepiederošie deputāti
+NA;LT;NI;Nepriklausomi nariai
+NA;MT;NI;Membri mhux affiljati
+NA;NL;NI;Niet-fractiegebonden leden
+NA;PL;NI;Niezrzeszeni
+NA;PT;NI;Não Inscritos
+NA;RO;NI;Deputați neafiliați
+NA;SK;NI;Nezaradení poslanci
+NA;SL;NI;Samostojni poslanci
+NA;SV;NI;Grupplösa
