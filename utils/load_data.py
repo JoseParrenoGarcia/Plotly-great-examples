@@ -851,7 +851,20 @@ def european_elections_data():
 
 def UK_elections_data():
     # https://commonslibrary.parliament.uk/research-briefings/CBP-8647/#fullreport
-    df = (pd.read_csv('data/UK_1918-2019election_results.csv', sep=',', encoding='ISO-8859-1'))
+    df = (pd.read_csv('data/UK_1918-2019election_results.csv', sep=',', encoding='ISO-8859-1')
+          .dropna(subset=['total_votes'])
+          .query("total_votes != ' '")
+          .assign(total_votes = lambda x: x['total_votes'].astype(float))
+          .query("total_votes > -1")
+          .query("election != '1974F'")
+          .replace({'election': '1974O'}, '1974')
+          [['election', 'con_votes', 'lib_votes', 'lab_votes', 'natSW_votes', 'oth_votes']]
+          .fillna(0)
+          .melt(id_vars=['election'], var_name='party', value_name='votes')
+          .assign(votes=lambda x: pd.to_numeric(x['votes'], errors='coerce'))
+          .groupby(['election', 'party'], as_index=False)
+          .agg({'votes': 'sum'})
+          )
 
     return df
 
