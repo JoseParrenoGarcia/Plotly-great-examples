@@ -851,6 +851,14 @@ def european_elections_data():
 
 def UK_elections_data():
     # https://commonslibrary.parliament.uk/research-briefings/CBP-8647/#fullreport
+    party_to_color = {
+        'Other': 'rgba(178, 186, 187, 0.5)',
+        'Lib. dems.': 'rgba(240, 178, 122, 1)',
+        'Scottish NP': 'rgba(247, 220, 111, 0.5)',
+        'Labour': 'rgba(203, 67, 53, 1)',
+        'Conservatives': 'rgba(46, 134, 193, 0.5)',
+    }
+
     df = (pd.read_csv('data/UK_1918-2019election_results.csv', sep=',', encoding='ISO-8859-1')
           .dropna(subset=['total_votes'])
           .query("total_votes != ' '")
@@ -861,9 +869,17 @@ def UK_elections_data():
           [['election', 'con_votes', 'lib_votes', 'lab_votes', 'natSW_votes', 'oth_votes']]
           .fillna(0)
           .melt(id_vars=['election'], var_name='party', value_name='votes')
-          .assign(votes=lambda x: pd.to_numeric(x['votes'], errors='coerce'))
+          .assign(votes=lambda x: pd.to_numeric(x['votes'], errors='coerce'),
+                  election=lambda x: pd.to_numeric(x['election'], errors='coerce'),
+                  )
           .groupby(['election', 'party'], as_index=False)
           .agg({'votes': 'sum'})
+          .replace({'party': 'con_votes'}, 'Conservatives')
+          .replace({'party': 'lab_votes'}, 'Labour')
+          .replace({'party': 'lib_votes'}, 'Lib. dems.')
+          .replace({'party': 'oth_votes'}, 'Other')
+          .replace({'party': 'natSW_votes'}, 'Scottish NP')
+          .assign(color=lambda x: x['party'].map(party_to_color))
           )
 
     return df
