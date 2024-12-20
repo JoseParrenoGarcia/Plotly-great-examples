@@ -30,13 +30,6 @@ def alcohol_consumption_line_chart(df):
                            )
             )
 
-            # if (country == 'Tanzania') or (country == 'Egypt, Arab Rep.'):
-            #     textposition = 'bottom right'
-            # # elif country == 'Poland':
-            # #     textposition = 'top right'
-            # else:
-            #     textposition = 'middle right'
-
             fig.add_trace(
                 go.Scatter(x=df[(df['Country'] == country) & (df['Year'] == df['Year'].max())]['Year'],
                            y=df[(df['Country'] == country) & (df['Year'] == df['Year'].max())]['alcohol_consumption'],
