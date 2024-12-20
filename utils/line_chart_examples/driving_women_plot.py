@@ -1,4 +1,20 @@
 import plotly.graph_objects as go
+import plotly.express as px
+
+def driving_women_plotly_express(df):
+    fig = px.line(df,
+                  x='Year',
+                  y='percentage',
+                  color='Sex',
+                  title='Driving licence holders by gender (UK, %)')
+
+    fig.update_layout(
+        font=dict(family="Helvetica Neue"),
+        height=700,
+        width=700,
+    )
+
+    return fig
 
 def driving_women_line_chart(df):
     df = df.sort_values(['Year', 'Sex'], ascending=False)
@@ -56,7 +72,7 @@ def driving_women_line_chart(df):
                 text="Only 29% of women drove in 1975. Now, it is over 70%.",
                 xref="paper",
                 yref="paper",
-                x=-0.080, y=1.23,
+                x=-0.080, y=1.18,
                 showarrow=False,
                 font=dict(family="Helvetica Neue", size=18),
                 align="left"
@@ -65,7 +81,7 @@ def driving_women_line_chart(df):
                 text="Driving licence holders by gender (UK, %)",
                 xref="paper",
                 yref="paper",
-                x=-0.080, y=1.10,
+                x=-0.080, y=1.08,
                 showarrow=False,
                 font=dict(family="Helvetica Neue", size=14),
                 align="left"
@@ -98,7 +114,7 @@ def driving_women_line_chart(df):
                    range=[1975, 2030],
                    ),
         margin=dict(t=150, pad=0),
-        height=600,
+        height=700,
         width=700,
     )
 
