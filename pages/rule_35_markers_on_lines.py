@@ -13,6 +13,7 @@ from utils.line_chart_examples.driving_women_plot import driving_women_line_char
 from utils.line_chart_examples.books_per_capita_plot import books_per_capita_plotly_express_line_chart, books_per_capita_line_plot
 from utils.line_chart_examples.uk_elections_plot import uk_elections_plotly_express_line_chart, uk_elections_line_chart
 from utils.line_chart_examples.kids_before_marriage_plot import kids_before_marriage_plotly_express_line_chart, kids_before_marriage_line_chart
+from utils.line_chart_examples.irish_population_plot import irish_population_plotly_express_line_chart, irish_population_line_chart
 
 
 # ---------------------------------------------------------------------
@@ -91,6 +92,15 @@ with important_events_tab:
 
     with st.expander("Expand to see the data"):
         st.dataframe(ireland_population_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(irish_population_plotly_express_line_chart(ireland_population_df))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(irish_population_line_chart(ireland_population_df))
+
 
 with replacement_for_legend_tab:
     st.subheader('Markers acting as legend')

@@ -895,7 +895,9 @@ def kids_before_marriage_data():
 
 def ireland_population_data():
     # https: // en.wikipedia.org / wiki / Historical_population_of_Ireland
-    df = (pd.read_csv('data/ireland_population.csv', sep=';'))
+    df = (pd.read_csv('data/ireland_population.csv', sep=';')
+          .assign(Population=lambda x: x['Population'].str.replace('m', '').astype(float))
+          )
 
     return df
 
