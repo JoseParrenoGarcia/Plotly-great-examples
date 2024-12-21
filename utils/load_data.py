@@ -851,7 +851,36 @@ def european_elections_data():
 
 def UK_elections_data():
     # https://commonslibrary.parliament.uk/research-briefings/CBP-8647/#fullreport
-    df = (pd.read_csv('data/UK_1918-2019election_results.csv', sep=',', encoding='ISO-8859-1'))
+    party_to_color = {
+        'Other': 'rgba(178, 186, 187, 0.5)',
+        'Lib. dems.': 'rgba(240, 178, 122, 1)',
+        'Scottish NP': 'rgba(247, 220, 111, 0.5)',
+        'Labour': 'rgba(203, 67, 53, 1)',
+        'Conservatives': 'rgba(46, 134, 193, 0.5)',
+    }
+
+    df = (pd.read_csv('data/UK_1918-2019election_results.csv', sep=',', encoding='ISO-8859-1')
+          .dropna(subset=['total_votes'])
+          .query("total_votes != ' '")
+          .assign(total_votes = lambda x: x['total_votes'].astype(float))
+          .query("total_votes > -1")
+          .query("election != '1974F'")
+          .replace({'election': '1974O'}, '1974')
+          [['election', 'con_votes', 'lib_votes', 'lab_votes', 'natSW_votes', 'oth_votes']]
+          .fillna(0)
+          .melt(id_vars=['election'], var_name='party', value_name='votes')
+          .assign(votes=lambda x: pd.to_numeric(x['votes'], errors='coerce'),
+                  election=lambda x: pd.to_numeric(x['election'], errors='coerce'),
+                  )
+          .groupby(['election', 'party'], as_index=False)
+          .agg({'votes': 'sum'})
+          .replace({'party': 'con_votes'}, 'Conservatives')
+          .replace({'party': 'lab_votes'}, 'Labour')
+          .replace({'party': 'lib_votes'}, 'Lib. dems.')
+          .replace({'party': 'oth_votes'}, 'Other')
+          .replace({'party': 'natSW_votes'}, 'Scottish NP')
+          .assign(color=lambda x: x['party'].map(party_to_color))
+          )
 
     return df
 
@@ -866,7 +895,9 @@ def kids_before_marriage_data():
 
 def ireland_population_data():
     # https: // en.wikipedia.org / wiki / Historical_population_of_Ireland
-    df = (pd.read_csv('data/ireland_population.csv', sep=';'))
+    df = (pd.read_csv('data/ireland_population.csv', sep=';')
+          .assign(Population=lambda x: x['Population'].str.replace('m', '').astype(float))
+          )
 
     return df
 

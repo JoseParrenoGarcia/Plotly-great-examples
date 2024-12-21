@@ -10,8 +10,8 @@ def books_per_capita_plotly_express_line_chart(df):
 
     fig.update_layout(
         font=dict(family="Helvetica Neue"),
-        height=600,
-        width=1000,
+        height=700,
+        width=700,
     )
 
     return fig
