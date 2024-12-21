@@ -38,9 +38,9 @@ def irish_population_line_chart(df):
         )
 
         if year == 1845:
-            t = "   <b>(1845 - 1852)</b><br>   The great famine <a href='https://en.wikipedia.org/wiki/Great_Famine_(Ireland)'>🔗</a>"
+            t = "<b>(1845 - 1852)</b><br>The great famine <a href='https://en.wikipedia.org/wiki/Great_Famine_(Ireland)'>🔗</a>"
         else:
-            t = "   <b>(1972)</b><br>   Ireland joins the EU <a href='https://ireland.representation.ec.europa.eu/about-us/irelands-eu-membership_en#:~:text=in%20the%20EU-,Ireland%20in%20the%20EU,referendum%20held%20on%2010%20May.'>🔗</a>"
+            t = "<b>(1972)</b><br>Ireland joins the EU <a href='https://ireland.representation.ec.europa.eu/about-us/irelands-eu-membership_en#:~:text=in%20the%20EU-,Ireland%20in%20the%20EU,referendum%20held%20on%2010%20May.'>🔗</a>"
 
         fig.add_shape(
             type="line",
@@ -53,10 +53,11 @@ def irish_population_line_chart(df):
 
         fig.add_trace(
             go.Scatter(x=[year],
-                       y=[2],
+                       y=[2.25],
                        text=[t],
-                       mode='text',
+                       mode='markers+text',
                        showlegend=False,
+                       marker=dict(size=20, color='rgba(0,0,0,0)'),
                        textfont=dict(family="Helvetica Neue", size=14, color='grey'),
                        textposition='middle right',
                        )
