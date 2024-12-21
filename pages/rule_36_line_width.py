@@ -6,6 +6,8 @@ from utils.load_data import (
     market_stocks_data,
 )
 
+from utils.line_chart_examples.faang_stocks_plot import faang_stocks_line_chart
+
 # ---------------------------------------------------------------------
 # CONFIGURATION
 # ---------------------------------------------------------------------
@@ -44,6 +46,18 @@ with lines_with_lots_of_change_tab:
 
     with st.expander("Expand to see the data"):
         st.dataframe(market_stocks_data_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(faang_stocks_line_chart(market_stocks_data_df, line_width=6))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(faang_stocks_line_chart(market_stocks_data_df, line_width=3))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(faang_stocks_line_chart(market_stocks_data_df, line_width=1))
 
 with too_many_lines_tab:
     st.subheader('Too many lines')

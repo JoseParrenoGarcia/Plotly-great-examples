@@ -915,9 +915,14 @@ def human_height_data():
 
 def market_stocks_data():
     # https://www.marketwatch.com/investing/stock/msft/download-data?mod=mw_quote_tab
-    df = (pd.read_csv('data/STOCK_US_XNAS_AAPL.csv', sep=','))
+    meta_stock = (pd.read_csv('data/STOCK_US_XNAS_META.csv', sep=',')
+                  .assign(stock='Meta',
+                          Date=lambda x: pd.to_datetime(x['Date'], format='%m/%d/%Y')
+                          )
+                  )
 
-    return df
+    return meta_stock
+
 
 def sector_growth_data():
     # https://ourworldindata.org/economic-growth#all-charts
