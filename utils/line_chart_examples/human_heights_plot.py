@@ -1,6 +1,6 @@
 import plotly.graph_objects as go
 
-def human_height_line_plot(df, line_width, hero_line=None):
+def human_height_line_plot(df, line_width, hero_line=None, benchmark_line=None):
     if hero_line is None:
         rest_of_countries = df['Entity'].unique()
     else:
@@ -44,6 +44,31 @@ def human_height_line_plot(df, line_width, hero_line=None):
                            )
             )
 
+    if benchmark_line is not None:
+        df_bench = df.groupby('Year')['height'].mean().reset_index()
+
+        fig.add_trace(
+            go.Scatter(x=df_bench['Year'],
+                       y=df_bench['height'],
+                       mode='lines',
+                       name='World average',
+                       showlegend=False,
+                       line=dict(color='black', width=line_width*2, dash='dash')
+                       )
+        )
+
+        fig.add_trace(
+            go.Scatter(x=df_bench[(df_bench['Year'] == df_bench['Year'].max())]['Year'],
+                       y=df_bench[(df_bench['Year'] == df_bench['Year'].max())]['height'],
+                       mode='markers+text',
+                       showlegend=False,
+                       marker=dict(color='black', size=line_width * 3 * 2),
+                       text='World average',
+                       textposition='top right',
+                       textfont=dict(family="Helvetica Neue", color='black', size=12),
+                       )
+        )
+
     # Update layout
     fig.update_layout(
         title=dict(
@@ -86,3 +111,5 @@ def human_height_line_plot(df, line_width, hero_line=None):
     )
 
     return fig
+
+
