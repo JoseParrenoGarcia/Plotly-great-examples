@@ -7,6 +7,7 @@ from utils.load_data import (
 )
 
 from utils.line_chart_examples.faang_stocks_plot import faang_stocks_line_chart
+from utils.line_chart_examples.human_heights_plot import human_height_line_plot
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -67,6 +68,29 @@ with too_many_lines_tab:
 
     with st.expander("Expand to see the data"):
         st.dataframe(human_height_data_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(human_height_line_plot(human_height_data_df,
+                                               line_width=6))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(human_height_line_plot(human_height_data_df,
+                                               line_width=3))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(human_height_line_plot(human_height_data_df,
+                                               line_width=1))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(human_height_line_plot(human_height_data_df,
+                                               line_width=1,
+                                               hero_line=['Vietnam', 'Denmark', 'South Korea', 'Japan']))
+
+
 
 with hero_line_tab:
     st.subheader('Hero line')
