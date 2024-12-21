@@ -25,7 +25,7 @@ def uk_elections_line_chart(df):
     for party in df['party'].unique():
 
         if (party == 'Labour') or (party == 'Lib. dems.'):
-            line_size = 3
+            line_size = 3.5
         else:
             line_size = 2
 
@@ -49,14 +49,17 @@ def uk_elections_line_chart(df):
                        marker=dict(color=df[df['party'] == party]['color'].values[0], size=line_size * 2),
                        text=party,
                        textposition='middle right',
-                       textfont=dict(family="Helvetica Neue", color=df[df['party'] == party]['color'].values[0], size=12),
+                       textfont=dict(family="Helvetica Neue", color=df[df['party'] == party]['color'].values[0], size=14),
                        )
         )
+
+    # for year in df['election'].unique():
+    #     fig.add_vline(x=year, line_width=1, line_dash="dash", line_color="rgba(204, 209, 209, 0.5)")
 
     fig.update_layout(
         title=dict(
             text="Labour vs Liberal votes",
-            font=dict(family="Helvetica Neue", size=20),
+            font=dict(family="Helvetica Neue", size=22),
         ),
         annotations=[
             # First paragraph annotation
@@ -64,18 +67,18 @@ def uk_elections_line_chart(df):
                 text='<b><span style="color:rgba(203, 67, 53, 1);">Labour</span></b> and <b><span style="color:rgba(240, 178, 122, 1);">Liberal</span></b> vote is mirrored. Both parties fight for the same voters.',
                 xref="paper",
                 yref="paper",
-                x=-0.13, y=1.4,
+                x=-0.08, y=1.225,
                 showarrow=False,
-                font=dict(family="Helvetica Neue", size=16),
+                font=dict(family="Helvetica Neue", size=18),
                 align="left"
             ),
             dict(
                 text='Number of votes in each election.',
                 xref="paper",
                 yref="paper",
-                x=-0.13, y=1.15,
+                x=-0.08, y=1.10,
                 showarrow=False,
-                font=dict(family="Helvetica Neue", size=13),
+                font=dict(family="Helvetica Neue", size=14),
                 align="left"
             ),
         ],
@@ -98,8 +101,8 @@ def uk_elections_line_chart(df):
         font=dict(family="Helvetica Neue", size=14),
         showlegend=False,
         margin=dict(t=250, r=100, pad=0),
-        height=600,
-        width=700,
+        height=800,
+        width=1000,
     )
 
     return fig
