@@ -23,6 +23,11 @@ def fertility_rates_line_chart(df, type='line'):
     for year in [1967, 1989]:
         population_value = df[df['Year'] == year]['Fertility Rate'].values[0]
 
+        if year==1967:
+            pos='top left'
+        else:
+            pos='top right'
+
         fig.add_trace(
             go.Scatter(x=df[df['Year'] == year]['Year'],
                        y=df[df['Year'] == year]['Fertility Rate'],
@@ -31,12 +36,12 @@ def fertility_rates_line_chart(df, type='line'):
                        showlegend=False,
                        marker=dict(size=8, color=color),
                        textfont=dict(family="Helvetica Neue", size=14, color=color),
-                       textposition='top right',
+                       textposition=pos,
                        )
         )
 
         if year == 1967:
-            t = "<b>(1966)</b><br>Decree 770 <a href='https://en.wikipedia.org/wiki/Decree_770'>🔗</a>"
+            t = "<b>(1967)</b><br>Decree 770 <a href='https://en.wikipedia.org/wiki/Decree_770'>🔗</a>"
         else:
             t = "<b>(1989)</b><br>Trial and execution of Ceaucescu <a href='https://en.wikipedia.org/wiki/Trial_and_execution_of_Nicolae_and_Elena_Ceaușescu'>🔗</a>"
 
@@ -120,8 +125,7 @@ def fertility_rates_line_chart(df, type='line'):
             linecolor='lightgrey',
             linewidth=2,
             ticksuffix="  ",
-            # range=[0, df['Fertility Rate'].max() * 1.5],
-            range=[0, None],
+            range=[0, 4.4],
 
         ),
         font=dict(family="Helvetica Neue", size=14),
