@@ -12,6 +12,7 @@ from utils.load_data import (
 from utils.line_chart_examples.fertility_rates_area_plot import fertility_rates_line_chart
 from utils.line_chart_examples.hong_kong_inflation_rates import hk_inflation_rates_line_chart
 from utils.line_chart_examples.shares_of_gdp_by_sector_plot import shares_of_gdp_by_sector_plot
+from utils.line_chart_examples.overlapping_distribution_plot import overlapping_distribution_line_chart
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -90,10 +91,14 @@ with overlapping_timeseries_tab:
 
     with st.expander("Expand to see the data"):
         st.dataframe(distributions_data_df, hide_index=True)
-    #
-    # st.write('')
-    # with st.container(border=True):
-    #     st.plotly_chart(shares_of_gdp_by_sector_plot(sector_growth_data_df, type='line'))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(overlapping_distribution_line_chart(distributions_data_df, type='line'))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(overlapping_distribution_line_chart(distributions_data_df, type='area'))
 
 with walkthrough_tab:
     st.subheader('Walkthrough timeseries')

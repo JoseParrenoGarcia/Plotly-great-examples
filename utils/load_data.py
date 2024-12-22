@@ -972,18 +972,18 @@ def distributions_data():
     np.random.seed(42)
 
     # Generate data for the normal and narrow distribution
-    x_narrow = np.linspace(-3, 3, 1000)
+    x_narrow = np.linspace(-4, 4, 1000)
     y_narrow = norm.pdf(x_narrow, loc=0, scale=0.5)
     tag_narrow = ['Normal Narrow'] * len(x_narrow)
 
     # Generate data for the normal and wide distribution
-    x_wide = np.linspace(-6, 6, 1000)
-    y_wide = norm.pdf(x_wide, loc=0, scale=2)
+    x_wide = np.linspace(-4, 4, 1000)
+    y_wide = norm.pdf(x_wide, loc=-1, scale=0.4)
     tag_wide = ['Normal Wide'] * len(x_wide)
 
     # Generate data for the skewed distribution
-    x_skewed = np.linspace(-3, 6, 1000)
-    y_skewed = skewnorm.pdf(x_skewed, a=4, loc=1, scale=1)
+    x_skewed = np.linspace(-4, 4, 1000)
+    y_skewed = norm.pdf(x_skewed, loc=2, scale=0.4)
     tag_skewed = ['Skewed'] * len(x_skewed)
 
     # Create a DataFrame
