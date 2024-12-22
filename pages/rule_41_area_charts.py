@@ -10,6 +10,7 @@ from utils.load_data import (
 )
 
 from utils.line_chart_examples.fertility_rates_area_plot import fertility_rates_plotly_express_line_chart, fertility_rates_line_chart
+from utils.line_chart_examples.hong_kong_inflation_rates import hk_inflation_rates_line_chart
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -59,9 +60,9 @@ with single_timeseries_tab:
         with col2:
             st.dataframe(inflation_rates_data_df, hide_index=True)
 
-    st.write('')
-    with st.container(border=True):
-        st.plotly_chart(fertility_rates_plotly_express_line_chart(fertility_rates_stacked_area_data_df))
+    # st.write('')
+    # with st.container(border=True):
+    #     st.plotly_chart(fertility_rates_plotly_express_line_chart(fertility_rates_stacked_area_data_df))
 
     st.write('')
     with st.container(border=True):
@@ -70,6 +71,15 @@ with single_timeseries_tab:
     st.write('')
     with st.container(border=True):
         st.plotly_chart(fertility_rates_line_chart(fertility_rates_stacked_area_data_df, type='area'))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(hk_inflation_rates_line_chart(inflation_rates_data_df, type='line'))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(hk_inflation_rates_line_chart(inflation_rates_data_df, type='area'))
+
 
 with overlapping_timeseries_tab:
     st.subheader('Overlapping timeseries')

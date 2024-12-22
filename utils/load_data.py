@@ -965,8 +965,10 @@ def inflation_rates_data():
           .drop(columns=['Country Code', 'Indicator Name', 'Indicator Code'])
           .melt(id_vars=['Country Name'], var_name='Year', value_name='Inflation Rate')
           .dropna()
-          .assign(Year=lambda x: x['Year'].astype(int))
+          .assign(Year=lambda x: x['Year'].astype(int),)
           )
+
+    df['Inflation Rate'] = df['Inflation Rate'].astype(float).round(2)
 
     return df
 
