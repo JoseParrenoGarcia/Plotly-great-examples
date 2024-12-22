@@ -946,13 +946,22 @@ def cumulative_co2_emmissions_data():
 
 def fertility_rates_stacked_area_data():
     # https://data.worldbank.org/indicator/SP.DYN.TFRT.IN?locations=RO
-    df = (pd.read_csv('data/fertility_rates.csv', sep=','))
+    df = (pd.read_csv('data/fertility_rates.csv', sep=',')
+          .query("`Country Name` == 'Romania'")
+          .drop(columns=['Country Code', 'Indicator Name', 'Indicator Code'])
+          .melt(id_vars=['Country Name'], var_name='Year', value_name='Fertility Rate')
+          )
 
     return df
 
 def inflation_rates_data():
     # https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=HK
-    df = (pd.read_csv('data/inflation_rates.csv', sep=','))
+    df = (pd.read_csv('data/inflation_rates.csv', sep=',')
+          .query("`Country Name` == 'Hong Kong SAR, China'")
+          .drop(columns=['Country Code', 'Indicator Name', 'Indicator Code'])
+          .melt(id_vars=['Country Name'], var_name='Year', value_name='Inflation Rate')
+          .dropna()
+          )
 
     return df
 
