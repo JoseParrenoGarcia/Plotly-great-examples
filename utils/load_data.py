@@ -3,6 +3,7 @@ import pycountry
 import pycountry_convert as pc
 import numpy as np
 import re
+from scipy.stats import norm, skewnorm
 
 def _get_continent(country_name):
     try:
@@ -940,14 +941,6 @@ def refugees_data():
 
     return df
 
-def cumulative_co2_emmissions_data():
-    # https://ourworldindata.org/grapher/cumulative-co2-emissions-region
-    df = (pd.read_csv('data/cumulative-co2-emissions-region.csv', sep=',')
-          .query("Cumulative_CO2_emissions > 0")
-          )
-
-    return df
-
 def fertility_rates_stacked_area_data():
     # https://data.worldbank.org/indicator/SP.DYN.TFRT.IN?locations=RO
     df = (pd.read_csv('data/fertility_rates.csv', sep=',')
@@ -974,5 +967,31 @@ def inflation_rates_data():
 
     return df
 
+def distributions_data():
+    # Set the random seed for reproducibility
+    np.random.seed(42)
 
+    # Generate data for the normal and narrow distribution
+    x_narrow = np.linspace(-3, 3, 1000)
+    y_narrow = norm.pdf(x_narrow, loc=0, scale=0.5)
+    tag_narrow = ['Normal Narrow'] * len(x_narrow)
 
+    # Generate data for the normal and wide distribution
+    x_wide = np.linspace(-6, 6, 1000)
+    y_wide = norm.pdf(x_wide, loc=0, scale=2)
+    tag_wide = ['Normal Wide'] * len(x_wide)
+
+    # Generate data for the skewed distribution
+    x_skewed = np.linspace(-3, 6, 1000)
+    y_skewed = skewnorm.pdf(x_skewed, a=4, loc=1, scale=1)
+    tag_skewed = ['Skewed'] * len(x_skewed)
+
+    # Create a DataFrame
+    df_narrow = pd.DataFrame({'x': x_narrow, 'y': y_narrow, 'tag': tag_narrow})
+    df_wide = pd.DataFrame({'x': x_wide, 'y': y_wide, 'tag': tag_wide})
+    df_skewed = pd.DataFrame({'x': x_skewed, 'y': y_skewed, 'tag': tag_skewed})
+
+    # Combine the DataFrames
+    df = pd.concat([df_narrow, df_wide, df_skewed], ignore_index=True)
+
+    return df
