@@ -940,7 +940,9 @@ def refugees_data():
 
 def cumulative_co2_emmissions_data():
     # https://ourworldindata.org/grapher/cumulative-co2-emissions-region
-    df = (pd.read_csv('data/cumulative-co2-emissions-region.csv', sep=','))
+    df = (pd.read_csv('data/cumulative-co2-emissions-region.csv', sep=',')
+          .query("Cumulative_CO2_emissions > 0")
+          )
 
     return df
 
@@ -950,6 +952,8 @@ def fertility_rates_stacked_area_data():
           .query("`Country Name` == 'Romania'")
           .drop(columns=['Country Code', 'Indicator Name', 'Indicator Code'])
           .melt(id_vars=['Country Name'], var_name='Year', value_name='Fertility Rate')
+          .dropna()
+          .assign(Year=lambda x: x['Year'].astype(int))
           )
 
     return df
@@ -961,6 +965,7 @@ def inflation_rates_data():
           .drop(columns=['Country Code', 'Indicator Name', 'Indicator Code'])
           .melt(id_vars=['Country Name'], var_name='Year', value_name='Inflation Rate')
           .dropna()
+          .assign(Year=lambda x: x['Year'].astype(int))
           )
 
     return df
