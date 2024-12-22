@@ -928,7 +928,9 @@ def market_stocks_data():
 
 def sector_growth_data():
     # https://ourworldindata.org/economic-growth#all-charts
-    df = (pd.read_csv('data/shares-of-gdp-by-economic-sector.csv', sep=','))
+    df = (pd.read_csv('data/shares-of-gdp-by-economic-sector.csv', sep=',')
+          .query("Entity == 'Spain'")
+          )
 
     return df
 

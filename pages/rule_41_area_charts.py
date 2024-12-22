@@ -9,8 +9,9 @@ from utils.load_data import (
     inflation_rates_data
 )
 
-from utils.line_chart_examples.fertility_rates_area_plot import fertility_rates_plotly_express_line_chart, fertility_rates_line_chart
+from utils.line_chart_examples.fertility_rates_area_plot import fertility_rates_line_chart
 from utils.line_chart_examples.hong_kong_inflation_rates import hk_inflation_rates_line_chart
+from utils.line_chart_examples.shares_of_gdp_by_sector_plot import shares_of_gdp_by_sector_plot
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -87,8 +88,12 @@ with overlapping_timeseries_tab:
     st.write('')
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2024/2/23/rule-41-avoid-area-charts)")
 
-    with st.expander("Expand to see the data"):
-        st.dataframe(sector_growth_data_df, hide_index=True)
+    # with st.expander("Expand to see the data"):
+    #     st.dataframe(sector_growth_data_df, hide_index=True)
+    #
+    # st.write('')
+    # with st.container(border=True):
+    #     st.plotly_chart(shares_of_gdp_by_sector_plot(sector_growth_data_df, type='line'))
 
 with walkthrough_tab:
     st.subheader('Walkthrough timeseries')
@@ -106,5 +111,12 @@ with stacked_100_tab:
     st.markdown("🌐 [Original article used for inspiration](https://www.addtwodigital.com/add-two-blog/2024/2/23/rule-41-avoid-area-charts)")
 
     with st.expander("Expand to see the data"):
-        st.dataframe(cumulative_co2_emmissions_data_df, hide_index=True)
+        st.dataframe(sector_growth_data_df, hide_index=True)
 
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(shares_of_gdp_by_sector_plot(sector_growth_data_df, type='line'))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(shares_of_gdp_by_sector_plot(sector_growth_data_df, type='stacked'))
