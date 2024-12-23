@@ -61,29 +61,29 @@ def refugees_line_chart(df, type='total'):
             df_aux = df[df['countries_to_display'] == country]
 
             if type == 'Ir_Sy_Af':
-                title_='Refugees from Iraq, Syria and Afghanistan'
-                h1=type
+                title_='Wars in the Middle East are one of the worst problems in humankind.'
+                h1='Syria and Afganishtan are the countries with the highest number of refugees.'
 
                 country_list = ['Iraq', 'Syria', 'Afghanistan']
                 df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
 
             elif type == 'Sudan_subsahara':
-                title_='Refugees from Sudan and Subharan Africa'
-                h1 = type
+                title_='Civil war in South Sudan and neighbouring countries are not covered enough in the media.'
+                h1 = 'After South Sudans independence in 2011, the country has been in a civil war.'
 
                 country_list = ['Sudan & South Sudan', 'Subharan Africa']
                 df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
 
             elif type == 'Myanmar':
-                title_='Refugees from Myanmar'
-                h1 = type
+                title_='The Rohingya crisis.'
+                h1 = 'The Myanmar government launched a military campaign in 2017 against the Muslim ethnic minority Rohingya.'
 
                 country_list = ['Myanmar']
                 df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
 
             elif type == 'Bos_Ukr':
-                title_='Refugees from Bosnia and Herzegovina and Ukraine'
-                h1 = type
+                title_='Criminal Russia is forcing people in Ukraine to flee their homes.'
+                h1 = 'Ukraine is now the biggest refugee crisis in Europe since the war in Bosnia'
 
                 country_list = ['Bosnia and Herzegovina', 'Ukraine']
                 df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
