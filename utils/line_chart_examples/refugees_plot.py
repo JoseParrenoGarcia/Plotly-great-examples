@@ -1,5 +1,7 @@
 import plotly.graph_objects as go
 import plotly.express as px
+from numpy.core.defchararray import title
+
 
 def refugees_plotly_express_line_chart(df):
     fig = px.line(df,
@@ -21,6 +23,9 @@ def refugees_line_chart(df, type='total'):
     fig = go.Figure()
 
     if type=='total':
+        title_ = 'Highest level of refugees in known history'
+        h1= '32 million people are currently displaced worldwide. This is equivalent to the population of Saudi Arabia.'
+
         df_aux = df.groupby('Year').sum().reset_index()
 
         fig.add_trace(
@@ -56,22 +61,37 @@ def refugees_line_chart(df, type='total'):
             df_aux = df[df['countries_to_display'] == country]
 
             if type == 'Ir_Sy_Af':
+                title_='Refugees from Iraq, Syria and Afghanistan'
+                h1=type
+
                 country_list = ['Iraq', 'Syria', 'Afghanistan']
                 df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
 
             elif type == 'Sudan_subsahara':
+                title_='Refugees from Sudan and Subharan Africa'
+                h1 = type
+
                 country_list = ['Sudan & South Sudan', 'Subharan Africa']
                 df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
 
             elif type == 'Myanmar':
+                title_='Refugees from Myanmar'
+                h1 = type
+
                 country_list = ['Myanmar']
                 df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
 
             elif type == 'Bos_Ukr':
+                title_='Refugees from Bosnia and Herzegovina and Ukraine'
+                h1 = type
+
                 country_list = ['Bosnia and Herzegovina', 'Ukraine']
                 df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
 
             else:
+                title_='Refugees by country'
+                h1 = type
+
                 country_list = list_of_countries
                 df_aux.loc[:, 'color'] = df_aux['color_rgb']
 
@@ -111,13 +131,13 @@ def refugees_line_chart(df, type='total'):
 
     fig.update_layout(
         title=dict(
-            text='Highest level of refugees in known history',
+            text=title_,
             font=dict(family="Helvetica Neue", size=22),
         ),
         annotations=[
             # First paragraph annotation
             dict(
-                text='32 million people are currently displaced worldwide. This is equivalent to the population of Saudi Arabia.',
+                text=h1,
                 xref="paper",
                 yref="paper",
                 x=-0.08, y=1.23,
