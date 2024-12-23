@@ -937,7 +937,40 @@ def sector_growth_data():
 
 def refugees_data():
     # https://www.unhcr.org/refugee-statistics/download?data_finder%5BdataGroup%5D=displacement&data_finder%5Bdataset%5D=population&data_finder%5BdisplayType%5D=totals&data_finder%5BpopulationType%5D%5B%5D=REF&data_finder%5BpopulationType%5D%5B%5D=ASY&data_finder%5BpopulationType%5D%5B%5D=IDP&data_finder%5BpopulationType%5D%5B%5D=OIP&data_finder%5BpopulationType%5D%5B%5D=STA&data_finder%5BpopulationType%5D%5B%5D=HST&data_finder%5BpopulationType%5D%5B%5D=OOC&data-finder=on&data_finder%5Byear__filterType%5D=range&data_finder%5Byear__rangeFrom%5D=1971&data_finder%5Byear__rangeTo%5D=2024&data_finder%5Bcoo__displayType%5D=all&data_finder%5Bcoa__displayType%5D=doNotDisplay&data_finder%5Byear__%5D=&data_finder%5Bcoo__%5D=&data_finder%5Bcoa__%5D=&data_finder%5Badvanced__%5D=&data_finder%5Bsubmit%5D=
-    df = (pd.read_csv('data/refugees.csv', sep=','))
+    countries_to_keep = ['Subharan Africa',
+                         'Afghanistan',
+                         'Syria',
+                         'Iraq',
+                         'Sudan & South Sudan',
+                         'Ukraine',
+                         'Myanmar',
+                         'Bosnia and Herzegovina',
+                         ]
+
+    subsaharan_countries = ['Angola', 'Benin', 'Botswana', 'Burkina Faso',
+                            'Burundi', 'Cabo Verde', 'Cameroon', 'Central African Rep.',
+                            'Chad', 'Comoros', 'Congo', 'Dem. Rep. of the Congo',
+                            'Djibouti', 'Equatorial Guinea', 'Eritrea',
+                            'Eswatini', 'Ethiopia', 'Gabon', 'Gambia', 'Ghana', 'Guinea',
+                            'Guinea-Bissau', 'Cote Ivoire', 'Kenya', 'Lesotho', 'Liberia',
+                            'Madagascar', 'Malawi', 'Mali', 'Mauritania', 'Mauritius',
+                            'Mozambique', 'Namibia', 'Niger', 'Nigeria', 'Rwanda',
+                            'Sao Tome and Principe', 'Senegal', 'Seychelles',
+                            'Sierra Leone', 'Somalia', 'South Africa', 'South Sudan', 'Sudan',
+                            'United Rep. of Tanzania', 'Togo', 'Uganda', 'Zambia', 'Zimbabwe']
+
+    df = (pd.read_csv('data/refugees.csv', sep=',')
+          .replace({'Country_of_origin': 'Syrian Arab Rep.'}, 'Syria')
+          .replace({'Country_of_origin': 'Sudan'}, 'Sudan & South Sudan')
+          .replace({'Country_of_origin': 'South Sudan'}, 'Sudan & South Sudan')
+          .replace({'Country_of_origin': 'Viet Nam'}, 'Vietnam')
+          .assign(countries_to_display=lambda x: x['Country_of_origin'].apply(lambda y: 'Subharan Africa' if y in subsaharan_countries else y))
+          .assign(countries_to_display=lambda x: x['countries_to_display'].apply(lambda y: 'Everywhere else' if y not in countries_to_keep else y),)
+          .groupby(['countries_to_display', 'Year'], as_index=False)
+          .agg({'Refugees': 'sum'})
+          .assign(total_refugees_per_year=lambda x: x.groupby('Year')['Refugees'].transform('sum'))
+          .assign(percentage=lambda x: np.round((x['Refugees'] / x['total_refugees_per_year']) * 100, 1))
+          )
 
     return df
 

@@ -13,6 +13,7 @@ from utils.line_chart_examples.fertility_rates_area_plot import fertility_rates_
 from utils.line_chart_examples.hong_kong_inflation_rates import hk_inflation_rates_line_chart
 from utils.line_chart_examples.shares_of_gdp_by_sector_plot import shares_of_gdp_by_sector_plot
 from utils.line_chart_examples.overlapping_distribution_plot import overlapping_distribution_line_chart
+from utils.line_chart_examples.refugees_plot import refugees_plotly_express_line_chart
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -108,6 +109,11 @@ with walkthrough_tab:
 
     with st.expander("Expand to see the data"):
         st.dataframe(refugees_data_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(refugees_plotly_express_line_chart(refugees_data_df))
+
 
 with stacked_100_tab:
     st.subheader('100% stacked timeseries')
