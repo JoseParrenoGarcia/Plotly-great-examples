@@ -56,14 +56,23 @@ def refugees_line_chart(df, type='total'):
             df_aux = df[df['countries_to_display'] == country]
 
             if type == 'Ir_Sy_Af':
-                df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in ['Iraq', 'Syria', 'Afghanistan'] else row['color_greyscale'], axis=1)
+                country_list = ['Iraq', 'Syria', 'Afghanistan']
+                df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
+
             elif type == 'Sudan_subsahara':
-                df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in ['Sudan & South Sudan', 'Subharan Africa'] else row['color_greyscale'], axis=1)
+                country_list = ['Sudan & South Sudan', 'Subharan Africa']
+                df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
+
             elif type == 'Myanmar':
-                df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in ['Myanmar'] else row['color_greyscale'], axis=1)
+                country_list = ['Myanmar']
+                df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
+
             elif type == 'Bos_Ukr':
-                df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in ['Bosnia and Herzegovina', 'Ukraine'] else row['color_greyscale'], axis=1)
+                country_list = ['Bosnia and Herzegovina', 'Ukraine']
+                df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
+
             else:
+                country_list = list_of_countries
                 df_aux.loc[:, 'color'] = df_aux['color_rgb']
 
 
@@ -73,22 +82,32 @@ def refugees_line_chart(df, type='total'):
                            mode='lines',
                            name=country,
                            stackgroup='one',
-                           showlegend=True,
+                           showlegend=False,
                            line=dict(width=2, color=df_aux['color'].values[0]),
                            )
             )
 
-            # fig.add_trace(
-            #     go.Scatter(x=df_aux[df_aux['Year'] == df_aux['Year'].max()]['Year'],
-            #                y=df_aux[df_aux['Year'] == df_aux['Year'].max()]['Refugees'],
-            #                text=df_aux[df_aux['Year'] == df_aux['Year'].max()]['Refugees'].apply(lambda x: f"{x // 1000000}m"),
-            #                mode='markers+text',
-            #                showlegend=False,
-            #                marker=dict(size=8),
-            #                textfont=dict(family="Helvetica Neue", size=14),
-            #                textposition='middle right',
-            #                )
-            # )
+            for c in country_list:
+                specific_country_df = df_aux[(df_aux['countries_to_display'] == c) & (df_aux['Year'] == df_aux['Year'].max())]
+
+                if (c == 'Ukraine') or (c =='Syria'):
+                    textpos = 'bottom right'
+                elif (c == 'Bosnia and Herzegovina') or () or (c == 'Iraq'):
+                    textpos = 'top right'
+                else:
+                    textpos = 'middle right'
+
+                fig.add_trace(
+                    go.Scatter(x=specific_country_df['Year'],
+                               y=specific_country_df['cumulative_refugees'],
+                               text=specific_country_df['text_to_show'],
+                               mode='markers+text',
+                               showlegend=False,
+                               marker=dict(size=8, color=df_aux['color'].values[0]),
+                               textfont=dict(family="Helvetica Neue", size=14, color=df_aux['color'].values[0]),
+                               textposition=textpos,
+                               )
+                )
 
     fig.update_layout(
         title=dict(
@@ -120,6 +139,10 @@ def refugees_line_chart(df, type='total'):
             showline=True,
             linecolor='lightgrey',
             linewidth=2,
+            range=[df['Year'].min(), df['Year'].max() + 15],
+            tickvals=[1980, 1990, 2000, 2010, 2020],
+            ticktext=['1980', '1990', '2000', '2010', '2020'],
+
         ),
         yaxis=dict(
             title='',

@@ -971,6 +971,18 @@ def refugees_data():
         'Everywhere else': 'rgba(229, 231, 233, 1)',
     }
 
+    countries_order = {
+        'Syria': 1,
+        'Iraq': 2,
+        'Afghanistan': 3,
+        'Sudan & South Sudan': 4,
+        'Subharan Africa': 5,
+        'Myanmar': 6,
+        'Ukraine': 7,
+        'Bosnia and Herzegovina': 8,
+        'Everywhere else': 9,
+    }
+
     subsaharan_countries = ['Angola', 'Benin', 'Botswana', 'Burkina Faso',
                             'Burundi', 'Cabo Verde', 'Cameroon', 'Central African Rep.',
                             'Chad', 'Comoros', 'Congo', 'Dem. Rep. of the Congo',
@@ -996,6 +1008,12 @@ def refugees_data():
           .assign(percentage=lambda x: np.round((x['Refugees'] / x['total_refugees_per_year']) * 100, 1))
           .assign(color_greyscale=lambda x: x['countries_to_display'].map(countries_to_keep_to_color_greyscale))
           .assign(color_rgb=lambda x: x['countries_to_display'].map(countries_to_keep_to_color_rgb))
+          .assign(countries_order=lambda x: x['countries_to_display'].map(countries_order))
+          .sort_values(by=['Year', 'countries_order',])
+          .assign(cumulative_refugees=lambda x: x.groupby('Year')['Refugees'].cumsum(),
+                  cumulative_prct=lambda x: x.groupby('Year')['percentage'].cumsum(),
+                  text_to_show = lambda x: x['countries_to_display'] + ':<br>' + x['Refugees'].apply(lambda x: f"{x / 1000000:.1f}m" if x >= 1000000 else f"{x // 1000}k").astype(str) + ' (' + x['percentage'].astype(str) + '% worldwide)',
+                  )
           )
 
     return df
