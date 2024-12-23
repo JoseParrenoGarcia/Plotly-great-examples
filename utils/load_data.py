@@ -947,6 +947,18 @@ def refugees_data():
                          'Bosnia and Herzegovina',
                          ]
 
+    countries_to_keep_to_color = {
+        'Syria': 'rgba(178, 186, 187, 0.5)',
+        'Iraq': 'rgba(240, 178, 122, 1)',
+        'Sudan & South Sudan': 'rgba(247, 220, 111, 0.5)',
+        'Subharan Africa': 'rgba(203, 67, 53, 1)',
+        'Afghanistan': 'rgba(46, 134, 193, 0.5)',
+        'Ukraine': 'rgba(46, 134, 193, 0.5)',
+        'Myanmar': 'rgba(46, 134, 193, 0.5)',
+        'Bosnia and Herzegovina': 'rgba(46, 134, 193, 0.5)',
+        'Everywhere else': 'rgba(46, 134, 193, 0.5)',
+    }
+
     subsaharan_countries = ['Angola', 'Benin', 'Botswana', 'Burkina Faso',
                             'Burundi', 'Cabo Verde', 'Cameroon', 'Central African Rep.',
                             'Chad', 'Comoros', 'Congo', 'Dem. Rep. of the Congo',
