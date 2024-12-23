@@ -120,7 +120,20 @@ with walkthrough_tab:
 
     st.write('')
     with st.container(border=True):
-        st.plotly_chart(refugees_line_chart(refugees_data_df, type='Iraq_Syria'))
+        st.plotly_chart(refugees_line_chart(refugees_data_df, type='Ir_Sy_Af'))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(refugees_line_chart(refugees_data_df, type='Sudan_subsahara'))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(refugees_line_chart(refugees_data_df, type='Myanmar'))
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(refugees_line_chart(refugees_data_df, type='Bos_Ukr'))
+
 
 
 with stacked_100_tab:

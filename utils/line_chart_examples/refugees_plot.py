@@ -46,8 +46,26 @@ def refugees_line_chart(df, type='total'):
         )
 
     else:
-        for country in df['countries_to_display'].unique():
+        list_of_countries = ['Syria', 'Iraq', 'Afghanistan',
+                             'Sudan & South Sudan', 'Subharan Africa',
+                             'Myanmar',
+                             'Ukraine', 'Bosnia and Herzegovina',
+                             'Everywhere else']
+
+        for country in list_of_countries:
             df_aux = df[df['countries_to_display'] == country]
+
+            if type == 'Ir_Sy_Af':
+                df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in ['Iraq', 'Syria', 'Afghanistan'] else row['color_greyscale'], axis=1)
+            elif type == 'Sudan_subsahara':
+                df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in ['Sudan & South Sudan', 'Subharan Africa'] else row['color_greyscale'], axis=1)
+            elif type == 'Myanmar':
+                df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in ['Myanmar'] else row['color_greyscale'], axis=1)
+            elif type == 'Bos_Ukr':
+                df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in ['Bosnia and Herzegovina', 'Ukraine'] else row['color_greyscale'], axis=1)
+            else:
+                df_aux.loc[:, 'color'] = df_aux['color_rgb']
+
 
             fig.add_trace(
                 go.Scatter(x=df_aux['Year'],
@@ -56,7 +74,7 @@ def refugees_line_chart(df, type='total'):
                            name=country,
                            stackgroup='one',
                            showlegend=True,
-                           line=dict(width=2),
+                           line=dict(width=2, color=df_aux['color'].values[0]),
                            )
             )
 

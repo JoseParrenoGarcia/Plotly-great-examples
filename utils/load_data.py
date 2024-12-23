@@ -947,16 +947,28 @@ def refugees_data():
                          'Bosnia and Herzegovina',
                          ]
 
-    countries_to_keep_to_color = {
-        'Syria': 'rgba(178, 186, 187, 0.5)',
-        'Iraq': 'rgba(240, 178, 122, 1)',
-        'Sudan & South Sudan': 'rgba(247, 220, 111, 0.5)',
-        'Subharan Africa': 'rgba(203, 67, 53, 1)',
-        'Afghanistan': 'rgba(46, 134, 193, 0.5)',
-        'Ukraine': 'rgba(46, 134, 193, 0.5)',
-        'Myanmar': 'rgba(46, 134, 193, 0.5)',
-        'Bosnia and Herzegovina': 'rgba(46, 134, 193, 0.5)',
-        'Everywhere else': 'rgba(46, 134, 193, 0.5)',
+    countries_to_keep_to_color_greyscale = {
+        'Syria': 'rgba(72, 73, 73, 1)',
+        'Iraq': 'rgba(98, 101, 103, 1)',
+        'Afghanistan': 'rgba(121, 125, 127, 1)',
+        'Sudan & South Sudan': 'rgba(144, 148, 151, 1)',
+        'Subharan Africa': 'rgba(166, 172, 175, 1)',
+        'Myanmar': 'rgba(189, 195, 199, 1)',
+        'Ukraine': 'rgba(202, 207, 210, 1)',
+        'Bosnia and Herzegovina': 'rgba(215, 219, 221,1)',
+        'Everywhere else': 'rgba(229, 231, 233, 1)',
+    }
+
+    countries_to_keep_to_color_rgb = {
+        'Syria': 'rgba(123, 36, 28, 1)',
+        'Iraq': 'rgba(192, 57, 43, 1)',
+        'Afghanistan': 'rgba(241, 113, 99, 1)',
+        'Sudan & South Sudan': 'rgba(46, 134, 193 1)',
+        'Subharan Africa': 'rgba(133, 193, 233, 1)',
+        'Myanmar': 'rgba(91, 44, 111, 1)',
+        'Ukraine': 'rgba(212, 172, 13, 1)',
+        'Bosnia and Herzegovina': 'rgba(247, 220, 111,1)',
+        'Everywhere else': 'rgba(229, 231, 233, 1)',
     }
 
     subsaharan_countries = ['Angola', 'Benin', 'Botswana', 'Burkina Faso',
@@ -982,6 +994,8 @@ def refugees_data():
           .agg({'Refugees': 'sum'})
           .assign(total_refugees_per_year=lambda x: x.groupby('Year')['Refugees'].transform('sum'))
           .assign(percentage=lambda x: np.round((x['Refugees'] / x['total_refugees_per_year']) * 100, 1))
+          .assign(color_greyscale=lambda x: x['countries_to_display'].map(countries_to_keep_to_color_greyscale))
+          .assign(color_rgb=lambda x: x['countries_to_display'].map(countries_to_keep_to_color_rgb))
           )
 
     return df
