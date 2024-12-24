@@ -20,6 +20,29 @@ def refugees_plotly_express_line_chart(df):
     return fig
 
 def refugees_line_chart(df, type='total'):
+
+    def _add_annotation_to_area_plot(fig, year, ystart, t, pos, yend=32_000_000, c='grey'):
+        fig.add_shape(
+            type="line",
+            x1=year,
+            x0=year,
+            y0=ystart,
+            y1=yend,
+            line=dict(color=c, width=1, dash="dash"),
+        )
+
+        fig.add_trace(
+            go.Scatter(x=[year],
+                       y=[yend],
+                       text=[t],
+                       mode='markers+text',
+                       showlegend=False,
+                       marker=dict(size=8, color='rgba(0,0,0,0)'),
+                       textfont=dict(color=c),
+                       textposition=pos,
+                       )
+        )
+
     fig = go.Figure()
 
     if type=='total':
@@ -67,12 +90,48 @@ def refugees_line_chart(df, type='total'):
                 country_list = ['Iraq', 'Syria', 'Afghanistan']
                 df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
 
+                if country == 'Afghanistan':
+                    t = "<b>(2001)</b><br>The Taliban collapse <a href='https://www.cfr.org/timeline/us-war-afghanistan'>🔗</a>"
+                    ystart = df_aux[df_aux['Year'] == 2001]['cumulative_refugees'].values[0]
+                    c = df_aux['color'].values[0]
+                    _add_annotation_to_area_plot(fig=fig, year=2001, t=t, pos='middle left', ystart=ystart, c=c)
+
+                    t = "<b>(2021)</b><br>Talibans regain control <a href='https://www.cfr.org/timeline/us-war-afghanistan'>🔗</a>"
+                    ystart = df_aux[df_aux['Year'] == 2021]['cumulative_refugees'].values[0]
+                    c = df_aux['color'].values[0]
+                    _add_annotation_to_area_plot(fig=fig, year=2021, t=t, pos='middle left', ystart=ystart, c=c)
+
+                if country == 'Iraq':
+                    t = "<b>(2006-2008)</b><br>Iraqi Civil War <a href='https://en.wikipedia.org/wiki/Iraqi_civil_war_(2006–2008)'>🔗</a>"
+                    ystart = df_aux[df_aux['Year'] == 2006]['cumulative_refugees'].values[0]
+                    c = df_aux['color'].values[0]
+                    _add_annotation_to_area_plot(fig=fig, year=2006, t=t, pos='middle right', ystart=ystart, yend=28_000_000, c=c)
+
+                if country == 'Syria':
+                    t = "<b>(2011-present)</b><br>Syrian Civil War<br><a href='https://en.wikipedia.org/wiki/Syrian_civil_war'>🔗</a>"
+                    ystart = df_aux[df_aux['Year'] == 2011]['cumulative_refugees'].values[0]
+                    c = df_aux['color'].values[0]
+                    _add_annotation_to_area_plot(fig=fig, year=2011, t=t, pos='middle right', ystart=ystart, yend=23_000_000, c=c)
+
+
             elif type == 'Sudan_subsahara':
                 title_='Civil war in South Sudan and neighbouring countries are not covered enough in the media.'
                 h1 = 'After South Sudans independence in 2011, the country has been in a civil war.'
 
                 country_list = ['Sudan & South Sudan', 'Subharan Africa']
                 df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
+
+                if country == 'Sudan & South Sudan':
+                    t = "<b>(2013-2020)</b><br>South Sudanese civil war <a href='https://en.wikipedia.org/wiki/South_Sudanese_Civil_War'>🔗</a>"
+                    ystart = df_aux[df_aux['Year'] == 2013]['cumulative_refugees'].values[0]
+                    c = df_aux['color'].values[0]
+                    _add_annotation_to_area_plot(fig=fig, year=2013, t=t, pos='middle left', ystart=ystart, c=c)
+
+                if country == 'Subharan Africa':
+                    t = "<b>(1994)</b><br>Rwanda genocide <a href='https://en.wikipedia.org/wiki/Rwandan_genocide'>🔗</a>"
+                    ystart = df_aux[df_aux['Year'] == 1994]['cumulative_refugees'].values[0]
+                    c = df_aux['color'].values[0]
+                    _add_annotation_to_area_plot(fig=fig, year=1994, t=t, pos='middle right', ystart=ystart, yend=28_000_000, c=c)
 
             elif type == 'Myanmar':
                 title_='The Rohingya crisis.'
@@ -81,12 +140,30 @@ def refugees_line_chart(df, type='total'):
                 country_list = ['Myanmar']
                 df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
 
+                if country == 'Myanmar':
+                    t = "<b>(2017-present)</b><br>Massive waves of violence started in Rakhine State <a href='https://www.unrefugees.org/news/rohingya-refugee-crisis-explained/#RohingyainBangladesh'>🔗</a>"
+                    ystart = df_aux[df_aux['Year'] == 2017]['cumulative_refugees'].values[0]
+                    c = df_aux['color'].values[0]
+                    _add_annotation_to_area_plot(fig=fig, year=2017, t=t, pos='middle left', ystart=ystart, c=c)
+
             elif type == 'Bos_Ukr':
                 title_='Criminal Russia is forcing people in Ukraine to flee their homes.'
                 h1 = 'Ukraine is now the biggest refugee crisis in Europe since the war in Bosnia'
 
                 country_list = ['Bosnia and Herzegovina', 'Ukraine']
                 df_aux.loc[:, 'color'] = df_aux.apply(lambda row: row['color_rgb'] if row['countries_to_display'] in country_list else row['color_greyscale'], axis=1)
+
+                if country == 'Bosnia and Herzegovina':
+                    t = "<b>(1992-1995)</b><br>Bosnian war <a href='https://en.wikipedia.org/wiki/Bosnian_War'>🔗</a>"
+                    ystart = df_aux[df_aux['Year'] == 1992]['cumulative_refugees'].values[0]
+                    c = df_aux['color'].values[0]
+                    _add_annotation_to_area_plot(fig=fig, year=1992, t=t, pos='middle right', ystart=ystart, c=c)
+
+                if country == 'Ukraine':
+                    t = "<b>(2021-present)</b><br>Russia invades Ukraine <a href='https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine'>🔗</a>"
+                    ystart = df_aux[df_aux['Year'] == 2021]['cumulative_refugees'].values[0]
+                    c = df_aux['color'].values[0]
+                    _add_annotation_to_area_plot(fig=fig, year=2021, t=t, pos='middle left', ystart=ystart, c=c)
 
             else:
                 title_='Refugees by country'
@@ -112,7 +189,7 @@ def refugees_line_chart(df, type='total'):
 
                 if (c == 'Ukraine') or (c =='Syria'):
                     textpos = 'bottom right'
-                elif (c == 'Bosnia and Herzegovina') or () or (c == 'Iraq'):
+                elif (c == 'Bosnia and Herzegovina') or (c == 'Iraq'):
                     textpos = 'top right'
                 else:
                     textpos = 'middle right'
@@ -121,6 +198,29 @@ def refugees_line_chart(df, type='total'):
                     go.Scatter(x=specific_country_df['Year'],
                                y=specific_country_df['cumulative_refugees'],
                                text=specific_country_df['text_to_show'],
+                               mode='markers+text',
+                               showlegend=False,
+                               marker=dict(size=8, color=df_aux['color'].values[0]),
+                               textfont=dict(family="Helvetica Neue", size=14, color=df_aux['color'].values[0]),
+                               textposition=textpos,
+                               )
+                )
+
+            remaining_countries = [country for country in list_of_countries if country not in country_list]
+            for c in remaining_countries:
+                specific_country_df = df_aux[(df_aux['countries_to_display'] == c) & (df_aux['Year'] == df_aux['Year'].max())]
+
+                if (c == 'Ukraine') or (c =='Syria') or (c =='Subharan Africa'):
+                    textpos = 'bottom right'
+                elif (c == 'Bosnia and Herzegovina') or (c == 'Iraq') or (c == 'Myanmar') or (c == 'Everywhere else'):
+                    textpos = 'top right'
+                else:
+                    textpos = 'middle right'
+
+                fig.add_trace(
+                    go.Scatter(x=specific_country_df['Year'],
+                               y=specific_country_df['cumulative_refugees'],
+                               text=c,
                                mode='markers+text',
                                showlegend=False,
                                marker=dict(size=8, color=df_aux['color'].values[0]),
