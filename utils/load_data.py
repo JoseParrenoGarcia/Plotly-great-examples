@@ -1045,30 +1045,4 @@ def inflation_rates_data():
     return df
 
 def distributions_data():
-    # Set the random seed for reproducibility
-    np.random.seed(42)
-
-    # Generate data for the normal and narrow distribution
-    x_narrow = np.linspace(-4, 4, 1000)
-    y_narrow = norm.pdf(x_narrow, loc=0, scale=0.5)
-    tag_narrow = ['Normal Narrow'] * len(x_narrow)
-
-    # Generate data for the normal and wide distribution
-    x_wide = np.linspace(-4, 4, 1000)
-    y_wide = norm.pdf(x_wide, loc=-1, scale=0.4)
-    tag_wide = ['Normal Wide'] * len(x_wide)
-
-    # Generate data for the skewed distribution
-    x_skewed = np.linspace(-4, 4, 1000)
-    y_skewed = norm.pdf(x_skewed, loc=2, scale=0.4)
-    tag_skewed = ['Skewed'] * len(x_skewed)
-
-    # Create a DataFrame
-    df_narrow = pd.DataFrame({'x': x_narrow, 'y': y_narrow, 'tag': tag_narrow})
-    df_wide = pd.DataFrame({'x': x_wide, 'y': y_wide, 'tag': tag_wide})
-    df_skewed = pd.DataFrame({'x': x_skewed, 'y': y_skewed, 'tag': tag_skewed})
-
-    # Combine the DataFrames
-    df = pd.concat([df_narrow, df_wide, df_skewed], ignore_index=True)
-
-    return df
+    return (pd.read_csv('data/distributions.csv', sep=','))
