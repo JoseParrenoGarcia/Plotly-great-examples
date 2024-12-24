@@ -42,9 +42,9 @@ inflation_rates_data_df = inflation_rates_data()
  stacked_100_tab,
  )  = st.tabs(
     ["📈 Single timeseries",
-     "🚶‍♀️ Overlapping timeseries",
-     "⏱️ Walthrough timeseries",
-     "📏 100% stacked timeseries",
+     "🔁️ Overlapping timeseries",
+     "🚶‍ Walthrough timeseries",
+     "📚 100% stacked timeseries",
      ]
 )
 

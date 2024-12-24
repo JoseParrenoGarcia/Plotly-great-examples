@@ -42,10 +42,10 @@ new_books_data_df = new_books_data()
  important_events_tab,
  replacement_for_legend_tab,
  )  = st.tabs(
-    ["📈 Uneven intervals",
-     "🚶‍♀️ Not a lot of data",
-     "⏱️ Important events",
-     "📏 Replacement for legend",
+    ["⏰ Uneven intervals",
+     "🌵️ Not a lot of data",
+     "🏆 Important events",
+     "📖 Replacement for legend",
      ]
 )
 

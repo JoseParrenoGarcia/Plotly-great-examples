@@ -30,9 +30,9 @@ fertility_rates_data_df = fertility_rates_data()
  segment_tab,
  )  = st.tabs(
     ["📈 Too many lines",
-     "⏱️ Too sparse",
-     "🚶‍♀️ Greying out",
-     "📏 Segment grouping",
+     "🌵 Too sparse",
+     "⚪️ Greying out",
+     "🗂 Segment grouping",
      ]
 )
 

@@ -31,9 +31,9 @@ market_stocks_data_df = market_stocks_data()
  too_many_lines_tab,
  benchmark_tab,
  )  = st.tabs(
-    ["📈 Lines with lots of change",
-     "🚶‍♀️ Too many lines",
-     "📏 Benchmark lines",
+    ["🔄 Lines with lots of change",
+     "📈 Too many lines",
+     "🏁 Benchmark lines",
      ]
 )
 
