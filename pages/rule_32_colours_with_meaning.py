@@ -36,9 +36,9 @@ european_elections_data_df = european_elections_data()
  colour_hierarchy_tab,
  colours_with_meaning_tab,
  )  = st.tabs(
-    ["📈 Hero lines",
-     "🚶‍♀️ Colour hierarchy",
-     "📏 Colours with meaning",
+    ["🦸‍♀️ Hero lines",
+     "👑️ Colour hierarchy",
+     "🌈 Colours with meaning",
      ]
 )
 

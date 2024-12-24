@@ -3,6 +3,7 @@ import pycountry
 import pycountry_convert as pc
 import numpy as np
 import re
+from scipy.stats import norm, skewnorm
 
 def _get_continent(country_name):
     try:
@@ -928,33 +929,146 @@ def market_stocks_data():
 
 def sector_growth_data():
     # https://ourworldindata.org/economic-growth#all-charts
-    df = (pd.read_csv('data/shares-of-gdp-by-economic-sector.csv', sep=','))
+    df = (pd.read_csv('data/shares-of-gdp-by-economic-sector.csv', sep=',')
+          .query("Entity == 'Spain'")
+          )
 
     return df
 
 def refugees_data():
     # https://www.unhcr.org/refugee-statistics/download?data_finder%5BdataGroup%5D=displacement&data_finder%5Bdataset%5D=population&data_finder%5BdisplayType%5D=totals&data_finder%5BpopulationType%5D%5B%5D=REF&data_finder%5BpopulationType%5D%5B%5D=ASY&data_finder%5BpopulationType%5D%5B%5D=IDP&data_finder%5BpopulationType%5D%5B%5D=OIP&data_finder%5BpopulationType%5D%5B%5D=STA&data_finder%5BpopulationType%5D%5B%5D=HST&data_finder%5BpopulationType%5D%5B%5D=OOC&data-finder=on&data_finder%5Byear__filterType%5D=range&data_finder%5Byear__rangeFrom%5D=1971&data_finder%5Byear__rangeTo%5D=2024&data_finder%5Bcoo__displayType%5D=all&data_finder%5Bcoa__displayType%5D=doNotDisplay&data_finder%5Byear__%5D=&data_finder%5Bcoo__%5D=&data_finder%5Bcoa__%5D=&data_finder%5Badvanced__%5D=&data_finder%5Bsubmit%5D=
-    df = (pd.read_csv('data/refugees.csv', sep=','))
+    countries_to_keep = ['Subharan Africa',
+                         'Afghanistan',
+                         'Syria',
+                         'Iraq',
+                         'Sudan & South Sudan',
+                         'Ukraine',
+                         'Myanmar',
+                         'Bosnia and Herzegovina',
+                         ]
 
-    return df
+    countries_to_keep_to_color_greyscale = {
+        'Syria': 'rgba(72, 73, 73, 1)',
+        'Iraq': 'rgba(98, 101, 103, 1)',
+        'Afghanistan': 'rgba(121, 125, 127, 1)',
+        'Sudan & South Sudan': 'rgba(144, 148, 151, 1)',
+        'Subharan Africa': 'rgba(166, 172, 175, 1)',
+        'Myanmar': 'rgba(189, 195, 199, 1)',
+        'Ukraine': 'rgba(202, 207, 210, 1)',
+        'Bosnia and Herzegovina': 'rgba(215, 219, 221,1)',
+        'Everywhere else': 'rgba(229, 231, 233, 1)',
+    }
 
-def cumulative_co2_emmissions_data():
-    # https://ourworldindata.org/grapher/cumulative-co2-emissions-region
-    df = (pd.read_csv('data/cumulative-co2-emissions-region.csv', sep=','))
+    countries_to_keep_to_color_rgb = {
+        'Syria': 'rgba(123, 36, 28, 1)',
+        'Iraq': 'rgba(192, 57, 43, 1)',
+        'Afghanistan': 'rgba(241, 113, 99, 1)',
+        'Sudan & South Sudan': 'rgba(46, 134, 193 1)',
+        'Subharan Africa': 'rgba(133, 193, 233, 1)',
+        'Myanmar': 'rgba(91, 44, 111, 1)',
+        'Ukraine': 'rgba(212, 172, 13, 1)',
+        'Bosnia and Herzegovina': 'rgba(247, 220, 111,1)',
+        'Everywhere else': 'rgba(229, 231, 233, 1)',
+    }
+
+    countries_order = {
+        'Syria': 1,
+        'Iraq': 2,
+        'Afghanistan': 3,
+        'Sudan & South Sudan': 4,
+        'Subharan Africa': 5,
+        'Myanmar': 6,
+        'Ukraine': 7,
+        'Bosnia and Herzegovina': 8,
+        'Everywhere else': 9,
+    }
+
+    subsaharan_countries = ['Angola', 'Benin', 'Botswana', 'Burkina Faso',
+                            'Burundi', 'Cabo Verde', 'Cameroon', 'Central African Rep.',
+                            'Chad', 'Comoros', 'Congo', 'Dem. Rep. of the Congo',
+                            'Djibouti', 'Equatorial Guinea', 'Eritrea',
+                            'Eswatini', 'Ethiopia', 'Gabon', 'Gambia', 'Ghana', 'Guinea',
+                            'Guinea-Bissau', 'Cote Ivoire', 'Kenya', 'Lesotho', 'Liberia',
+                            'Madagascar', 'Malawi', 'Mali', 'Mauritania', 'Mauritius',
+                            'Mozambique', 'Namibia', 'Niger', 'Nigeria', 'Rwanda',
+                            'Sao Tome and Principe', 'Senegal', 'Seychelles',
+                            'Sierra Leone', 'Somalia', 'South Africa', 'South Sudan', 'Sudan',
+                            'United Rep. of Tanzania', 'Togo', 'Uganda', 'Zambia', 'Zimbabwe']
+
+    df = (pd.read_csv('data/refugees.csv', sep=',')
+          .replace({'Country_of_origin': 'Syrian Arab Rep.'}, 'Syria')
+          .replace({'Country_of_origin': 'Sudan'}, 'Sudan & South Sudan')
+          .replace({'Country_of_origin': 'South Sudan'}, 'Sudan & South Sudan')
+          .replace({'Country_of_origin': 'Viet Nam'}, 'Vietnam')
+          .assign(countries_to_display=lambda x: x['Country_of_origin'].apply(lambda y: 'Subharan Africa' if y in subsaharan_countries else y))
+          .assign(countries_to_display=lambda x: x['countries_to_display'].apply(lambda y: 'Everywhere else' if y not in countries_to_keep else y),)
+          .groupby(['countries_to_display', 'Year'], as_index=False)
+          .agg({'Refugees': 'sum'})
+          .assign(total_refugees_per_year=lambda x: x.groupby('Year')['Refugees'].transform('sum'))
+          .assign(percentage=lambda x: np.round((x['Refugees'] / x['total_refugees_per_year']) * 100, 1))
+          .assign(color_greyscale=lambda x: x['countries_to_display'].map(countries_to_keep_to_color_greyscale))
+          .assign(color_rgb=lambda x: x['countries_to_display'].map(countries_to_keep_to_color_rgb))
+          .assign(countries_order=lambda x: x['countries_to_display'].map(countries_order))
+          .sort_values(by=['Year', 'countries_order',])
+          .assign(cumulative_refugees=lambda x: x.groupby('Year')['Refugees'].cumsum(),
+                  cumulative_prct=lambda x: x.groupby('Year')['percentage'].cumsum(),
+                  text_to_show = lambda x: x['countries_to_display'] + ':<br>' + x['Refugees'].apply(lambda x: f"{x / 1000000:.1f}m" if x >= 1000000 else f"{x // 1000}k").astype(str) + ' (' + x['percentage'].astype(str) + '% worldwide)',
+                  )
+          )
 
     return df
 
 def fertility_rates_stacked_area_data():
     # https://data.worldbank.org/indicator/SP.DYN.TFRT.IN?locations=RO
-    df = (pd.read_csv('data/fertility_rates.csv', sep=','))
+    df = (pd.read_csv('data/fertility_rates.csv', sep=',')
+          .query("`Country Name` == 'Romania'")
+          .drop(columns=['Country Code', 'Indicator Name', 'Indicator Code'])
+          .melt(id_vars=['Country Name'], var_name='Year', value_name='Fertility Rate')
+          .dropna()
+          .assign(Year=lambda x: x['Year'].astype(int))
+          )
 
     return df
 
 def inflation_rates_data():
     # https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=HK
-    df = (pd.read_csv('data/inflation_rates.csv', sep=','))
+    df = (pd.read_csv('data/inflation_rates.csv', sep=',')
+          .query("`Country Name` == 'Hong Kong SAR, China'")
+          .drop(columns=['Country Code', 'Indicator Name', 'Indicator Code'])
+          .melt(id_vars=['Country Name'], var_name='Year', value_name='Inflation Rate')
+          .dropna()
+          .assign(Year=lambda x: x['Year'].astype(int),)
+          )
+
+    df['Inflation Rate'] = df['Inflation Rate'].astype(float).round(2)
 
     return df
 
+def distributions_data():
+    # Set the random seed for reproducibility
+    np.random.seed(42)
 
+    # Generate data for the normal and narrow distribution
+    x_narrow = np.linspace(-4, 4, 1000)
+    y_narrow = norm.pdf(x_narrow, loc=0, scale=0.5)
+    tag_narrow = ['Normal Narrow'] * len(x_narrow)
 
+    # Generate data for the normal and wide distribution
+    x_wide = np.linspace(-4, 4, 1000)
+    y_wide = norm.pdf(x_wide, loc=-1, scale=0.4)
+    tag_wide = ['Normal Wide'] * len(x_wide)
+
+    # Generate data for the skewed distribution
+    x_skewed = np.linspace(-4, 4, 1000)
+    y_skewed = norm.pdf(x_skewed, loc=2, scale=0.4)
+    tag_skewed = ['Skewed'] * len(x_skewed)
+
+    # Create a DataFrame
+    df_narrow = pd.DataFrame({'x': x_narrow, 'y': y_narrow, 'tag': tag_narrow})
+    df_wide = pd.DataFrame({'x': x_wide, 'y': y_wide, 'tag': tag_wide})
+    df_skewed = pd.DataFrame({'x': x_skewed, 'y': y_skewed, 'tag': tag_skewed})
+
+    # Combine the DataFrames
+    df = pd.concat([df_narrow, df_wide, df_skewed], ignore_index=True)
+
+    return df

@@ -1,4 +1,4 @@
-Entity,Code,Year,Share of services in GDP at current prices (Herrendorf et al. data),Share of industry in GDP at current prices (Herrendorf et al. data),Share of agriculture in GDP at current prices (Herrendorf et al. data)
+Entity,Code,Year,Share_of_services_in_GDP,Share_of_industry_in_GDP,Share_of_agriculture_in_GDP
 Belgium,BEL,1835,44.87,34.55,20.58
 Belgium,BEL,1836,44.02,36.64,19.34
 Belgium,BEL,1837,45.01,36.25,18.74
