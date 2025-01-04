@@ -47,15 +47,14 @@ def space_race_line_chart(df):
         )
     )
 
-    for index, row in soviet_data.iterrows():
-        fig.add_annotation(
-            x=start_soviet,
-            y=row['Year'],
-            ax=start_soviet-10,
-            ay=0,
-            showarrow=True,
-            arrowhead=0,
-            arrowcolor=soviet_color,
+    for year in soviet_data['Year']:
+        fig.add_shape(
+            type="line",
+            x0=start_soviet,
+            y0=year,
+            x1=start_soviet - 40,
+            y1=year,
+            line=dict(color=soviet_color, width=2)
         )
 
     # Add annotations for the US
@@ -81,15 +80,14 @@ def space_race_line_chart(df):
         )
     )
 
-    for index, row in us_data.iterrows():
-        fig.add_annotation(
-            x=start_us,
-            y=row['Year'],
-            ax=start_us + 10,
-            ay=0,
-            showarrow=True,
-            arrowhead=0,
-            arrowcolor=us_color,
+    for year in us_data['Year']:
+        fig.add_shape(
+            type="line",
+            x0=start_us,
+            y0=year,
+            x1=start_us + 40,
+            y1=year,
+            line=dict(color=us_color, width=2)
         )
 
     # Add annotations for both
