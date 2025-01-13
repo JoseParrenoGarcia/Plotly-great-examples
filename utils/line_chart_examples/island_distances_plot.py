@@ -163,8 +163,8 @@ def island_distance_line_chart(df):
         font=dict(family="Helvetica Neue", size=14),
         showlegend=False,
         margin=dict(t=150, pad=0),
-        height=1000,
-        width=1200,
+        height=800,
+        width=900,
     )
 
     return fig
