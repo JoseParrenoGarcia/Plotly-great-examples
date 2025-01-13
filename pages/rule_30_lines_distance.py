@@ -11,7 +11,7 @@ from utils.load_data import (
 from utils.line_chart_examples.driving_women_plot import driving_women_line_chart
 from utils.line_chart_examples.space_race_plot import space_race_line_chart
 from utils.line_chart_examples.island_distances_plot import island_distance_line_chart
-from utils.line_chart_examples.political_distances_plots import political_distance_line_chart
+from utils.line_chart_examples.political_distances_plots import political_distance_line_chart, political_distance_bar_chart
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -92,6 +92,10 @@ with other_distances_tab:
 
     with st.expander("Expand to see the data"):
         st.dataframe(political_view_survey_data_df, hide_index=False)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(political_distance_bar_chart(political_view_survey_data_df))
 
     st.write('')
     with st.container(border=True):

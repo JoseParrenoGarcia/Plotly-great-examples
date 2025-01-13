@@ -81,9 +81,9 @@ def political_distance_line_chart(df):
             position=0,
             zeroline=False,
             range=[0, 100],
-            tickvals=[20, 40, 60, 80, 100],
+            tickvals=[0, 20, 40, 60, 80, 100],
             tickmode='array',
-            ticktext=['20%', '40%', '60%', '80%', '100%'],
+            ticktext=['0%', '20%', '40%', '60%', '80%', '100%'],
             tickfont=dict(size=14),
         ),
         yaxis=dict(
@@ -98,6 +98,47 @@ def political_distance_line_chart(df):
         margin=dict(t=150, pad=0),
         height=600,
         width=700,
+    )
+
+    return fig
+
+def political_distance_bar_chart(df):
+    fig = go.Figure()
+
+    fig.add_trace(
+        go.Bar(
+            x=df['left'],
+            y=df['Topic'],
+            marker_color='rgb(236, 112, 99)',
+            orientation='h',
+            name='Left wingers',
+            text=df['left'].astype(str) + '%',
+            textposition='outside',
+        )
+    )
+
+    fig.add_trace(
+        go.Bar(
+            x=df['right'],
+            y=df['Topic'],
+            marker_color='rgb(93, 173, 226)',
+            orientation='h',
+            name='Right wingers',
+            text=df['right'].astype(str) + '%',
+            textposition='outside',
+        )
+    )
+
+    # Minor layout customization
+    fig.update_layout(
+        title=dict(
+            text='Policies that differentiate left and right wingers the most',
+            font=dict(family="Helvetica Neue", size=24),
+        ),
+        font=dict(family="Helvetica Neue"),
+        height=600,
+        width=1000,
+        xaxis=dict(range=[0, 100],),
     )
 
     return fig
