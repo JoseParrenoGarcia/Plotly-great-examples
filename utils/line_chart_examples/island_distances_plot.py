@@ -1,5 +1,49 @@
 import plotly.graph_objects as go
 
+def island_distance_bar_chart(df):
+    df = df.sort_values('Km_rank', ascending=True)
+
+    fig = go.Figure()
+
+    fig.add_trace(
+        go.Bar(
+            x=df['Km'],
+            y=df['Km_rank'],
+            text='    ' + df['Island'] + ' to ' + df['Closest landmass'] + ': ' + df['Km'].astype(str) + ' km',
+            showlegend=False,
+            textposition='outside',
+            orientation='h',
+        )
+    )
+
+    # Update layout
+    fig.update_layout(
+        title=dict(
+            text='Closest landmasses to different islands',
+            font=dict(family="Helvetica Neue", size=24),
+        ),
+        xaxis=dict(
+            showticklabels=False,
+            showgrid=False,
+            position=0,
+            zeroline=False,
+            range=[0, 3000],
+        ),
+        yaxis=dict(
+            title='',
+            showgrid=False,
+            visible=False,
+        ),
+        yaxis_autorange='reversed',
+        font=dict(family="Helvetica Neue", size=14),
+        showlegend=False,
+        margin=dict(t=150, pad=0),
+        height=600,
+        width=700,
+    )
+
+    return fig
+
 def island_distance_line_chart(df):
     df = df.sort_values('Km_rank', ascending=True)
 

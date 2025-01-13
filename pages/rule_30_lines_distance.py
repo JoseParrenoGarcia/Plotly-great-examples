@@ -10,7 +10,7 @@ from utils.load_data import (
 
 from utils.line_chart_examples.driving_women_plot import driving_women_line_chart
 from utils.line_chart_examples.space_race_plot import space_race_line_chart
-from utils.line_chart_examples.island_distances_plot import island_distance_line_chart
+from utils.line_chart_examples.island_distances_plot import island_distance_line_chart, island_distance_bar_chart
 from utils.line_chart_examples.political_distances_plots import political_distance_line_chart, political_distance_bar_chart
 
 # ---------------------------------------------------------------------
@@ -79,6 +79,10 @@ with physical_distance_tab:
 
     with st.expander("Expand to see the data"):
         st.dataframe(island_distances_data_df, hide_index=True)
+
+    st.write('')
+    with st.container(border=True):
+        st.plotly_chart(island_distance_bar_chart(island_distances_data_df))
 
     st.write('')
     with st.container(border=True):
