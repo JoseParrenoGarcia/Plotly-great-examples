@@ -60,11 +60,11 @@ with sparse_tab:
 
     st.write('')
     with st.container(border=True):
-        st.plotly_chart(fertility_rates_plotly_express_line_chart(fertility_rates_data_df[fertility_rates_data_df['Country Name'].isin(['France', 'United Kingdom', 'Germany', 'Italy'])]))
+        st.plotly_chart(fertility_rates_plotly_express_line_chart(fertility_rates_data_df[fertility_rates_data_df['Country Name'].isin(['United Arab Emirates', 'Saudi Arabia', 'Kuwait', 'Bahrain', 'Oman'])]))
 
     st.write('')
     with st.container(border=True):
-        st.plotly_chart(fertility_rates_plotly_express_line_chart(fertility_rates_data_df[fertility_rates_data_df['Country Name'].isin(['Niger', 'Korea, Rep.', 'United States', 'World'])]))
+        st.plotly_chart(fertility_rates_plotly_express_line_chart(fertility_rates_data_df[fertility_rates_data_df['Country Name'].isin(['Niger', 'Somalia', 'Congo, Dem. Rep.', 'Mali'])]))
 
 with grey_out_tab:
     st.subheader('Grey out to provide context')
