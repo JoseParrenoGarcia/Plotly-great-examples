@@ -58,8 +58,6 @@ def fertility_rates_line_plot(df, title, countries_to_highlight):
                 text=country
                 textposition='middle right'
 
-
-
             fig.add_trace(
                 go.Scatter(x=df[(df['Country Name'] == country) & (df['Year'] == df['Year'].max())]['Year'],
                            y=df[(df['Country Name'] == country) & (df['Year'] == df['Year'].max())]['Fertility_Rate'],
@@ -167,7 +165,9 @@ def fertility_rates_lines_by_group(df):
 
         return fig
 
-    fig = make_subplots(rows=1, cols=5, shared_yaxes=True)
+    fig = make_subplots(rows=1, cols=5, shared_yaxes=True,
+                        # subplot_titles=("Asia", "Europe", "Africa", "North America", 'S')
+                        )
 
     asia_fig = _individual_plot(df=df, continent='Asia')
     for trace in asia_fig.data:
@@ -227,7 +227,7 @@ def fertility_rates_lines_by_group(df):
             linecolor='lightgrey',
             linewidth=2,
             range=[df['Year'].min(), df['Year'].max() + 2],
-            dtick=10,
+            dtick=20,
             row=1,
             col=col
         )
