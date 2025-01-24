@@ -6,7 +6,7 @@ def uk_elections_plotly_express_line_chart(df):
                  x='election',
                  y='votes',
                  color='party',
-                 markers=True,
+                 markers=False,
                  title='UK elections')
 
     fig.update_layout(
